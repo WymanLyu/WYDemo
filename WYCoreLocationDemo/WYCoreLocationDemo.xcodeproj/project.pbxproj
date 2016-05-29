@@ -1,0 +1,531 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		133B33491CFAD92A0031450D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 133B33481CFAD92A0031450D /* main.m */; };
+		133B334C1CFAD92A0031450D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 133B334B1CFAD92A0031450D /* AppDelegate.m */; };
+		133B334F1CFAD92A0031450D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 133B334E1CFAD92A0031450D /* ViewController.m */; };
+		133B33521CFAD92A0031450D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 133B33501CFAD92A0031450D /* Main.storyboard */; };
+		133B33541CFAD92A0031450D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 133B33531CFAD92A0031450D /* Assets.xcassets */; };
+		133B33571CFAD92A0031450D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 133B33551CFAD92A0031450D /* LaunchScreen.storyboard */; };
+		133B33621CFAD92B0031450D /* WYCoreLocationDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 133B33611CFAD92B0031450D /* WYCoreLocationDemoTests.m */; };
+		133B336D1CFAD92B0031450D /* WYCoreLocationDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 133B336C1CFAD92B0031450D /* WYCoreLocationDemoUITests.m */; };
+		133B337B1CFAD9490031450D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 133B337A1CFAD9490031450D /* CoreLocation.framework */; };
+		133B337E1CFADDD30031450D /* WYLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 133B337D1CFADDD30031450D /* WYLocationManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		133B335E1CFAD92B0031450D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 133B333C1CFAD92A0031450D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 133B33431CFAD92A0031450D;
+			remoteInfo = WYCoreLocationDemo;
+		};
+		133B33691CFAD92B0031450D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 133B333C1CFAD92A0031450D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 133B33431CFAD92A0031450D;
+			remoteInfo = WYCoreLocationDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		133B33441CFAD92A0031450D /* WYCoreLocationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WYCoreLocationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		133B33481CFAD92A0031450D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		133B334A1CFAD92A0031450D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		133B334B1CFAD92A0031450D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		133B334D1CFAD92A0031450D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		133B334E1CFAD92A0031450D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		133B33511CFAD92A0031450D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		133B33531CFAD92A0031450D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		133B33561CFAD92A0031450D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		133B33581CFAD92A0031450D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		133B335D1CFAD92B0031450D /* WYCoreLocationDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WYCoreLocationDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		133B33611CFAD92B0031450D /* WYCoreLocationDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYCoreLocationDemoTests.m; sourceTree = "<group>"; };
+		133B33631CFAD92B0031450D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		133B33681CFAD92B0031450D /* WYCoreLocationDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WYCoreLocationDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		133B336C1CFAD92B0031450D /* WYCoreLocationDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYCoreLocationDemoUITests.m; sourceTree = "<group>"; };
+		133B336E1CFAD92B0031450D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		133B337A1CFAD9490031450D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		133B337C1CFADDD30031450D /* WYLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYLocationManager.h; sourceTree = "<group>"; };
+		133B337D1CFADDD30031450D /* WYLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYLocationManager.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		133B33411CFAD92A0031450D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				133B337B1CFAD9490031450D /* CoreLocation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		133B335A1CFAD92B0031450D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		133B33651CFAD92B0031450D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		133B333B1CFAD92A0031450D = {
+			isa = PBXGroup;
+			children = (
+				133B337A1CFAD9490031450D /* CoreLocation.framework */,
+				133B33461CFAD92A0031450D /* WYCoreLocationDemo */,
+				133B33601CFAD92B0031450D /* WYCoreLocationDemoTests */,
+				133B336B1CFAD92B0031450D /* WYCoreLocationDemoUITests */,
+				133B33451CFAD92A0031450D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		133B33451CFAD92A0031450D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				133B33441CFAD92A0031450D /* WYCoreLocationDemo.app */,
+				133B335D1CFAD92B0031450D /* WYCoreLocationDemoTests.xctest */,
+				133B33681CFAD92B0031450D /* WYCoreLocationDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		133B33461CFAD92A0031450D /* WYCoreLocationDemo */ = {
+			isa = PBXGroup;
+			children = (
+				133B334A1CFAD92A0031450D /* AppDelegate.h */,
+				133B334B1CFAD92A0031450D /* AppDelegate.m */,
+				133B334D1CFAD92A0031450D /* ViewController.h */,
+				133B334E1CFAD92A0031450D /* ViewController.m */,
+				133B33501CFAD92A0031450D /* Main.storyboard */,
+				133B33531CFAD92A0031450D /* Assets.xcassets */,
+				133B33551CFAD92A0031450D /* LaunchScreen.storyboard */,
+				133B33581CFAD92A0031450D /* Info.plist */,
+				133B33471CFAD92A0031450D /* Supporting Files */,
+				133B337C1CFADDD30031450D /* WYLocationManager.h */,
+				133B337D1CFADDD30031450D /* WYLocationManager.m */,
+			);
+			path = WYCoreLocationDemo;
+			sourceTree = "<group>";
+		};
+		133B33471CFAD92A0031450D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				133B33481CFAD92A0031450D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		133B33601CFAD92B0031450D /* WYCoreLocationDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				133B33611CFAD92B0031450D /* WYCoreLocationDemoTests.m */,
+				133B33631CFAD92B0031450D /* Info.plist */,
+			);
+			path = WYCoreLocationDemoTests;
+			sourceTree = "<group>";
+		};
+		133B336B1CFAD92B0031450D /* WYCoreLocationDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				133B336C1CFAD92B0031450D /* WYCoreLocationDemoUITests.m */,
+				133B336E1CFAD92B0031450D /* Info.plist */,
+			);
+			path = WYCoreLocationDemoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		133B33431CFAD92A0031450D /* WYCoreLocationDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 133B33711CFAD92B0031450D /* Build configuration list for PBXNativeTarget "WYCoreLocationDemo" */;
+			buildPhases = (
+				133B33401CFAD92A0031450D /* Sources */,
+				133B33411CFAD92A0031450D /* Frameworks */,
+				133B33421CFAD92A0031450D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WYCoreLocationDemo;
+			productName = WYCoreLocationDemo;
+			productReference = 133B33441CFAD92A0031450D /* WYCoreLocationDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		133B335C1CFAD92B0031450D /* WYCoreLocationDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 133B33741CFAD92B0031450D /* Build configuration list for PBXNativeTarget "WYCoreLocationDemoTests" */;
+			buildPhases = (
+				133B33591CFAD92B0031450D /* Sources */,
+				133B335A1CFAD92B0031450D /* Frameworks */,
+				133B335B1CFAD92B0031450D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				133B335F1CFAD92B0031450D /* PBXTargetDependency */,
+			);
+			name = WYCoreLocationDemoTests;
+			productName = WYCoreLocationDemoTests;
+			productReference = 133B335D1CFAD92B0031450D /* WYCoreLocationDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		133B33671CFAD92B0031450D /* WYCoreLocationDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 133B33771CFAD92B0031450D /* Build configuration list for PBXNativeTarget "WYCoreLocationDemoUITests" */;
+			buildPhases = (
+				133B33641CFAD92B0031450D /* Sources */,
+				133B33651CFAD92B0031450D /* Frameworks */,
+				133B33661CFAD92B0031450D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				133B336A1CFAD92B0031450D /* PBXTargetDependency */,
+			);
+			name = WYCoreLocationDemoUITests;
+			productName = WYCoreLocationDemoUITests;
+			productReference = 133B33681CFAD92B0031450D /* WYCoreLocationDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		133B333C1CFAD92A0031450D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = wyman;
+				TargetAttributes = {
+					133B33431CFAD92A0031450D = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					133B335C1CFAD92B0031450D = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = 133B33431CFAD92A0031450D;
+					};
+					133B33671CFAD92B0031450D = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = 133B33431CFAD92A0031450D;
+					};
+				};
+			};
+			buildConfigurationList = 133B333F1CFAD92A0031450D /* Build configuration list for PBXProject "WYCoreLocationDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 133B333B1CFAD92A0031450D;
+			productRefGroup = 133B33451CFAD92A0031450D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				133B33431CFAD92A0031450D /* WYCoreLocationDemo */,
+				133B335C1CFAD92B0031450D /* WYCoreLocationDemoTests */,
+				133B33671CFAD92B0031450D /* WYCoreLocationDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		133B33421CFAD92A0031450D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				133B33571CFAD92A0031450D /* LaunchScreen.storyboard in Resources */,
+				133B33541CFAD92A0031450D /* Assets.xcassets in Resources */,
+				133B33521CFAD92A0031450D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		133B335B1CFAD92B0031450D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		133B33661CFAD92B0031450D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		133B33401CFAD92A0031450D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				133B334F1CFAD92A0031450D /* ViewController.m in Sources */,
+				133B334C1CFAD92A0031450D /* AppDelegate.m in Sources */,
+				133B337E1CFADDD30031450D /* WYLocationManager.m in Sources */,
+				133B33491CFAD92A0031450D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		133B33591CFAD92B0031450D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				133B33621CFAD92B0031450D /* WYCoreLocationDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		133B33641CFAD92B0031450D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				133B336D1CFAD92B0031450D /* WYCoreLocationDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		133B335F1CFAD92B0031450D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 133B33431CFAD92A0031450D /* WYCoreLocationDemo */;
+			targetProxy = 133B335E1CFAD92B0031450D /* PBXContainerItemProxy */;
+		};
+		133B336A1CFAD92B0031450D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 133B33431CFAD92A0031450D /* WYCoreLocationDemo */;
+			targetProxy = 133B33691CFAD92B0031450D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		133B33501CFAD92A0031450D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				133B33511CFAD92A0031450D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		133B33551CFAD92A0031450D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				133B33561CFAD92A0031450D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		133B336F1CFAD92B0031450D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		133B33701CFAD92B0031450D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		133B33721CFAD92B0031450D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WYCoreLocationDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wyman.WYCoreLocationDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		133B33731CFAD92B0031450D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WYCoreLocationDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wyman.WYCoreLocationDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		133B33751CFAD92B0031450D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WYCoreLocationDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wyman.WYCoreLocationDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WYCoreLocationDemo.app/WYCoreLocationDemo";
+			};
+			name = Debug;
+		};
+		133B33761CFAD92B0031450D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WYCoreLocationDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wyman.WYCoreLocationDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WYCoreLocationDemo.app/WYCoreLocationDemo";
+			};
+			name = Release;
+		};
+		133B33781CFAD92B0031450D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WYCoreLocationDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wyman.WYCoreLocationDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WYCoreLocationDemo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		133B33791CFAD92B0031450D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WYCoreLocationDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wyman.WYCoreLocationDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WYCoreLocationDemo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		133B333F1CFAD92A0031450D /* Build configuration list for PBXProject "WYCoreLocationDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				133B336F1CFAD92B0031450D /* Debug */,
+				133B33701CFAD92B0031450D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		133B33711CFAD92B0031450D /* Build configuration list for PBXNativeTarget "WYCoreLocationDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				133B33721CFAD92B0031450D /* Debug */,
+				133B33731CFAD92B0031450D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		133B33741CFAD92B0031450D /* Build configuration list for PBXNativeTarget "WYCoreLocationDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				133B33751CFAD92B0031450D /* Debug */,
+				133B33761CFAD92B0031450D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		133B33771CFAD92B0031450D /* Build configuration list for PBXNativeTarget "WYCoreLocationDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				133B33781CFAD92B0031450D /* Debug */,
+				133B33791CFAD92B0031450D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 133B333C1CFAD92A0031450D /* Project object */;
+}
