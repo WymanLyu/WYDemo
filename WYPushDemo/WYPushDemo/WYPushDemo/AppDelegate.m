@@ -16,30 +16,62 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    // 1.注册本地通知
+    if ([UIDevice currentDevice].systemVersion.doubleValue > 8.0) { // 8.0+版本
+        // 1.1.本地通知
+        [self registerLocalNoti];
+        
+    }else{ // 7.0
+        
+    }
+    
+    // 2.处理在通过通知启动
+    if (launchOptions[@"UIApplicationLaunchOptionsLocalNotificationKey"]) {
+        // 2.1.获取启动通知
+        UILocalNotification *localNoti = launchOptions[@"UIApplicationLaunchOptionsLocalNotificationKey"];
+        // 2.2.处理通知
+        [self handleLaunchingByReceiveNoti:localNoti];
+    }
+    
     return YES;
 }
 
-- (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+// 接收到通知的处理(程序已死)
+- (void)handleLaunchingByReceiveNoti:(UILocalNotification *)localNoti{
+    
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+// 接收本地通知的回调(程序未死)
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+    NSLog(@"%@", notification.alertBody);
+    
 }
 
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+// 注册本地通知
+- (void)registerLocalNoti {
+    // 1.设置通知的操作组
+    UIMutableUserNotificationCategory *category = [[UIMutableUserNotificationCategory alloc] init];
+    category.identifier = @"categoryID";
+    // 1.1.操作组的行为
+    UIMutableUserNotificationAction *action1 = [[UIMutableUserNotificationAction alloc] init];
+    action1.identifier = @"action1"; // 必须要有key，不然系统没办法找到这个操作
+    action1.title = @"这是操作1";
+    action1.activationMode = UIUserNotificationActivationModeForeground;
+    // 1.2.操作组的行为
+    UIMutableUserNotificationAction *action2 = [[UIMutableUserNotificationAction alloc] init];
+    action2.identifier = @"action2";
+    action2.title = @"这是操作2";
+    action2.activationMode = UIUserNotificationActivationModeBackground;
+    [category setActions:@[action1, action2] forContext:UIUserNotificationActionContextMinimal];
+    
+    // 2.创建配置
+    NSSet *set = [NSSet setWithObjects:category, nil];
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge | UIUserNotificationTypeAlert | UIUserNotificationTypeSound) categories:set];
+    // 3.注册通知
+    [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
 
-- (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-}
 
 @end
