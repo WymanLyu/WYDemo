@@ -33,6 +33,9 @@
     localNoti.alertAction = @"这是啥子"; // 提示内容下面滑条文字
     localNoti.alertTitle = @"zzzz"; // 在通知栏中显示的名字
     
+    // 2.2.其他效果
+    localNoti.applicationIconBadgeNumber = 21; 
+    
     // 3.设置发送时间
     localNoti.fireDate = [NSDate dateWithTimeIntervalSinceNow:4];
     
