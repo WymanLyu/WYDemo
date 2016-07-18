@@ -51,14 +51,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="音效" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uNx-Ks-0LR">
-                                                    <rect key="frame" x="15" y="6" width="32" height="20"/>
+                                                    <rect key="frame" x="15" y="6" width="32" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="SystemSoundID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ASd-JX-sdT">
-                                                    <rect key="frame" x="15" y="25.5" width="91.5" height="14"/>
+                                                    <rect key="frame" x="15" y="25.5" width="83.5" height="13.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -68,6 +68,33 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="9o6-hz-QCv" kind="show" id="nPZ-oi-4yP"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellID" textLabel="t1w-9M-K9r" detailTextLabel="fEn-xm-uab" rowHeight="44" style="IBUITableViewCellStyleSubtitle" id="up0-N9-fJ6">
+                                        <rect key="frame" x="0.0" y="152" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="up0-N9-fJ6" id="TVU-Jb-7Xh">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="本地音乐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="t1w-9M-K9r">
+                                                    <rect key="frame" x="15" y="6" width="64" height="19.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="AVAudioPlayer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fEn-xm-uab">
+                                                    <rect key="frame" x="15" y="25.5" width="76" height="13.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="th6-u9-BG5" kind="show" id="ftT-7q-ZJJ"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -82,7 +109,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dlV-Uy-6bh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="673" y="322"/>
+            <point key="canvasLocation" x="262" y="244"/>
         </scene>
         <!--录音-->
         <scene sceneID="tne-QT-ifu">
@@ -155,7 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1680" y="88"/>
+            <point key="canvasLocation" x="983" y="-257"/>
         </scene>
         <!--音效-->
         <scene sceneID="cjf-pW-jhU">
@@ -191,7 +218,67 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xpl-e3-lHW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1444" y="835"/>
+            <point key="canvasLocation" x="983" y="393"/>
+        </scene>
+        <!--本地音乐-->
+        <scene sceneID="sBy-hQ-35p">
+            <objects>
+                <viewController title="本地音乐" id="th6-u9-BG5" customClass="LocalMusicViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YLa-TW-l8g"/>
+                        <viewControllerLayoutGuide type="bottom" id="lCP-g4-c70"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="82e-XL-l7Z">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byb-hD-N88">
+                                <rect key="frame" x="240" y="114" width="120" height="36"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="04Z-5c-Dqo"/>
+                                    <constraint firstAttribute="width" constant="120" id="GEg-HI-eif"/>
+                                </constraints>
+                                <state key="normal" title="播放"/>
+                                <connections>
+                                    <action selector="playeMusci:" destination="th6-u9-BG5" eventType="touchUpInside" id="1Yd-mj-v4C"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yqR-Ts-cn1">
+                                <rect key="frame" x="240" y="181" width="120" height="36"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="暂停"/>
+                                <connections>
+                                    <action selector="pauseMusic:" destination="th6-u9-BG5" eventType="touchUpInside" id="TKL-dS-ibz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jd5-bI-Avl">
+                                <rect key="frame" x="240" y="252" width="120" height="36"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="停止"/>
+                                <connections>
+                                    <action selector="stopMusic:" destination="th6-u9-BG5" eventType="touchUpInside" id="7RY-w7-kXU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yqR-Ts-cn1" firstAttribute="centerX" secondItem="byb-hD-N88" secondAttribute="centerX" id="4Ow-qk-5fN"/>
+                            <constraint firstItem="Jd5-bI-Avl" firstAttribute="height" secondItem="byb-hD-N88" secondAttribute="height" id="8Pe-yZ-GZm"/>
+                            <constraint firstItem="Jd5-bI-Avl" firstAttribute="width" secondItem="byb-hD-N88" secondAttribute="width" id="8Pg-aB-Rz2"/>
+                            <constraint firstItem="byb-hD-N88" firstAttribute="top" secondItem="YLa-TW-l8g" secondAttribute="bottom" constant="50" id="9HD-Lz-gea"/>
+                            <constraint firstItem="byb-hD-N88" firstAttribute="centerX" secondItem="82e-XL-l7Z" secondAttribute="centerX" id="D5r-KC-gW8"/>
+                            <constraint firstItem="yqR-Ts-cn1" firstAttribute="top" secondItem="byb-hD-N88" secondAttribute="bottom" constant="31" id="G0h-Ej-j4b"/>
+                            <constraint firstItem="Jd5-bI-Avl" firstAttribute="centerX" secondItem="byb-hD-N88" secondAttribute="centerX" id="MGh-ka-Ffv"/>
+                            <constraint firstItem="Jd5-bI-Avl" firstAttribute="top" secondItem="yqR-Ts-cn1" secondAttribute="bottom" constant="35" id="RVB-bP-70e"/>
+                            <constraint firstItem="yqR-Ts-cn1" firstAttribute="width" secondItem="byb-hD-N88" secondAttribute="width" id="uaB-F7-oQ6"/>
+                            <constraint firstItem="yqR-Ts-cn1" firstAttribute="height" secondItem="byb-hD-N88" secondAttribute="height" id="xPN-Jm-CCv"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CA8-ho-DcL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="262" y="984"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="g50-vg-ZrP">
@@ -209,7 +296,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2sZ-4W-CPg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-40" y="260"/>
+            <point key="canvasLocation" x="-398" y="244"/>
         </scene>
     </scenes>
 </document>

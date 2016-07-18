@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE48427B1D38D15A000EFFEB /* LocalMusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE48427A1D38D15A000EFFEB /* LocalMusicViewController.m */; };
+		BE48427D1D38D7C7000EFFEB /* 1201111234.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BE48427C1D38D7C7000EFFEB /* 1201111234.mp3 */; };
 		BE73B7831D37672B006BDF21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE73B7821D37672B006BDF21 /* main.m */; };
 		BE73B7861D37672B006BDF21 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE73B7851D37672B006BDF21 /* AppDelegate.m */; };
 		BE73B7891D37672B006BDF21 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE73B7881D37672B006BDF21 /* ViewController.m */; };
@@ -39,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BE4842791D38D15A000EFFEB /* LocalMusicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalMusicViewController.h; sourceTree = "<group>"; };
+		BE48427A1D38D15A000EFFEB /* LocalMusicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalMusicViewController.m; sourceTree = "<group>"; };
+		BE48427C1D38D7C7000EFFEB /* 1201111234.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1201111234.mp3; sourceTree = "<group>"; };
 		BE73B77E1D37672B006BDF21 /* WYAVFoundationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WYAVFoundationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE73B7821D37672B006BDF21 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BE73B7841D37672B006BDF21 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -121,8 +126,11 @@
 				BE73B7BC1D37931F006BDF21 /* SoundViewController.m */,
 				BE73B7B41D376B9E006BDF21 /* TableViewController.h */,
 				BE73B7B51D376B9E006BDF21 /* TableViewController.m */,
+				BE4842791D38D15A000EFFEB /* LocalMusicViewController.h */,
+				BE48427A1D38D15A000EFFEB /* LocalMusicViewController.m */,
 				BE73B78A1D37672B006BDF21 /* Main.storyboard */,
 				BE73B7BF1D37974E006BDF21 /* lose.aac */,
+				BE48427C1D38D7C7000EFFEB /* 1201111234.mp3 */,
 				BE73B78D1D37672B006BDF21 /* Assets.xcassets */,
 				BE73B78F1D37672B006BDF21 /* LaunchScreen.storyboard */,
 				BE73B7921D37672B006BDF21 /* Info.plist */,
@@ -270,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE73B7911D37672B006BDF21 /* LaunchScreen.storyboard in Resources */,
+				BE48427D1D38D7C7000EFFEB /* 1201111234.mp3 in Resources */,
 				BE73B78E1D37672B006BDF21 /* Assets.xcassets in Resources */,
 				BE73B7C01D37974E006BDF21 /* lose.aac in Resources */,
 				BE73B78C1D37672B006BDF21 /* Main.storyboard in Resources */,
@@ -300,6 +309,7 @@
 				BE73B7BA1D377CC1006BDF21 /* WYAVTool.m in Sources */,
 				BE73B7891D37672B006BDF21 /* ViewController.m in Sources */,
 				BE73B7BD1D37931F006BDF21 /* SoundViewController.m in Sources */,
+				BE48427B1D38D15A000EFFEB /* LocalMusicViewController.m in Sources */,
 				BE73B7861D37672B006BDF21 /* AppDelegate.m in Sources */,
 				BE73B7831D37672B006BDF21 /* main.m in Sources */,
 				BE73B7B61D376B9E006BDF21 /* TableViewController.m in Sources */,
@@ -528,6 +538,7 @@
 				BE73B7AD1D37672B006BDF21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BE73B7AE1D37672B006BDF21 /* Build configuration list for PBXNativeTarget "WYAVFoundationDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +547,7 @@
 				BE73B7B01D37672B006BDF21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BE73B7B11D37672B006BDF21 /* Build configuration list for PBXNativeTarget "WYAVFoundationDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -544,6 +556,7 @@
 				BE73B7B31D37672B006BDF21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

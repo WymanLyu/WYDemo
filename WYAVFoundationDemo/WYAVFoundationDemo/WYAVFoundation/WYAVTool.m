@@ -7,7 +7,6 @@
 //
 
 #import "WYAVTool.h"
-#import <AVFoundation/AVFoundation.h>
 
 @interface WYAVTool ()
 
@@ -20,6 +19,10 @@
 ////// 音效 //////////
 /** 音效id缓存 */
 @property (nonatomic, strong) NSMutableDictionary *soundsIDCaches;
+
+////// 本地音乐 //////////
+/** 音乐播放器缓存 */
+@property (nonatomic, strong) NSMutableDictionary *musicPlayers;
 
 @end
 
@@ -146,7 +149,7 @@ static WYAVTool *_instance;
 + (void)wy_playSoundsWithURL:(NSURL *)url {
     if (!url) return;
     WYAVTool *avTool = [WYAVTool shareAVTool];
-    // 1.查询缓存
+    // 1.获取资源ID
     SystemSoundID soundID = [avTool.soundsIDCaches[url.absoluteString] unsignedIntValue];
     if (soundID == 0) { // 没有资源缓存
         // 1.资源
@@ -170,6 +173,85 @@ static WYAVTool *_instance;
     NSURL *url = [[NSBundle mainBundle] URLForResource:soundName withExtension:nil];
     [self wy_playSoundsWithURL:url];
     
+}
+
+#pragma mark - 本地音乐
+
+- (NSMutableDictionary *)musicPlayers {
+    if (!_musicPlayers) {
+        _musicPlayers = [NSMutableDictionary dictionary];
+    }
+    return _musicPlayers;
+}
+
+/**
+ *  播放指定资源的音乐【不支持网络】
+ */
++ (AVAudioPlayer *)wy_playMusicWithURL:(NSURL *)url {
+    if (!url) return nil;
+    WYAVTool *avTool = [WYAVTool shareAVTool];
+    // 1.获取播放器
+    AVAudioPlayer *player = avTool.musicPlayers[url.absoluteString];
+    if (!player) { // 没有则创建
+        player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+        [avTool.musicPlayers setValue:player forKey:url.absoluteString];
+        [player prepareToPlay];
+    }
+    
+    // 2.播放
+    [player play];
+    return player;
+}
+
+/**
+ *  播放工程中的音乐
+ */
++ (AVAudioPlayer *)wy_playMusicWithName:(NSString *)musicName {
+    NSURL *url = [[NSBundle mainBundle] URLForResource:musicName withExtension:nil];
+    return  [self wy_playMusicWithURL:url];
+}
+
+/**
+ *  暂停指定资源的音乐
+ */
++ (void)wy_pauseMusicWithURL:(NSURL *)url {
+    if (!url) return;
+    WYAVTool *avTool = [WYAVTool shareAVTool];
+    AVAudioPlayer *player = avTool.musicPlayers[url.absoluteString];
+    if (!player) return; // 没有播放器
+    if (!player.isPlaying) return; // 没有播放
+    [player pause];
+}
+
+/**
+ *  暂停工程中的音乐
+ */
++ (void)wy_pauseMusicWithName:(NSString *)musicName {
+     NSURL *url = [[NSBundle mainBundle] URLForResource:musicName withExtension:nil];
+    [self wy_pauseMusicWithURL:url];
+}
+
+/**
+ *  停止指定资源的音乐
+ */
++ (void)wy_stopMusicWithURL:(NSURL *)url {
+    if (!url) return;
+    WYAVTool *avTool = [WYAVTool shareAVTool];
+    AVAudioPlayer *player = avTool.musicPlayers[url.absoluteString];
+    if (!player) return; // 没有播放器
+    if (!player.isPlaying) return; // 没有播放
+    [player stop];
+    // 移除播放器
+    [avTool.musicPlayers removeObjectForKey:url.absoluteString];
+    player = nil;
+}
+
+/**
+ *  停止工程中的音乐
+ */
++ (void)wy_stopMusicWithName:(NSString *)musicName {
+     NSURL *url = [[NSBundle mainBundle] URLForResource:musicName withExtension:nil];
+    [self wy_stopMusicWithURL:url];
 }
 
 
