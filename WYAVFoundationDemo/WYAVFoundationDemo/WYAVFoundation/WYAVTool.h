@@ -49,7 +49,7 @@
  */
 + (void)wy_playSoundsWithName:(NSString *)soundName;
 
-/////////// 播放音乐 ////////////////
+/////////// 播放音乐【本地】 ////////////////
 
 /**
  *  播放指定资源的音乐【不支持网络】
@@ -80,6 +80,10 @@
  *  停止工程中的音乐
  */
 + (void)wy_stopMusicWithName:(NSString *)musicName;
+
+/////////// 播放音乐【远程】 ////////////////
+
+
 
 
 
