@@ -7,12 +7,12 @@
 //
 
 #import "SoundViewController.h"
-#import "WYAVTool.h"
+#import "WYAVManager.h"
 
 @implementation SoundViewController
 
 - (IBAction)playSound:(UIButton *)sender {
-    [WYAVTool wy_playSoundsWithName:@"lose.aac"];
+    [WYAVManager wy_playSoundsWithName:@"lose.aac"];
 }
 
 @end

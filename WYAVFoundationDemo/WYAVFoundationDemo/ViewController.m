@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "WYAVTool.h"
+#import "WYAVManager.h"
 
 @interface ViewController ()
 
@@ -18,22 +18,22 @@
 #pragma mark - 事件处理
 // 录音
 - (IBAction)recorder:(id)sender {
-    [WYAVTool wy_recorderStart];
+    [WYAVManager wy_recorderStart];
 }
 
 // 暂停开始
 - (IBAction)stopOrStar:(UIButton *)sender {
     sender.selected = !sender.isSelected;
     if (sender.isSelected) { // 选中(暂停状态)
-        [WYAVTool wy_recorderPause];
+        [WYAVManager wy_recorderPause];
     }else { // 未选中(播放状态)
-        [WYAVTool wy_recorderStart];
+        [WYAVManager wy_recorderStart];
     }
 }
 
 // 结束
 - (IBAction)end:(id)sender {
-    [WYAVTool wy_recorderEnd];
+    [WYAVManager wy_recorderEnd];
 }
 
 // 播放

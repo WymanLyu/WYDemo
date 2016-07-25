@@ -7,20 +7,20 @@
 //
 
 #import "LocalMusicViewController.h"
-#import "WYAVTool.h"
+#import "WYAVManager.h"
 
 @implementation LocalMusicViewController
 
 - (IBAction)playeMusci:(UIButton *)sender {
-    [WYAVTool wy_playMusicWithName:@"1201111234.mp3"];
+    [WYAVManager wy_playMusicWithName:@"1201111234.mp3"];
 }
 
 - (IBAction)pauseMusic:(UIButton *)sender {
-    [WYAVTool wy_pauseMusicWithName:@"1201111234.mp3"];
+    [WYAVManager wy_pauseMusicWithName:@"1201111234.mp3"];
 }
 
 - (IBAction)stopMusic:(UIButton *)sender {
-    [WYAVTool wy_stopMusicWithName:@"1201111234.mp3"];
+    [WYAVManager wy_stopMusicWithName:@"1201111234.mp3"];
 }
 
 @end
