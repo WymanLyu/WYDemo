@@ -25,6 +25,8 @@
 		BEDB40BB1D45E068007F19F7 /* MovieItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDB40BA1D45E068007F19F7 /* MovieItem.m */; };
 		BEDB40BE1D45E219007F19F7 /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDB40BD1D45E219007F19F7 /* MovieCell.m */; };
 		BEDB40C01D45E238007F19F7 /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEDB40BF1D45E238007F19F7 /* MovieCell.xib */; };
+		BEFCFAF61D476A9300F1ABF9 /* WYResourceLoaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFCFAF51D476A9300F1ABF9 /* WYResourceLoaderManager.m */; };
+		BEFCFAF91D476EB400F1ABF9 /* AVResourceLoaderTask.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFCFAF81D476EB400F1ABF9 /* AVResourceLoaderTask.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,10 @@
 		BEDB40BC1D45E219007F19F7 /* MovieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieCell.h; sourceTree = "<group>"; };
 		BEDB40BD1D45E219007F19F7 /* MovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
 		BEDB40BF1D45E238007F19F7 /* MovieCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MovieCell.xib; path = WYAVFoundation/MovieCell.xib; sourceTree = "<group>"; };
+		BEFCFAF41D476A9300F1ABF9 /* WYResourceLoaderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYResourceLoaderManager.h; sourceTree = "<group>"; };
+		BEFCFAF51D476A9300F1ABF9 /* WYResourceLoaderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYResourceLoaderManager.m; sourceTree = "<group>"; };
+		BEFCFAF71D476EB400F1ABF9 /* AVResourceLoaderTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVResourceLoaderTask.h; sourceTree = "<group>"; };
+		BEFCFAF81D476EB400F1ABF9 /* AVResourceLoaderTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVResourceLoaderTask.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +194,10 @@
 			children = (
 				BE73B7B81D377CC1006BDF21 /* WYAVManager.h */,
 				BE73B7B91D377CC1006BDF21 /* WYAVManager.m */,
+				BEFCFAF41D476A9300F1ABF9 /* WYResourceLoaderManager.h */,
+				BEFCFAF51D476A9300F1ABF9 /* WYResourceLoaderManager.m */,
+				BEFCFAF71D476EB400F1ABF9 /* AVResourceLoaderTask.h */,
+				BEFCFAF81D476EB400F1ABF9 /* AVResourceLoaderTask.m */,
 			);
 			path = WYAVFoundation;
 			sourceTree = "<group>";
@@ -331,9 +341,11 @@
 				BE73B7891D37672B006BDF21 /* ViewController.m in Sources */,
 				BE73B7BD1D37931F006BDF21 /* SoundViewController.m in Sources */,
 				BE48427B1D38D15A000EFFEB /* LocalMusicViewController.m in Sources */,
+				BEFCFAF91D476EB400F1ABF9 /* AVResourceLoaderTask.m in Sources */,
 				BEDB40BE1D45E219007F19F7 /* MovieCell.m in Sources */,
 				BE73B7861D37672B006BDF21 /* AppDelegate.m in Sources */,
 				BE73B7831D37672B006BDF21 /* main.m in Sources */,
+				BEFCFAF61D476A9300F1ABF9 /* WYResourceLoaderManager.m in Sources */,
 				BE73B7B61D376B9E006BDF21 /* TableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

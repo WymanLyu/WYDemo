@@ -523,9 +523,9 @@ static void *playbackBufferEmptyContext = &playbackBufferEmptyContext;
     // 1.KVO
     // 1.1.资源播放状态
     [_wy_currentItem addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:statusContext];
-    // 1.2.资源缓冲
+    // 1.2.资源缓冲状态
     [_wy_currentItem addObserver:self forKeyPath:@"playbackBufferEmpty" options:NSKeyValueObservingOptionNew context:loadedTimeRangesContext];
-    // 1.3.资源下载
+    // 1.3.资源下载时间
     [_wy_currentItem addObserver:self forKeyPath:@"loadedTimeRanges" options:NSKeyValueObservingOptionNew context:loadedTimeRangesContext];
     
     // 2.TimeObserve

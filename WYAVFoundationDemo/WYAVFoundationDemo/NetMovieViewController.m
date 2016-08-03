@@ -9,7 +9,7 @@
 #import "NetMovieViewController.h"
 #import "MovieItem.h"
 #import "MovieCell.h"
-#import "WYAVFoundation/WYAVManager.h"
+#import "WYAVManager.h"
 
 @interface NetMovieViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *playerView;
