@@ -15,6 +15,9 @@
 		BE3E6A0A1D83AE2E009FBB53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE3E6A081D83AE2E009FBB53 /* LaunchScreen.storyboard */; };
 		BE3E6A151D83AE2E009FBB53 /* WYCoreImageDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3E6A141D83AE2E009FBB53 /* WYCoreImageDemoTests.m */; };
 		BE3E6A201D83AE2E009FBB53 /* WYCoreImageDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3E6A1F1D83AE2E009FBB53 /* WYCoreImageDemoUITests.m */; };
+		BE3E6A2F1D83DC04009FBB53 /* TransitionView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3E6A2E1D83DC04009FBB53 /* TransitionView.m */; };
+		BE3E6A321D83EDE5009FBB53 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE3E6A301D83EDE5009FBB53 /* 1.jpg */; };
+		BE3E6A331D83EDE5009FBB53 /* 1副本.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE3E6A311D83EDE5009FBB53 /* 1副本.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,10 @@
 		BE3E6A1B1D83AE2E009FBB53 /* WYCoreImageDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WYCoreImageDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE3E6A1F1D83AE2E009FBB53 /* WYCoreImageDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYCoreImageDemoUITests.m; sourceTree = "<group>"; };
 		BE3E6A211D83AE2E009FBB53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE3E6A2D1D83DC04009FBB53 /* TransitionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitionView.h; sourceTree = "<group>"; };
+		BE3E6A2E1D83DC04009FBB53 /* TransitionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitionView.m; sourceTree = "<group>"; };
+		BE3E6A301D83EDE5009FBB53 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		BE3E6A311D83EDE5009FBB53 /* 1副本.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1副本.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,10 +113,14 @@
 				BE3E6A001D83AE2D009FBB53 /* ViewController.h */,
 				BE3E6A011D83AE2D009FBB53 /* ViewController.m */,
 				BE3E6A031D83AE2E009FBB53 /* Main.storyboard */,
+				BE3E6A301D83EDE5009FBB53 /* 1.jpg */,
+				BE3E6A311D83EDE5009FBB53 /* 1副本.jpg */,
 				BE3E6A061D83AE2E009FBB53 /* Assets.xcassets */,
 				BE3E6A081D83AE2E009FBB53 /* LaunchScreen.storyboard */,
 				BE3E6A0B1D83AE2E009FBB53 /* Info.plist */,
 				BE3E69FA1D83AE2D009FBB53 /* Supporting Files */,
+				BE3E6A2D1D83DC04009FBB53 /* TransitionView.h */,
+				BE3E6A2E1D83DC04009FBB53 /* TransitionView.m */,
 			);
 			path = WYCoreImageDemo;
 			sourceTree = "<group>";
@@ -207,6 +218,7 @@
 				TargetAttributes = {
 					BE3E69F61D83AE2D009FBB53 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 9T725P7UDK;
 					};
 					BE3E6A0F1D83AE2E009FBB53 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -244,6 +256,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE3E6A0A1D83AE2E009FBB53 /* LaunchScreen.storyboard in Resources */,
+				BE3E6A321D83EDE5009FBB53 /* 1.jpg in Resources */,
+				BE3E6A331D83EDE5009FBB53 /* 1副本.jpg in Resources */,
 				BE3E6A071D83AE2E009FBB53 /* Assets.xcassets in Resources */,
 				BE3E6A051D83AE2E009FBB53 /* Main.storyboard in Resources */,
 			);
@@ -271,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE3E6A021D83AE2D009FBB53 /* ViewController.m in Sources */,
+				BE3E6A2F1D83DC04009FBB53 /* TransitionView.m in Sources */,
 				BE3E69FF1D83AE2D009FBB53 /* AppDelegate.m in Sources */,
 				BE3E69FC1D83AE2D009FBB53 /* main.m in Sources */,
 			);
@@ -413,6 +428,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = WYCoreImageDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yunyao.demo.WYCoreImageDemo;
@@ -424,6 +440,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = WYCoreImageDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yunyao.demo.WYCoreImageDemo;

@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "TransitionView.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *inputImgView;
@@ -14,9 +15,14 @@
 @property (weak, nonatomic) IBOutlet UITextField *urlTextField;
 @property (weak, nonatomic) IBOutlet UIButton *doneBtn;
 
+@property (nonatomic, strong) CIImage *transionImage;
+
 @end
 
 @implementation ViewController
+{
+    NSTimer *_timer;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,6 +43,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)transitionClick:(id)sender {
+    
+    // 1.换成转场视图
+    TransitionView *transitionView = [[TransitionView alloc] initWithFrame: self.inputImgView.bounds];
+    [self.inputImgView addSubview:transitionView];
+    
+   
+    
+}
+
+- (void)transiTion {
+    
+}
+
+
 
 - (IBAction)doneClick:(id)sender {
     
@@ -50,7 +71,6 @@
     
     // 3.core image 的上下文
     CIContext *context = [CIContext contextWithOptions:@{kCIContextUseSoftwareRenderer : @NO}];
-    // 转换坐标系
     
     // 4.创建输入图片
     CIImage *inputImage = [CIImage imageWithContentsOfURL:fileUrl];
@@ -85,12 +105,12 @@
             // 8.渲染
             CGImageRef outImageRef = [context createCGImage:outImage fromRect:[outImage extent]];
             self.outputImgView.image = [UIImage imageWithCGImage:outImageRef];
+            CGImageRelease(outImageRef);
         });
         
     });
     
-   
-    
+
     CGImageRelease(inImageRef);
 }
 

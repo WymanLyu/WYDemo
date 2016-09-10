@@ -18,19 +18,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zhp-73-gIz">
-                                <rect key="frame" x="67" y="42" width="240" height="128"/>
+                                <rect key="frame" x="67" y="42" width="240" height="250"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="Ed0-CA-8zQ"/>
-                                    <constraint firstAttribute="height" constant="128" id="aeG-9a-naR"/>
+                                    <constraint firstAttribute="height" constant="250" id="aeG-9a-naR"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dtw-Ji-zT6">
-                                <rect key="frame" x="67" y="310" width="240" height="128"/>
+                                <rect key="frame" x="67" y="352" width="240" height="250"/>
                                 <color key="backgroundColor" red="0.55452881610000004" green="1" blue="0.82140430180000001" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R6t-Oq-haR">
-                                <rect key="frame" x="122" y="195" width="130" height="30"/>
+                                <rect key="frame" x="122" y="317" width="130" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Ld7-ne-qjm"/>
                                     <constraint firstAttribute="width" constant="130" id="kgN-Zi-zrA"/>
@@ -39,7 +39,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byg-ja-COB">
-                                <rect key="frame" x="289" y="195" width="59" height="30"/>
+                                <rect key="frame" x="289" y="317" width="59" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="8fN-nb-bsJ"/>
                                     <constraint firstAttribute="width" constant="59" id="GVE-NV-M0O"/>
@@ -49,19 +49,28 @@
                                     <action selector="doneClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yfs-mW-iCk"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7Z-2V-k1R">
+                                <rect key="frame" x="9" y="317" width="30" height="30"/>
+                                <state key="normal" title="转场"/>
+                                <connections>
+                                    <action selector="transitionClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="92Y-no-JfK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="dtw-Ji-zT6" firstAttribute="height" secondItem="zhp-73-gIz" secondAttribute="height" id="3Bt-b5-uD3"/>
+                            <constraint firstItem="b7Z-2V-k1R" firstAttribute="centerY" secondItem="R6t-Oq-haR" secondAttribute="centerY" id="7Jj-Uz-DF4"/>
                             <constraint firstItem="dtw-Ji-zT6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="C7T-x2-V41"/>
                             <constraint firstItem="byg-ja-COB" firstAttribute="leading" secondItem="R6t-Oq-haR" secondAttribute="trailing" constant="37" id="IQP-Xw-0nl"/>
                             <constraint firstItem="zhp-73-gIz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="22" id="SOQ-29-BE6"/>
                             <constraint firstItem="R6t-Oq-haR" firstAttribute="top" secondItem="zhp-73-gIz" secondAttribute="bottom" constant="25" id="XP0-fK-vvB"/>
                             <constraint firstItem="dtw-Ji-zT6" firstAttribute="width" secondItem="zhp-73-gIz" secondAttribute="width" id="Y4A-Rf-RyN"/>
-                            <constraint firstItem="dtw-Ji-zT6" firstAttribute="top" secondItem="zhp-73-gIz" secondAttribute="bottom" constant="140" id="YkT-Sd-Fwe"/>
+                            <constraint firstItem="dtw-Ji-zT6" firstAttribute="top" secondItem="zhp-73-gIz" secondAttribute="bottom" constant="60" id="YkT-Sd-Fwe"/>
                             <constraint firstItem="R6t-Oq-haR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZGy-yb-S8o"/>
                             <constraint firstItem="byg-ja-COB" firstAttribute="centerY" secondItem="R6t-Oq-haR" secondAttribute="centerY" id="aEz-FL-Oqm"/>
                             <constraint firstItem="zhp-73-gIz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fYs-0k-pTl"/>
-                            <constraint firstItem="dtw-Ji-zT6" firstAttribute="height" secondItem="zhp-73-gIz" secondAttribute="height" id="lYP-jO-eSg"/>
+                            <constraint firstItem="b7Z-2V-k1R" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="9" id="zM9-cn-7mI"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
