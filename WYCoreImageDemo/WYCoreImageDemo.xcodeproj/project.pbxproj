@@ -1,0 +1,521 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BE3E69FC1D83AE2D009FBB53 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3E69FB1D83AE2D009FBB53 /* main.m */; };
+		BE3E69FF1D83AE2D009FBB53 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3E69FE1D83AE2D009FBB53 /* AppDelegate.m */; };
+		BE3E6A021D83AE2D009FBB53 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3E6A011D83AE2D009FBB53 /* ViewController.m */; };
+		BE3E6A051D83AE2E009FBB53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE3E6A031D83AE2E009FBB53 /* Main.storyboard */; };
+		BE3E6A071D83AE2E009FBB53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE3E6A061D83AE2E009FBB53 /* Assets.xcassets */; };
+		BE3E6A0A1D83AE2E009FBB53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE3E6A081D83AE2E009FBB53 /* LaunchScreen.storyboard */; };
+		BE3E6A151D83AE2E009FBB53 /* WYCoreImageDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3E6A141D83AE2E009FBB53 /* WYCoreImageDemoTests.m */; };
+		BE3E6A201D83AE2E009FBB53 /* WYCoreImageDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3E6A1F1D83AE2E009FBB53 /* WYCoreImageDemoUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BE3E6A111D83AE2E009FBB53 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE3E69EF1D83AE2D009FBB53 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE3E69F61D83AE2D009FBB53;
+			remoteInfo = WYCoreImageDemo;
+		};
+		BE3E6A1C1D83AE2E009FBB53 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE3E69EF1D83AE2D009FBB53 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE3E69F61D83AE2D009FBB53;
+			remoteInfo = WYCoreImageDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BE3E69F71D83AE2D009FBB53 /* WYCoreImageDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WYCoreImageDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE3E69FB1D83AE2D009FBB53 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BE3E69FD1D83AE2D009FBB53 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BE3E69FE1D83AE2D009FBB53 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BE3E6A001D83AE2D009FBB53 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		BE3E6A011D83AE2D009FBB53 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BE3E6A041D83AE2E009FBB53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BE3E6A061D83AE2E009FBB53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BE3E6A091D83AE2E009FBB53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BE3E6A0B1D83AE2E009FBB53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE3E6A101D83AE2E009FBB53 /* WYCoreImageDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WYCoreImageDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE3E6A141D83AE2E009FBB53 /* WYCoreImageDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYCoreImageDemoTests.m; sourceTree = "<group>"; };
+		BE3E6A161D83AE2E009FBB53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE3E6A1B1D83AE2E009FBB53 /* WYCoreImageDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WYCoreImageDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE3E6A1F1D83AE2E009FBB53 /* WYCoreImageDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYCoreImageDemoUITests.m; sourceTree = "<group>"; };
+		BE3E6A211D83AE2E009FBB53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BE3E69F41D83AE2D009FBB53 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE3E6A0D1D83AE2E009FBB53 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE3E6A181D83AE2E009FBB53 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BE3E69EE1D83AE2D009FBB53 = {
+			isa = PBXGroup;
+			children = (
+				BE3E69F91D83AE2D009FBB53 /* WYCoreImageDemo */,
+				BE3E6A131D83AE2E009FBB53 /* WYCoreImageDemoTests */,
+				BE3E6A1E1D83AE2E009FBB53 /* WYCoreImageDemoUITests */,
+				BE3E69F81D83AE2D009FBB53 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BE3E69F81D83AE2D009FBB53 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BE3E69F71D83AE2D009FBB53 /* WYCoreImageDemo.app */,
+				BE3E6A101D83AE2E009FBB53 /* WYCoreImageDemoTests.xctest */,
+				BE3E6A1B1D83AE2E009FBB53 /* WYCoreImageDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BE3E69F91D83AE2D009FBB53 /* WYCoreImageDemo */ = {
+			isa = PBXGroup;
+			children = (
+				BE3E69FD1D83AE2D009FBB53 /* AppDelegate.h */,
+				BE3E69FE1D83AE2D009FBB53 /* AppDelegate.m */,
+				BE3E6A001D83AE2D009FBB53 /* ViewController.h */,
+				BE3E6A011D83AE2D009FBB53 /* ViewController.m */,
+				BE3E6A031D83AE2E009FBB53 /* Main.storyboard */,
+				BE3E6A061D83AE2E009FBB53 /* Assets.xcassets */,
+				BE3E6A081D83AE2E009FBB53 /* LaunchScreen.storyboard */,
+				BE3E6A0B1D83AE2E009FBB53 /* Info.plist */,
+				BE3E69FA1D83AE2D009FBB53 /* Supporting Files */,
+			);
+			path = WYCoreImageDemo;
+			sourceTree = "<group>";
+		};
+		BE3E69FA1D83AE2D009FBB53 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BE3E69FB1D83AE2D009FBB53 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BE3E6A131D83AE2E009FBB53 /* WYCoreImageDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				BE3E6A141D83AE2E009FBB53 /* WYCoreImageDemoTests.m */,
+				BE3E6A161D83AE2E009FBB53 /* Info.plist */,
+			);
+			path = WYCoreImageDemoTests;
+			sourceTree = "<group>";
+		};
+		BE3E6A1E1D83AE2E009FBB53 /* WYCoreImageDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BE3E6A1F1D83AE2E009FBB53 /* WYCoreImageDemoUITests.m */,
+				BE3E6A211D83AE2E009FBB53 /* Info.plist */,
+			);
+			path = WYCoreImageDemoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BE3E69F61D83AE2D009FBB53 /* WYCoreImageDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE3E6A241D83AE2E009FBB53 /* Build configuration list for PBXNativeTarget "WYCoreImageDemo" */;
+			buildPhases = (
+				BE3E69F31D83AE2D009FBB53 /* Sources */,
+				BE3E69F41D83AE2D009FBB53 /* Frameworks */,
+				BE3E69F51D83AE2D009FBB53 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WYCoreImageDemo;
+			productName = WYCoreImageDemo;
+			productReference = BE3E69F71D83AE2D009FBB53 /* WYCoreImageDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BE3E6A0F1D83AE2E009FBB53 /* WYCoreImageDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE3E6A271D83AE2E009FBB53 /* Build configuration list for PBXNativeTarget "WYCoreImageDemoTests" */;
+			buildPhases = (
+				BE3E6A0C1D83AE2E009FBB53 /* Sources */,
+				BE3E6A0D1D83AE2E009FBB53 /* Frameworks */,
+				BE3E6A0E1D83AE2E009FBB53 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE3E6A121D83AE2E009FBB53 /* PBXTargetDependency */,
+			);
+			name = WYCoreImageDemoTests;
+			productName = WYCoreImageDemoTests;
+			productReference = BE3E6A101D83AE2E009FBB53 /* WYCoreImageDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BE3E6A1A1D83AE2E009FBB53 /* WYCoreImageDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE3E6A2A1D83AE2E009FBB53 /* Build configuration list for PBXNativeTarget "WYCoreImageDemoUITests" */;
+			buildPhases = (
+				BE3E6A171D83AE2E009FBB53 /* Sources */,
+				BE3E6A181D83AE2E009FBB53 /* Frameworks */,
+				BE3E6A191D83AE2E009FBB53 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE3E6A1D1D83AE2E009FBB53 /* PBXTargetDependency */,
+			);
+			name = WYCoreImageDemoUITests;
+			productName = WYCoreImageDemoUITests;
+			productReference = BE3E6A1B1D83AE2E009FBB53 /* WYCoreImageDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BE3E69EF1D83AE2D009FBB53 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = yunyao;
+				TargetAttributes = {
+					BE3E69F61D83AE2D009FBB53 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					BE3E6A0F1D83AE2E009FBB53 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = BE3E69F61D83AE2D009FBB53;
+					};
+					BE3E6A1A1D83AE2E009FBB53 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = BE3E69F61D83AE2D009FBB53;
+					};
+				};
+			};
+			buildConfigurationList = BE3E69F21D83AE2D009FBB53 /* Build configuration list for PBXProject "WYCoreImageDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BE3E69EE1D83AE2D009FBB53;
+			productRefGroup = BE3E69F81D83AE2D009FBB53 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BE3E69F61D83AE2D009FBB53 /* WYCoreImageDemo */,
+				BE3E6A0F1D83AE2E009FBB53 /* WYCoreImageDemoTests */,
+				BE3E6A1A1D83AE2E009FBB53 /* WYCoreImageDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BE3E69F51D83AE2D009FBB53 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE3E6A0A1D83AE2E009FBB53 /* LaunchScreen.storyboard in Resources */,
+				BE3E6A071D83AE2E009FBB53 /* Assets.xcassets in Resources */,
+				BE3E6A051D83AE2E009FBB53 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE3E6A0E1D83AE2E009FBB53 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE3E6A191D83AE2E009FBB53 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BE3E69F31D83AE2D009FBB53 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE3E6A021D83AE2D009FBB53 /* ViewController.m in Sources */,
+				BE3E69FF1D83AE2D009FBB53 /* AppDelegate.m in Sources */,
+				BE3E69FC1D83AE2D009FBB53 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE3E6A0C1D83AE2E009FBB53 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE3E6A151D83AE2E009FBB53 /* WYCoreImageDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE3E6A171D83AE2E009FBB53 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE3E6A201D83AE2E009FBB53 /* WYCoreImageDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BE3E6A121D83AE2E009FBB53 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE3E69F61D83AE2D009FBB53 /* WYCoreImageDemo */;
+			targetProxy = BE3E6A111D83AE2E009FBB53 /* PBXContainerItemProxy */;
+		};
+		BE3E6A1D1D83AE2E009FBB53 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE3E69F61D83AE2D009FBB53 /* WYCoreImageDemo */;
+			targetProxy = BE3E6A1C1D83AE2E009FBB53 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BE3E6A031D83AE2E009FBB53 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE3E6A041D83AE2E009FBB53 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BE3E6A081D83AE2E009FBB53 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE3E6A091D83AE2E009FBB53 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BE3E6A221D83AE2E009FBB53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BE3E6A231D83AE2E009FBB53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BE3E6A251D83AE2E009FBB53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WYCoreImageDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yunyao.demo.WYCoreImageDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BE3E6A261D83AE2E009FBB53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WYCoreImageDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yunyao.demo.WYCoreImageDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		BE3E6A281D83AE2E009FBB53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WYCoreImageDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yunyao.demo.WYCoreImageDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WYCoreImageDemo.app/WYCoreImageDemo";
+			};
+			name = Debug;
+		};
+		BE3E6A291D83AE2E009FBB53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WYCoreImageDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yunyao.demo.WYCoreImageDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WYCoreImageDemo.app/WYCoreImageDemo";
+			};
+			name = Release;
+		};
+		BE3E6A2B1D83AE2E009FBB53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WYCoreImageDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yunyao.demo.WYCoreImageDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WYCoreImageDemo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		BE3E6A2C1D83AE2E009FBB53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WYCoreImageDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yunyao.demo.WYCoreImageDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WYCoreImageDemo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BE3E69F21D83AE2D009FBB53 /* Build configuration list for PBXProject "WYCoreImageDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE3E6A221D83AE2E009FBB53 /* Debug */,
+				BE3E6A231D83AE2E009FBB53 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE3E6A241D83AE2E009FBB53 /* Build configuration list for PBXNativeTarget "WYCoreImageDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE3E6A251D83AE2E009FBB53 /* Debug */,
+				BE3E6A261D83AE2E009FBB53 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BE3E6A271D83AE2E009FBB53 /* Build configuration list for PBXNativeTarget "WYCoreImageDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE3E6A281D83AE2E009FBB53 /* Debug */,
+				BE3E6A291D83AE2E009FBB53 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BE3E6A2A1D83AE2E009FBB53 /* Build configuration list for PBXNativeTarget "WYCoreImageDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE3E6A2B1D83AE2E009FBB53 /* Debug */,
+				BE3E6A2C1D83AE2E009FBB53 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BE3E69EF1D83AE2D009FBB53 /* Project object */;
+}
