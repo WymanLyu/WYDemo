@@ -63,8 +63,13 @@
 - (void)transition {
     
     // 1.设置转场滤镜的进度 (10s为周期)
-    NSInteger t = ([NSDate timeIntervalSinceReferenceDate] - _timeInterval)*0.1;
-    
+    CGFloat t = ([NSDate timeIntervalSinceReferenceDate] - _timeInterval)*0.1;
+    NSLog(@"---%f", t);
+    if (t >= 1.0) {
+        [_timer invalidate];
+        _timer = nil;
+    }
+
     // 2.转场滤镜 获取混合图片
     [_transitionFilter setValue:_inputImage forKey:kCIInputImageKey];
     [_transitionFilter setValue:_transionImage forKey:kCIInputTargetImageKey];
@@ -82,44 +87,13 @@
     CIImage *resultImg = [cropFilter valueForKey:kCIOutputImageKey];
     
     // 4.获取过程的图片渲染
-
     CGImageRef result = [_context createCGImage:resultImg fromRect:[resultImg extent]];
     if (result) {
         self.layer.contents = (__bridge id _Nullable)(result);
         CGImageRelease(result);
     }
- 
-    
-//    [self setNeedsDisplay];
- 
-}
 
-
-- (void)drawRect:(CGRect)rect {
-    
-    // 1.设置转场滤镜的进度 (10s为周期)
-    NSInteger t = ([NSDate timeIntervalSinceReferenceDate] - _timeInterval)*0.01;
-    
-    // 2.转场滤镜 获取混合图片
-    [_transitionFilter setValue:_inputImage forKey:kCIInputImageKey];
-    [_transitionFilter setValue:_transionImage forKey:kCIInputTargetImageKey];
-    // 设置进度
-    [_transitionFilter setValue:@(t) forKey:kCIInputTimeKey];
-    CIImage *outImg = [_transitionFilter valueForKey:kCIOutputImageKey];
-    
-    // 3.裁剪滤镜 获取转场中的渲染图片
-    CIFilter *cropFilter = [CIFilter filterWithName:@"CICrop"];
-    [cropFilter setValue:outImg forKey:kCIInputImageKey];
-    // 设置裁剪区
-    [cropFilter setValue:_vetor forKey:@"inputRectangle"];
-    // 获取结果
-    CIImage *resultImg = [cropFilter valueForKey:kCIOutputImageKey];
-    
-    // 4.获取过程的图片渲染
-    CGImageRef result = [_context createCGImage:resultImg fromRect:[resultImg extent]];
-    self.layer.contents = (__bridge id _Nullable)(result);
-    CGImageRelease(result);
-    
+ 
 }
 
 
