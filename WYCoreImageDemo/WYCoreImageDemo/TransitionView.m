@@ -61,7 +61,7 @@
     // 1.设置转场滤镜的进度 (10s为周期)
     CGFloat t = ([NSDate timeIntervalSinceReferenceDate] - _timeInterval)*0.1;
     NSLog(@"---%f", t);
-    if (t >= 0.5) {
+    if (t >= 1.0) {
         [_timer invalidate];
         _timer = nil;
     }
@@ -90,15 +90,10 @@
     CIImage *resultImg = [cropFilter valueForKey:kCIOutputImageKey];
     
     // 4.获取过程的图片渲染
-    CGRect oriRect = [resultImg extent];
-    
-//     _vetor = [CIVector vectorWithX:0 Y:0 Z:oriRect.size.width W:oriRect.size.height];
-    
-    CGImageRef result = [_context createCGImage:resultImg fromRect:oriRect];
+    CGImageRef result = [_context createCGImage:resultImg fromRect:[resultImg extent]];
     if (result) {
         
         self.layer.contents = (__bridge id _Nullable)(result);
-//        self.layer.contents = (__bridge id _Nullable)(xximg.CGImage);
         CGImageRelease(result);
     }
 
