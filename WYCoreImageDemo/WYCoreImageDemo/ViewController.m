@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "TransitionView.h"
+#import "BackgroundFilter.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *inputImgView;
@@ -49,14 +50,55 @@
     TransitionView *transitionView = [[TransitionView alloc] initWithFrame: self.inputImgView.bounds];
     [self.inputImgView addSubview:transitionView];
     
-   
-    
 }
 
-- (void)transiTion {
+// 背景色滤镜
+- (IBAction)backgroundFilter:(id)sender {
+    
+    // 1.获取路径
+    NSString *imagePath = @"/Users/yunyao/Library/Containers/com.tencent.qq/Data/Library/Application Support/QQ/Users/384846187/QQ/Temp.db/BAFC0F69-F9BE-4845-BF34-8C0EF34CAF9D.png";
+    
+    // 2.获取图片url
+    NSURL *fileUrl = [NSURL fileURLWithPath:imagePath];
+    
+    // 3.core image 的上下文
+    CIContext *context = [CIContext contextWithOptions:@{kCIContextUseSoftwareRenderer : @NO}];
+    
+    // 4.创建输入图片
+    CIImage *inputImage = [CIImage imageWithContentsOfURL:fileUrl];
+    
+    // 5.渲染
+    CGImageRef inImageRef = [context createCGImage:inputImage fromRect:[inputImage extent]];
+    if (inImageRef) {
+        self.inputImgView.image = [UIImage imageWithCGImage:inImageRef];
+    }
+    
+    // 6.创建滤镜
+    BackgroundFilter *backgroundFilter = [[BackgroundFilter alloc] init];
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        // 设置输入
+//        [backgroundFilter setValue:inputImage forKey:@"inputImage"];
+        backgroundFilter.inputImage = inputImage;
+        // 设置去除颜色最小角度
+        [backgroundFilter setValue:@90 forKey:inputMinHueAngle];
+        // 设置去除颜色最大角度
+        [backgroundFilter setValue:@140 forKey:inputMaxHueAngle];
+        // 7.获取输出
+        CIImage *outImage = backgroundFilter.outputImage;
+        // 回主线程渲染
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // 8.渲染
+            CGImageRef outImageRef = [context createCGImage:outImage fromRect:[outImage extent]];
+            self.outputImgView.backgroundColor = [UIColor grayColor];
+            self.outputImgView.image = [UIImage imageWithCGImage:outImageRef];
+            CGImageRelease(outImageRef);
+        });
+        
+    });
+
+    
     
 }
-
 
 
 - (IBAction)doneClick:(id)sender {

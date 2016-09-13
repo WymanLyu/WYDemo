@@ -18,6 +18,7 @@
 		BE3E6A2F1D83DC04009FBB53 /* TransitionView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3E6A2E1D83DC04009FBB53 /* TransitionView.m */; };
 		BE3E6A321D83EDE5009FBB53 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE3E6A301D83EDE5009FBB53 /* 1.jpg */; };
 		BE3E6A331D83EDE5009FBB53 /* 1副本.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE3E6A311D83EDE5009FBB53 /* 1副本.jpg */; };
+		BE6B156E1D87C3CE00B0A78D /* BackgroundFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6B156D1D87C3CE00B0A78D /* BackgroundFilter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		BE3E6A2E1D83DC04009FBB53 /* TransitionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitionView.m; sourceTree = "<group>"; };
 		BE3E6A301D83EDE5009FBB53 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		BE3E6A311D83EDE5009FBB53 /* 1副本.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1副本.jpg"; sourceTree = "<group>"; };
+		BE6B156C1D87C3CE00B0A78D /* BackgroundFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundFilter.h; sourceTree = "<group>"; };
+		BE6B156D1D87C3CE00B0A78D /* BackgroundFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundFilter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,8 @@
 				BE3E69FA1D83AE2D009FBB53 /* Supporting Files */,
 				BE3E6A2D1D83DC04009FBB53 /* TransitionView.h */,
 				BE3E6A2E1D83DC04009FBB53 /* TransitionView.m */,
+				BE6B156C1D87C3CE00B0A78D /* BackgroundFilter.h */,
+				BE6B156D1D87C3CE00B0A78D /* BackgroundFilter.m */,
 			);
 			path = WYCoreImageDemo;
 			sourceTree = "<group>";
@@ -285,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE3E6A021D83AE2D009FBB53 /* ViewController.m in Sources */,
+				BE6B156E1D87C3CE00B0A78D /* BackgroundFilter.m in Sources */,
 				BE3E6A2F1D83DC04009FBB53 /* TransitionView.m in Sources */,
 				BE3E69FF1D83AE2D009FBB53 /* AppDelegate.m in Sources */,
 				BE3E69FC1D83AE2D009FBB53 /* main.m in Sources */,
@@ -515,6 +521,7 @@
 				BE3E6A261D83AE2E009FBB53 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BE3E6A271D83AE2E009FBB53 /* Build configuration list for PBXNativeTarget "WYCoreImageDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +530,7 @@
 				BE3E6A291D83AE2E009FBB53 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BE3E6A2A1D83AE2E009FBB53 /* Build configuration list for PBXNativeTarget "WYCoreImageDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -531,6 +539,7 @@
 				BE3E6A2C1D83AE2E009FBB53 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
