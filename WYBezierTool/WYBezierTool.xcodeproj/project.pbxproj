@@ -16,6 +16,8 @@
 		BED01F411D93B05E0039CDEB /* WYBezierToolUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BED01F401D93B05E0039CDEB /* WYBezierToolUITests.m */; };
 		BED01F501D93B9400039CDEB /* WYCoordinateView.m in Sources */ = {isa = PBXBuildFile; fileRef = BED01F4F1D93B9400039CDEB /* WYCoordinateView.m */; };
 		BED01F531D93BF040039CDEB /* WYOperationView.m in Sources */ = {isa = PBXBuildFile; fileRef = BED01F521D93BF040039CDEB /* WYOperationView.m */; };
+		BED01F561D94D4BA0039CDEB /* WYBezierLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BED01F551D94D4BA0039CDEB /* WYBezierLineModel.m */; };
+		BED01F591D94D51B0039CDEB /* WYDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = BED01F581D94D51B0039CDEB /* WYDotView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,10 @@
 		BED01F4F1D93B9400039CDEB /* WYCoordinateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYCoordinateView.m; sourceTree = "<group>"; };
 		BED01F511D93BF040039CDEB /* WYOperationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYOperationView.h; sourceTree = "<group>"; };
 		BED01F521D93BF040039CDEB /* WYOperationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYOperationView.m; sourceTree = "<group>"; };
+		BED01F541D94D4BA0039CDEB /* WYBezierLineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYBezierLineModel.h; sourceTree = "<group>"; };
+		BED01F551D94D4BA0039CDEB /* WYBezierLineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYBezierLineModel.m; sourceTree = "<group>"; };
+		BED01F571D94D51B0039CDEB /* WYDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYDotView.h; sourceTree = "<group>"; };
+		BED01F581D94D51B0039CDEB /* WYDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYDotView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +123,10 @@
 				BED01F4F1D93B9400039CDEB /* WYCoordinateView.m */,
 				BED01F511D93BF040039CDEB /* WYOperationView.h */,
 				BED01F521D93BF040039CDEB /* WYOperationView.m */,
+				BED01F541D94D4BA0039CDEB /* WYBezierLineModel.h */,
+				BED01F551D94D4BA0039CDEB /* WYBezierLineModel.m */,
+				BED01F571D94D51B0039CDEB /* WYDotView.h */,
+				BED01F581D94D51B0039CDEB /* WYDotView.m */,
 			);
 			path = WYBezierTool;
 			sourceTree = "<group>";
@@ -276,8 +286,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BED01F561D94D4BA0039CDEB /* WYBezierLineModel.m in Sources */,
 				BED01F531D93BF040039CDEB /* WYOperationView.m in Sources */,
 				BED01F501D93B9400039CDEB /* WYCoordinateView.m in Sources */,
+				BED01F591D94D51B0039CDEB /* WYDotView.m in Sources */,
 				BED01F261D93B05E0039CDEB /* ViewController.m in Sources */,
 				BED01F231D93B05E0039CDEB /* main.m in Sources */,
 				BED01F201D93B05E0039CDEB /* AppDelegate.m in Sources */,

@@ -7,15 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "WYBezierLineModel.h"
 
 @interface WYCoordinateView : NSView
 
+/** 维护贝塞尔曲线的数组 */
+@property (strong) NSMutableArray<WYBezierLineModel *> *bezierArrM;
+
 - (void)startAnimation;
-
-@end
-
-@interface WYDotView : NSView
-
-@property (strong) NSColor *backgroundColor;
 
 @end
