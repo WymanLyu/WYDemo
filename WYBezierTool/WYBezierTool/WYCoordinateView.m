@@ -55,6 +55,10 @@
         _dotUpR = [[WYDotView alloc] init];
         _dotBottomL = [[WYDotView alloc] init];
         _dotBottomR = [[WYDotView alloc] init];
+        _dotUpL.noDrag = YES;
+        _dotUpR.noDrag = YES;
+        _dotBottomL.noDrag = YES;
+        _dotBottomR.noDrag = YES;
         [self addSubview:_dotUpL];
         [self addSubview:_dotUpR];
         [self addSubview:_dotBottomL];
@@ -64,12 +68,16 @@
         _dotBottomL.backgroundColor = [NSColor orangeColor];
         _dotBottomR.backgroundColor = [NSColor orangeColor];
         
+        // 监听通知
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mouseMoveNoti:) name:kDotViewMouseMoveNotification object:nil];
+        
     }
     return self;
 }
 
 - (void)dealloc {
     [self removeObserver:self forKeyPath:@"bezierArrM"];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)setFrame:(NSRect)frame {
@@ -96,8 +104,10 @@
     }
     // 设置默认曲线模型
     WYBezierLineModel *bezierLine0 = [[WYBezierLineModel alloc] init];
+    WYBezierLineModel *bezierLine1 = [[WYBezierLineModel alloc] init];
     [self bezierArrM];
     [[self mutableArrayValueForKey:@"bezierArrM"] addObject:bezierLine0];
+    [[self mutableArrayValueForKey:@"bezierArrM"] addObject:bezierLine1];
    
 
 }
@@ -106,8 +116,6 @@
     [super drawRect:dirtyRect];
     
     // 1.绘制坐标系
-    // 设置起始点
-//    CGPoint beginPoint = _pointUpL;
     
     // 1.0. 获取上下文
     NSGraphicsContext *ctx = [NSGraphicsContext currentContext];
@@ -122,6 +130,77 @@
     CGContextSetLineWidth(ctx.CGContext, 2);
     [[NSColor grayColor] set];
     CGContextStrokePath(ctx.CGContext);
+    
+    // 2.绘制贝塞尔曲线
+    if (!self.bezierArrM.count) return;
+    for (WYBezierLineModel *model in self.bezierArrM) {
+        // 出栈
+        [ctx restoreGraphicsState];
+        // 入栈
+        [ctx saveGraphicsState];
+        
+        CGFloat dotW = model.beginDot.frame.size.width;
+        CGFloat controlW = model.controlDot1.frame.size.width;
+        CGRect begionF = model.beginDot.frame;
+        CGRect endF = model.endDot.frame;
+        CGRect controlF1 = model.controlDot1.frame;
+        CGRect controlF2 = model.controlDot2.frame;
+        // 设置中心点为起始点
+        model.beginDotPoint = CGPointMake(begionF.origin.x + dotW*0.5, begionF.origin.y + dotW*0.5);
+        model.endDotPoint = CGPointMake(endF.origin.x + dotW*0.5, endF.origin.y + dotW*0.5);
+        model.controlPoint1 = CGPointMake(controlF1.origin.x + controlW*0.5, controlF1.origin.y + controlW*0.5);
+        model.controlPoint2 = CGPointMake(controlF2.origin.x + controlW*0.5, controlF2.origin.y + controlW*0.5);
+        // 绘制控制线
+        CGContextMoveToPoint(ctx.CGContext, model.beginDotPoint.x, model.beginDotPoint.y);
+        CGContextAddLineToPoint(ctx.CGContext, model.controlPoint1.x, model.controlPoint1.y);
+        CGContextMoveToPoint(ctx.CGContext, model.endDotPoint.x, model.endDotPoint.y);
+        CGContextAddLineToPoint(ctx.CGContext, model.controlPoint2.x, model.controlPoint2.y);
+        CGContextSetLineWidth(ctx.CGContext, 1.5);
+        CGContextStrokePath(ctx.CGContext);
+        
+        // 创建贝塞尔曲线
+        // 出栈
+        [ctx restoreGraphicsState];
+        // 入栈
+        [ctx saveGraphicsState];
+        CGContextMoveToPoint(ctx.CGContext, model.beginDotPoint.x, model.beginDotPoint.y);
+        CGContextAddCurveToPoint(ctx.CGContext, model.controlPoint1.x, model.controlPoint1.y, model.controlPoint2.x, model.controlPoint2.y, model.endDotPoint.x, model.endDotPoint.y);
+        CGContextSetLineWidth(ctx.CGContext, 3);
+        [[NSColor blueColor] set];
+        
+        CGContextStrokePath(ctx.CGContext);
+        
+    }
+    
+}
+
+#pragma mark - 通知处理
+
+- (void)mouseMoveNoti:(NSNotification *)noti {
+    
+    NSPoint draggedCenter = [[noti.userInfo objectForKey:@"mousePointInTouchView"] pointValue];
+    WYDotView *draggedView = noti.object;
+    
+    if ([draggedView noDrag]) return; // 坐标顶点
+    if ([draggedView isDragged]) { // 是否被拖拽的视图
+    
+        if ([self.subviews containsObject:draggedView]) { // 在视图中
+    
+            // 转换坐标至本视图
+            CGFloat width = draggedView.frame.size.width;
+            NSPoint center = [self convertPoint:draggedCenter fromView:draggedView];
+            center = CGPointMake(center.x - width*0.5, center.y - width*0.5);
+    
+            // 移动视图
+            [draggedView setFrameOrigin:center];
+            
+            // 重绘贝塞尔
+            [self setNeedsDisplay:YES];
+            
+        }
+    
+    }
+    
     
 }
 
@@ -214,7 +293,7 @@ static void *NSKeyValueObservingOptionNewContext = &NSKeyValueObservingOptionNew
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
     if (context == NSKeyValueObservingOptionNewContext) {
         if ([keyPath isEqualToString:@"bezierArrM"]) {
-            NSLog(@"%@", change);
+//            NSLog(@"%@", change);
             
             NSInteger kind = [[change objectForKey:@"kind"] integerValue];
             if (kind == NSKeyValueChangeInsertion) { // 判断是否是插入数据
@@ -223,7 +302,7 @@ static void *NSKeyValueObservingOptionNewContext = &NSKeyValueObservingOptionNew
                     for (WYBezierLineModel *dotModel in newObjs) { // 遍历新数据
                         
                         // 1.设置其起始点和终点
-                        NSLog(@"%@", dotModel);
+//                        NSLog(@"%@", dotModel);
                         dotModel.beginDotPoint = self.beginPoint;
                         dotModel.endDotPoint = [self convertPointDiagonally:self.beginPoint];
                         

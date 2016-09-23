@@ -8,8 +8,16 @@
 
 #import <Cocoa/Cocoa.h>
 
+extern NSString *const kDotViewMouseDownNotification;
+extern NSString *const kDotViewMouseUpNotification;
+extern NSString *const kDotViewMouseMoveNotification;
+
 @interface WYDotView : NSView
 
 @property (strong) NSColor *backgroundColor;
+
+@property (nonatomic, assign, readonly) BOOL isDragged;
+
+@property (nonatomic, assign) BOOL noDrag;
 
 @end

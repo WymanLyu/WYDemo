@@ -32,7 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    NSLog(@"%@", NSStringFromRect(self.view.bounds));
+//    NSLog(@"%@", NSStringFromRect(self.view.bounds));
     
     // 1.设置子控件
     [self setupSubs];
