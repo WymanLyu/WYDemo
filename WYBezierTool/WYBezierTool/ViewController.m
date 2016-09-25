@@ -85,7 +85,7 @@
     resultTextField.textColor = [NSColor blackColor];
     [self.view addSubview:resultTextField];
     resultTextField.wantsLayer = YES;
-    resultTextField.selectable = NO; // 不允许交互
+//    resultTextField.selectable = NO; // 不允许交互
     resultTextField.layer.backgroundColor = [NSColor grayColor].CGColor;
     
     // 3.操作区
@@ -114,7 +114,6 @@
         [resultStr appendString:[NSString stringWithFormat:@"%@\n\n", str]];
     }
     self.resultTextField.stringValue = resultStr;
-//    [self.resultTextField setNeedsDisplay:YES];
     
 }
 

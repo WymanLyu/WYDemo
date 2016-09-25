@@ -50,10 +50,8 @@ NSString *const kDotViewMouseMoveNotification = @"DotViewMouseMoveNotification";
         NSPoint point = [self convertPoint:[theEvent locationInWindow] fromView:nil];
         
         // 2.包装参数
-//        NSLog(@"%@", NSStringFromPoint(point));
         NSMutableDictionary *dictM = [NSMutableDictionary dictionary];
         dictM[@"mousePointInTouchView"] = [NSValue valueWithPoint:point];
-
         
         // 3.发送通知
         [[NSNotificationCenter defaultCenter] postNotificationName:kDotViewMouseMoveNotification object:self userInfo:dictM];
@@ -66,9 +64,11 @@ NSString *const kDotViewMouseMoveNotification = @"DotViewMouseMoveNotification";
     self.layer.cornerRadius = self.frame.size.width * 0.5;
     self.layer.borderColor = [NSColor clearColor].CGColor;
     _isDragged = NO;
-    // 发送通知
-    [[NSNotificationCenter defaultCenter] postNotificationName:kDotViewMouseUpNotification object:self userInfo:nil];
 
+    // 发送通知
+    if (self.noDrag) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:kDotViewMouseUpNotification object:self userInfo:nil];
+    }
 }
 
 

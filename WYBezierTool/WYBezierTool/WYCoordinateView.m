@@ -75,6 +75,7 @@ NSString *const kDotViewCoordinateNotification = @"kDotViewCoordinateNotificatio
         
         // 监听通知
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mouseMoveNoti:) name:kDotViewMouseMoveNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mouseUpNoti:) name:kDotViewMouseUpNotification object:nil];
         
     }
     return self;
@@ -137,20 +138,7 @@ NSString *const kDotViewCoordinateNotification = @"kDotViewCoordinateNotificatio
         [ctx restoreGraphicsState];
         // 入栈
         [ctx saveGraphicsState];
-        
-        // 始点和终点的宽度
-        CGFloat dotW = model.beginDot.frame.size.width;
-        // 控制点宽度
-        CGFloat controlW = model.controlDot1.frame.size.width;
-        CGRect begionF = model.beginDot.frame;
-        CGRect endF = model.endDot.frame;
-        CGRect controlF1 = model.controlDot1.frame;
-        CGRect controlF2 = model.controlDot2.frame;
-        // 设置中心点为起始点
-        model.beginDotPoint = CGPointMake(begionF.origin.x + dotW*0.5, begionF.origin.y + dotW*0.5);
-        model.endDotPoint = CGPointMake(endF.origin.x + dotW*0.5, endF.origin.y + dotW*0.5);
-        model.controlPoint1 = CGPointMake(controlF1.origin.x + controlW*0.5, controlF1.origin.y + controlW*0.5);
-        model.controlPoint2 = CGPointMake(controlF2.origin.x + controlW*0.5, controlF2.origin.y + controlW*0.5);
+
         // 绘制控制线
         CGContextMoveToPoint(ctx.CGContext, model.beginDotPoint.x, model.beginDotPoint.y);
         CGContextAddLineToPoint(ctx.CGContext, model.controlPoint1.x, model.controlPoint1.y);
@@ -190,31 +178,30 @@ NSString *const kDotViewCoordinateNotification = @"kDotViewCoordinateNotificatio
             // 1.转换坐标至本视图
             CGFloat width = draggedView.frame.size.width;
             NSPoint center = [self convertPoint:draggedCenter fromView:draggedView];
-            center = CGPointMake(center.x - width*0.5, center.y - width*0.5);
             
             // 2.修改模型数据
             WYBezierLineModel *model = [self.bezierArrM objectAtIndex:draggedView.index];
             if (draggedView == model.beginDot) { // 开始点
                 
-                model.beginDotPoint = CGPointMake(center.x - 2*width, center.y - 2*width);
+                model.beginDotPoint = CGPointMake(center.x , center.y );
                 
             } else if (draggedView == model.endDot) { // 结束点
                 
-                model.endDotPoint = CGPointMake(center.x - 2*width, center.y - 2*width);
+                model.endDotPoint = CGPointMake(center.x, center.y);
                 
             } else if (draggedView == model.controlDot1) { // 控制点1
                 
-                model.controlPoint1 = CGPointMake(center.x - 2*width, center.y - 2*width);
+                model.controlPoint1 = CGPointMake(center.x, center.y);
                 
             } else if (draggedView == model.controlDot2) { // 控制点2
                 
-                model.controlPoint2 = CGPointMake(center.x - 2*width, center.y - 2*width);
+                model.controlPoint2 = CGPointMake(center.x, center.y);
             }
             
             // 3.处理越界情况
     
             // 4.移动视图
-            [draggedView setFrameOrigin:center];
+            [draggedView setFrameOrigin:CGPointMake(center.x- width*0.5, center.y- width*0.5)];
             
             // 5.重绘贝塞尔
             [self setNeedsDisplay:YES];
@@ -228,6 +215,14 @@ NSString *const kDotViewCoordinateNotification = @"kDotViewCoordinateNotificatio
     
     }
    
+}
+
+- (void)mouseUpNoti:(NSNotification *)noti {
+    
+    WYDotView *dotView = noti.object;
+    CGPoint center = CGPointMake(dotView.frame.size.width*0.5 + dotView.frame.origin.x, dotView.frame.size.width*0.5 + dotView.frame.origin.y);
+    self.beginPoint = center;
+    
 }
 
 #pragma mark - 发出结果通知
@@ -294,7 +289,7 @@ NSString *const kDotViewCoordinateNotification = @"kDotViewCoordinateNotificatio
     }
 
     // 3.更新信息
-    info = [NSString stringWithFormat:@"UIBezierPath *path%zd = [[[UIBezierPath alloc] init] moveToPoint:CGPointMake(%f, %f)]; \n [path addCurveToPoint:CGPointMake(%.2f, %.2f) controlPoint1: CGPointMake(%.2f, %.2f) controlPoint2: CGPointMake(%.2f, %.2f)];",dotView.index, beginP.x, beginP.y, endP.x, endP.y, controlP1.x, controlP1.y, controlP2.x, controlP2.y];
+    info = [NSString stringWithFormat:@"UIBezierPath *path%zd = [[[[UIBezierPath alloc] init] alloc] moveToPoint:CGPointMake(%f, %f)]; \n [path addCurveToPoint:CGPointMake(%.2f, %.2f) controlPoint1: CGPointMake(%.2f, %.2f) controlPoint2: CGPointMake(%.2f, %.2f)];",dotView.index, beginP.x, beginP.y, endP.x, endP.y, controlP1.x, controlP1.y, controlP2.x, controlP2.y];
     [self.equationArrM replaceObjectAtIndex:dotView.index withObject:info];
 }
 
@@ -361,7 +356,22 @@ NSString *const kDotViewCoordinateNotification = @"kDotViewCoordinateNotificatio
     CGFloat width = fabs(_startDotPoint.x - _endDotPoint.x);
     CGFloat height = fabs(_startDotPoint.y - _endDotPoint.y);
     [self setControlPointWithWidth:width height:height];
+    
     [self setNeedsDisplay:YES];
+    [self displayIfNeeded];
+    // 设置新的结果
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (self.bezierArrM.count) {
+            for (WYBezierLineModel *model in self.bezierArrM) {
+                
+                // 更新方程坐标系
+                [self getResultEquationWithDotView:model.beginDot];
+            }
+            [self sendNoti];
+        }
+
+//    });
+
 }
 
 - (CGPoint)beginPoint {
