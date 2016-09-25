@@ -23,7 +23,7 @@
 @property (weak) WYOperationView *operationView;
 
 /** 结果区 */
-@property (weak) NSView *resultTextField;
+@property (weak) NSTextField *resultTextField;
 
 @end
 
@@ -36,6 +36,17 @@
     
     // 1.设置子控件
     [self setupSubs];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dotViewCoordinateNoti:) name:kDotViewCoordinateNotification object:self.coordinateView];
+    
+    // 设置默认曲线模型
+    WYBezierLineModel *bezierLine0 = [[WYBezierLineModel alloc] init];
+//    WYBezierLineModel *bezierLine1 = [[WYBezierLineModel alloc] init];
+//    WYBezierLineModel *bezierLine2 = [[WYBezierLineModel alloc] init];
+//    WYBezierLineModel *bezierLine3 = [[WYBezierLineModel alloc] init];
+    [[self.coordinateView mutableArrayValueForKey:@"bezierArrM"] addObject:bezierLine0];
+//    [[self.coordinateView mutableArrayValueForKey:@"bezierArrM"] addObject:bezierLine1];
+//    [[self.coordinateView mutableArrayValueForKey:@"bezierArrM"] addObject:bezierLine2];
+//    [[self.coordinateView mutableArrayValueForKey:@"bezierArrM"] addObject:bezierLine3];
     
     
     // Do any additional setup after loading the view.
@@ -70,9 +81,11 @@
     CGFloat resultTextFieldX = kMargin;
     CGFloat resultTextFieldY = kMargin;
     resultTextField.frame = CGRectMake(resultTextFieldX, resultTextFieldY, resultTextFieldW, resultTextFieldH);
+    resultTextField.font = [NSFont systemFontOfSize:11.5f];
+    resultTextField.textColor = [NSColor blackColor];
     [self.view addSubview:resultTextField];
     resultTextField.wantsLayer = YES;
-    resultTextField.enabled = NO; // 不允许交互
+    resultTextField.selectable = NO; // 不允许交互
     resultTextField.layer.backgroundColor = [NSColor grayColor].CGColor;
     
     // 3.操作区
@@ -90,6 +103,19 @@
     _coordinateView = coordinateView;
     _resultTextField = resultTextField;
     _operationView = operationView;    
+}
+
+- (void)dotViewCoordinateNoti:(NSNotification *)noti {
+    
+    NSArray *result = noti.userInfo[@"BezierEquation"];
+    
+    NSMutableString *resultStr = [NSMutableString string];
+    for (NSString *str in result) {
+        [resultStr appendString:[NSString stringWithFormat:@"%@\n\n", str]];
+    }
+    self.resultTextField.stringValue = resultStr;
+//    [self.resultTextField setNeedsDisplay:YES];
+    
 }
 
 

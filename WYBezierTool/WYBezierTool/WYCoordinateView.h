@@ -9,6 +9,8 @@
 #import <Cocoa/Cocoa.h>
 #import "WYBezierLineModel.h"
 
+extern NSString *const kDotViewCoordinateNotification;
+
 @interface WYCoordinateView : NSView
 
 /** 维护贝塞尔曲线的数组 */

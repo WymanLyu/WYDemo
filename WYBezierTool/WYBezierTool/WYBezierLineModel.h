@@ -27,5 +27,8 @@
 @property (assign) CGPoint controlPoint2;
 @property (strong) WYDotView *controlDot2;
 
+/** 序号 */
+@property (nonatomic, assign) NSInteger index;
+
 
 @end

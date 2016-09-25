@@ -16,6 +16,8 @@ extern NSString *const kDotViewMouseMoveNotification;
 
 @property (strong) NSColor *backgroundColor;
 
+@property (nonatomic, assign) NSInteger index;
+
 @property (nonatomic, assign, readonly) BOOL isDragged;
 
 @property (nonatomic, assign) BOOL noDrag;

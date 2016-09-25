@@ -12,10 +12,15 @@
 
 #define kMargin 25
 
+NSString *const kDotViewCoordinateNotification = @"kDotViewCoordinateNotification";
+
 @interface WYCoordinateView ()
 
 /** 起始点控制坐标系 */
 @property (assign) CGPoint beginPoint;
+
+/** 结果方程信息 */
+@property (strong) NSMutableArray *equationArrM;
 
 @end
 
@@ -102,13 +107,8 @@
         // 清空曲线模型
         [[self mutableArrayValueForKey:@"bezierArrM"] removeAllObjects];
     }
-    // 设置默认曲线模型
-    WYBezierLineModel *bezierLine0 = [[WYBezierLineModel alloc] init];
-    WYBezierLineModel *bezierLine1 = [[WYBezierLineModel alloc] init];
+  
     [self bezierArrM];
-    [[self mutableArrayValueForKey:@"bezierArrM"] addObject:bezierLine0];
-    [[self mutableArrayValueForKey:@"bezierArrM"] addObject:bezierLine1];
-   
 
 }
 
@@ -116,7 +116,6 @@
     [super drawRect:dirtyRect];
     
     // 1.绘制坐标系
-    
     // 1.0. 获取上下文
     NSGraphicsContext *ctx = [NSGraphicsContext currentContext];
     [ctx saveGraphicsState];
@@ -139,7 +138,9 @@
         // 入栈
         [ctx saveGraphicsState];
         
+        // 始点和终点的宽度
         CGFloat dotW = model.beginDot.frame.size.width;
+        // 控制点宽度
         CGFloat controlW = model.controlDot1.frame.size.width;
         CGRect begionF = model.beginDot.frame;
         CGRect endF = model.endDot.frame;
@@ -186,22 +187,115 @@
     
         if ([self.subviews containsObject:draggedView]) { // 在视图中
     
-            // 转换坐标至本视图
+            // 1.转换坐标至本视图
             CGFloat width = draggedView.frame.size.width;
             NSPoint center = [self convertPoint:draggedCenter fromView:draggedView];
             center = CGPointMake(center.x - width*0.5, center.y - width*0.5);
+            
+            // 2.修改模型数据
+            WYBezierLineModel *model = [self.bezierArrM objectAtIndex:draggedView.index];
+            if (draggedView == model.beginDot) { // 开始点
+                
+                model.beginDotPoint = CGPointMake(center.x - 2*width, center.y - 2*width);
+                
+            } else if (draggedView == model.endDot) { // 结束点
+                
+                model.endDotPoint = CGPointMake(center.x - 2*width, center.y - 2*width);
+                
+            } else if (draggedView == model.controlDot1) { // 控制点1
+                
+                model.controlPoint1 = CGPointMake(center.x - 2*width, center.y - 2*width);
+                
+            } else if (draggedView == model.controlDot2) { // 控制点2
+                
+                model.controlPoint2 = CGPointMake(center.x - 2*width, center.y - 2*width);
+            }
+            
+            // 3.处理越界情况
     
-            // 移动视图
+            // 4.移动视图
             [draggedView setFrameOrigin:center];
             
-            // 重绘贝塞尔
+            // 5.重绘贝塞尔
             [self setNeedsDisplay:YES];
             
+            // 6.更新结果方程
+            [self getResultEquationWithDotView:draggedView];
+            
+            // 7.发送通知
+            [self sendNoti];
         }
     
     }
+   
+}
+
+#pragma mark - 发出结果通知
+
+- (void)sendNoti {
     
+    NSMutableDictionary *infoDict = [NSMutableDictionary dictionary];
+    infoDict[@"BezierEquation"] = self.equationArrM;
+    [[NSNotificationCenter defaultCenter] postNotificationName:kDotViewCoordinateNotification object:self userInfo:infoDict];
+}
+
+#pragma mark - 计算结果方程
+
+- (void)getResultEquationWithDotView:(WYDotView *)dotView {
     
+    if (!self.equationArrM) { // 懒加载
+        self.equationArrM = [NSMutableArray array];
+    }
+    
+    // 0.获取原有信息
+    @try {
+        [self.equationArrM objectAtIndex:dotView.index];
+    }
+    @catch (NSException *exception) {
+        NSString *info  = @"";
+        [self.equationArrM insertObject:info atIndex:dotView.index];
+    }
+    NSString *info = [self.equationArrM objectAtIndex:dotView.index];
+    
+    // 1.根据索引获取对应的贝塞尔模型
+    WYBezierLineModel *model = [self.bezierArrM objectAtIndex:dotView.index];
+    CGPoint beginP = model.beginDotPoint;
+    CGPoint endP = model.endDotPoint;
+    CGPoint controlP1 = model.controlPoint1;
+    CGPoint controlP2 = model.controlPoint2;
+    
+    CGFloat width = self.frame.size.width - 2*kMargin;
+    CGFloat height = self.frame.size.height - 2*kMargin;
+
+    // 2.针对所有点进行坐标转换
+    if (CGPointEqualToPoint(self.beginPoint, _pointUpL)) { // 左上坐标系
+        
+        beginP = CGPointMake((beginP.x - kMargin)/width, (self.frame.size.height - beginP.y - kMargin)/height);
+        endP = CGPointMake((endP.x - kMargin)/width, (self.frame.size.height - endP.y - kMargin)/height);
+        controlP1 = CGPointMake((controlP1.x - kMargin)/width, (self.frame.size.height - controlP1.y - kMargin)/height);
+        controlP2 = CGPointMake((controlP2.x - kMargin)/width, (self.frame.size.height - controlP2.y - kMargin)/height);
+        
+    } else if (CGPointEqualToPoint(self.beginPoint, _pointUpR)) { // 右上坐标系
+        
+        
+    } else if (CGPointEqualToPoint(self.beginPoint, _pointBottomL)) { // 左下坐标系
+        
+        beginP = CGPointMake((beginP.x - kMargin)/width, (beginP.y - kMargin)/height);
+        endP = CGPointMake((endP.x - kMargin)/width, (endP.y - kMargin)/height);
+        controlP1 = CGPointMake((controlP1.x - kMargin)/width, (controlP1.y - kMargin)/height);
+        controlP2 = CGPointMake((controlP2.x - kMargin)/width, (controlP2.y - kMargin)/height);
+        
+    } else if (CGPointEqualToPoint(self.beginPoint, _pointBottomR)) { // 左右坐标系
+        
+        
+    } else {
+        
+        
+    }
+
+    // 3.更新信息
+    info = [NSString stringWithFormat:@"UIBezierPath *path%zd = [[[UIBezierPath alloc] init] moveToPoint:CGPointMake(%f, %f)]; \n [path addCurveToPoint:CGPointMake(%.2f, %.2f) controlPoint1: CGPointMake(%.2f, %.2f) controlPoint2: CGPointMake(%.2f, %.2f)];",dotView.index, beginP.x, beginP.y, endP.x, endP.y, controlP1.x, controlP1.y, controlP2.x, controlP2.y];
+    [self.equationArrM replaceObjectAtIndex:dotView.index withObject:info];
 }
 
 #pragma mark - 私有方法
@@ -293,7 +387,7 @@ static void *NSKeyValueObservingOptionNewContext = &NSKeyValueObservingOptionNew
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
     if (context == NSKeyValueObservingOptionNewContext) {
         if ([keyPath isEqualToString:@"bezierArrM"]) {
-//            NSLog(@"%@", change);
+            NSLog(@"%@", change);
             
             NSInteger kind = [[change objectForKey:@"kind"] integerValue];
             if (kind == NSKeyValueChangeInsertion) { // 判断是否是插入数据
@@ -305,6 +399,8 @@ static void *NSKeyValueObservingOptionNewContext = &NSKeyValueObservingOptionNew
 //                        NSLog(@"%@", dotModel);
                         dotModel.beginDotPoint = self.beginPoint;
                         dotModel.endDotPoint = [self convertPointDiagonally:self.beginPoint];
+                        dotModel.controlPoint1 = _controlPoint1;
+                        dotModel.controlPoint2 = _controlPoint2;
                         
                         // 2.添加相关联的视图
                         [self addSubview:dotModel.beginDot];
@@ -320,6 +416,15 @@ static void *NSKeyValueObservingOptionNewContext = &NSKeyValueObservingOptionNew
                         CGFloat controlDotWidth = controlDotF.size.width;
                         dotModel.controlDot1.frame = CGRectMake(_controlPoint1.x - controlDotWidth*0.5, _controlPoint1.y - controlDotWidth*0.5, controlDotWidth, controlDotWidth);
                         dotModel.controlDot2.frame = CGRectMake(_controlPoint2.x - controlDotWidth*0.5, _controlPoint2.y - controlDotWidth*0.5, controlDotWidth, controlDotWidth);
+                        
+                        // 3.绑定索引
+                        NSIndexSet *indexSet = change[@"indexes"];
+                        dotModel.index = [indexSet lastIndex];
+                        
+                        // 4.发送方程通知
+                        [self getResultEquationWithDotView:dotModel.beginDot];
+                        [self sendNoti];
+                        
                     }
                 }
             } else if (kind == NSKeyValueChangeRemoval) { // 判断是移除数据

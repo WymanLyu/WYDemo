@@ -33,4 +33,14 @@
     return self;
 }
 
+- (void)setIndex:(NSInteger)index {
+    _index = index;
+    
+    self.beginDot.index = _index;
+    self.endDot.index = _index;
+    self.controlDot1.index = _index;
+    self.controlDot2.index = _index;
+    
+}
+
 @end
