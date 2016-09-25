@@ -98,6 +98,17 @@
     [self.view addSubview:operationView];
     operationView.wantsLayer = YES;
     operationView.layer.backgroundColor = [NSColor gridColor].CGColor;
+    // 监听
+    __weak typeof(self)weakSelf = self;
+    operationView.addClik = ^{
+        WYBezierLineModel *bezierLine = [[WYBezierLineModel alloc] init];
+        [[weakSelf.coordinateView mutableArrayValueForKey:@"bezierArrM"] addObject:bezierLine];
+    };
+    operationView.minusClik = ^{
+        if (weakSelf.coordinateView.bezierArrM.count > 1) {
+            [[weakSelf.coordinateView mutableArrayValueForKey:@"bezierArrM"] removeLastObject];
+        }
+    };
     
     // 4.控制器引用子控件
     _coordinateView = coordinateView;

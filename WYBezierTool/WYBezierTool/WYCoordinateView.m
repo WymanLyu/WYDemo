@@ -22,6 +22,9 @@ NSString *const kDotViewCoordinateNotification = @"kDotViewCoordinateNotificatio
 /** 结果方程信息 */
 @property (strong) NSMutableArray *equationArrM;
 
+/** 最后一个模型 */
+@property (strong) WYBezierLineModel *lastModel;
+
 @end
 
 @implementation WYCoordinateView
@@ -397,7 +400,7 @@ static void *NSKeyValueObservingOptionNewContext = &NSKeyValueObservingOptionNew
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
     if (context == NSKeyValueObservingOptionNewContext) {
         if ([keyPath isEqualToString:@"bezierArrM"]) {
-            NSLog(@"%@", change);
+//            NSLog(@"%@", change);
             
             NSInteger kind = [[change objectForKey:@"kind"] integerValue];
             if (kind == NSKeyValueChangeInsertion) { // 判断是否是插入数据
@@ -435,10 +438,26 @@ static void *NSKeyValueObservingOptionNewContext = &NSKeyValueObservingOptionNew
                         [self getResultEquationWithDotView:dotModel.beginDot];
                         [self sendNoti];
                         
+                        // 5.保存最后的一个模型（因为监听不了移除前）
+                        WYBezierLineModel *lastModel = [self.bezierArrM lastObject];
+                        self.lastModel = lastModel;
+
                     }
                 }
             } else if (kind == NSKeyValueChangeRemoval) { // 判断是移除数据
                 
+                 NSLog(@"%@", change);
+                if (!self.lastModel)return;
+                [self.lastModel.beginDot removeFromSuperview];
+                [self.lastModel.endDot removeFromSuperview];
+                [self.lastModel.controlDot1 removeFromSuperview];
+                [self.lastModel.controlDot2 removeFromSuperview];
+                [self.equationArrM removeLastObject];
+                [self sendNoti];
+                
+                // 保存最后的一个模型（因为监听不了移除前）
+                WYBezierLineModel *lastModel = [self.bezierArrM lastObject];
+                self.lastModel = lastModel;
                 
             }
             

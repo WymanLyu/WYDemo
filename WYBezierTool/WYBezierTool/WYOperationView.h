@@ -10,4 +10,7 @@
 
 @interface WYOperationView : NSView
 
+@property (copy) void(^addClik)();
+@property (copy) void(^minusClik)();
+
 @end
