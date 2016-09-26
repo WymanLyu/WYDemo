@@ -206,13 +206,15 @@ NSString *const kDotViewCoordinateNotification = @"kDotViewCoordinateNotificatio
             // 4.移动视图
             [draggedView setFrameOrigin:CGPointMake(center.x- width*0.5, center.y- width*0.5)];
             
-            // 5.重绘贝塞尔
+            // 5.移动关联视图
+            
+            // 6.重绘贝塞尔
             [self setNeedsDisplay:YES];
             
-            // 6.更新结果方程
+            // 7.更新结果方程
             [self getResultEquationWithDotView:draggedView];
             
-            // 7.发送通知
+            // 8.发送通知
             [self sendNoti];
         }
     
@@ -292,7 +294,8 @@ NSString *const kDotViewCoordinateNotification = @"kDotViewCoordinateNotificatio
     }
 
     // 3.更新信息
-    info = [NSString stringWithFormat:@"UIBezierPath *path%zd = [[[[UIBezierPath alloc] init] alloc] moveToPoint:CGPointMake(%f, %f)]; \n [path addCurveToPoint:CGPointMake(%.2f, %.2f) controlPoint1: CGPointMake(%.2f, %.2f) controlPoint2: CGPointMake(%.2f, %.2f)];",dotView.index, beginP.x, beginP.y, endP.x, endP.y, controlP1.x, controlP1.y, controlP2.x, controlP2.y];
+    info = [NSString stringWithFormat:@"UIBezierPath *path%zd = [UIBezierPath bezierPath];\n[path%zd moveToPoint:CGPointMake(%.2f, %.2f)];\n[path%zd addCurveToPoint:CGPointMake(%.2f, %.2f) controlPoint1: CGPointMake(%.2f, %.2f) controlPoint2: CGPointMake(%.2f, %.2f)];",dotView.index, dotView.index, beginP.x, beginP.y, dotView.index, endP.x, endP.y, controlP1.x, controlP1.y, controlP2.x, controlP2.y];
+    
     [self.equationArrM replaceObjectAtIndex:dotView.index withObject:info];
 }
 

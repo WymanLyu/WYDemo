@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "WYCoordinateView.h"
 #import "WYOperationView.h"
+#import "AppDelegate.h"
 
 #define kMargin 35
 #define kWindowH self.view.bounds.size.height
@@ -40,13 +41,7 @@
     
     // 设置默认曲线模型
     WYBezierLineModel *bezierLine0 = [[WYBezierLineModel alloc] init];
-//    WYBezierLineModel *bezierLine1 = [[WYBezierLineModel alloc] init];
-//    WYBezierLineModel *bezierLine2 = [[WYBezierLineModel alloc] init];
-//    WYBezierLineModel *bezierLine3 = [[WYBezierLineModel alloc] init];
     [[self.coordinateView mutableArrayValueForKey:@"bezierArrM"] addObject:bezierLine0];
-//    [[self.coordinateView mutableArrayValueForKey:@"bezierArrM"] addObject:bezierLine1];
-//    [[self.coordinateView mutableArrayValueForKey:@"bezierArrM"] addObject:bezierLine2];
-//    [[self.coordinateView mutableArrayValueForKey:@"bezierArrM"] addObject:bezierLine3];
     
     
     // Do any additional setup after loading the view.
