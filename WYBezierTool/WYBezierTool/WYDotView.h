@@ -11,6 +11,7 @@
 extern NSString *const kDotViewMouseDownNotification;
 extern NSString *const kDotViewMouseUpNotification;
 extern NSString *const kDotViewMouseMoveNotification;
+extern NSString *const kDotViewMouseDoubleClickNotification;
 
 @interface WYDotView : NSView
 

@@ -9,6 +9,7 @@
 #import <Quartz/Quartz.h>
 #import "WYCoordinateView.h"
 #import "WYDotView.h"
+#import "NSObject+RelationPool.h"
 
 #define kMargin 25
 
@@ -22,8 +23,11 @@ NSString *const kDotViewCoordinateNotification = @"kDotViewCoordinateNotificatio
 /** 结果方程信息 */
 @property (strong) NSMutableArray *equationArrM;
 
-/** 最后一个模型 */
+/** 最后一个模型（因为监听不了移除前的数据所以引用，需要在移除后移除模型中的视图） */
 @property (strong) WYBezierLineModel *lastModel;
+
+/** 视图模型 */
+@property (strong) NSMutableArray<NSMutableArray *> *relationViewArrM;
 
 @end
 
@@ -54,6 +58,9 @@ NSString *const kDotViewCoordinateNotification = @"kDotViewCoordinateNotificatio
 // 绑定属性的成员变量
 @synthesize beginPoint = _beginPoint;
 @synthesize bezierArrM = _bezierArrM;
+@synthesize relationViewArrM = _relationViewArrM;
+
+#pragma mark - 系统方法
 
 - (instancetype)initWithFrame:(NSRect)frameRect {
     if (self = [super initWithFrame:frameRect]) {
@@ -79,7 +86,7 @@ NSString *const kDotViewCoordinateNotification = @"kDotViewCoordinateNotificatio
         // 监听通知
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mouseMoveNoti:) name:kDotViewMouseMoveNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mouseUpNoti:) name:kDotViewMouseUpNotification object:nil];
-        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mouseDoubleClickNoti:) name:kDotViewMouseDoubleClickNotification object:nil];
     }
     return self;
 }
@@ -179,34 +186,21 @@ NSString *const kDotViewCoordinateNotification = @"kDotViewCoordinateNotificatio
         if ([self.subviews containsObject:draggedView]) { // 在视图中
     
             // 1.转换坐标至本视图
-            CGFloat width = draggedView.frame.size.width;
             NSPoint center = [self convertPoint:draggedCenter fromView:draggedView];
             
-            // 2.修改模型数据
-            WYBezierLineModel *model = [self.bezierArrM objectAtIndex:draggedView.index];
-            if (draggedView == model.beginDot) { // 开始点
-                
-                model.beginDotPoint = CGPointMake(center.x , center.y );
-                
-            } else if (draggedView == model.endDot) { // 结束点
-                
-                model.endDotPoint = CGPointMake(center.x, center.y);
-                
-            } else if (draggedView == model.controlDot1) { // 控制点1
-                
-                model.controlPoint1 = CGPointMake(center.x, center.y);
-                
-            } else if (draggedView == model.controlDot2) { // 控制点2
-                
-                model.controlPoint2 = CGPointMake(center.x, center.y);
-            }
-            
-            // 3.处理越界情况
-    
-            // 4.移动视图
-            [draggedView setFrameOrigin:CGPointMake(center.x- width*0.5, center.y- width*0.5)];
+            // 2.修改模型数据并移动拖拽视图
+            [self changeDotViewCoordinate:draggedView withChangedCenter:center];
             
             // 5.移动关联视图
+            NSArray *relationViewArr = [draggedView.wy_getPoolParners allObjects];
+//            NSLog(@"%@", relationViewArr);
+            for (WYDotView *dotView in relationViewArr) {
+                // 移动视图并修改对应模型数据
+                [self changeDotViewCoordinate:dotView withChangedCenter:center];
+                // 更新结果方程
+                [self getResultEquationWithDotView:dotView];
+                    
+            }
             
             // 6.重绘贝塞尔
             [self setNeedsDisplay:YES];
@@ -228,6 +222,45 @@ NSString *const kDotViewCoordinateNotification = @"kDotViewCoordinateNotificatio
     CGPoint center = CGPointMake(dotView.frame.size.width*0.5 + dotView.frame.origin.x, dotView.frame.size.width*0.5 + dotView.frame.origin.y);
     self.beginPoint = center;
     
+}
+
+- (void)mouseDoubleClickNoti:(NSNotification *)noti {
+    
+    // 1.获取触发点
+    WYDotView *dotView = noti.object;
+    
+    // 2.获取所有有交集的点组成池子
+    // 表示是否合并
+    BOOL isMerge = NO;
+    for (WYDotView *dotSubV in self.subviews) {
+        if (dotView == dotSubV) continue;
+        if (dotSubV.noDrag) continue;
+        if (CGRectIntersectsRect(dotSubV.frame, dotView.frame)) {
+            
+            // 过滤自己伙伴
+            if ([[dotView wy_getPoolParners] containsObject:dotSubV]) {
+                continue;
+            }
+           
+            // 有交集则并入
+            [dotView wy_addPoolParner:dotSubV];
+            isMerge = YES; // 表示是合并操作
+        }
+    }
+    
+    if (isMerge) {
+    
+        NSLog(@"合并成功");
+        
+    } else {
+       
+        if (dotView.wy_pool) {
+            [dotView wy_dismissPool]; 
+        }
+        NSLog(@"解散成功");
+    }
+    
+
 }
 
 #pragma mark - 发出结果通知
@@ -339,9 +372,39 @@ NSString *const kDotViewCoordinateNotification = @"kDotViewCoordinateNotificatio
         
         _controlPoint1 = CGPointMake(kMargin + width*(2.0/3.0), kMargin + height*(1.0/3.0));
         _controlPoint2 = CGPointMake(kMargin + width*(1.0/3.0), kMargin + height*(2.0/3.0));
-        
     }
     
+}
+
+// 修改视图对应的模型坐标数据同时移动视图
+- (void)changeDotViewCoordinate:(WYDotView *)draggedView withChangedCenter:(CGPoint)center {
+    // 1.转换坐标至本视图
+    CGFloat width = draggedView.frame.size.width;
+//    NSPoint center = [self convertPoint:draggedCenter fromView:draggedView];
+    
+    // 2.修改模型数据
+    WYBezierLineModel *model = [self.bezierArrM objectAtIndex:draggedView.index];
+    if (draggedView == model.beginDot) { // 开始点
+        
+        model.beginDotPoint = CGPointMake(center.x , center.y );
+        
+    } else if (draggedView == model.endDot) { // 结束点
+        
+        model.endDotPoint = CGPointMake(center.x, center.y);
+        
+    } else if (draggedView == model.controlDot1) { // 控制点1
+        
+        model.controlPoint1 = CGPointMake(center.x, center.y);
+        
+    } else if (draggedView == model.controlDot2) { // 控制点2
+        
+        model.controlPoint2 = CGPointMake(center.x, center.y);
+    }
+    
+    // 3.处理越界情况
+    
+    // 4.移动视图
+    [draggedView setFrameOrigin:CGPointMake(center.x- width*0.5, center.y- width*0.5)];
 }
 
 
@@ -366,17 +429,14 @@ NSString *const kDotViewCoordinateNotification = @"kDotViewCoordinateNotificatio
     [self setNeedsDisplay:YES];
     [self displayIfNeeded];
     // 设置新的结果
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        if (self.bezierArrM.count) {
-            for (WYBezierLineModel *model in self.bezierArrM) {
-                
-                // 更新方程坐标系
-                [self getResultEquationWithDotView:model.beginDot];
-            }
-            [self sendNoti];
+    if (self.bezierArrM.count) {
+        for (WYBezierLineModel *model in self.bezierArrM) {
+            
+            // 更新方程坐标系
+            [self getResultEquationWithDotView:model.beginDot];
         }
-
-//    });
+        [self sendNoti];
+    }
 
 }
 
@@ -397,6 +457,18 @@ static void *NSKeyValueObservingOptionNewContext = &NSKeyValueObservingOptionNew
 - (void)setBezierArrM:(NSMutableArray *)bezierArrM {
     _bezierArrM = bezierArrM;
 }
+
+- (NSMutableArray<NSMutableArray *> *)relationViewArrM {
+    if (!_relationViewArrM) {
+        _relationViewArrM = [NSMutableArray array];
+    }
+    return _relationViewArrM;
+}
+
+- (void)setRelationViewArrM:(NSMutableArray<NSMutableArray *> *)relationViewArrM {
+    _relationViewArrM = relationViewArrM;
+}
+
 
 #pragma mark - 监听数组的变化
 
@@ -441,7 +513,7 @@ static void *NSKeyValueObservingOptionNewContext = &NSKeyValueObservingOptionNew
                         [self getResultEquationWithDotView:dotModel.beginDot];
                         [self sendNoti];
                         
-                        // 5.保存最后的一个模型（因为监听不了移除前）
+                        // 5.保存最后的一个模型（因为监听不了移除前的数据）
                         WYBezierLineModel *lastModel = [self.bezierArrM lastObject];
                         self.lastModel = lastModel;
 

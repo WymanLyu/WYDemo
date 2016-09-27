@@ -8,9 +8,10 @@
 
 #import "WYDotView.h"
 
-NSString *const kDotViewMouseDownNotification = @"DotViewMouseDownNotification";
-NSString *const kDotViewMouseUpNotification = @"DotViewMouseUpNotification";
-NSString *const kDotViewMouseMoveNotification = @"DotViewMouseMoveNotification";
+NSString *const kDotViewMouseDownNotification        = @"DotViewMouseDownNotification";
+NSString *const kDotViewMouseUpNotification          = @"DotViewMouseUpNotification";
+NSString *const kDotViewMouseMoveNotification        = @"DotViewMouseMoveNotification";
+NSString *const kDotViewMouseDoubleClickNotification = @"kDotViewMouseDoubleClickNotification";
 
 
 @implementation WYDotView
@@ -69,6 +70,18 @@ NSString *const kDotViewMouseMoveNotification = @"DotViewMouseMoveNotification";
     if (self.noDrag) {
         [[NSNotificationCenter defaultCenter] postNotificationName:kDotViewMouseUpNotification object:self userInfo:nil];
     }
+}
+
+- (void)rightMouseUp:(NSEvent *)theEvent {
+    
+    if (theEvent.clickCount == 2) {
+        // 发送通知
+        if (!self.noDrag) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:kDotViewMouseDoubleClickNotification object:self userInfo:nil];
+        }
+
+    }
+    
 }
 
 

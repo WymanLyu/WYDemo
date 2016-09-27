@@ -18,6 +18,7 @@
 		BED01F531D93BF040039CDEB /* WYOperationView.m in Sources */ = {isa = PBXBuildFile; fileRef = BED01F521D93BF040039CDEB /* WYOperationView.m */; };
 		BED01F561D94D4BA0039CDEB /* WYBezierLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BED01F551D94D4BA0039CDEB /* WYBezierLineModel.m */; };
 		BED01F591D94D51B0039CDEB /* WYDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = BED01F581D94D51B0039CDEB /* WYDotView.m */; };
+		BEFEB2CD1D992EDF00C7378C /* NSObject+RelationPool.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFEB2CC1D992EDF00C7378C /* NSObject+RelationPool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,8 @@
 		BED01F551D94D4BA0039CDEB /* WYBezierLineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYBezierLineModel.m; sourceTree = "<group>"; };
 		BED01F571D94D51B0039CDEB /* WYDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYDotView.h; sourceTree = "<group>"; };
 		BED01F581D94D51B0039CDEB /* WYDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYDotView.m; sourceTree = "<group>"; };
+		BEFEB2CB1D992EDF00C7378C /* NSObject+RelationPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+RelationPool.h"; sourceTree = "<group>"; };
+		BEFEB2CC1D992EDF00C7378C /* NSObject+RelationPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+RelationPool.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +130,8 @@
 				BED01F551D94D4BA0039CDEB /* WYBezierLineModel.m */,
 				BED01F571D94D51B0039CDEB /* WYDotView.h */,
 				BED01F581D94D51B0039CDEB /* WYDotView.m */,
+				BEFEB2CB1D992EDF00C7378C /* NSObject+RelationPool.h */,
+				BEFEB2CC1D992EDF00C7378C /* NSObject+RelationPool.m */,
 			);
 			path = WYBezierTool;
 			sourceTree = "<group>";
@@ -288,6 +293,7 @@
 			files = (
 				BED01F561D94D4BA0039CDEB /* WYBezierLineModel.m in Sources */,
 				BED01F531D93BF040039CDEB /* WYOperationView.m in Sources */,
+				BEFEB2CD1D992EDF00C7378C /* NSObject+RelationPool.m in Sources */,
 				BED01F501D93B9400039CDEB /* WYCoordinateView.m in Sources */,
 				BED01F591D94D51B0039CDEB /* WYDotView.m in Sources */,
 				BED01F261D93B05E0039CDEB /* ViewController.m in Sources */,
@@ -513,6 +519,7 @@
 				BED01F471D93B05E0039CDEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BED01F481D93B05E0039CDEB /* Build configuration list for PBXNativeTarget "WYBezierToolTests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +528,7 @@
 				BED01F4A1D93B05E0039CDEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BED01F4B1D93B05E0039CDEB /* Build configuration list for PBXNativeTarget "WYBezierToolUITests" */ = {
 			isa = XCConfigurationList;
@@ -529,6 +537,7 @@
 				BED01F4D1D93B05E0039CDEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
