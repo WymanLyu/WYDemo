@@ -255,7 +255,7 @@ NSString *const kDotViewCoordinateNotification = @"kDotViewCoordinateNotificatio
     } else {
        
         if (dotView.wy_pool) {
-            [dotView wy_dismissPool]; 
+            [dotView wy_dismissPool];
         }
         NSLog(@"解散成功");
     }
@@ -521,7 +521,7 @@ static void *NSKeyValueObservingOptionNewContext = &NSKeyValueObservingOptionNew
                 }
             } else if (kind == NSKeyValueChangeRemoval) { // 判断是移除数据
                 
-                 NSLog(@"%@", change);
+//                 NSLog(@"%@", change);
                 if (!self.lastModel)return;
                 [self.lastModel.beginDot removeFromSuperview];
                 [self.lastModel.endDot removeFromSuperview];
