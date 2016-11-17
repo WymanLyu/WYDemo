@@ -85,7 +85,7 @@ void RGBtoHSV( float r, float g, float b, float *h, float *s, float *v )
     int colorChannel = 4;
     // 此模型的颜色总数
     int colorCategories = colorSize * colorSize * colorSize;
-    // 开辟色彩梯度模型的内存
+    // 开辟色彩梯度模型的内存【一个颜色需要的内存大小是 sizeof(float)*colorChannel 】
     float *cubeData = (float *)malloc(colorCategories * sizeof(float)*colorChannel);
     
     // 2.创建数据处理的容器
