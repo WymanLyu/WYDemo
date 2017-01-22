@@ -192,6 +192,8 @@ CGFloat distanceBetweenPoints (CGPoint first, CGPoint second) {
 //        [view addGestureRecognizer:panGesture];
     }
     
+    
+    
 }
 
 
