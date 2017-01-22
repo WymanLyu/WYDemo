@@ -1,0 +1,264 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		13BD64A61CE9809300C9EC3A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BD64A51CE9809300C9EC3A /* main.m */; };
+		13BD64AF1CE980AE00C9EC3A /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BD64AE1CE980AE00C9EC3A /* GCDAsyncSocket.m */; };
+		13BD64B21CE980C200C9EC3A /* WYServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BD64B11CE980C200C9EC3A /* WYServer.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		13BD64A01CE9809300C9EC3A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		13BD64A21CE9809300C9EC3A /* WYSocketServerDemo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = WYSocketServerDemo; sourceTree = BUILT_PRODUCTS_DIR; };
+		13BD64A51CE9809300C9EC3A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		13BD64AD1CE980AE00C9EC3A /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		13BD64AE1CE980AE00C9EC3A /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		13BD64B01CE980C200C9EC3A /* WYServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYServer.h; sourceTree = "<group>"; };
+		13BD64B11CE980C200C9EC3A /* WYServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYServer.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		13BD649F1CE9809300C9EC3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		13BD64991CE9809300C9EC3A = {
+			isa = PBXGroup;
+			children = (
+				13BD64AC1CE980AE00C9EC3A /* TCP */,
+				13BD64A41CE9809300C9EC3A /* WYSocketServerDemo */,
+				13BD64A31CE9809300C9EC3A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		13BD64A31CE9809300C9EC3A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				13BD64A21CE9809300C9EC3A /* WYSocketServerDemo */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		13BD64A41CE9809300C9EC3A /* WYSocketServerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				13BD64B01CE980C200C9EC3A /* WYServer.h */,
+				13BD64B11CE980C200C9EC3A /* WYServer.m */,
+				13BD64A51CE9809300C9EC3A /* main.m */,
+			);
+			path = WYSocketServerDemo;
+			sourceTree = "<group>";
+		};
+		13BD64AC1CE980AE00C9EC3A /* TCP */ = {
+			isa = PBXGroup;
+			children = (
+				13BD64AD1CE980AE00C9EC3A /* GCDAsyncSocket.h */,
+				13BD64AE1CE980AE00C9EC3A /* GCDAsyncSocket.m */,
+			);
+			path = TCP;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		13BD64A11CE9809300C9EC3A /* WYSocketServerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13BD64A91CE9809300C9EC3A /* Build configuration list for PBXNativeTarget "WYSocketServerDemo" */;
+			buildPhases = (
+				13BD649E1CE9809300C9EC3A /* Sources */,
+				13BD649F1CE9809300C9EC3A /* Frameworks */,
+				13BD64A01CE9809300C9EC3A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WYSocketServerDemo;
+			productName = WYSocketServerDemo;
+			productReference = 13BD64A21CE9809300C9EC3A /* WYSocketServerDemo */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		13BD649A1CE9809300C9EC3A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = wyman;
+				TargetAttributes = {
+					13BD64A11CE9809300C9EC3A = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 13BD649D1CE9809300C9EC3A /* Build configuration list for PBXProject "WYSocketServerDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 13BD64991CE9809300C9EC3A;
+			productRefGroup = 13BD64A31CE9809300C9EC3A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				13BD64A11CE9809300C9EC3A /* WYSocketServerDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		13BD649E1CE9809300C9EC3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13BD64AF1CE980AE00C9EC3A /* GCDAsyncSocket.m in Sources */,
+				13BD64A61CE9809300C9EC3A /* main.m in Sources */,
+				13BD64B21CE980C200C9EC3A /* WYServer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		13BD64A71CE9809300C9EC3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		13BD64A81CE9809300C9EC3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		13BD64AA1CE9809300C9EC3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		13BD64AB1CE9809300C9EC3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		13BD649D1CE9809300C9EC3A /* Build configuration list for PBXProject "WYSocketServerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13BD64A71CE9809300C9EC3A /* Debug */,
+				13BD64A81CE9809300C9EC3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		13BD64A91CE9809300C9EC3A /* Build configuration list for PBXNativeTarget "WYSocketServerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13BD64AA1CE9809300C9EC3A /* Debug */,
+				13BD64AB1CE9809300C9EC3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 13BD649A1CE9809300C9EC3A /* Project object */;
+}

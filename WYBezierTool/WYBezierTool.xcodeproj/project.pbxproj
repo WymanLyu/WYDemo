@@ -1,0 +1,586 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BED01F201D93B05E0039CDEB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BED01F1F1D93B05E0039CDEB /* AppDelegate.m */; };
+		BED01F231D93B05E0039CDEB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BED01F221D93B05E0039CDEB /* main.m */; };
+		BED01F281D93B05E0039CDEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BED01F271D93B05E0039CDEB /* Assets.xcassets */; };
+		BED01F2B1D93B05E0039CDEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BED01F291D93B05E0039CDEB /* Main.storyboard */; };
+		BED01F361D93B05E0039CDEB /* WYBezierToolTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BED01F351D93B05E0039CDEB /* WYBezierToolTests.m */; };
+		BED01F411D93B05E0039CDEB /* WYBezierToolUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BED01F401D93B05E0039CDEB /* WYBezierToolUITests.m */; };
+		BEFEB2D11D9A750B00C7378C /* NSObject+RelationPool.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFEB2D01D9A750B00C7378C /* NSObject+RelationPool.m */; };
+		BEFEB2E01D9A751500C7378C /* WYBezierLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFEB2D51D9A751500C7378C /* WYBezierLineModel.m */; };
+		BEFEB2E11D9A751500C7378C /* WYCoordinateView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFEB2D81D9A751500C7378C /* WYCoordinateView.m */; };
+		BEFEB2E21D9A751500C7378C /* WYDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFEB2DA1D9A751500C7378C /* WYDotView.m */; };
+		BEFEB2E31D9A751500C7378C /* WYOperationView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFEB2DC1D9A751500C7378C /* WYOperationView.m */; };
+		BEFEB2E41D9A751500C7378C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFEB2DF1D9A751500C7378C /* ViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BED01F321D93B05E0039CDEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BED01F131D93B05E0039CDEB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BED01F1A1D93B05E0039CDEB;
+			remoteInfo = WYBezierTool;
+		};
+		BED01F3D1D93B05E0039CDEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BED01F131D93B05E0039CDEB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BED01F1A1D93B05E0039CDEB;
+			remoteInfo = WYBezierTool;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BED01F1B1D93B05E0039CDEB /* WYBezierTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WYBezierTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BED01F1E1D93B05E0039CDEB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BED01F1F1D93B05E0039CDEB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BED01F221D93B05E0039CDEB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BED01F271D93B05E0039CDEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BED01F2A1D93B05E0039CDEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BED01F2C1D93B05E0039CDEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BED01F311D93B05E0039CDEB /* WYBezierToolTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WYBezierToolTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BED01F351D93B05E0039CDEB /* WYBezierToolTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYBezierToolTests.m; sourceTree = "<group>"; };
+		BED01F371D93B05E0039CDEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BED01F3C1D93B05E0039CDEB /* WYBezierToolUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WYBezierToolUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BED01F401D93B05E0039CDEB /* WYBezierToolUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYBezierToolUITests.m; sourceTree = "<group>"; };
+		BED01F421D93B05E0039CDEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEFEB2CF1D9A750B00C7378C /* NSObject+RelationPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+RelationPool.h"; sourceTree = "<group>"; };
+		BEFEB2D01D9A750B00C7378C /* NSObject+RelationPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+RelationPool.m"; sourceTree = "<group>"; };
+		BEFEB2D41D9A751500C7378C /* WYBezierLineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYBezierLineModel.h; sourceTree = "<group>"; };
+		BEFEB2D51D9A751500C7378C /* WYBezierLineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYBezierLineModel.m; sourceTree = "<group>"; };
+		BEFEB2D71D9A751500C7378C /* WYCoordinateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYCoordinateView.h; sourceTree = "<group>"; };
+		BEFEB2D81D9A751500C7378C /* WYCoordinateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYCoordinateView.m; sourceTree = "<group>"; };
+		BEFEB2D91D9A751500C7378C /* WYDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYDotView.h; sourceTree = "<group>"; };
+		BEFEB2DA1D9A751500C7378C /* WYDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYDotView.m; sourceTree = "<group>"; };
+		BEFEB2DB1D9A751500C7378C /* WYOperationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYOperationView.h; sourceTree = "<group>"; };
+		BEFEB2DC1D9A751500C7378C /* WYOperationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYOperationView.m; sourceTree = "<group>"; };
+		BEFEB2DE1D9A751500C7378C /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		BEFEB2DF1D9A751500C7378C /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BED01F181D93B05E0039CDEB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BED01F2E1D93B05E0039CDEB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BED01F391D93B05E0039CDEB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BED01F121D93B05E0039CDEB = {
+			isa = PBXGroup;
+			children = (
+				BED01F1D1D93B05E0039CDEB /* WYBezierTool */,
+				BED01F341D93B05E0039CDEB /* WYBezierToolTests */,
+				BED01F3F1D93B05E0039CDEB /* WYBezierToolUITests */,
+				BED01F1C1D93B05E0039CDEB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BED01F1C1D93B05E0039CDEB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BED01F1B1D93B05E0039CDEB /* WYBezierTool.app */,
+				BED01F311D93B05E0039CDEB /* WYBezierToolTests.xctest */,
+				BED01F3C1D93B05E0039CDEB /* WYBezierToolUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BED01F1D1D93B05E0039CDEB /* WYBezierTool */ = {
+			isa = PBXGroup;
+			children = (
+				BEFEB2D21D9A751500C7378C /* ToolClasses */,
+				BEFEB2CE1D9A750B00C7378C /* Categore */,
+				BED01F1E1D93B05E0039CDEB /* AppDelegate.h */,
+				BED01F1F1D93B05E0039CDEB /* AppDelegate.m */,
+				BED01F271D93B05E0039CDEB /* Assets.xcassets */,
+				BED01F291D93B05E0039CDEB /* Main.storyboard */,
+				BED01F2C1D93B05E0039CDEB /* Info.plist */,
+				BED01F211D93B05E0039CDEB /* Supporting Files */,
+			);
+			path = WYBezierTool;
+			sourceTree = "<group>";
+		};
+		BED01F211D93B05E0039CDEB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BED01F221D93B05E0039CDEB /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BED01F341D93B05E0039CDEB /* WYBezierToolTests */ = {
+			isa = PBXGroup;
+			children = (
+				BED01F351D93B05E0039CDEB /* WYBezierToolTests.m */,
+				BED01F371D93B05E0039CDEB /* Info.plist */,
+			);
+			path = WYBezierToolTests;
+			sourceTree = "<group>";
+		};
+		BED01F3F1D93B05E0039CDEB /* WYBezierToolUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BED01F401D93B05E0039CDEB /* WYBezierToolUITests.m */,
+				BED01F421D93B05E0039CDEB /* Info.plist */,
+			);
+			path = WYBezierToolUITests;
+			sourceTree = "<group>";
+		};
+		BEFEB2CE1D9A750B00C7378C /* Categore */ = {
+			isa = PBXGroup;
+			children = (
+				BEFEB2CF1D9A750B00C7378C /* NSObject+RelationPool.h */,
+				BEFEB2D01D9A750B00C7378C /* NSObject+RelationPool.m */,
+			);
+			path = Categore;
+			sourceTree = "<group>";
+		};
+		BEFEB2D21D9A751500C7378C /* ToolClasses */ = {
+			isa = PBXGroup;
+			children = (
+				BEFEB2D31D9A751500C7378C /* Model */,
+				BEFEB2D61D9A751500C7378C /* View */,
+				BEFEB2DD1D9A751500C7378C /* ViewControl */,
+			);
+			name = ToolClasses;
+			path = Categore/ToolClasses;
+			sourceTree = "<group>";
+		};
+		BEFEB2D31D9A751500C7378C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BEFEB2D41D9A751500C7378C /* WYBezierLineModel.h */,
+				BEFEB2D51D9A751500C7378C /* WYBezierLineModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BEFEB2D61D9A751500C7378C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BEFEB2D71D9A751500C7378C /* WYCoordinateView.h */,
+				BEFEB2D81D9A751500C7378C /* WYCoordinateView.m */,
+				BEFEB2D91D9A751500C7378C /* WYDotView.h */,
+				BEFEB2DA1D9A751500C7378C /* WYDotView.m */,
+				BEFEB2DB1D9A751500C7378C /* WYOperationView.h */,
+				BEFEB2DC1D9A751500C7378C /* WYOperationView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BEFEB2DD1D9A751500C7378C /* ViewControl */ = {
+			isa = PBXGroup;
+			children = (
+				BEFEB2DE1D9A751500C7378C /* ViewController.h */,
+				BEFEB2DF1D9A751500C7378C /* ViewController.m */,
+			);
+			path = ViewControl;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BED01F1A1D93B05E0039CDEB /* WYBezierTool */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BED01F451D93B05E0039CDEB /* Build configuration list for PBXNativeTarget "WYBezierTool" */;
+			buildPhases = (
+				BED01F171D93B05E0039CDEB /* Sources */,
+				BED01F181D93B05E0039CDEB /* Frameworks */,
+				BED01F191D93B05E0039CDEB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WYBezierTool;
+			productName = WYBezierTool;
+			productReference = BED01F1B1D93B05E0039CDEB /* WYBezierTool.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BED01F301D93B05E0039CDEB /* WYBezierToolTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BED01F481D93B05E0039CDEB /* Build configuration list for PBXNativeTarget "WYBezierToolTests" */;
+			buildPhases = (
+				BED01F2D1D93B05E0039CDEB /* Sources */,
+				BED01F2E1D93B05E0039CDEB /* Frameworks */,
+				BED01F2F1D93B05E0039CDEB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BED01F331D93B05E0039CDEB /* PBXTargetDependency */,
+			);
+			name = WYBezierToolTests;
+			productName = WYBezierToolTests;
+			productReference = BED01F311D93B05E0039CDEB /* WYBezierToolTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BED01F3B1D93B05E0039CDEB /* WYBezierToolUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BED01F4B1D93B05E0039CDEB /* Build configuration list for PBXNativeTarget "WYBezierToolUITests" */;
+			buildPhases = (
+				BED01F381D93B05E0039CDEB /* Sources */,
+				BED01F391D93B05E0039CDEB /* Frameworks */,
+				BED01F3A1D93B05E0039CDEB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BED01F3E1D93B05E0039CDEB /* PBXTargetDependency */,
+			);
+			name = WYBezierToolUITests;
+			productName = WYBezierToolUITests;
+			productReference = BED01F3C1D93B05E0039CDEB /* WYBezierToolUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BED01F131D93B05E0039CDEB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = yunyao;
+				TargetAttributes = {
+					BED01F1A1D93B05E0039CDEB = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					BED01F301D93B05E0039CDEB = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = BED01F1A1D93B05E0039CDEB;
+					};
+					BED01F3B1D93B05E0039CDEB = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = BED01F1A1D93B05E0039CDEB;
+					};
+				};
+			};
+			buildConfigurationList = BED01F161D93B05E0039CDEB /* Build configuration list for PBXProject "WYBezierTool" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BED01F121D93B05E0039CDEB;
+			productRefGroup = BED01F1C1D93B05E0039CDEB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BED01F1A1D93B05E0039CDEB /* WYBezierTool */,
+				BED01F301D93B05E0039CDEB /* WYBezierToolTests */,
+				BED01F3B1D93B05E0039CDEB /* WYBezierToolUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BED01F191D93B05E0039CDEB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BED01F281D93B05E0039CDEB /* Assets.xcassets in Resources */,
+				BED01F2B1D93B05E0039CDEB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BED01F2F1D93B05E0039CDEB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BED01F3A1D93B05E0039CDEB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BED01F171D93B05E0039CDEB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEFEB2E41D9A751500C7378C /* ViewController.m in Sources */,
+				BEFEB2E31D9A751500C7378C /* WYOperationView.m in Sources */,
+				BEFEB2E01D9A751500C7378C /* WYBezierLineModel.m in Sources */,
+				BEFEB2D11D9A750B00C7378C /* NSObject+RelationPool.m in Sources */,
+				BEFEB2E21D9A751500C7378C /* WYDotView.m in Sources */,
+				BED01F231D93B05E0039CDEB /* main.m in Sources */,
+				BEFEB2E11D9A751500C7378C /* WYCoordinateView.m in Sources */,
+				BED01F201D93B05E0039CDEB /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BED01F2D1D93B05E0039CDEB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BED01F361D93B05E0039CDEB /* WYBezierToolTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BED01F381D93B05E0039CDEB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BED01F411D93B05E0039CDEB /* WYBezierToolUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BED01F331D93B05E0039CDEB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BED01F1A1D93B05E0039CDEB /* WYBezierTool */;
+			targetProxy = BED01F321D93B05E0039CDEB /* PBXContainerItemProxy */;
+		};
+		BED01F3E1D93B05E0039CDEB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BED01F1A1D93B05E0039CDEB /* WYBezierTool */;
+			targetProxy = BED01F3D1D93B05E0039CDEB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BED01F291D93B05E0039CDEB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BED01F2A1D93B05E0039CDEB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BED01F431D93B05E0039CDEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		BED01F441D93B05E0039CDEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		BED01F461D93B05E0039CDEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = WYBezierTool/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yunyao.demo.WYBezierTool;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BED01F471D93B05E0039CDEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = WYBezierTool/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yunyao.demo.WYBezierTool;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		BED01F491D93B05E0039CDEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = WYBezierToolTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yunyao.demo.WYBezierToolTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WYBezierTool.app/Contents/MacOS/WYBezierTool";
+			};
+			name = Debug;
+		};
+		BED01F4A1D93B05E0039CDEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = WYBezierToolTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yunyao.demo.WYBezierToolTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WYBezierTool.app/Contents/MacOS/WYBezierTool";
+			};
+			name = Release;
+		};
+		BED01F4C1D93B05E0039CDEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = WYBezierToolUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yunyao.demo.WYBezierToolUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WYBezierTool;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		BED01F4D1D93B05E0039CDEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = WYBezierToolUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yunyao.demo.WYBezierToolUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WYBezierTool;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BED01F161D93B05E0039CDEB /* Build configuration list for PBXProject "WYBezierTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BED01F431D93B05E0039CDEB /* Debug */,
+				BED01F441D93B05E0039CDEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BED01F451D93B05E0039CDEB /* Build configuration list for PBXNativeTarget "WYBezierTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BED01F461D93B05E0039CDEB /* Debug */,
+				BED01F471D93B05E0039CDEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BED01F481D93B05E0039CDEB /* Build configuration list for PBXNativeTarget "WYBezierToolTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BED01F491D93B05E0039CDEB /* Debug */,
+				BED01F4A1D93B05E0039CDEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BED01F4B1D93B05E0039CDEB /* Build configuration list for PBXNativeTarget "WYBezierToolUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BED01F4C1D93B05E0039CDEB /* Debug */,
+				BED01F4D1D93B05E0039CDEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BED01F131D93B05E0039CDEB /* Project object */;
+}

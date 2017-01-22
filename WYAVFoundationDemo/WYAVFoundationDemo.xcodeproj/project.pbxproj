@@ -1,0 +1,598 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BE48427B1D38D15A000EFFEB /* LocalMusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE48427A1D38D15A000EFFEB /* LocalMusicViewController.m */; };
+		BE48427D1D38D7C7000EFFEB /* 1201111234.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BE48427C1D38D7C7000EFFEB /* 1201111234.mp3 */; };
+		BE73B7831D37672B006BDF21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE73B7821D37672B006BDF21 /* main.m */; };
+		BE73B7861D37672B006BDF21 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE73B7851D37672B006BDF21 /* AppDelegate.m */; };
+		BE73B7891D37672B006BDF21 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE73B7881D37672B006BDF21 /* ViewController.m */; };
+		BE73B78C1D37672B006BDF21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE73B78A1D37672B006BDF21 /* Main.storyboard */; };
+		BE73B78E1D37672B006BDF21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE73B78D1D37672B006BDF21 /* Assets.xcassets */; };
+		BE73B7911D37672B006BDF21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE73B78F1D37672B006BDF21 /* LaunchScreen.storyboard */; };
+		BE73B79C1D37672B006BDF21 /* WYAVFoundationDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE73B79B1D37672B006BDF21 /* WYAVFoundationDemoTests.m */; };
+		BE73B7A71D37672B006BDF21 /* WYAVFoundationDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE73B7A61D37672B006BDF21 /* WYAVFoundationDemoUITests.m */; };
+		BE73B7B61D376B9E006BDF21 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE73B7B51D376B9E006BDF21 /* TableViewController.m */; };
+		BE73B7BA1D377CC1006BDF21 /* WYAVManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BE73B7B91D377CC1006BDF21 /* WYAVManager.m */; };
+		BE73B7BD1D37931F006BDF21 /* SoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE73B7BC1D37931F006BDF21 /* SoundViewController.m */; };
+		BE73B7C01D37974E006BDF21 /* lose.aac in Resources */ = {isa = PBXBuildFile; fileRef = BE73B7BF1D37974E006BDF21 /* lose.aac */; };
+		BEDB40B81D45DB1A007F19F7 /* NetMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDB40B71D45DB1A007F19F7 /* NetMovieViewController.m */; };
+		BEDB40BB1D45E068007F19F7 /* MovieItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDB40BA1D45E068007F19F7 /* MovieItem.m */; };
+		BEDB40BE1D45E219007F19F7 /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDB40BD1D45E219007F19F7 /* MovieCell.m */; };
+		BEDB40C01D45E238007F19F7 /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEDB40BF1D45E238007F19F7 /* MovieCell.xib */; };
+		BEFCFAF61D476A9300F1ABF9 /* WYResourceLoaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFCFAF51D476A9300F1ABF9 /* WYResourceLoaderManager.m */; };
+		BEFCFAF91D476EB400F1ABF9 /* AVResourceLoaderTask.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFCFAF81D476EB400F1ABF9 /* AVResourceLoaderTask.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BE73B7981D37672B006BDF21 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE73B7761D37672B006BDF21 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE73B77D1D37672B006BDF21;
+			remoteInfo = WYAVFoundationDemo;
+		};
+		BE73B7A31D37672B006BDF21 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE73B7761D37672B006BDF21 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE73B77D1D37672B006BDF21;
+			remoteInfo = WYAVFoundationDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BE4842791D38D15A000EFFEB /* LocalMusicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalMusicViewController.h; sourceTree = "<group>"; };
+		BE48427A1D38D15A000EFFEB /* LocalMusicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalMusicViewController.m; sourceTree = "<group>"; };
+		BE48427C1D38D7C7000EFFEB /* 1201111234.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1201111234.mp3; sourceTree = "<group>"; };
+		BE73B77E1D37672B006BDF21 /* WYAVFoundationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WYAVFoundationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE73B7821D37672B006BDF21 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BE73B7841D37672B006BDF21 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BE73B7851D37672B006BDF21 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BE73B7871D37672B006BDF21 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		BE73B7881D37672B006BDF21 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BE73B78B1D37672B006BDF21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BE73B78D1D37672B006BDF21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BE73B7901D37672B006BDF21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BE73B7921D37672B006BDF21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE73B7971D37672B006BDF21 /* WYAVFoundationDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WYAVFoundationDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE73B79B1D37672B006BDF21 /* WYAVFoundationDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYAVFoundationDemoTests.m; sourceTree = "<group>"; };
+		BE73B79D1D37672B006BDF21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE73B7A21D37672B006BDF21 /* WYAVFoundationDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WYAVFoundationDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE73B7A61D37672B006BDF21 /* WYAVFoundationDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYAVFoundationDemoUITests.m; sourceTree = "<group>"; };
+		BE73B7A81D37672B006BDF21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE73B7B41D376B9E006BDF21 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		BE73B7B51D376B9E006BDF21 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		BE73B7B81D377CC1006BDF21 /* WYAVManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYAVManager.h; sourceTree = "<group>"; };
+		BE73B7B91D377CC1006BDF21 /* WYAVManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYAVManager.m; sourceTree = "<group>"; };
+		BE73B7BB1D37931F006BDF21 /* SoundViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundViewController.h; sourceTree = "<group>"; };
+		BE73B7BC1D37931F006BDF21 /* SoundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundViewController.m; sourceTree = "<group>"; };
+		BE73B7BF1D37974E006BDF21 /* lose.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = lose.aac; sourceTree = "<group>"; };
+		BEDB40B61D45DB1A007F19F7 /* NetMovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetMovieViewController.h; sourceTree = "<group>"; };
+		BEDB40B71D45DB1A007F19F7 /* NetMovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetMovieViewController.m; sourceTree = "<group>"; };
+		BEDB40B91D45E068007F19F7 /* MovieItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MovieItem.h; path = WYAVFoundation/MovieItem.h; sourceTree = "<group>"; };
+		BEDB40BA1D45E068007F19F7 /* MovieItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MovieItem.m; path = WYAVFoundation/MovieItem.m; sourceTree = "<group>"; };
+		BEDB40BC1D45E219007F19F7 /* MovieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieCell.h; sourceTree = "<group>"; };
+		BEDB40BD1D45E219007F19F7 /* MovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
+		BEDB40BF1D45E238007F19F7 /* MovieCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MovieCell.xib; path = WYAVFoundation/MovieCell.xib; sourceTree = "<group>"; };
+		BEFCFAF41D476A9300F1ABF9 /* WYResourceLoaderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYResourceLoaderManager.h; sourceTree = "<group>"; };
+		BEFCFAF51D476A9300F1ABF9 /* WYResourceLoaderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYResourceLoaderManager.m; sourceTree = "<group>"; };
+		BEFCFAF71D476EB400F1ABF9 /* AVResourceLoaderTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVResourceLoaderTask.h; sourceTree = "<group>"; };
+		BEFCFAF81D476EB400F1ABF9 /* AVResourceLoaderTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVResourceLoaderTask.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BE73B77B1D37672B006BDF21 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE73B7941D37672B006BDF21 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE73B79F1D37672B006BDF21 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BE73B7751D37672B006BDF21 = {
+			isa = PBXGroup;
+			children = (
+				BE73B7801D37672B006BDF21 /* WYAVFoundationDemo */,
+				BE73B79A1D37672B006BDF21 /* WYAVFoundationDemoTests */,
+				BE73B7A51D37672B006BDF21 /* WYAVFoundationDemoUITests */,
+				BE73B77F1D37672B006BDF21 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BE73B77F1D37672B006BDF21 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BE73B77E1D37672B006BDF21 /* WYAVFoundationDemo.app */,
+				BE73B7971D37672B006BDF21 /* WYAVFoundationDemoTests.xctest */,
+				BE73B7A21D37672B006BDF21 /* WYAVFoundationDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BE73B7801D37672B006BDF21 /* WYAVFoundationDemo */ = {
+			isa = PBXGroup;
+			children = (
+				BE73B7B71D377CA6006BDF21 /* WYAVFoundation */,
+				BE73B7841D37672B006BDF21 /* AppDelegate.h */,
+				BE73B7851D37672B006BDF21 /* AppDelegate.m */,
+				BE73B7871D37672B006BDF21 /* ViewController.h */,
+				BE73B7881D37672B006BDF21 /* ViewController.m */,
+				BE73B7BB1D37931F006BDF21 /* SoundViewController.h */,
+				BE73B7BC1D37931F006BDF21 /* SoundViewController.m */,
+				BE73B7B41D376B9E006BDF21 /* TableViewController.h */,
+				BE73B7B51D376B9E006BDF21 /* TableViewController.m */,
+				BE4842791D38D15A000EFFEB /* LocalMusicViewController.h */,
+				BE48427A1D38D15A000EFFEB /* LocalMusicViewController.m */,
+				BEDB40B61D45DB1A007F19F7 /* NetMovieViewController.h */,
+				BEDB40B71D45DB1A007F19F7 /* NetMovieViewController.m */,
+				BEDB40B91D45E068007F19F7 /* MovieItem.h */,
+				BEDB40BA1D45E068007F19F7 /* MovieItem.m */,
+				BEDB40BC1D45E219007F19F7 /* MovieCell.h */,
+				BEDB40BD1D45E219007F19F7 /* MovieCell.m */,
+				BEDB40BF1D45E238007F19F7 /* MovieCell.xib */,
+				BE73B78A1D37672B006BDF21 /* Main.storyboard */,
+				BE73B7BF1D37974E006BDF21 /* lose.aac */,
+				BE48427C1D38D7C7000EFFEB /* 1201111234.mp3 */,
+				BE73B78D1D37672B006BDF21 /* Assets.xcassets */,
+				BE73B78F1D37672B006BDF21 /* LaunchScreen.storyboard */,
+				BE73B7921D37672B006BDF21 /* Info.plist */,
+				BE73B7811D37672B006BDF21 /* Supporting Files */,
+			);
+			path = WYAVFoundationDemo;
+			sourceTree = "<group>";
+		};
+		BE73B7811D37672B006BDF21 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BE73B7821D37672B006BDF21 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BE73B79A1D37672B006BDF21 /* WYAVFoundationDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				BE73B79B1D37672B006BDF21 /* WYAVFoundationDemoTests.m */,
+				BE73B79D1D37672B006BDF21 /* Info.plist */,
+			);
+			path = WYAVFoundationDemoTests;
+			sourceTree = "<group>";
+		};
+		BE73B7A51D37672B006BDF21 /* WYAVFoundationDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BE73B7A61D37672B006BDF21 /* WYAVFoundationDemoUITests.m */,
+				BE73B7A81D37672B006BDF21 /* Info.plist */,
+			);
+			path = WYAVFoundationDemoUITests;
+			sourceTree = "<group>";
+		};
+		BE73B7B71D377CA6006BDF21 /* WYAVFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				BE73B7B81D377CC1006BDF21 /* WYAVManager.h */,
+				BE73B7B91D377CC1006BDF21 /* WYAVManager.m */,
+				BEFCFAF41D476A9300F1ABF9 /* WYResourceLoaderManager.h */,
+				BEFCFAF51D476A9300F1ABF9 /* WYResourceLoaderManager.m */,
+				BEFCFAF71D476EB400F1ABF9 /* AVResourceLoaderTask.h */,
+				BEFCFAF81D476EB400F1ABF9 /* AVResourceLoaderTask.m */,
+			);
+			path = WYAVFoundation;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BE73B77D1D37672B006BDF21 /* WYAVFoundationDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE73B7AB1D37672B006BDF21 /* Build configuration list for PBXNativeTarget "WYAVFoundationDemo" */;
+			buildPhases = (
+				BE73B77A1D37672B006BDF21 /* Sources */,
+				BE73B77B1D37672B006BDF21 /* Frameworks */,
+				BE73B77C1D37672B006BDF21 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WYAVFoundationDemo;
+			productName = WYAVFoundationDemo;
+			productReference = BE73B77E1D37672B006BDF21 /* WYAVFoundationDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BE73B7961D37672B006BDF21 /* WYAVFoundationDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE73B7AE1D37672B006BDF21 /* Build configuration list for PBXNativeTarget "WYAVFoundationDemoTests" */;
+			buildPhases = (
+				BE73B7931D37672B006BDF21 /* Sources */,
+				BE73B7941D37672B006BDF21 /* Frameworks */,
+				BE73B7951D37672B006BDF21 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE73B7991D37672B006BDF21 /* PBXTargetDependency */,
+			);
+			name = WYAVFoundationDemoTests;
+			productName = WYAVFoundationDemoTests;
+			productReference = BE73B7971D37672B006BDF21 /* WYAVFoundationDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BE73B7A11D37672B006BDF21 /* WYAVFoundationDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE73B7B11D37672B006BDF21 /* Build configuration list for PBXNativeTarget "WYAVFoundationDemoUITests" */;
+			buildPhases = (
+				BE73B79E1D37672B006BDF21 /* Sources */,
+				BE73B79F1D37672B006BDF21 /* Frameworks */,
+				BE73B7A01D37672B006BDF21 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE73B7A41D37672B006BDF21 /* PBXTargetDependency */,
+			);
+			name = WYAVFoundationDemoUITests;
+			productName = WYAVFoundationDemoUITests;
+			productReference = BE73B7A21D37672B006BDF21 /* WYAVFoundationDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BE73B7761D37672B006BDF21 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = yunyao;
+				TargetAttributes = {
+					BE73B77D1D37672B006BDF21 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					BE73B7961D37672B006BDF21 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = BE73B77D1D37672B006BDF21;
+					};
+					BE73B7A11D37672B006BDF21 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = BE73B77D1D37672B006BDF21;
+					};
+				};
+			};
+			buildConfigurationList = BE73B7791D37672B006BDF21 /* Build configuration list for PBXProject "WYAVFoundationDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BE73B7751D37672B006BDF21;
+			productRefGroup = BE73B77F1D37672B006BDF21 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BE73B77D1D37672B006BDF21 /* WYAVFoundationDemo */,
+				BE73B7961D37672B006BDF21 /* WYAVFoundationDemoTests */,
+				BE73B7A11D37672B006BDF21 /* WYAVFoundationDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BE73B77C1D37672B006BDF21 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE73B7911D37672B006BDF21 /* LaunchScreen.storyboard in Resources */,
+				BE48427D1D38D7C7000EFFEB /* 1201111234.mp3 in Resources */,
+				BE73B78E1D37672B006BDF21 /* Assets.xcassets in Resources */,
+				BEDB40C01D45E238007F19F7 /* MovieCell.xib in Resources */,
+				BE73B7C01D37974E006BDF21 /* lose.aac in Resources */,
+				BE73B78C1D37672B006BDF21 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE73B7951D37672B006BDF21 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE73B7A01D37672B006BDF21 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BE73B77A1D37672B006BDF21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE73B7BA1D377CC1006BDF21 /* WYAVManager.m in Sources */,
+				BEDB40B81D45DB1A007F19F7 /* NetMovieViewController.m in Sources */,
+				BEDB40BB1D45E068007F19F7 /* MovieItem.m in Sources */,
+				BE73B7891D37672B006BDF21 /* ViewController.m in Sources */,
+				BE73B7BD1D37931F006BDF21 /* SoundViewController.m in Sources */,
+				BE48427B1D38D15A000EFFEB /* LocalMusicViewController.m in Sources */,
+				BEFCFAF91D476EB400F1ABF9 /* AVResourceLoaderTask.m in Sources */,
+				BEDB40BE1D45E219007F19F7 /* MovieCell.m in Sources */,
+				BE73B7861D37672B006BDF21 /* AppDelegate.m in Sources */,
+				BE73B7831D37672B006BDF21 /* main.m in Sources */,
+				BEFCFAF61D476A9300F1ABF9 /* WYResourceLoaderManager.m in Sources */,
+				BE73B7B61D376B9E006BDF21 /* TableViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE73B7931D37672B006BDF21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE73B79C1D37672B006BDF21 /* WYAVFoundationDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE73B79E1D37672B006BDF21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE73B7A71D37672B006BDF21 /* WYAVFoundationDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BE73B7991D37672B006BDF21 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE73B77D1D37672B006BDF21 /* WYAVFoundationDemo */;
+			targetProxy = BE73B7981D37672B006BDF21 /* PBXContainerItemProxy */;
+		};
+		BE73B7A41D37672B006BDF21 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE73B77D1D37672B006BDF21 /* WYAVFoundationDemo */;
+			targetProxy = BE73B7A31D37672B006BDF21 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BE73B78A1D37672B006BDF21 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE73B78B1D37672B006BDF21 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BE73B78F1D37672B006BDF21 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE73B7901D37672B006BDF21 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BE73B7A91D37672B006BDF21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BE73B7AA1D37672B006BDF21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BE73B7AC1D37672B006BDF21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WYAVFoundationDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yunyao.demo.WYAVFoundationDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BE73B7AD1D37672B006BDF21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WYAVFoundationDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yunyao.demo.WYAVFoundationDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		BE73B7AF1D37672B006BDF21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WYAVFoundationDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yunyao.demo.WYAVFoundationDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WYAVFoundationDemo.app/WYAVFoundationDemo";
+			};
+			name = Debug;
+		};
+		BE73B7B01D37672B006BDF21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WYAVFoundationDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yunyao.demo.WYAVFoundationDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WYAVFoundationDemo.app/WYAVFoundationDemo";
+			};
+			name = Release;
+		};
+		BE73B7B21D37672B006BDF21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WYAVFoundationDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yunyao.demo.WYAVFoundationDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WYAVFoundationDemo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		BE73B7B31D37672B006BDF21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WYAVFoundationDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yunyao.demo.WYAVFoundationDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WYAVFoundationDemo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BE73B7791D37672B006BDF21 /* Build configuration list for PBXProject "WYAVFoundationDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE73B7A91D37672B006BDF21 /* Debug */,
+				BE73B7AA1D37672B006BDF21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE73B7AB1D37672B006BDF21 /* Build configuration list for PBXNativeTarget "WYAVFoundationDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE73B7AC1D37672B006BDF21 /* Debug */,
+				BE73B7AD1D37672B006BDF21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE73B7AE1D37672B006BDF21 /* Build configuration list for PBXNativeTarget "WYAVFoundationDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE73B7AF1D37672B006BDF21 /* Debug */,
+				BE73B7B01D37672B006BDF21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE73B7B11D37672B006BDF21 /* Build configuration list for PBXNativeTarget "WYAVFoundationDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE73B7B21D37672B006BDF21 /* Debug */,
+				BE73B7B31D37672B006BDF21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BE73B7761D37672B006BDF21 /* Project object */;
+}
