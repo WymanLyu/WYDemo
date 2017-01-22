@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2659" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TransitionViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dg3-ZR-GvC">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="G7k-ih-0zj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <blurEffect style="light"/>
+                </visualEffectView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_irate" translatesAutoresizingMaskIntoConstraints="NO" id="Pbg-Hh-FzJ">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="237"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="237" id="hBm-FK-RDJ"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Pbg-Hh-FzJ" secondAttribute="trailing" id="1Jn-5e-GUl"/>
+                <constraint firstItem="Pbg-Hh-FzJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="CCP-HG-yNO"/>
+                <constraint firstItem="Pbg-Hh-FzJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="FuB-Si-Bsk"/>
+                <constraint firstAttribute="trailing" secondItem="Dg3-ZR-GvC" secondAttribute="trailing" id="Lt1-xM-V7p"/>
+                <constraint firstItem="Dg3-ZR-GvC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dn1-jc-6ky"/>
+                <constraint firstItem="Dg3-ZR-GvC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="gbI-1T-LKT"/>
+                <constraint firstAttribute="bottom" secondItem="Dg3-ZR-GvC" secondAttribute="bottom" id="lHp-Vj-Pet"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="background_irate" width="320" height="237"/>
+    </resources>
+</document>

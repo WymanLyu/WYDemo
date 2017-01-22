@@ -1,0 +1,591 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F59A0B431E0A6E0900CE20B2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F59A0B421E0A6E0900CE20B2 /* main.m */; };
+		F59A0B461E0A6E0900CE20B2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F59A0B451E0A6E0900CE20B2 /* AppDelegate.m */; };
+		F59A0B491E0A6E0900CE20B2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F59A0B481E0A6E0900CE20B2 /* ViewController.m */; };
+		F59A0B4C1E0A6E0900CE20B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F59A0B4A1E0A6E0900CE20B2 /* Main.storyboard */; };
+		F59A0B4E1E0A6E0900CE20B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F59A0B4D1E0A6E0900CE20B2 /* Assets.xcassets */; };
+		F59A0B511E0A6E0A00CE20B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F59A0B4F1E0A6E0A00CE20B2 /* LaunchScreen.storyboard */; };
+		F59A0B5C1E0A6E0A00CE20B2 /* _2_12WYEventTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F59A0B5B1E0A6E0A00CE20B2 /* _2_12WYEventTests.m */; };
+		F59A0B671E0A6E0A00CE20B2 /* _2_12WYEventUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F59A0B661E0A6E0A00CE20B2 /* _2_12WYEventUITests.m */; };
+		F59A0B771E0A6E4100CE20B2 /* View0.m in Sources */ = {isa = PBXBuildFile; fileRef = F59A0B761E0A6E4100CE20B2 /* View0.m */; };
+		F59A0B7A1E0A6E5400CE20B2 /* View1.m in Sources */ = {isa = PBXBuildFile; fileRef = F59A0B791E0A6E5400CE20B2 /* View1.m */; };
+		F59A0B7E1E0A704400CE20B2 /* WYEventCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = F59A0B7D1E0A704400CE20B2 /* WYEventCenter.m */; };
+		F59A0B811E0A730700CE20B2 /* WYEventCourier.m in Sources */ = {isa = PBXBuildFile; fileRef = F59A0B801E0A730700CE20B2 /* WYEventCourier.m */; };
+		F59A0B851E0A8B8600CE20B2 /* TestController.m in Sources */ = {isa = PBXBuildFile; fileRef = F59A0B841E0A8B8600CE20B2 /* TestController.m */; };
+		F59A0B891E0B663700CE20B2 /* NSObject+WYEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = F59A0B881E0B663700CE20B2 /* NSObject+WYEvent.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F59A0B581E0A6E0A00CE20B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F59A0B361E0A6E0900CE20B2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F59A0B3D1E0A6E0900CE20B2;
+			remoteInfo = "12-12WYEvent";
+		};
+		F59A0B631E0A6E0A00CE20B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F59A0B361E0A6E0900CE20B2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F59A0B3D1E0A6E0900CE20B2;
+			remoteInfo = "12-12WYEvent";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F59A0B3E1E0A6E0900CE20B2 /* 12-12WYEvent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "12-12WYEvent.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F59A0B421E0A6E0900CE20B2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F59A0B441E0A6E0900CE20B2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F59A0B451E0A6E0900CE20B2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F59A0B471E0A6E0900CE20B2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F59A0B481E0A6E0900CE20B2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F59A0B4B1E0A6E0900CE20B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F59A0B4D1E0A6E0900CE20B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F59A0B501E0A6E0A00CE20B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F59A0B521E0A6E0A00CE20B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F59A0B571E0A6E0A00CE20B2 /* 12-12WYEventTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "12-12WYEventTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F59A0B5B1E0A6E0A00CE20B2 /* _2_12WYEventTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _2_12WYEventTests.m; sourceTree = "<group>"; };
+		F59A0B5D1E0A6E0A00CE20B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F59A0B621E0A6E0A00CE20B2 /* 12-12WYEventUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "12-12WYEventUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F59A0B661E0A6E0A00CE20B2 /* _2_12WYEventUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _2_12WYEventUITests.m; sourceTree = "<group>"; };
+		F59A0B681E0A6E0A00CE20B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F59A0B751E0A6E4100CE20B2 /* View0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View0.h; sourceTree = "<group>"; };
+		F59A0B761E0A6E4100CE20B2 /* View0.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = View0.m; sourceTree = "<group>"; };
+		F59A0B781E0A6E5400CE20B2 /* View1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View1.h; sourceTree = "<group>"; };
+		F59A0B791E0A6E5400CE20B2 /* View1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = View1.m; sourceTree = "<group>"; };
+		F59A0B7C1E0A704400CE20B2 /* WYEventCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYEventCenter.h; sourceTree = "<group>"; };
+		F59A0B7D1E0A704400CE20B2 /* WYEventCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYEventCenter.m; sourceTree = "<group>"; };
+		F59A0B7F1E0A730700CE20B2 /* WYEventCourier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYEventCourier.h; sourceTree = "<group>"; };
+		F59A0B801E0A730700CE20B2 /* WYEventCourier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYEventCourier.m; sourceTree = "<group>"; };
+		F59A0B821E0A813B00CE20B2 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		F59A0B831E0A8B8600CE20B2 /* TestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestController.h; sourceTree = "<group>"; };
+		F59A0B841E0A8B8600CE20B2 /* TestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestController.m; sourceTree = "<group>"; };
+		F59A0B861E0A8E7D00CE20B2 /* NSObject_WY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSObject_WY.h; sourceTree = "<group>"; };
+		F59A0B871E0B663700CE20B2 /* NSObject+WYEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+WYEvent.h"; sourceTree = "<group>"; };
+		F59A0B881E0B663700CE20B2 /* NSObject+WYEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+WYEvent.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F59A0B3B1E0A6E0900CE20B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F59A0B541E0A6E0A00CE20B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F59A0B5F1E0A6E0A00CE20B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F59A0B351E0A6E0900CE20B2 = {
+			isa = PBXGroup;
+			children = (
+				F59A0B401E0A6E0900CE20B2 /* 12-12WYEvent */,
+				F59A0B5A1E0A6E0A00CE20B2 /* 12-12WYEventTests */,
+				F59A0B651E0A6E0A00CE20B2 /* 12-12WYEventUITests */,
+				F59A0B3F1E0A6E0900CE20B2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F59A0B3F1E0A6E0900CE20B2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F59A0B3E1E0A6E0900CE20B2 /* 12-12WYEvent.app */,
+				F59A0B571E0A6E0A00CE20B2 /* 12-12WYEventTests.xctest */,
+				F59A0B621E0A6E0A00CE20B2 /* 12-12WYEventUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F59A0B401E0A6E0900CE20B2 /* 12-12WYEvent */ = {
+			isa = PBXGroup;
+			children = (
+				F59A0B7B1E0A702B00CE20B2 /* EventCenter */,
+				F59A0B741E0A6E1800CE20B2 /* view */,
+				F59A0B441E0A6E0900CE20B2 /* AppDelegate.h */,
+				F59A0B451E0A6E0900CE20B2 /* AppDelegate.m */,
+				F59A0B471E0A6E0900CE20B2 /* ViewController.h */,
+				F59A0B481E0A6E0900CE20B2 /* ViewController.m */,
+				F59A0B4A1E0A6E0900CE20B2 /* Main.storyboard */,
+				F59A0B4D1E0A6E0900CE20B2 /* Assets.xcassets */,
+				F59A0B4F1E0A6E0A00CE20B2 /* LaunchScreen.storyboard */,
+				F59A0B521E0A6E0A00CE20B2 /* Info.plist */,
+				F59A0B411E0A6E0900CE20B2 /* Supporting Files */,
+				F59A0B821E0A813B00CE20B2 /* PrefixHeader.pch */,
+				F59A0B831E0A8B8600CE20B2 /* TestController.h */,
+				F59A0B841E0A8B8600CE20B2 /* TestController.m */,
+			);
+			path = "12-12WYEvent";
+			sourceTree = "<group>";
+		};
+		F59A0B411E0A6E0900CE20B2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F59A0B421E0A6E0900CE20B2 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F59A0B5A1E0A6E0A00CE20B2 /* 12-12WYEventTests */ = {
+			isa = PBXGroup;
+			children = (
+				F59A0B5B1E0A6E0A00CE20B2 /* _2_12WYEventTests.m */,
+				F59A0B5D1E0A6E0A00CE20B2 /* Info.plist */,
+			);
+			path = "12-12WYEventTests";
+			sourceTree = "<group>";
+		};
+		F59A0B651E0A6E0A00CE20B2 /* 12-12WYEventUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F59A0B661E0A6E0A00CE20B2 /* _2_12WYEventUITests.m */,
+				F59A0B681E0A6E0A00CE20B2 /* Info.plist */,
+			);
+			path = "12-12WYEventUITests";
+			sourceTree = "<group>";
+		};
+		F59A0B741E0A6E1800CE20B2 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				F59A0B751E0A6E4100CE20B2 /* View0.h */,
+				F59A0B761E0A6E4100CE20B2 /* View0.m */,
+				F59A0B781E0A6E5400CE20B2 /* View1.h */,
+				F59A0B791E0A6E5400CE20B2 /* View1.m */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		F59A0B7B1E0A702B00CE20B2 /* EventCenter */ = {
+			isa = PBXGroup;
+			children = (
+				F59A0B7C1E0A704400CE20B2 /* WYEventCenter.h */,
+				F59A0B7D1E0A704400CE20B2 /* WYEventCenter.m */,
+				F59A0B7F1E0A730700CE20B2 /* WYEventCourier.h */,
+				F59A0B801E0A730700CE20B2 /* WYEventCourier.m */,
+				F59A0B861E0A8E7D00CE20B2 /* NSObject_WY.h */,
+				F59A0B871E0B663700CE20B2 /* NSObject+WYEvent.h */,
+				F59A0B881E0B663700CE20B2 /* NSObject+WYEvent.m */,
+			);
+			path = EventCenter;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F59A0B3D1E0A6E0900CE20B2 /* 12-12WYEvent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F59A0B6B1E0A6E0A00CE20B2 /* Build configuration list for PBXNativeTarget "12-12WYEvent" */;
+			buildPhases = (
+				F59A0B3A1E0A6E0900CE20B2 /* Sources */,
+				F59A0B3B1E0A6E0900CE20B2 /* Frameworks */,
+				F59A0B3C1E0A6E0900CE20B2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "12-12WYEvent";
+			productName = "12-12WYEvent";
+			productReference = F59A0B3E1E0A6E0900CE20B2 /* 12-12WYEvent.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F59A0B561E0A6E0A00CE20B2 /* 12-12WYEventTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F59A0B6E1E0A6E0A00CE20B2 /* Build configuration list for PBXNativeTarget "12-12WYEventTests" */;
+			buildPhases = (
+				F59A0B531E0A6E0A00CE20B2 /* Sources */,
+				F59A0B541E0A6E0A00CE20B2 /* Frameworks */,
+				F59A0B551E0A6E0A00CE20B2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F59A0B591E0A6E0A00CE20B2 /* PBXTargetDependency */,
+			);
+			name = "12-12WYEventTests";
+			productName = "12-12WYEventTests";
+			productReference = F59A0B571E0A6E0A00CE20B2 /* 12-12WYEventTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F59A0B611E0A6E0A00CE20B2 /* 12-12WYEventUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F59A0B711E0A6E0A00CE20B2 /* Build configuration list for PBXNativeTarget "12-12WYEventUITests" */;
+			buildPhases = (
+				F59A0B5E1E0A6E0A00CE20B2 /* Sources */,
+				F59A0B5F1E0A6E0A00CE20B2 /* Frameworks */,
+				F59A0B601E0A6E0A00CE20B2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F59A0B641E0A6E0A00CE20B2 /* PBXTargetDependency */,
+			);
+			name = "12-12WYEventUITests";
+			productName = "12-12WYEventUITests";
+			productReference = F59A0B621E0A6E0A00CE20B2 /* 12-12WYEventUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F59A0B361E0A6E0900CE20B2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = tykj;
+				TargetAttributes = {
+					F59A0B3D1E0A6E0900CE20B2 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+					F59A0B561E0A6E0A00CE20B2 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F59A0B3D1E0A6E0900CE20B2;
+					};
+					F59A0B611E0A6E0A00CE20B2 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F59A0B3D1E0A6E0900CE20B2;
+					};
+				};
+			};
+			buildConfigurationList = F59A0B391E0A6E0900CE20B2 /* Build configuration list for PBXProject "12-12WYEvent" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F59A0B351E0A6E0900CE20B2;
+			productRefGroup = F59A0B3F1E0A6E0900CE20B2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F59A0B3D1E0A6E0900CE20B2 /* 12-12WYEvent */,
+				F59A0B561E0A6E0A00CE20B2 /* 12-12WYEventTests */,
+				F59A0B611E0A6E0A00CE20B2 /* 12-12WYEventUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F59A0B3C1E0A6E0900CE20B2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F59A0B511E0A6E0A00CE20B2 /* LaunchScreen.storyboard in Resources */,
+				F59A0B4E1E0A6E0900CE20B2 /* Assets.xcassets in Resources */,
+				F59A0B4C1E0A6E0900CE20B2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F59A0B551E0A6E0A00CE20B2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F59A0B601E0A6E0A00CE20B2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F59A0B3A1E0A6E0900CE20B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F59A0B491E0A6E0900CE20B2 /* ViewController.m in Sources */,
+				F59A0B7A1E0A6E5400CE20B2 /* View1.m in Sources */,
+				F59A0B811E0A730700CE20B2 /* WYEventCourier.m in Sources */,
+				F59A0B771E0A6E4100CE20B2 /* View0.m in Sources */,
+				F59A0B891E0B663700CE20B2 /* NSObject+WYEvent.m in Sources */,
+				F59A0B461E0A6E0900CE20B2 /* AppDelegate.m in Sources */,
+				F59A0B431E0A6E0900CE20B2 /* main.m in Sources */,
+				F59A0B7E1E0A704400CE20B2 /* WYEventCenter.m in Sources */,
+				F59A0B851E0A8B8600CE20B2 /* TestController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F59A0B531E0A6E0A00CE20B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F59A0B5C1E0A6E0A00CE20B2 /* _2_12WYEventTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F59A0B5E1E0A6E0A00CE20B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F59A0B671E0A6E0A00CE20B2 /* _2_12WYEventUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F59A0B591E0A6E0A00CE20B2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F59A0B3D1E0A6E0900CE20B2 /* 12-12WYEvent */;
+			targetProxy = F59A0B581E0A6E0A00CE20B2 /* PBXContainerItemProxy */;
+		};
+		F59A0B641E0A6E0A00CE20B2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F59A0B3D1E0A6E0900CE20B2 /* 12-12WYEvent */;
+			targetProxy = F59A0B631E0A6E0A00CE20B2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F59A0B4A1E0A6E0900CE20B2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F59A0B4B1E0A6E0900CE20B2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F59A0B4F1E0A6E0A00CE20B2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F59A0B501E0A6E0A00CE20B2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F59A0B691E0A6E0A00CE20B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F59A0B6A1E0A6E0A00CE20B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F59A0B6C1E0A6E0A00CE20B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "12-12WYEvent/PrefixHeader.pch";
+				INFOPLIST_FILE = "12-12WYEvent/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tykj.-2-12WYEvent";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F59A0B6D1E0A6E0A00CE20B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "12-12WYEvent/PrefixHeader.pch";
+				INFOPLIST_FILE = "12-12WYEvent/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tykj.-2-12WYEvent";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F59A0B6F1E0A6E0A00CE20B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "12-12WYEventTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tykj.-2-12WYEventTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/12-12WYEvent.app/12-12WYEvent";
+			};
+			name = Debug;
+		};
+		F59A0B701E0A6E0A00CE20B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "12-12WYEventTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tykj.-2-12WYEventTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/12-12WYEvent.app/12-12WYEvent";
+			};
+			name = Release;
+		};
+		F59A0B721E0A6E0A00CE20B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "12-12WYEventUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tykj.-2-12WYEventUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "12-12WYEvent";
+			};
+			name = Debug;
+		};
+		F59A0B731E0A6E0A00CE20B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "12-12WYEventUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tykj.-2-12WYEventUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "12-12WYEvent";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F59A0B391E0A6E0900CE20B2 /* Build configuration list for PBXProject "12-12WYEvent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F59A0B691E0A6E0A00CE20B2 /* Debug */,
+				F59A0B6A1E0A6E0A00CE20B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F59A0B6B1E0A6E0A00CE20B2 /* Build configuration list for PBXNativeTarget "12-12WYEvent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F59A0B6C1E0A6E0A00CE20B2 /* Debug */,
+				F59A0B6D1E0A6E0A00CE20B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F59A0B6E1E0A6E0A00CE20B2 /* Build configuration list for PBXNativeTarget "12-12WYEventTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F59A0B6F1E0A6E0A00CE20B2 /* Debug */,
+				F59A0B701E0A6E0A00CE20B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F59A0B711E0A6E0A00CE20B2 /* Build configuration list for PBXNativeTarget "12-12WYEventUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F59A0B721E0A6E0A00CE20B2 /* Debug */,
+				F59A0B731E0A6E0A00CE20B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F59A0B361E0A6E0900CE20B2 /* Project object */;
+}
