@@ -103,9 +103,9 @@
 
 - (IBAction)doneClick:(id)sender {
     
-    [self.outputImgView resignFirstResponder];
+    [self.urlTextField resignFirstResponder];
     
-    // 1.获取路径
+    // 1.获取路径/Users/wyman/Desktop/2C91698D-784C-468D-A6B8-3FA6AE4DD533.png
     NSString *imagePath = self.urlTextField.text;
     
     // 2.获取图片url
@@ -127,7 +127,7 @@
     NSArray *arr = [CIFilter filterNamesInCategory:kCICategoryBlur];
     NSLog(@"%@", arr);
     // 获取高斯滤镜
-    CIFilter *filter = [CIFilter filterWithName:@"CIMotionBlur"];
+    CIFilter *filter = [CIFilter filterWithName:@"CIGaussianBlur"];
     // 查询属性
     NSLog(@"%@", filter.attributes);
     
@@ -139,7 +139,7 @@
         // 设置模糊半径
         [filter setValue:@2 forKey:@"inputRadius"];
         // 设置模糊角度
-        [filter setValue:@40 forKey:@"inputRadius"];
+        [filter setValue:@2 forKey:@"inputRadius"];
         // 7.获取输出
         CIImage *outImage = [filter valueForKey:kCIOutputImageKey];
         // 回主线程渲染
@@ -149,9 +149,9 @@
             self.outputImgView.image = [UIImage imageWithCGImage:outImageRef];
             CGImageRelease(outImageRef);
         });
-        
+
     });
-    
+
 
     CGImageRelease(inImageRef);
 }

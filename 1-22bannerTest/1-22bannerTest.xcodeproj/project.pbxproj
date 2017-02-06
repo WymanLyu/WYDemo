@@ -24,6 +24,7 @@
 		F509C1B01E34527300239F3A /* WYMagicLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F509C1AA1E34527300239F3A /* WYMagicLayout.m */; };
 		F509C1B11E34527300239F3A /* WYMagicView.m in Sources */ = {isa = PBXBuildFile; fileRef = F509C1AC1E34527300239F3A /* WYMagicView.m */; };
 		F509C1B31E34A56400239F3A /* 主题2.png in Resources */ = {isa = PBXBuildFile; fileRef = F509C1B21E34A56400239F3A /* 主题2.png */; };
+		F509C1B51E35E42000239F3A /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = F509C1B41E35E42000239F3A /* bg.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		F509C1AB1E34527300239F3A /* WYMagicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYMagicView.h; sourceTree = "<group>"; };
 		F509C1AC1E34527300239F3A /* WYMagicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYMagicView.m; sourceTree = "<group>"; };
 		F509C1B21E34A56400239F3A /* 主题2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "主题2.png"; sourceTree = "<group>"; };
+		F509C1B41E35E42000239F3A /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 				F509C1761E34522D00239F3A /* ViewController.m */,
 				F509C1781E34522D00239F3A /* Main.storyboard */,
 				F509C1B21E34A56400239F3A /* 主题2.png */,
+				F509C1B41E35E42000239F3A /* bg.png */,
 				F509C17B1E34522D00239F3A /* Assets.xcassets */,
 				F509C17D1E34522D00239F3A /* LaunchScreen.storyboard */,
 				F509C1801E34522D00239F3A /* Info.plist */,
@@ -292,6 +295,7 @@
 				TargetAttributes = {
 					F509C16B1E34522D00239F3A = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 9T725P7UDK;
 						ProvisioningStyle = Automatic;
 					};
 					F509C1841E34522E00239F3A = {
@@ -331,6 +335,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F509C1B51E35E42000239F3A /* bg.png in Resources */,
 				F509C17F1E34522D00239F3A /* LaunchScreen.storyboard in Resources */,
 				F509C17C1E34522D00239F3A /* Assets.xcassets in Resources */,
 				F509C17A1E34522D00239F3A /* Main.storyboard in Resources */,
@@ -654,7 +659,9 @@
 			baseConfigurationReference = 48349F39FF84DC26BA14B5E7 /* Pods-1-22bannerTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9T725P7UDK;
 				INFOPLIST_FILE = "1-22bannerTest/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tykj.--22bannerTest";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -666,7 +673,9 @@
 			baseConfigurationReference = F4AF4C52268E04A38A000505 /* Pods-1-22bannerTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9T725P7UDK;
 				INFOPLIST_FILE = "1-22bannerTest/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tykj.--22bannerTest";
 				PRODUCT_NAME = "$(TARGET_NAME)";

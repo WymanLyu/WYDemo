@@ -67,7 +67,7 @@ static NSString *const kGlowImageName = @"gloweffect";
         // 图片视图
         _imgView = [UIImageView new];
         _imgView.frame = CGRectMake(0, 0, CGRectGetWidth(frame), CGRectGetHeight(frame));
-        _imgView.contentMode = UIViewContentModeScaleAspectFill;
+//        _imgView.contentMode = UIViewContentModeScaleAspectFill;
         [_contentView addSubview:_imgView];
         
         [self addSubview:_contentView];
