@@ -40,6 +40,16 @@ static const void *kWYFullPanGestureDelegateKey = &kWYFullPanGestureDelegateKey;
                 self.wy_navgationBar.backBtn.hidden = NO;
             }
         }
+        // 配置返回操作
+        __weak typeof(self)weakSelf = self;
+        if ([wy_navgationBar respondsToSelector:@selector(setCustomNavgationBackClick:)]) {
+            wy_navgationBar.customNavgationBackClick = ^{
+                if (weakSelf.navigationController.childViewControllers.count >= 2) {// 大于1则pop回去
+                    [weakSelf.navigationController popViewControllerAnimated:YES];
+                }
+            };
+        }
+
     }
 
     // 建立关联属性
@@ -164,6 +174,15 @@ static const void *kWYFullPanGestureDelegateKey = &kWYFullPanGestureDelegateKey;
             
         }
     }];
+    
+    // 6.对于继承WYCustomNavgationBar的自定义bar也提供返回按钮
+    if ([self.wy_navgationBar isKindOfClass:[WYCustomNavgationBar class]]) {
+        if (self.navigationController.childViewControllers.count >= 2) {// 大于1则显示返回按钮
+            if ([self.wy_navgationBar respondsToSelector:@selector(backBtn)]) {
+                self.wy_navgationBar.backBtn.hidden = NO;
+            }
+        }
+    }
     
     // 6.继续执行viewDidLoad
     [self wy_WYCustomNavigationBar_viewDidLoad];

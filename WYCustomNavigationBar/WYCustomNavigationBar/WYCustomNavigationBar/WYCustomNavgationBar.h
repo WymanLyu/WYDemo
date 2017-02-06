@@ -22,6 +22,9 @@
 /** 下边界线 */
 @property (nonatomic, readonly, weak) UIView *lineView;
 
+/** 标题 */
+@property (nonatomic, weak) UILabel *titleLbl;
+
 @end
 
 #pragma mark - 统一导航样式配置类

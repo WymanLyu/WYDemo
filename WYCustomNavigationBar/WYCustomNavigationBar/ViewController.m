@@ -21,6 +21,8 @@
    
     // Do any additional setup after loading the view, typically from a nib.
     
+    self.wy_navgationBar.titleLbl.text = @"测试测试";
+    
     UIButton *btn = [[UIButton alloc] init];
     [btn setBackgroundColor:[UIColor brownColor]];
     [btn setTitle:@"关闭/开启全屏侧滑" forState:UIControlStateNormal];

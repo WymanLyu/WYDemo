@@ -19,10 +19,9 @@
 		F555775B1E471357004E4BD0 /* WYCustomNavgationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F555775A1E471357004E4BD0 /* WYCustomNavgationBar.m */; };
 		F555775E1E471399004E4BD0 /* WYFullPanGestureDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F555775D1E471399004E4BD0 /* WYFullPanGestureDelegate.m */; };
 		F55577611E47140A004E4BD0 /* UIView+WYCustomNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F55577601E47140A004E4BD0 /* UIView+WYCustomNavigationBar.m */; };
-		F586207A1E471D1A00C4F222 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F58620781E471D1A00C4F222 /* back@2x.png */; };
-		F586207B1E471D1A00C4F222 /* back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F58620791E471D1A00C4F222 /* back@3x.png */; };
 		F586207E1E481A9800C4F222 /* CustomNavVc.m in Sources */ = {isa = PBXBuildFile; fileRef = F586207D1E481A9800C4F222 /* CustomNavVc.m */; };
 		F58620811E481EF300C4F222 /* AlphaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F58620801E481EF300C4F222 /* AlphaViewController.m */; };
+		F58620841E4853CA00C4F222 /* WYCustomNavigationBarBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F58620831E4853CA00C4F222 /* WYCustomNavigationBarBundle.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,13 +66,12 @@
 		F555775D1E471399004E4BD0 /* WYFullPanGestureDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYFullPanGestureDelegate.m; sourceTree = "<group>"; };
 		F555775F1E47140A004E4BD0 /* UIView+WYCustomNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WYCustomNavigationBar.h"; sourceTree = "<group>"; };
 		F55577601E47140A004E4BD0 /* UIView+WYCustomNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WYCustomNavigationBar.m"; sourceTree = "<group>"; };
-		F58620781E471D1A00C4F222 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
-		F58620791E471D1A00C4F222 /* back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@3x.png"; sourceTree = "<group>"; };
 		F586207C1E481A9800C4F222 /* CustomNavVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavVc.h; sourceTree = "<group>"; };
 		F586207D1E481A9800C4F222 /* CustomNavVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavVc.m; sourceTree = "<group>"; };
 		F586207F1E481EF300C4F222 /* AlphaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlphaViewController.h; sourceTree = "<group>"; };
 		F58620801E481EF300C4F222 /* AlphaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlphaViewController.m; sourceTree = "<group>"; };
 		F58620821E48216900C4F222 /* WYNavigationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYNavigationBar.h; sourceTree = "<group>"; };
+		F58620831E4853CA00C4F222 /* WYCustomNavigationBarBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WYCustomNavigationBarBundle.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,8 +178,7 @@
 				F555775D1E471399004E4BD0 /* WYFullPanGestureDelegate.m */,
 				F555775F1E47140A004E4BD0 /* UIView+WYCustomNavigationBar.h */,
 				F55577601E47140A004E4BD0 /* UIView+WYCustomNavigationBar.m */,
-				F58620781E471D1A00C4F222 /* back@2x.png */,
-				F58620791E471D1A00C4F222 /* back@3x.png */,
+				F58620831E4853CA00C4F222 /* WYCustomNavigationBarBundle.bundle */,
 			);
 			path = WYCustomNavigationBar;
 			sourceTree = "<group>";
@@ -292,10 +289,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F58620841E4853CA00C4F222 /* WYCustomNavigationBarBundle.bundle in Resources */,
 				F55577311E471228004E4BD0 /* LaunchScreen.storyboard in Resources */,
 				F555772E1E471228004E4BD0 /* Assets.xcassets in Resources */,
-				F586207B1E471D1A00C4F222 /* back@3x.png in Resources */,
-				F586207A1E471D1A00C4F222 /* back@2x.png in Resources */,
 				F555772C1E471228004E4BD0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
