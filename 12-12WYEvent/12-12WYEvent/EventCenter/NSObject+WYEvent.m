@@ -16,7 +16,7 @@ static void *WYCustomObjectEventMarkingArrMKey = &WYCustomObjectEventMarkingArrM
 
 /** 发送事件 */
 - (void)wy_sendEvent:(NSString *const)marking something:(id)something callBack:(void(^)(id *res))result {
-    [WYEventCenter wy_sendEvent:marking withTarget:self something:something callBack:result];
+    [WYEventCenter wy_sendEvent:marking withSender:self something:something callBack:result];
 }
 
 /** 监听事件 */
@@ -40,11 +40,11 @@ static void *WYCustomObjectEventMarkingArrMKey = &WYCustomObjectEventMarkingArrM
 }
 
 - (NSMutableArray *)eventMarkingArrM {
-    NSMutableArray *arr = (NSMutableArray *)objc_getAssociatedObject(self,WYCustomObjectEventMarkingArrMKey);
-    if (!arr) {
-        arr = [NSMutableArray array];
+    NSMutableArray *eventMarkingArrM = (NSMutableArray *)objc_getAssociatedObject(self,WYCustomObjectEventMarkingArrMKey);
+    if (!eventMarkingArrM) {
+        eventMarkingArrM = [NSMutableArray array];
     }
-    return arr;
+    return eventMarkingArrM;
 }
 
 - (void)setEventMarkingArrM:(NSMutableArray *)eventMarkingArrM {

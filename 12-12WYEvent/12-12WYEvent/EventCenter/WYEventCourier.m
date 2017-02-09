@@ -7,35 +7,7 @@
 //
 
 #import "WYEventCourier.h"
-
-
-typedef id (^WeakReference)(void);
-
-WeakReference makeWeakReference(id object) {
-    __weak id weakref = object;
-    return ^{
-//        __strong id ref = weakref;
-        return weakref;
-    };
-}
-
-id weakReferenceNonretainedObjectValue(WeakReference ref) {
-    return ref ? ref() : nil;
-}
-
-@interface WYEvent : NSObject
-
-@property (nonatomic, copy) void(^eventHandle)(id noti, id *res);
-@property (nonatomic, copy) void(^eventBeforeHandle)(id noti, id *res);
-@property (nonatomic, copy) void(^eventAfterHandle)(id noti, id *res);
-
-@property (nonatomic, copy) void(^finish)(id *res);
-@property (nonatomic, strong) id noti;
-
-/** 监听者 */
-@property (nonatomic, strong) WeakReference target;
-
-@end
+#import "WYEvent.h"
 
 @interface WYEventCourier ()
 
@@ -56,7 +28,7 @@ static WYEventCourier *shareCourier = nil;
     return shareCourier;
 }
 
-
+#pragma mark - 事件回调执行
 // 执行
 - (void)handleEventForMarking:(NSString *)marking {
     
@@ -83,27 +55,25 @@ Finish:
     }
 }
 
-
-// 保存
+#pragma mark - 事件保存
 - (void)keepEventHandle:(void (^)(id, id *))handle forMarking:(NSString *)marking {
     WYEvent *event = [self.wy_map objectForKey:marking];
     if (!event) {
         event = [WYEvent new];
+        [self.wy_map setObject:event forKey:marking];
     }
     event.eventHandle = handle;
     // 弱引用target
     event.target = makeWeakReference(self);
-    [self.wy_map setObject:event forKey:marking];
 }
 
 - (void)keepFinishHandle:(void (^)(id *))handle forMarking:(NSString *)marking {
     WYEvent *event = [self.wy_map objectForKey:marking];
     if (!event) {
         event = [WYEvent new];
+        [self.wy_map setObject:event forKey:marking];
     }
     event.finish = handle;
-    // 弱引用target -- 发事件方无需监听者
-//    event.target = makeWeakReference(self);
     [self.wy_map setObject:event forKey:marking];
 }
 
@@ -111,33 +81,49 @@ Finish:
     WYEvent *event = [self.wy_map objectForKey:marking];
     if (!event) {
         event = [WYEvent new];
+        [self.wy_map setObject:event forKey:marking];
     }
     event.noti = arg;
-    // 弱引用target -- 发事件方无需监听者
-//    event.target = makeWeakReference(self);
     [self.wy_map setObject:event forKey:marking];
 }
 
-// 有监听者
-- (void)keepEventHandle:(void (^)(id, id *))handle withTarget:(id)target forMarking:(NSString *)marking {
+- (void)keepEventTarget:(id)target forMarking:(NSString *)marking {
     WYEvent *event = [self.wy_map objectForKey:marking];
     if (!event) {
         event = [WYEvent new];
+        [self.wy_map setObject:event forKey:marking];
     }
-    event.eventHandle = handle;
-    // 弱引用target
-    event.target = makeWeakReference(target);
-    [self.wy_map setObject:event forKey:marking];
+    if (target) {
+        event.target = makeWeakReference(target);
+    } else {
+        event.target = makeWeakReference(self);
+    }
 }
 
+- (void)keepEventSender:(id)sender forMarking:(NSString *)marking {
+    WYEvent *event = [self.wy_map objectForKey:marking];
+    if (!event) {
+        event = [WYEvent new];
+        [self.wy_map setObject:event forKey:marking];
+    }
+    if (sender) {
+        event.sender = makeWeakReference(sender);
+    } else {
+        event.sender = makeWeakReference(self);
+    }
+}
+
+
+#pragma mark - 事件删除
 /** 移除事件回调 */
 - (void)removerMarking:(NSString *)marking {
     WYEvent *event = [self.wy_map objectForKey:marking];
     if (!event) return;
     [self.wy_map removeObjectForKey:marking];
+    event = nil;
 }
 
-
+#pragma mark - 存储事件的Map
 - (NSMutableDictionary *)wy_map {
     if (!_wy_map) {
         _wy_map = [NSMutableDictionary dictionary];
@@ -147,11 +133,6 @@ Finish:
 
 @end
 
-
-
-@implementation WYEvent : NSObject
-
-@end
 
 
 

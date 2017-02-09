@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F5716CBA1E4C5D1400AA171C /* WYEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = F5716CB91E4C5D1400AA171C /* WYEvent.m */; };
+		F5827B8F1E4C877D003204D7 /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5827B8E1E4C877D003204D7 /* CustomView.m */; };
 		F59A0B431E0A6E0900CE20B2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F59A0B421E0A6E0900CE20B2 /* main.m */; };
 		F59A0B461E0A6E0900CE20B2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F59A0B451E0A6E0900CE20B2 /* AppDelegate.m */; };
 		F59A0B491E0A6E0900CE20B2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F59A0B481E0A6E0900CE20B2 /* ViewController.m */; };
@@ -19,7 +21,7 @@
 		F59A0B7A1E0A6E5400CE20B2 /* View1.m in Sources */ = {isa = PBXBuildFile; fileRef = F59A0B791E0A6E5400CE20B2 /* View1.m */; };
 		F59A0B7E1E0A704400CE20B2 /* WYEventCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = F59A0B7D1E0A704400CE20B2 /* WYEventCenter.m */; };
 		F59A0B811E0A730700CE20B2 /* WYEventCourier.m in Sources */ = {isa = PBXBuildFile; fileRef = F59A0B801E0A730700CE20B2 /* WYEventCourier.m */; };
-		F59A0B851E0A8B8600CE20B2 /* TestController.m in Sources */ = {isa = PBXBuildFile; fileRef = F59A0B841E0A8B8600CE20B2 /* TestController.m */; };
+		F59A0B851E0A8B8600CE20B2 /* TestController1.m in Sources */ = {isa = PBXBuildFile; fileRef = F59A0B841E0A8B8600CE20B2 /* TestController1.m */; };
 		F59A0B891E0B663700CE20B2 /* NSObject+WYEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = F59A0B881E0B663700CE20B2 /* NSObject+WYEvent.m */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F5716CB81E4C5D1400AA171C /* WYEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYEvent.h; sourceTree = "<group>"; };
+		F5716CB91E4C5D1400AA171C /* WYEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYEvent.m; sourceTree = "<group>"; };
+		F5827B8D1E4C877D003204D7 /* CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
+		F5827B8E1E4C877D003204D7 /* CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomView.m; sourceTree = "<group>"; };
 		F59A0B3E1E0A6E0900CE20B2 /* 12-12WYEvent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "12-12WYEvent.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F59A0B421E0A6E0900CE20B2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F59A0B441E0A6E0900CE20B2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -66,9 +72,8 @@
 		F59A0B7F1E0A730700CE20B2 /* WYEventCourier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYEventCourier.h; sourceTree = "<group>"; };
 		F59A0B801E0A730700CE20B2 /* WYEventCourier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYEventCourier.m; sourceTree = "<group>"; };
 		F59A0B821E0A813B00CE20B2 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		F59A0B831E0A8B8600CE20B2 /* TestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestController.h; sourceTree = "<group>"; };
-		F59A0B841E0A8B8600CE20B2 /* TestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestController.m; sourceTree = "<group>"; };
-		F59A0B861E0A8E7D00CE20B2 /* NSObject_WY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSObject_WY.h; sourceTree = "<group>"; };
+		F59A0B831E0A8B8600CE20B2 /* TestController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestController1.h; sourceTree = "<group>"; };
+		F59A0B841E0A8B8600CE20B2 /* TestController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestController1.m; sourceTree = "<group>"; };
 		F59A0B871E0B663700CE20B2 /* NSObject+WYEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+WYEvent.h"; sourceTree = "<group>"; };
 		F59A0B881E0B663700CE20B2 /* NSObject+WYEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+WYEvent.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,8 +138,10 @@
 				F59A0B521E0A6E0A00CE20B2 /* Info.plist */,
 				F59A0B411E0A6E0900CE20B2 /* Supporting Files */,
 				F59A0B821E0A813B00CE20B2 /* PrefixHeader.pch */,
-				F59A0B831E0A8B8600CE20B2 /* TestController.h */,
-				F59A0B841E0A8B8600CE20B2 /* TestController.m */,
+				F59A0B831E0A8B8600CE20B2 /* TestController1.h */,
+				F59A0B841E0A8B8600CE20B2 /* TestController1.m */,
+				F5827B8D1E4C877D003204D7 /* CustomView.h */,
+				F5827B8E1E4C877D003204D7 /* CustomView.m */,
 			);
 			path = "12-12WYEvent";
 			sourceTree = "<group>";
@@ -183,9 +190,10 @@
 				F59A0B7D1E0A704400CE20B2 /* WYEventCenter.m */,
 				F59A0B7F1E0A730700CE20B2 /* WYEventCourier.h */,
 				F59A0B801E0A730700CE20B2 /* WYEventCourier.m */,
-				F59A0B861E0A8E7D00CE20B2 /* NSObject_WY.h */,
 				F59A0B871E0B663700CE20B2 /* NSObject+WYEvent.h */,
 				F59A0B881E0B663700CE20B2 /* NSObject+WYEvent.m */,
+				F5716CB81E4C5D1400AA171C /* WYEvent.h */,
+				F5716CB91E4C5D1400AA171C /* WYEvent.m */,
 			);
 			path = EventCenter;
 			sourceTree = "<group>";
@@ -323,7 +331,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5716CBA1E4C5D1400AA171C /* WYEvent.m in Sources */,
 				F59A0B491E0A6E0900CE20B2 /* ViewController.m in Sources */,
+				F5827B8F1E4C877D003204D7 /* CustomView.m in Sources */,
 				F59A0B7A1E0A6E5400CE20B2 /* View1.m in Sources */,
 				F59A0B811E0A730700CE20B2 /* WYEventCourier.m in Sources */,
 				F59A0B771E0A6E4100CE20B2 /* View0.m in Sources */,
@@ -331,7 +341,7 @@
 				F59A0B461E0A6E0900CE20B2 /* AppDelegate.m in Sources */,
 				F59A0B431E0A6E0900CE20B2 /* main.m in Sources */,
 				F59A0B7E1E0A704400CE20B2 /* WYEventCenter.m in Sources */,
-				F59A0B851E0A8B8600CE20B2 /* TestController.m in Sources */,
+				F59A0B851E0A8B8600CE20B2 /* TestController1.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

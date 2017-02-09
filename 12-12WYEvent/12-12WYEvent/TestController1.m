@@ -6,17 +6,18 @@
 //  Copyright © 2016年 tykj. All rights reserved.
 //
 
-#import "TestController.h"
+#import "TestController1.h"
 
-@interface TestController ()
+@interface TestController1 ()
+@property (weak, nonatomic) IBOutlet UILabel *valueLbl;
 
 @end
 
-@implementation TestController
+@implementation TestController1
 
 
 - (void)dealloc {
-    NSLog(@"silesile---=-=-");
+    NSLog(@"%s", __func__);
 //    [WYEventCenter wy_removeHandingEvent:@"ssss"];
 }
 
@@ -27,21 +28,15 @@
     
     __weak typeof(self)weakSelf = self;
     // 虽然不会循环引用，但是self使用weak还是必要的因为block对self引用了
-    [self wy_observeHandingEvent:@"ssss" handle:^(id noti, __autoreleasing id *re) {
-        [weakSelf test];
-        *re = @(9009);
+    [self wy_observeHandingEvent:@"CustomViewSliderChange" handle:^(id noti, __autoreleasing id *re) {
+        *re = @(88888);
+        weakSelf.valueLbl.text = [noti stringValue];
         NSLog(@"--%@ 控制器执行中。。。", noti);
     }];
     
 }
 
-- (void)test {
-    NSLog(@"test");
-}
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

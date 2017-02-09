@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "View0.h"
-#import "TestController.h"
+//#import "TestController.h"
 
 @interface ViewController ()
 
@@ -34,9 +34,7 @@
 }
 
 - (void)sss {
-//    []
-    TestController *vc = [TestController new];
-    [self presentViewController:vc animated:YES completion:nil];
+
 }
 
 
