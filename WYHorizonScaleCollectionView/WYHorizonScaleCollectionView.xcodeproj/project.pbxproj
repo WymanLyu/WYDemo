@@ -15,10 +15,10 @@
 		F5716C7C1E495EDC00AA171C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5716C7A1E495EDC00AA171C /* LaunchScreen.storyboard */; };
 		F5716C871E495EDC00AA171C /* WYHorizonScaleCollectionViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F5716C861E495EDC00AA171C /* WYHorizonScaleCollectionViewTests.m */; };
 		F5716C921E495EDC00AA171C /* WYHorizonScaleCollectionViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F5716C911E495EDC00AA171C /* WYHorizonScaleCollectionViewUITests.m */; };
-		F5716CA11E49720800AA171C /* WYHorizonScaleLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F5716CA01E49720800AA171C /* WYHorizonScaleLayout.m */; };
-		F5716CA41E49DCCA00AA171C /* WYSupplementaryLblView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5716CA31E49DCCA00AA171C /* WYSupplementaryLblView.m */; };
-		F5716CA71E4AC23300AA171C /* WYHorizonScaleCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5716CA61E4AC23300AA171C /* WYHorizonScaleCollectionView.m */; };
-		F5716CAA1E4B0F1E00AA171C /* WYHorizonScaleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5716CA91E4B0F1D00AA171C /* WYHorizonScaleCell.m */; };
+		F5716CB41E4C1CCE00AA171C /* WYHorizonScaleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5716CAD1E4C1CCE00AA171C /* WYHorizonScaleCell.m */; };
+		F5716CB51E4C1CCE00AA171C /* WYHorizonScaleCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5716CAF1E4C1CCE00AA171C /* WYHorizonScaleCollectionView.m */; };
+		F5716CB61E4C1CCE00AA171C /* WYHorizonScaleLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F5716CB11E4C1CCE00AA171C /* WYHorizonScaleLayout.m */; };
+		F5716CB71E4C1CCE00AA171C /* WYSupplementaryLblView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5716CB31E4C1CCE00AA171C /* WYSupplementaryLblView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,14 +55,14 @@
 		F5716C8D1E495EDC00AA171C /* WYHorizonScaleCollectionViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WYHorizonScaleCollectionViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5716C911E495EDC00AA171C /* WYHorizonScaleCollectionViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYHorizonScaleCollectionViewUITests.m; sourceTree = "<group>"; };
 		F5716C931E495EDC00AA171C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F5716C9F1E49720800AA171C /* WYHorizonScaleLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYHorizonScaleLayout.h; sourceTree = "<group>"; };
-		F5716CA01E49720800AA171C /* WYHorizonScaleLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYHorizonScaleLayout.m; sourceTree = "<group>"; };
-		F5716CA21E49DCCA00AA171C /* WYSupplementaryLblView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYSupplementaryLblView.h; sourceTree = "<group>"; };
-		F5716CA31E49DCCA00AA171C /* WYSupplementaryLblView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYSupplementaryLblView.m; sourceTree = "<group>"; };
-		F5716CA51E4AC23300AA171C /* WYHorizonScaleCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYHorizonScaleCollectionView.h; sourceTree = "<group>"; };
-		F5716CA61E4AC23300AA171C /* WYHorizonScaleCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYHorizonScaleCollectionView.m; sourceTree = "<group>"; };
-		F5716CA81E4B0F1D00AA171C /* WYHorizonScaleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYHorizonScaleCell.h; sourceTree = "<group>"; };
-		F5716CA91E4B0F1D00AA171C /* WYHorizonScaleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYHorizonScaleCell.m; sourceTree = "<group>"; };
+		F5716CAC1E4C1CCE00AA171C /* WYHorizonScaleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYHorizonScaleCell.h; sourceTree = "<group>"; };
+		F5716CAD1E4C1CCE00AA171C /* WYHorizonScaleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYHorizonScaleCell.m; sourceTree = "<group>"; };
+		F5716CAE1E4C1CCE00AA171C /* WYHorizonScaleCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYHorizonScaleCollectionView.h; sourceTree = "<group>"; };
+		F5716CAF1E4C1CCE00AA171C /* WYHorizonScaleCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYHorizonScaleCollectionView.m; sourceTree = "<group>"; };
+		F5716CB01E4C1CCE00AA171C /* WYHorizonScaleLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYHorizonScaleLayout.h; sourceTree = "<group>"; };
+		F5716CB11E4C1CCE00AA171C /* WYHorizonScaleLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYHorizonScaleLayout.m; sourceTree = "<group>"; };
+		F5716CB21E4C1CCE00AA171C /* WYSupplementaryLblView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYSupplementaryLblView.h; sourceTree = "<group>"; };
+		F5716CB31E4C1CCE00AA171C /* WYSupplementaryLblView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYSupplementaryLblView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +113,7 @@
 		F5716C6B1E495EDC00AA171C /* WYHorizonScaleCollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				F5716CAB1E4C1CCE00AA171C /* WYSupplementaryLblView */,
 				F5716C6F1E495EDC00AA171C /* AppDelegate.h */,
 				F5716C701E495EDC00AA171C /* AppDelegate.m */,
 				F5716C721E495EDC00AA171C /* ViewController.h */,
@@ -122,14 +123,6 @@
 				F5716C7A1E495EDC00AA171C /* LaunchScreen.storyboard */,
 				F5716C7D1E495EDC00AA171C /* Info.plist */,
 				F5716C6C1E495EDC00AA171C /* Supporting Files */,
-				F5716C9F1E49720800AA171C /* WYHorizonScaleLayout.h */,
-				F5716CA01E49720800AA171C /* WYHorizonScaleLayout.m */,
-				F5716CA21E49DCCA00AA171C /* WYSupplementaryLblView.h */,
-				F5716CA31E49DCCA00AA171C /* WYSupplementaryLblView.m */,
-				F5716CA51E4AC23300AA171C /* WYHorizonScaleCollectionView.h */,
-				F5716CA61E4AC23300AA171C /* WYHorizonScaleCollectionView.m */,
-				F5716CA81E4B0F1D00AA171C /* WYHorizonScaleCell.h */,
-				F5716CA91E4B0F1D00AA171C /* WYHorizonScaleCell.m */,
 			);
 			path = WYHorizonScaleCollectionView;
 			sourceTree = "<group>";
@@ -158,6 +151,21 @@
 				F5716C931E495EDC00AA171C /* Info.plist */,
 			);
 			path = WYHorizonScaleCollectionViewUITests;
+			sourceTree = "<group>";
+		};
+		F5716CAB1E4C1CCE00AA171C /* WYSupplementaryLblView */ = {
+			isa = PBXGroup;
+			children = (
+				F5716CAC1E4C1CCE00AA171C /* WYHorizonScaleCell.h */,
+				F5716CAD1E4C1CCE00AA171C /* WYHorizonScaleCell.m */,
+				F5716CAE1E4C1CCE00AA171C /* WYHorizonScaleCollectionView.h */,
+				F5716CAF1E4C1CCE00AA171C /* WYHorizonScaleCollectionView.m */,
+				F5716CB01E4C1CCE00AA171C /* WYHorizonScaleLayout.h */,
+				F5716CB11E4C1CCE00AA171C /* WYHorizonScaleLayout.m */,
+				F5716CB21E4C1CCE00AA171C /* WYSupplementaryLblView.h */,
+				F5716CB31E4C1CCE00AA171C /* WYSupplementaryLblView.m */,
+			);
+			path = WYSupplementaryLblView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,13 +301,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5716CA11E49720800AA171C /* WYHorizonScaleLayout.m in Sources */,
+				F5716CB41E4C1CCE00AA171C /* WYHorizonScaleCell.m in Sources */,
+				F5716CB61E4C1CCE00AA171C /* WYHorizonScaleLayout.m in Sources */,
+				F5716CB71E4C1CCE00AA171C /* WYSupplementaryLblView.m in Sources */,
+				F5716CB51E4C1CCE00AA171C /* WYHorizonScaleCollectionView.m in Sources */,
 				F5716C741E495EDC00AA171C /* ViewController.m in Sources */,
 				F5716C711E495EDC00AA171C /* AppDelegate.m in Sources */,
 				F5716C6E1E495EDC00AA171C /* main.m in Sources */,
-				F5716CAA1E4B0F1E00AA171C /* WYHorizonScaleCell.m in Sources */,
-				F5716CA41E49DCCA00AA171C /* WYSupplementaryLblView.m in Sources */,
-				F5716CA71E4AC23300AA171C /* WYHorizonScaleCollectionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

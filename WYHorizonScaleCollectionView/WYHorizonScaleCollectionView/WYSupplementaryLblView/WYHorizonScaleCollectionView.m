@@ -16,8 +16,6 @@
 #define IPHONE5_SCREEN_WIDTH 320
 #define CURRENTSCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 
-
-
 @interface WYHorizonScaleCollectionView () <UICollectionViewDataSource, UICollectionViewDelegate>
 
 /** 轮播collectionView */
