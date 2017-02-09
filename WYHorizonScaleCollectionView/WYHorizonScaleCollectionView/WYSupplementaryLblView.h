@@ -14,8 +14,4 @@
 @property (nonatomic, weak) UILabel *titleLbl;
 
 
-
-/** 内部移动的比例 */
-@property (nonatomic, assign) CGFloat progressScale;
-
 @end

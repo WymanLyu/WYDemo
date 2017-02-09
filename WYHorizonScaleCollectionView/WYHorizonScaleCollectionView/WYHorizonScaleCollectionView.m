@@ -11,12 +11,14 @@
 #import "WYSupplementaryLblView.h"
 #import "WYHorizonScaleCell.h"
 
-#define MARGIN 70// 对应185  如果是200则是93
+#define IPHONE6_PLUS_SCREEN_WIDTH 414
+#define IPHONE6_SCREEN_WIDTH 375
+#define IPHONE5_SCREEN_WIDTH 320
+#define CURRENTSCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+
+
 
 @interface WYHorizonScaleCollectionView () <UICollectionViewDataSource, UICollectionViewDelegate>
-
-/** 数据源 */
-@property (nonatomic, strong) NSArray *dataSource;
 
 /** 轮播collectionView */
 @property (nonatomic, strong) UICollectionView *collectionView;
@@ -40,8 +42,28 @@
 
 @implementation WYHorizonScaleCollectionView
 
+
+static double margin = 90; // 调节中心点的硬编码
+
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame] ) {
+        
+       margin = (
+                    {
+                        CGFloat width = 90;
+                        if (CURRENTSCREEN_WIDTH == IPHONE6_PLUS_SCREEN_WIDTH) {
+                            width = 70;
+                        } else if (CURRENTSCREEN_WIDTH == IPHONE6_SCREEN_WIDTH) {
+                            width = 90;
+                        } else if (CURRENTSCREEN_WIDTH == IPHONE5_SCREEN_WIDTH) {
+                            width = 117.5;
+                        } else {
+                            width = 90;
+                        }
+                        width;
+                    }
+                 );
+        
         
         // 初始
         _autoScrollTimeInterval = 3.5f;
@@ -53,16 +75,12 @@
         
         // 1.设置布局layout
         WYHorizonScaleLayout *layout = [[WYHorizonScaleLayout alloc] init];
-//        UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-        
         layout.itemSize = CGSizeMake(ITEMSIZE_WIDTH, ITEMSIZE_HEIGHT);
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         layout.direction = HorizonScrollDirectionRight; // 默认是右侧
         layout.fatherView = self;
         self.layout = layout;
-        
-        CGFloat margin = 0;
-//        margin = ([UIScreen mainScreen].bounds.size.width - ITEMSIZE_WIDTH - 140) / 2.0;
+
         layout.minimumLineSpacing = 0;
         layout.minimumInteritemSpacing = 0;
         
@@ -78,13 +96,6 @@
         // 3.注册cell
         [collectionView registerClass:[WYHorizonScaleCell class] forCellWithReuseIdentifier:@"ReusableCell"];
         [collectionView registerClass:[WYSupplementaryLblView class] forSupplementaryViewOfKind:kSupplementaryViewKind withReuseIdentifier:@"Title"];
-        
-        // 4.数据源
-        NSArray *dataSource = @[@"onesx",@"twoccecwcw",@"thr中文无聊的我单排扣我的卡ee"];
-       
-        layout.dataSource = dataSource;
-        self.dataSource = dataSource;
-
 
     }
     return self;
@@ -92,6 +103,8 @@
 
 - (void)setDataSource:(NSArray *)dataSource {
     _dataSource = dataSource;
+    
+    self.layout.dataSource = dataSource;
     
     _totalItemsCount = self.infiniteLoop ? _dataSource.count * 100 : _dataSource.count;
     
@@ -105,9 +118,8 @@
     [self.collectionView reloadData];
     [self.layout invalidateLayout];
  
-#warning 硬编码，待修改
     // 移到中间
-    [_collectionView setContentOffset:CGPointMake([self.layout collectionViewContentSize].width*0.5+MARGIN, _collectionView.contentOffset.y) animated:NO];
+    [_collectionView setContentOffset:CGPointMake([self.layout collectionViewContentSize].width*0.5+margin, _collectionView.contentOffset.y) animated:NO];
 }
 
 #pragma mark - 数据源
@@ -124,19 +136,17 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    NSLog(@"============%f", scrollView.contentOffset.x);
+
     if (scrollView.contentOffset.x < self.beginOffsetX) { // 右边
-//        NSLog(@"===========右边");
         self.layout.direction = HorizonScrollDirectionRight;
     } else {
-//        NSLog(@"===========左边");
         self.layout.direction = HorizonScrollDirectionLeft;
     }
     
     // 临界值处理
     if (scrollView.contentOffset.x < 600 || (scrollView.contentOffset.x > (scrollView.contentSize.width - 600))) {
         // 移到中间
-        [_collectionView setContentOffset:CGPointMake([self.layout collectionViewContentSize].width*0.5+MARGIN, _collectionView.contentOffset.y) animated:YES];
+        [_collectionView setContentOffset:CGPointMake([self.layout collectionViewContentSize].width*0.5+margin, _collectionView.contentOffset.y) animated:YES];
     }
 }
 
@@ -166,6 +176,8 @@
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     UICollectionReusableView *reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:kSupplementaryViewKind withReuseIdentifier:@"Title" forIndexPath:indexPath];
     reusableView.backgroundColor = [UIColor redColor];
+    
+    self.layout.supplementaryView = (WYSupplementaryLblView *)reusableView;
     return reusableView;
 }
 
@@ -241,15 +253,11 @@
     }
     
     int index = 0;
-//    if (_layout.scrollDirection == UICollectionViewScrollDirectionHorizontal) {
-//        index = (_collectionView.contentOffset.x + _layout.itemSize.width * 0.5) / _layout.itemSize.width;
-//    } else {
-//        index = (_collectionView.contentOffset.y + _layout.itemSize.height * 0.5) / _layout.itemSize.height;
-//    }
-    
-   index = _totalItemsCount*0.5 + (_collectionView.contentOffset.x - (self.layout.collectionViewContentSize.width*0.5+MARGIN)) / ITEMSIZE_WIDTH;
-    
-    
+    if (_layout.scrollDirection == UICollectionViewScrollDirectionHorizontal) {
+        index = (_collectionView.contentOffset.x + _layout.itemSize.width * 0.5) / _layout.itemSize.width;
+    } else {
+        index = (_collectionView.contentOffset.y + _layout.itemSize.height * 0.5) / _layout.itemSize.height;
+    }
     
     return MAX(0, index);
 }

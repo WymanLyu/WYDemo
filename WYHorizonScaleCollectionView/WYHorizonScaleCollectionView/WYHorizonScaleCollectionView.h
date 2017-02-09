@@ -20,6 +20,9 @@
 /** 是否无限循环,默认Yes */
 @property (nonatomic,assign) BOOL infiniteLoop;
 
+/** 数据源 */
+@property (nonatomic, strong) NSArray *dataSource;
+
 // 获取模型索引
 - (int)pageControlIndexWithCurrentCellIndex:(NSInteger)index;
 

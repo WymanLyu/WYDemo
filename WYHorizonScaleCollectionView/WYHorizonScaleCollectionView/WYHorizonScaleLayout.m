@@ -7,7 +7,6 @@
 //
 
 #import "WYHorizonScaleLayout.h"
-#import "WYSupplementaryLblView.h"
 
 #pragma mark - 排序函数
 // 升序状态
@@ -34,6 +33,11 @@ NSInteger sortByIndexPath (id obj1, id obj2, void *context)
 
 - (void)prepareLayout {
     [super prepareLayout];
+    
+    // 默认属性
+    self.itemSize = CGSizeMake(ITEMSIZE_WIDTH, ITEMSIZE_HEIGHT);
+    self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    self.direction = HorizonScrollDirectionRight; // 默认是右侧
     
     // 这里给装饰视图，创建布局属性
     UICollectionViewLayoutAttributes *supplementaryAttributes = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:kSupplementaryViewKind withIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
@@ -116,16 +120,24 @@ NSInteger sortByIndexPath (id obj1, id obj2, void *context)
     CGFloat titleLblScale = 1 - distance*1.0 / defaultWidth;
     
     // 获取装饰视图处理文本渐变动画,只支持9.0以上
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0) {
-        if ([self.collectionView respondsToSelector:@selector(supplementaryViewForElementKind:atIndexPath:)]) {
-             WYSupplementaryLblView *supplementaryView = (WYSupplementaryLblView *)[self.collectionView supplementaryViewForElementKind:kSupplementaryViewKind atIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
-            [supplementaryView.titleLbl sizeToFit];
-            supplementaryView.titleLbl.text = targetText;
-            supplementaryView.titleLbl.backgroundColor = [UIColor yellowColor];
-            supplementaryView.titleLbl.alpha = titleLblScale*titleLblScale*titleLblScale;
-            supplementaryView.progressScale = titleLblScale*titleLblScale*titleLblScale;
-        }
-    }
+//    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0) {
+//        if ([self.collectionView respondsToSelector:@selector(supplementaryViewForElementKind:atIndexPath:)]) {
+//             WYSupplementaryLblView *supplementaryView = (WYSupplementaryLblView *)[self.collectionView supplementaryViewForElementKind:kSupplementaryViewKind atIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
+//            [supplementaryView.titleLbl sizeToFit];
+//            supplementaryView.titleLbl.text = targetText;
+//            supplementaryView.titleLbl.backgroundColor = [UIColor yellowColor];
+//            supplementaryView.titleLbl.alpha = titleLblScale*titleLblScale*titleLblScale;
+//            supplementaryView.progressScale = titleLblScale*titleLblScale*titleLblScale;
+//        }
+//    }
+    
+    // 直接在外面传进来了，因为只有一个视图就不循环利用【糟糕的设计也会有不错的效果】
+    [self.supplementaryView.titleLbl sizeToFit];
+    self.supplementaryView.titleLbl.text = targetText;
+    self.supplementaryView.titleLbl.backgroundColor = [UIColor yellowColor];
+    self.supplementaryView.titleLbl.alpha = titleLblScale*titleLblScale*titleLblScale;
+    
+    
     
     // 设置尺寸
     self.supplementaryAttributes.size = CGSizeMake((targetSize.width-originSize.width)*titleLblScale + originSize.width, targetSize.height);
@@ -190,14 +202,6 @@ NSInteger sortByIndexPath (id obj1, id obj2, void *context)
     
     NSLog(@"%s", __func__);
     UICollectionViewLayoutAttributes *layoutAttributes = [super layoutAttributesForSupplementaryViewOfKind:elementKind atIndexPath:indexPath];
-    
-//    if ([elementKind isEqualToString:kSupplementaryViewKind]) {
-//        UICollectionViewLayoutAttributes *layoutAttributes = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:kSupplementaryViewKind withIndexPath:indexPath];
-//        layoutAttributes.size = CGSizeMake(100, 100);
-//        return layoutAttributes;
-//    }
-    
-    
     
     return layoutAttributes;
 }

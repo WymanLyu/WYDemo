@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "WYHorizonScaleCollectionView.h"
+#import "WYSupplementaryLblView.h"
 
 #define ITEMSIZE_WIDTH 185 // 185
-#define ITEMSIZE_HEIGHT 150
+#define ITEMSIZE_HEIGHT 300// 150
 
 static NSString * const kSupplementaryViewKind = @"kSupplementaryViewKind";
 
@@ -29,5 +30,8 @@ typedef enum : NSUInteger {
 
 /** 滚动方向 */
 @property (nonatomic, assign) HorizonScrollDirection direction;
+
+/** 装饰视图 */
+@property (nonatomic, strong) WYSupplementaryLblView *supplementaryView;
 
 @end
