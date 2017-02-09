@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F526C49F1E4C90BC00D7E0AB /* WYNotificationCourier.m in Sources */ = {isa = PBXBuildFile; fileRef = F526C49E1E4C90BC00D7E0AB /* WYNotificationCourier.m */; };
 		F5716CBA1E4C5D1400AA171C /* WYEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = F5716CB91E4C5D1400AA171C /* WYEvent.m */; };
 		F5827B8F1E4C877D003204D7 /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5827B8E1E4C877D003204D7 /* CustomView.m */; };
 		F59A0B431E0A6E0900CE20B2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F59A0B421E0A6E0900CE20B2 /* main.m */; };
@@ -43,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F526C49D1E4C90BC00D7E0AB /* WYNotificationCourier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYNotificationCourier.h; sourceTree = "<group>"; };
+		F526C49E1E4C90BC00D7E0AB /* WYNotificationCourier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYNotificationCourier.m; sourceTree = "<group>"; };
 		F5716CB81E4C5D1400AA171C /* WYEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYEvent.h; sourceTree = "<group>"; };
 		F5716CB91E4C5D1400AA171C /* WYEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYEvent.m; sourceTree = "<group>"; };
 		F5827B8D1E4C877D003204D7 /* CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
@@ -188,12 +191,14 @@
 			children = (
 				F59A0B7C1E0A704400CE20B2 /* WYEventCenter.h */,
 				F59A0B7D1E0A704400CE20B2 /* WYEventCenter.m */,
-				F59A0B7F1E0A730700CE20B2 /* WYEventCourier.h */,
-				F59A0B801E0A730700CE20B2 /* WYEventCourier.m */,
-				F59A0B871E0B663700CE20B2 /* NSObject+WYEvent.h */,
-				F59A0B881E0B663700CE20B2 /* NSObject+WYEvent.m */,
 				F5716CB81E4C5D1400AA171C /* WYEvent.h */,
 				F5716CB91E4C5D1400AA171C /* WYEvent.m */,
+				F59A0B7F1E0A730700CE20B2 /* WYEventCourier.h */,
+				F59A0B801E0A730700CE20B2 /* WYEventCourier.m */,
+				F526C49D1E4C90BC00D7E0AB /* WYNotificationCourier.h */,
+				F526C49E1E4C90BC00D7E0AB /* WYNotificationCourier.m */,
+				F59A0B871E0B663700CE20B2 /* NSObject+WYEvent.h */,
+				F59A0B881E0B663700CE20B2 /* NSObject+WYEvent.m */,
 			);
 			path = EventCenter;
 			sourceTree = "<group>";
@@ -337,6 +342,7 @@
 				F59A0B7A1E0A6E5400CE20B2 /* View1.m in Sources */,
 				F59A0B811E0A730700CE20B2 /* WYEventCourier.m in Sources */,
 				F59A0B771E0A6E4100CE20B2 /* View0.m in Sources */,
+				F526C49F1E4C90BC00D7E0AB /* WYNotificationCourier.m in Sources */,
 				F59A0B891E0B663700CE20B2 /* NSObject+WYEvent.m in Sources */,
 				F59A0B461E0A6E0900CE20B2 /* AppDelegate.m in Sources */,
 				F59A0B431E0A6E0900CE20B2 /* main.m in Sources */,

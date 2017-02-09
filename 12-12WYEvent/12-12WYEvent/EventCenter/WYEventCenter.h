@@ -27,16 +27,23 @@
 
 @interface WYEventCenter : NSObject
 
+#pragma mark - 自定义通信方式
 /** 发送事件 -- 默认发送者是WYEventCourier*/
 + (void)wy_sendEvent:(NSString *const)marking withSender:(id)sender something:(id)something callBack:(void(^)(id *res))resultCallBack;
 
 /** 监听事件 -- 默认监听者是WYEventCourier */
 + (void)wy_observeHandingEvent:(NSString *const)marking withTarget:(id)target handle:(void(^)(id noti, id *res))handle;
+//+ (void)wy_observeBeforeHandleEvent:(NSString *const)marking handle:(void(^)(id noti, id res))something;
+//+ (void)wy_observeAfterHandleEvent:(NSString *const)marking handle:(void(^)(id noti, id re))something;
 
 /** 释放监听事件 */
 + (void)wy_removeHandingEvent:(NSString *const)marking;
 
-//+ (void)wy_observeBeforeHandleEvent:(NSString *const)marking handle:(void(^)(id noti, id res))something;
-//+ (void)wy_observeAfterHandleEvent:(NSString *const)marking handle:(void(^)(id noti, id re))something;
+#pragma mark - 系统通知方式
+/** 发送事件 */
+- (void)wy_postNotificationName:(NSString *const)notiName withSender:(id)sender userInfo:(NSDictionary *)aUserInfo finishHandle:(void (^)(__autoreleasing id *))finishCallBack;
+
+/** 发送通知 */
+- (void)wy_observeNotificationName:(NSString *const)notiName fromSender:(id)sender withObserve:(id)observe handle:(void(^)(NSNotification *noti))handle;
 
 @end
