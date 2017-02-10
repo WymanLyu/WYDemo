@@ -41,7 +41,7 @@
 /** 发送通知 */
 - (void)wy_observeNotificationName:(NSString *const)notiName fromSender:(id)sender handle:(void(^)(NSNotification *noti))handle;
 
-#pragma mark - 系统KVO - 还需要移除观察者才行，怎么这么蛋疼呢！
+#pragma mark - 系统KVO - 还需要移除观察者才行，怎么这么蛋疼呢！- 待深入研究一下
 /** 监听某个属性 */
 - (void)wy_observePath:(NSString *)path target:(NSObject *)target options:(NSKeyValueObservingOptions)options change:(void(^)(NSDictionary<NSKeyValueChangeKey,id> *change))handle;
 

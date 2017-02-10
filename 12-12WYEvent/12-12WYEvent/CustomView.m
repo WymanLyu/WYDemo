@@ -7,7 +7,7 @@
 //
 
 #import "CustomView.h"
-#import "NSObject+WYEvent.h"
+#import "WYEvent.h"
 
 @implementation CustomView
 

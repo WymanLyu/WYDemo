@@ -7,6 +7,7 @@
 //
 
 #import "TestController1.h"
+#import "WYEvent.h"
 
 @interface TestController1 ()
 @property (weak, nonatomic) IBOutlet UILabel *valueLbl;

@@ -7,7 +7,7 @@
 //
 
 #import "TestController3.h"
-#import "NSObject+WYEvent.h"
+#import "WYEvent.h"
 
 @interface TestController3 ()
 @property (weak, nonatomic) IBOutlet UISlider *slider;

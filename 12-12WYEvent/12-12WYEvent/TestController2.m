@@ -7,7 +7,7 @@
 //
 
 #import "TestController2.h"
-#import "NSObject+WYEvent.h"
+#import "WYEvent.h"
 #import "CustomView2.h"
 
 @interface TestController2 ()
