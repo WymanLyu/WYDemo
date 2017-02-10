@@ -11,6 +11,10 @@
 
 @implementation CustomView
 
+- (void)dealloc {
+    NSLog(@"%s", __func__);
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     for (UIView *subView in self.subviews) {
