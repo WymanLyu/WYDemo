@@ -16,26 +16,14 @@
 - (void)registeNotificationName:(NSString *const)notiName;
 
 ////////////////// 保存信息
-// 保存对象
-/** 保存监听者 */
-- (void)keepEventTarget:(id)target forMarking:(NSString *)marking;
+/** 保存接受者和回调 */
+- (void)keepEventObserve:(id)observe forMarking:(NSString *)marking eventHandle:(void(^)(id noti))handle;
 /** 保存发送者 */
-- (void)keepEventSender:(id)sender forMarking:(NSString *)marking;
-/** 保存参数 */
-- (void)keepEventArg:(id)arg forMarking:(NSString *)marking;
-// 保存回调
-/** 保存事件完毕后的block */
-- (void)keepFinishHandle:(void(^)(id *res))handle forMarking:(NSString *)marking;
-/** 保存事件执行block */
-- (void)keepEventHandle:(void(^)(id noti, id *res))handle forMarking:(NSString *)marking;
-/** 待开发 */
-//- (void)keepBeforeEventHandle:(void(^)(id noti, id res))handle forMarking:(NSString *)marking;
-//- (void)keepAfterEventHandle:(void(^)(id noti, id res))handle forMarking:(NSString *)marking;
-
+- (void)keepEventSender:(id)sender forMarking:(NSString *)marking finishHandle:(void(^)())finishHandle;
 
 /////////////// 执行回调
 /** 执行所有注册事件的block */
-- (void)handleEventForMarking:(NSString *)marking;
+- (void)handleEventForMarking:(NSString *)marking withNoti:(NSNotification *)noti;
 
 /////////////// 移除事件
 /** 移除事件回调 */

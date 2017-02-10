@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		F526C49F1E4C90BC00D7E0AB /* WYNotificationCourier.m in Sources */ = {isa = PBXBuildFile; fileRef = F526C49E1E4C90BC00D7E0AB /* WYNotificationCourier.m */; };
+		F526C4A21E4D550500D7E0AB /* WYNotificationEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = F526C4A11E4D550500D7E0AB /* WYNotificationEvent.m */; };
+		F526C4A51E4D5CCE00D7E0AB /* WYWeakObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F526C4A41E4D5CCE00D7E0AB /* WYWeakObject.m */; };
+		F526C4AE1E4D5FD500D7E0AB /* TestController2.m in Sources */ = {isa = PBXBuildFile; fileRef = F526C4AD1E4D5FD500D7E0AB /* TestController2.m */; };
+		F526C4B11E4D634C00D7E0AB /* CustomView2.m in Sources */ = {isa = PBXBuildFile; fileRef = F526C4B01E4D634C00D7E0AB /* CustomView2.m */; };
+		F526C4B51E4D88FA00D7E0AB /* TestController3.m in Sources */ = {isa = PBXBuildFile; fileRef = F526C4B41E4D88FA00D7E0AB /* TestController3.m */; };
+		F526C4B91E4D98A000D7E0AB /* WYKVOCourier.m in Sources */ = {isa = PBXBuildFile; fileRef = F526C4B81E4D98A000D7E0AB /* WYKVOCourier.m */; };
+		F526C4BC1E4D995C00D7E0AB /* WYKVOEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = F526C4BB1E4D995C00D7E0AB /* WYKVOEvent.m */; };
 		F5716CBA1E4C5D1400AA171C /* WYEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = F5716CB91E4C5D1400AA171C /* WYEvent.m */; };
 		F5827B8F1E4C877D003204D7 /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5827B8E1E4C877D003204D7 /* CustomView.m */; };
 		F59A0B431E0A6E0900CE20B2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F59A0B421E0A6E0900CE20B2 /* main.m */; };
@@ -46,6 +53,20 @@
 /* Begin PBXFileReference section */
 		F526C49D1E4C90BC00D7E0AB /* WYNotificationCourier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYNotificationCourier.h; sourceTree = "<group>"; };
 		F526C49E1E4C90BC00D7E0AB /* WYNotificationCourier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYNotificationCourier.m; sourceTree = "<group>"; };
+		F526C4A01E4D550500D7E0AB /* WYNotificationEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYNotificationEvent.h; sourceTree = "<group>"; };
+		F526C4A11E4D550500D7E0AB /* WYNotificationEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYNotificationEvent.m; sourceTree = "<group>"; };
+		F526C4A31E4D5CCE00D7E0AB /* WYWeakObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYWeakObject.h; sourceTree = "<group>"; };
+		F526C4A41E4D5CCE00D7E0AB /* WYWeakObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYWeakObject.m; sourceTree = "<group>"; };
+		F526C4AC1E4D5FD500D7E0AB /* TestController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestController2.h; sourceTree = "<group>"; };
+		F526C4AD1E4D5FD500D7E0AB /* TestController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestController2.m; sourceTree = "<group>"; };
+		F526C4AF1E4D634C00D7E0AB /* CustomView2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomView2.h; sourceTree = "<group>"; };
+		F526C4B01E4D634C00D7E0AB /* CustomView2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomView2.m; sourceTree = "<group>"; };
+		F526C4B31E4D88FA00D7E0AB /* TestController3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestController3.h; sourceTree = "<group>"; };
+		F526C4B41E4D88FA00D7E0AB /* TestController3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestController3.m; sourceTree = "<group>"; };
+		F526C4B71E4D98A000D7E0AB /* WYKVOCourier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYKVOCourier.h; sourceTree = "<group>"; };
+		F526C4B81E4D98A000D7E0AB /* WYKVOCourier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYKVOCourier.m; sourceTree = "<group>"; };
+		F526C4BA1E4D995C00D7E0AB /* WYKVOEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYKVOEvent.h; sourceTree = "<group>"; };
+		F526C4BB1E4D995C00D7E0AB /* WYKVOEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYKVOEvent.m; sourceTree = "<group>"; };
 		F5716CB81E4C5D1400AA171C /* WYEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYEvent.h; sourceTree = "<group>"; };
 		F5716CB91E4C5D1400AA171C /* WYEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYEvent.m; sourceTree = "<group>"; };
 		F5827B8D1E4C877D003204D7 /* CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
@@ -106,6 +127,89 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F526C4A61E4D5D5200D7E0AB /* CustomEvent */ = {
+			isa = PBXGroup;
+			children = (
+				F5716CB81E4C5D1400AA171C /* WYEvent.h */,
+				F5716CB91E4C5D1400AA171C /* WYEvent.m */,
+				F59A0B7F1E0A730700CE20B2 /* WYEventCourier.h */,
+				F59A0B801E0A730700CE20B2 /* WYEventCourier.m */,
+			);
+			name = CustomEvent;
+			sourceTree = "<group>";
+		};
+		F526C4A71E4D5D6000D7E0AB /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				F526C49D1E4C90BC00D7E0AB /* WYNotificationCourier.h */,
+				F526C49E1E4C90BC00D7E0AB /* WYNotificationCourier.m */,
+				F526C4A01E4D550500D7E0AB /* WYNotificationEvent.h */,
+				F526C4A11E4D550500D7E0AB /* WYNotificationEvent.m */,
+			);
+			name = Notification;
+			sourceTree = "<group>";
+		};
+		F526C4A81E4D5D7500D7E0AB /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				F526C4A31E4D5CCE00D7E0AB /* WYWeakObject.h */,
+				F526C4A41E4D5CCE00D7E0AB /* WYWeakObject.m */,
+			);
+			name = Tool;
+			sourceTree = "<group>";
+		};
+		F526C4A91E4D5F7A00D7E0AB /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				F526C4B21E4D88DF00D7E0AB /* KVO */,
+				F526C4AB1E4D5FAA00D7E0AB /* Notification */,
+				F526C4AA1E4D5F8400D7E0AB /* CustomEvent */,
+			);
+			name = Test;
+			sourceTree = "<group>";
+		};
+		F526C4AA1E4D5F8400D7E0AB /* CustomEvent */ = {
+			isa = PBXGroup;
+			children = (
+				F59A0B831E0A8B8600CE20B2 /* TestController1.h */,
+				F59A0B841E0A8B8600CE20B2 /* TestController1.m */,
+				F5827B8D1E4C877D003204D7 /* CustomView.h */,
+				F5827B8E1E4C877D003204D7 /* CustomView.m */,
+			);
+			name = CustomEvent;
+			sourceTree = "<group>";
+		};
+		F526C4AB1E4D5FAA00D7E0AB /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				F526C4AC1E4D5FD500D7E0AB /* TestController2.h */,
+				F526C4AD1E4D5FD500D7E0AB /* TestController2.m */,
+				F526C4AF1E4D634C00D7E0AB /* CustomView2.h */,
+				F526C4B01E4D634C00D7E0AB /* CustomView2.m */,
+			);
+			name = Notification;
+			sourceTree = "<group>";
+		};
+		F526C4B21E4D88DF00D7E0AB /* KVO */ = {
+			isa = PBXGroup;
+			children = (
+				F526C4B31E4D88FA00D7E0AB /* TestController3.h */,
+				F526C4B41E4D88FA00D7E0AB /* TestController3.m */,
+			);
+			name = KVO;
+			sourceTree = "<group>";
+		};
+		F526C4B61E4D984100D7E0AB /* KVO */ = {
+			isa = PBXGroup;
+			children = (
+				F526C4B71E4D98A000D7E0AB /* WYKVOCourier.h */,
+				F526C4B81E4D98A000D7E0AB /* WYKVOCourier.m */,
+				F526C4BA1E4D995C00D7E0AB /* WYKVOEvent.h */,
+				F526C4BB1E4D995C00D7E0AB /* WYKVOEvent.m */,
+			);
+			name = KVO;
+			sourceTree = "<group>";
+		};
 		F59A0B351E0A6E0900CE20B2 = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +233,7 @@
 		F59A0B401E0A6E0900CE20B2 /* 12-12WYEvent */ = {
 			isa = PBXGroup;
 			children = (
+				F526C4A91E4D5F7A00D7E0AB /* Test */,
 				F59A0B7B1E0A702B00CE20B2 /* EventCenter */,
 				F59A0B741E0A6E1800CE20B2 /* view */,
 				F59A0B441E0A6E0900CE20B2 /* AppDelegate.h */,
@@ -141,10 +246,6 @@
 				F59A0B521E0A6E0A00CE20B2 /* Info.plist */,
 				F59A0B411E0A6E0900CE20B2 /* Supporting Files */,
 				F59A0B821E0A813B00CE20B2 /* PrefixHeader.pch */,
-				F59A0B831E0A8B8600CE20B2 /* TestController1.h */,
-				F59A0B841E0A8B8600CE20B2 /* TestController1.m */,
-				F5827B8D1E4C877D003204D7 /* CustomView.h */,
-				F5827B8E1E4C877D003204D7 /* CustomView.m */,
 			);
 			path = "12-12WYEvent";
 			sourceTree = "<group>";
@@ -189,14 +290,12 @@
 		F59A0B7B1E0A702B00CE20B2 /* EventCenter */ = {
 			isa = PBXGroup;
 			children = (
+				F526C4B61E4D984100D7E0AB /* KVO */,
+				F526C4A81E4D5D7500D7E0AB /* Tool */,
+				F526C4A71E4D5D6000D7E0AB /* Notification */,
+				F526C4A61E4D5D5200D7E0AB /* CustomEvent */,
 				F59A0B7C1E0A704400CE20B2 /* WYEventCenter.h */,
 				F59A0B7D1E0A704400CE20B2 /* WYEventCenter.m */,
-				F5716CB81E4C5D1400AA171C /* WYEvent.h */,
-				F5716CB91E4C5D1400AA171C /* WYEvent.m */,
-				F59A0B7F1E0A730700CE20B2 /* WYEventCourier.h */,
-				F59A0B801E0A730700CE20B2 /* WYEventCourier.m */,
-				F526C49D1E4C90BC00D7E0AB /* WYNotificationCourier.h */,
-				F526C49E1E4C90BC00D7E0AB /* WYNotificationCourier.m */,
 				F59A0B871E0B663700CE20B2 /* NSObject+WYEvent.h */,
 				F59A0B881E0B663700CE20B2 /* NSObject+WYEvent.m */,
 			);
@@ -336,18 +435,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F526C4B11E4D634C00D7E0AB /* CustomView2.m in Sources */,
 				F5716CBA1E4C5D1400AA171C /* WYEvent.m in Sources */,
 				F59A0B491E0A6E0900CE20B2 /* ViewController.m in Sources */,
 				F5827B8F1E4C877D003204D7 /* CustomView.m in Sources */,
 				F59A0B7A1E0A6E5400CE20B2 /* View1.m in Sources */,
+				F526C4A51E4D5CCE00D7E0AB /* WYWeakObject.m in Sources */,
 				F59A0B811E0A730700CE20B2 /* WYEventCourier.m in Sources */,
+				F526C4A21E4D550500D7E0AB /* WYNotificationEvent.m in Sources */,
 				F59A0B771E0A6E4100CE20B2 /* View0.m in Sources */,
 				F526C49F1E4C90BC00D7E0AB /* WYNotificationCourier.m in Sources */,
+				F526C4B91E4D98A000D7E0AB /* WYKVOCourier.m in Sources */,
+				F526C4AE1E4D5FD500D7E0AB /* TestController2.m in Sources */,
 				F59A0B891E0B663700CE20B2 /* NSObject+WYEvent.m in Sources */,
+				F526C4B51E4D88FA00D7E0AB /* TestController3.m in Sources */,
 				F59A0B461E0A6E0900CE20B2 /* AppDelegate.m in Sources */,
 				F59A0B431E0A6E0900CE20B2 /* main.m in Sources */,
 				F59A0B7E1E0A704400CE20B2 /* WYEventCenter.m in Sources */,
 				F59A0B851E0A8B8600CE20B2 /* TestController1.m in Sources */,
+				F526C4BC1E4D995C00D7E0AB /* WYKVOEvent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

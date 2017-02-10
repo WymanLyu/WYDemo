@@ -14,7 +14,6 @@
 /** 存储执行block */
 @property (nonatomic, strong) NSMutableDictionary <NSString *, WYEvent *> *wy_map;
 
-
 @end
 
 @implementation WYEventCourier

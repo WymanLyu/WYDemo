@@ -19,17 +19,7 @@
 ///////////////////////////////////////////////////////////////////
 
 #import <Foundation/Foundation.h>
-
-typedef id (^WeakReference)(void);
-
-/**
- *  给定对象进行装箱，返回装箱后的弱引用对象
- */
-extern WeakReference makeWeakReference(id object);
-/**
- *  给定弱引用对象进行解包，返回解包后的对象
- */
-extern id weakReferenceNonretainedObjectValue(WeakReference ref);
+#import "WYWeakObject.h"
 
 @interface WYEvent : NSObject
 
@@ -46,5 +36,6 @@ extern id weakReferenceNonretainedObjectValue(WeakReference ref);
 @property (nonatomic, strong) WeakReference target;
 /** 发起者 */
 @property (nonatomic, strong) WeakReference sender;
+
 
 @end

@@ -8,18 +8,7 @@
 
 #import "WYEvent.h"
 
-extern WeakReference makeWeakReference(id object) {
-    __weak id weakref = object;
-    return ^{
-        //        __strong id ref = weakref;
-        return weakref;
-    };
-}
-
-extern id weakReferenceNonretainedObjectValue(WeakReference ref) {
-    return ref ? ref() : nil;
-}
-
 @implementation WYEvent
+
 
 @end

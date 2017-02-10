@@ -53,4 +53,21 @@ static void *WYCustomObjectEventMarkingArrMKey = &WYCustomObjectEventMarkingArrM
     [self didChangeValueForKey:@"tempObject"];
 }
 
+#pragma mark - 系统通知方式
+/** 发送事件 */
+- (void)wy_postNotificationName:(NSString *const)notiName userInfo:(NSDictionary *)aUserInfo finishHandle:(void (^)())finishCallBack {
+    [WYEventCenter wy_postNotificationName:notiName withSender:self userInfo:aUserInfo finishHandle:finishCallBack];
+}
+
+/** 发送通知 */
+- (void)wy_observeNotificationName:(NSString *const)notiName fromSender:(id)sender handle:(void(^)(NSNotification *noti))handle {
+    [WYEventCenter wy_observeNotificationName:notiName fromSender:sender withObserve:self handle:handle];
+}
+
+#pragma mark - KVO方式
+/** 监听某个属性 */
+- (void)wy_observePath:(NSString *)path target:(NSObject *)target options:(NSKeyValueObservingOptions)options change:(void(^)(NSDictionary<NSKeyValueChangeKey,id> * change))handle {
+    [WYEventCenter wy_observePath:path observe:self target:target options:options change:handle];
+}
+
 @end

@@ -9,6 +9,7 @@
 #import "WYEventCenter.h"
 #import "WYEventCourier.h"
 #import "WYNotificationCourier.h"
+#import "WYKVOCourier.h"
 
 @implementation WYEventCenter
 
@@ -43,13 +44,13 @@
 
 #pragma mark - 系统通知方式
 /** 发送事件 */
-- (void)wy_postNotificationName:(NSString *const)notiName withSender:(id)sender userInfo:(NSDictionary *)aUserInfo finishHandle:(void (^)(__autoreleasing id *))finishCallBack {
++ (void)wy_postNotificationName:(NSString *const)notiName withSender:(id)sender userInfo:(NSDictionary *)aUserInfo finishHandle:(void (^)())finishCallBack {
     
     // marking 由 notiName 和 sender 共同决定
     NSString *marking = [NSString stringWithFormat:@"%@+%zd", notiName, [sender hash]];
-    [[WYNotificationCourier shareCourier] keepEventSender:sender forMarking:marking];
-    [[WYNotificationCourier shareCourier] keepEventArg:aUserInfo forMarking:marking];
-    [[WYNotificationCourier shareCourier] keepFinishHandle:finishCallBack forMarking:marking];
+    
+    // 保存信息
+    [[WYNotificationCourier shareCourier] keepEventSender:sender forMarking:marking finishHandle:finishCallBack];
     [[WYNotificationCourier shareCourier] registeNotificationName:notiName];
     
     // 发送通知
@@ -57,13 +58,18 @@
 }
 
 /** 发送通知 */
-- (void)wy_observeNotificationName:(NSString *const)notiName fromSender:(id)sender withObserve:(id)observe handle:(void(^)(NSNotification *noti))handle{
++ (void)wy_observeNotificationName:(NSString *const)notiName fromSender:(id)sender withObserve:(id)observe handle:(void(^)(NSNotification *noti))handle{
     
     // marking 由 notiName 和 sender 共同决定
     NSString *marking = [NSString stringWithFormat:@"%@+%zd", notiName, [sender hash]];
-    [[WYNotificationCourier shareCourier] keepEventTarget:observe forMarking:marking];
-    
+    [[WYNotificationCourier shareCourier] keepEventObserve:observe forMarking:marking eventHandle:handle];
     [[NSNotificationCenter defaultCenter] addObserver:observe selector:@selector(wy_removeHandingEvent:) name:notiName object:sender];
+}
+
+#pragma mark - KVO方式
+/** 监听某个属性 */
++ (void)wy_observePath:(NSString *)path observe:(id)observe target:(id)target options:(NSKeyValueObservingOptions)options change:(void(^)(NSDictionary<NSKeyValueChangeKey,id> *))handle {
+    [[WYKVOCourier shareCourier] keepKVOObserve:observe target:target forPath:path options:options eventHandle:handle];
 }
 
 @end

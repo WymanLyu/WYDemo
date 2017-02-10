@@ -1,18 +1,21 @@
 //
 //  WYNotificationCourier.m
-//  12-12WYEvent
+//  12-12WYNotificationEvent
 //
 //  Created by wyman on 2017/2/9.
 //  Copyright © 2017年 tykj. All rights reserved.
 //
 
 #import "WYNotificationCourier.h"
-#import "WYEvent.h"
+#import "WYNotificationEvent.h"
 
 @interface WYNotificationCourier ()
 
 /** 存储执行block */
-@property (nonatomic, strong) NSMutableDictionary <NSString *, WYEvent *> *wy_map;
+@property (nonatomic, strong) NSMutableDictionary <NSString *, WYNotificationEvent *> *wy_map;
+
+/** 已经注册的通知 */
+@property (nonatomic, strong) NSMutableArray *notiArrM;
 
 @end
 
@@ -29,99 +32,62 @@ static WYNotificationCourier *shareCourier = nil;
 
 #pragma mark - 注册通知
 - (void)registeNotificationName:(NSString *const)notiName {
+    
+    // 只监听一次就好了
+    if ([self.notiArrM containsObject:notiName]) return;
+    [self.notiArrM addObject:notiName];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notiHandleFunction:) name:notiName object:nil];
 }
 
 - (void)notiHandleFunction:(NSNotification *)noti {
- 
+    
     // 取出发送者
     id sender = noti.object;
     NSString *notiName = noti.name;
-    // marking 由 notiName 和 sender 共同决定
+    
+    // marking 由 notiName 和 sender 共同决定, 取出对应的事件发送给所有监听者
     NSString *marking = [NSString stringWithFormat:@"%@+%zd", notiName, [sender hash]];
-    
     // 取出事件对象
-    WYEvent *event = [self.wy_map objectForKey:marking];
+    WYNotificationEvent *event = [self.wy_map objectForKey:marking];
     if (!event) return;
-    [self handleEventForMarking:marking];
-}
-
-#pragma mark - 事件回调执行
-// 执行
-- (void)handleEventForMarking:(NSString *)marking {
+    [self handleEventForMarking:marking withNoti:noti];
     
-    WYEvent *event = [self.wy_map objectForKey:marking];
-    __block id res = nil;
-    // 校验监听者是否移除了
-    id target = weakReferenceNonretainedObjectValue(event.target);
-    if (!target) {
-        [self removerMarking:marking];
+    // marking 由 notiName 和 sender 共同决定 ,执行监听nil的所有监听者的回调
+    NSString *marking2 = [NSString stringWithFormat:@"%@+0", notiName];
+    // 取出事件对象
+    WYNotificationEvent *event2 = [self.wy_map objectForKey:marking2];
+    if (!event2) {
         goto Finish;
-    }
-    if (event.eventBeforeHandle) {
-        event.eventBeforeHandle(event.noti, &res);
-    }
-    if (event.eventHandle) {
-        event.eventHandle(event.noti, &res);
-    }
-    if (event.eventAfterHandle) {
-        event.eventAfterHandle(event.noti, &res);
-    }
+    };
+    [self handleEventForMarking:marking2 withNoti:noti];
+    
+    // 执行结束的回调
 Finish:
-    if (event.finish) {
-        event.finish(&res);
+    if (event.finishHandle) {
+        event.finishHandle();
     }
 }
 
-#pragma mark - 事件保存
-- (void)keepEventHandle:(void (^)(id, id *))handle forMarking:(NSString *)marking {
-    WYEvent *event = [self.wy_map objectForKey:marking];
+#pragma mark - 事件信息保存
+/** 保存接受者和回调 */
+- (void)keepEventObserve:(id)observe forMarking:(NSString *)marking eventHandle:(void(^)(id noti))handle {
+    WYNotificationEvent *event = [self.wy_map objectForKey:marking];
     if (!event) {
-        event = [WYEvent new];
+        event = [[WYNotificationEvent alloc] init];
         [self.wy_map setObject:event forKey:marking];
     }
-    event.eventHandle = handle;
-    // 弱引用target
-    event.target = makeWeakReference(self);
+    WeakReference weakObserve  = makeWeakReference(self);
+    if (observe) {
+      weakObserve  = makeWeakReference(observe);
+    }
+    [event.observeDictM setObject:handle forKey:weakObserve];
 }
 
-- (void)keepFinishHandle:(void (^)(id *))handle forMarking:(NSString *)marking {
-    WYEvent *event = [self.wy_map objectForKey:marking];
+/** 保存发送者 */
+- (void)keepEventSender:(id)sender forMarking:(NSString *)marking finishHandle:(void(^)())finishHandle {
+    WYNotificationEvent *event = [self.wy_map objectForKey:marking];
     if (!event) {
-        event = [WYEvent new];
-        [self.wy_map setObject:event forKey:marking];
-    }
-    event.finish = handle;
-    [self.wy_map setObject:event forKey:marking];
-}
-
-- (void)keepEventArg:(id)arg forMarking:(NSString *)marking {
-    WYEvent *event = [self.wy_map objectForKey:marking];
-    if (!event) {
-        event = [WYEvent new];
-        [self.wy_map setObject:event forKey:marking];
-    }
-    event.noti = arg;
-    [self.wy_map setObject:event forKey:marking];
-}
-
-- (void)keepEventTarget:(id)target forMarking:(NSString *)marking {
-    WYEvent *event = [self.wy_map objectForKey:marking];
-    if (!event) {
-        event = [WYEvent new];
-        [self.wy_map setObject:event forKey:marking];
-    }
-    if (target) {
-        event.target = makeWeakReference(target);
-    } else {
-        event.target = makeWeakReference(self);
-    }
-}
-
-- (void)keepEventSender:(id)sender forMarking:(NSString *)marking {
-    WYEvent *event = [self.wy_map objectForKey:marking];
-    if (!event) {
-        event = [WYEvent new];
+        event = [[WYNotificationEvent alloc] init];
         [self.wy_map setObject:event forKey:marking];
     }
     if (sender) {
@@ -129,13 +95,41 @@ Finish:
     } else {
         event.sender = makeWeakReference(self);
     }
+    event.finishHandle = finishHandle;
 }
 
+#pragma mark - 事件回调执行
+// 执行
+- (void)handleEventForMarking:(NSString *)marking withNoti:(NSNotification *)noti {
+    
+    WYNotificationEvent *event = [self.wy_map objectForKey:marking];
+    
+    __block NSMutableArray *deleteArr = [NSMutableArray array];
+    
+    // 执行所有监听者的回调
+    [event.observeDictM enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        WeakReference observe = weakReferenceNonretainedObjectValue(key);
+        void(^handle)(id noti) = (void(^)(id noti))obj;
+        if (observe) { // 监听者还在则执行回调
+            if (handle) {
+                handle(noti);
+            }
+        } else {
+            [deleteArr addObject:key];
+        }
+    }];
+    
+    // 删除监听者挂了的block
+    for (WeakReference key in deleteArr) {
+        [event.observeDictM removeObjectForKey:key];
+    }
+    
+}
 
 #pragma mark - 事件删除
 /** 移除事件回调 */
 - (void)removerMarking:(NSString *)marking {
-    WYEvent *event = [self.wy_map objectForKey:marking];
+    WYNotificationEvent *event = [self.wy_map objectForKey:marking];
     if (!event) return;
     [self.wy_map removeObjectForKey:marking];
     event = nil;
@@ -147,6 +141,13 @@ Finish:
         _wy_map = [NSMutableDictionary dictionary];
     }
     return _wy_map;
+}
+
+- (NSMutableArray *)notiArrM {
+    if (!_notiArrM) {
+        _notiArrM = [NSMutableArray array];
+    }
+    return _notiArrM;
 }
 
 

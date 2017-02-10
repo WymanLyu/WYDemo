@@ -33,17 +33,23 @@
 
 /** 监听事件 -- 默认监听者是WYEventCourier */
 + (void)wy_observeHandingEvent:(NSString *const)marking withTarget:(id)target handle:(void(^)(id noti, id *res))handle;
+/// 待开发---- //
 //+ (void)wy_observeBeforeHandleEvent:(NSString *const)marking handle:(void(^)(id noti, id res))something;
 //+ (void)wy_observeAfterHandleEvent:(NSString *const)marking handle:(void(^)(id noti, id re))something;
+/// 待开发---- //
 
 /** 释放监听事件 */
 + (void)wy_removeHandingEvent:(NSString *const)marking;
 
 #pragma mark - 系统通知方式
 /** 发送事件 */
-- (void)wy_postNotificationName:(NSString *const)notiName withSender:(id)sender userInfo:(NSDictionary *)aUserInfo finishHandle:(void (^)(__autoreleasing id *))finishCallBack;
++ (void)wy_postNotificationName:(NSString *const)notiName withSender:(id)sender userInfo:(NSDictionary *)aUserInfo finishHandle:(void (^)())finishCallBack;
 
 /** 发送通知 */
-- (void)wy_observeNotificationName:(NSString *const)notiName fromSender:(id)sender withObserve:(id)observe handle:(void(^)(NSNotification *noti))handle;
++ (void)wy_observeNotificationName:(NSString *const)notiName fromSender:(id)sender withObserve:(id)observe handle:(void(^)(NSNotification *noti))handle;
+
+#pragma mark - KVO方式
+/** 监听某个属性 */
++ (void)wy_observePath:(NSString *)path observe:(id)observe target:(id)target options:(NSKeyValueObservingOptions)options change:(void(^)(NSDictionary<NSKeyValueChangeKey,id> *))change;
 
 @end
