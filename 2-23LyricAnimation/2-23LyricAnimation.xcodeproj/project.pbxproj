@@ -1,0 +1,530 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F5936DA31E5EAC23008402D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F5936DA21E5EAC23008402D8 /* main.m */; };
+		F5936DA61E5EAC23008402D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F5936DA51E5EAC23008402D8 /* AppDelegate.m */; };
+		F5936DA91E5EAC23008402D8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5936DA81E5EAC23008402D8 /* ViewController.m */; };
+		F5936DAC1E5EAC23008402D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5936DAA1E5EAC23008402D8 /* Main.storyboard */; };
+		F5936DAE1E5EAC23008402D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5936DAD1E5EAC23008402D8 /* Assets.xcassets */; };
+		F5936DB11E5EAC23008402D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5936DAF1E5EAC23008402D8 /* LaunchScreen.storyboard */; };
+		F5936DBC1E5EAC23008402D8 /* __23LyricAnimationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F5936DBB1E5EAC23008402D8 /* __23LyricAnimationTests.m */; };
+		F5936DC71E5EAC23008402D8 /* __23LyricAnimationUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F5936DC61E5EAC23008402D8 /* __23LyricAnimationUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F5936DB81E5EAC23008402D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F5936D961E5EAC23008402D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5936D9D1E5EAC23008402D8;
+			remoteInfo = "2-23LyricAnimation";
+		};
+		F5936DC31E5EAC23008402D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F5936D961E5EAC23008402D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5936D9D1E5EAC23008402D8;
+			remoteInfo = "2-23LyricAnimation";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F5936D9E1E5EAC23008402D8 /* 2-23LyricAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "2-23LyricAnimation.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5936DA21E5EAC23008402D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F5936DA41E5EAC23008402D8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F5936DA51E5EAC23008402D8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F5936DA71E5EAC23008402D8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F5936DA81E5EAC23008402D8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F5936DAB1E5EAC23008402D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F5936DAD1E5EAC23008402D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F5936DB01E5EAC23008402D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F5936DB21E5EAC23008402D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5936DB71E5EAC23008402D8 /* 2-23LyricAnimationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "2-23LyricAnimationTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5936DBB1E5EAC23008402D8 /* __23LyricAnimationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = __23LyricAnimationTests.m; sourceTree = "<group>"; };
+		F5936DBD1E5EAC23008402D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5936DC21E5EAC23008402D8 /* 2-23LyricAnimationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "2-23LyricAnimationUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5936DC61E5EAC23008402D8 /* __23LyricAnimationUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = __23LyricAnimationUITests.m; sourceTree = "<group>"; };
+		F5936DC81E5EAC23008402D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F5936D9B1E5EAC23008402D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5936DB41E5EAC23008402D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5936DBF1E5EAC23008402D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F5936D951E5EAC23008402D8 = {
+			isa = PBXGroup;
+			children = (
+				F5936DA01E5EAC23008402D8 /* 2-23LyricAnimation */,
+				F5936DBA1E5EAC23008402D8 /* 2-23LyricAnimationTests */,
+				F5936DC51E5EAC23008402D8 /* 2-23LyricAnimationUITests */,
+				F5936D9F1E5EAC23008402D8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F5936D9F1E5EAC23008402D8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F5936D9E1E5EAC23008402D8 /* 2-23LyricAnimation.app */,
+				F5936DB71E5EAC23008402D8 /* 2-23LyricAnimationTests.xctest */,
+				F5936DC21E5EAC23008402D8 /* 2-23LyricAnimationUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F5936DA01E5EAC23008402D8 /* 2-23LyricAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				F5936DA41E5EAC23008402D8 /* AppDelegate.h */,
+				F5936DA51E5EAC23008402D8 /* AppDelegate.m */,
+				F5936DA71E5EAC23008402D8 /* ViewController.h */,
+				F5936DA81E5EAC23008402D8 /* ViewController.m */,
+				F5936DAA1E5EAC23008402D8 /* Main.storyboard */,
+				F5936DAD1E5EAC23008402D8 /* Assets.xcassets */,
+				F5936DAF1E5EAC23008402D8 /* LaunchScreen.storyboard */,
+				F5936DB21E5EAC23008402D8 /* Info.plist */,
+				F5936DA11E5EAC23008402D8 /* Supporting Files */,
+			);
+			path = "2-23LyricAnimation";
+			sourceTree = "<group>";
+		};
+		F5936DA11E5EAC23008402D8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F5936DA21E5EAC23008402D8 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F5936DBA1E5EAC23008402D8 /* 2-23LyricAnimationTests */ = {
+			isa = PBXGroup;
+			children = (
+				F5936DBB1E5EAC23008402D8 /* __23LyricAnimationTests.m */,
+				F5936DBD1E5EAC23008402D8 /* Info.plist */,
+			);
+			path = "2-23LyricAnimationTests";
+			sourceTree = "<group>";
+		};
+		F5936DC51E5EAC23008402D8 /* 2-23LyricAnimationUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F5936DC61E5EAC23008402D8 /* __23LyricAnimationUITests.m */,
+				F5936DC81E5EAC23008402D8 /* Info.plist */,
+			);
+			path = "2-23LyricAnimationUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F5936D9D1E5EAC23008402D8 /* 2-23LyricAnimation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5936DCB1E5EAC23008402D8 /* Build configuration list for PBXNativeTarget "2-23LyricAnimation" */;
+			buildPhases = (
+				F5936D9A1E5EAC23008402D8 /* Sources */,
+				F5936D9B1E5EAC23008402D8 /* Frameworks */,
+				F5936D9C1E5EAC23008402D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "2-23LyricAnimation";
+			productName = "2-23LyricAnimation";
+			productReference = F5936D9E1E5EAC23008402D8 /* 2-23LyricAnimation.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F5936DB61E5EAC23008402D8 /* 2-23LyricAnimationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5936DCE1E5EAC23008402D8 /* Build configuration list for PBXNativeTarget "2-23LyricAnimationTests" */;
+			buildPhases = (
+				F5936DB31E5EAC23008402D8 /* Sources */,
+				F5936DB41E5EAC23008402D8 /* Frameworks */,
+				F5936DB51E5EAC23008402D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F5936DB91E5EAC23008402D8 /* PBXTargetDependency */,
+			);
+			name = "2-23LyricAnimationTests";
+			productName = "2-23LyricAnimationTests";
+			productReference = F5936DB71E5EAC23008402D8 /* 2-23LyricAnimationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F5936DC11E5EAC23008402D8 /* 2-23LyricAnimationUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5936DD11E5EAC23008402D8 /* Build configuration list for PBXNativeTarget "2-23LyricAnimationUITests" */;
+			buildPhases = (
+				F5936DBE1E5EAC23008402D8 /* Sources */,
+				F5936DBF1E5EAC23008402D8 /* Frameworks */,
+				F5936DC01E5EAC23008402D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F5936DC41E5EAC23008402D8 /* PBXTargetDependency */,
+			);
+			name = "2-23LyricAnimationUITests";
+			productName = "2-23LyricAnimationUITests";
+			productReference = F5936DC21E5EAC23008402D8 /* 2-23LyricAnimationUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F5936D961E5EAC23008402D8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = wyman;
+				TargetAttributes = {
+					F5936D9D1E5EAC23008402D8 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					F5936DB61E5EAC23008402D8 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F5936D9D1E5EAC23008402D8;
+					};
+					F5936DC11E5EAC23008402D8 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F5936D9D1E5EAC23008402D8;
+					};
+				};
+			};
+			buildConfigurationList = F5936D991E5EAC23008402D8 /* Build configuration list for PBXProject "2-23LyricAnimation" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F5936D951E5EAC23008402D8;
+			productRefGroup = F5936D9F1E5EAC23008402D8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F5936D9D1E5EAC23008402D8 /* 2-23LyricAnimation */,
+				F5936DB61E5EAC23008402D8 /* 2-23LyricAnimationTests */,
+				F5936DC11E5EAC23008402D8 /* 2-23LyricAnimationUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F5936D9C1E5EAC23008402D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5936DB11E5EAC23008402D8 /* LaunchScreen.storyboard in Resources */,
+				F5936DAE1E5EAC23008402D8 /* Assets.xcassets in Resources */,
+				F5936DAC1E5EAC23008402D8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5936DB51E5EAC23008402D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5936DC01E5EAC23008402D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F5936D9A1E5EAC23008402D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5936DA91E5EAC23008402D8 /* ViewController.m in Sources */,
+				F5936DA61E5EAC23008402D8 /* AppDelegate.m in Sources */,
+				F5936DA31E5EAC23008402D8 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5936DB31E5EAC23008402D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5936DBC1E5EAC23008402D8 /* __23LyricAnimationTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5936DBE1E5EAC23008402D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5936DC71E5EAC23008402D8 /* __23LyricAnimationUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F5936DB91E5EAC23008402D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5936D9D1E5EAC23008402D8 /* 2-23LyricAnimation */;
+			targetProxy = F5936DB81E5EAC23008402D8 /* PBXContainerItemProxy */;
+		};
+		F5936DC41E5EAC23008402D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5936D9D1E5EAC23008402D8 /* 2-23LyricAnimation */;
+			targetProxy = F5936DC31E5EAC23008402D8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F5936DAA1E5EAC23008402D8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F5936DAB1E5EAC23008402D8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F5936DAF1E5EAC23008402D8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F5936DB01E5EAC23008402D8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F5936DC91E5EAC23008402D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F5936DCA1E5EAC23008402D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F5936DCC1E5EAC23008402D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "2-23LyricAnimation/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "wyman.--23LyricAnimation";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F5936DCD1E5EAC23008402D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "2-23LyricAnimation/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "wyman.--23LyricAnimation";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F5936DCF1E5EAC23008402D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "2-23LyricAnimationTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "wyman.--23LyricAnimationTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/2-23LyricAnimation.app/2-23LyricAnimation";
+			};
+			name = Debug;
+		};
+		F5936DD01E5EAC23008402D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "2-23LyricAnimationTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "wyman.--23LyricAnimationTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/2-23LyricAnimation.app/2-23LyricAnimation";
+			};
+			name = Release;
+		};
+		F5936DD21E5EAC23008402D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "2-23LyricAnimationUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "wyman.--23LyricAnimationUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "2-23LyricAnimation";
+			};
+			name = Debug;
+		};
+		F5936DD31E5EAC23008402D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "2-23LyricAnimationUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "wyman.--23LyricAnimationUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "2-23LyricAnimation";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F5936D991E5EAC23008402D8 /* Build configuration list for PBXProject "2-23LyricAnimation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5936DC91E5EAC23008402D8 /* Debug */,
+				F5936DCA1E5EAC23008402D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F5936DCB1E5EAC23008402D8 /* Build configuration list for PBXNativeTarget "2-23LyricAnimation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5936DCC1E5EAC23008402D8 /* Debug */,
+				F5936DCD1E5EAC23008402D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F5936DCE1E5EAC23008402D8 /* Build configuration list for PBXNativeTarget "2-23LyricAnimationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5936DCF1E5EAC23008402D8 /* Debug */,
+				F5936DD01E5EAC23008402D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F5936DD11E5EAC23008402D8 /* Build configuration list for PBXNativeTarget "2-23LyricAnimationUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5936DD21E5EAC23008402D8 /* Debug */,
+				F5936DD31E5EAC23008402D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F5936D961E5EAC23008402D8 /* Project object */;
+}
