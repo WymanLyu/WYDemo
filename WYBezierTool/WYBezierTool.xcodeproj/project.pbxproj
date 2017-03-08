@@ -14,11 +14,11 @@
 		BED01F361D93B05E0039CDEB /* WYBezierToolTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BED01F351D93B05E0039CDEB /* WYBezierToolTests.m */; };
 		BED01F411D93B05E0039CDEB /* WYBezierToolUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BED01F401D93B05E0039CDEB /* WYBezierToolUITests.m */; };
 		BEFEB2D11D9A750B00C7378C /* NSObject+RelationPool.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFEB2D01D9A750B00C7378C /* NSObject+RelationPool.m */; };
-		BEFEB2E01D9A751500C7378C /* WYBezierLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFEB2D51D9A751500C7378C /* WYBezierLineModel.m */; };
-		BEFEB2E11D9A751500C7378C /* WYCoordinateView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFEB2D81D9A751500C7378C /* WYCoordinateView.m */; };
-		BEFEB2E21D9A751500C7378C /* WYDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFEB2DA1D9A751500C7378C /* WYDotView.m */; };
-		BEFEB2E31D9A751500C7378C /* WYOperationView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFEB2DC1D9A751500C7378C /* WYOperationView.m */; };
-		BEFEB2E41D9A751500C7378C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFEB2DF1D9A751500C7378C /* ViewController.m */; };
+		F5D2402F1E64265600F08C52 /* WYBezierLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D240241E64265600F08C52 /* WYBezierLineModel.m */; };
+		F5D240301E64265600F08C52 /* WYCoordinateView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D240271E64265600F08C52 /* WYCoordinateView.m */; };
+		F5D240311E64265600F08C52 /* WYDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D240291E64265600F08C52 /* WYDotView.m */; };
+		F5D240321E64265600F08C52 /* WYOperationView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D2402B1E64265600F08C52 /* WYOperationView.m */; };
+		F5D240331E64265600F08C52 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D2402E1E64265600F08C52 /* ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,16 +54,16 @@
 		BED01F421D93B05E0039CDEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEFEB2CF1D9A750B00C7378C /* NSObject+RelationPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+RelationPool.h"; sourceTree = "<group>"; };
 		BEFEB2D01D9A750B00C7378C /* NSObject+RelationPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+RelationPool.m"; sourceTree = "<group>"; };
-		BEFEB2D41D9A751500C7378C /* WYBezierLineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYBezierLineModel.h; sourceTree = "<group>"; };
-		BEFEB2D51D9A751500C7378C /* WYBezierLineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYBezierLineModel.m; sourceTree = "<group>"; };
-		BEFEB2D71D9A751500C7378C /* WYCoordinateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYCoordinateView.h; sourceTree = "<group>"; };
-		BEFEB2D81D9A751500C7378C /* WYCoordinateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYCoordinateView.m; sourceTree = "<group>"; };
-		BEFEB2D91D9A751500C7378C /* WYDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYDotView.h; sourceTree = "<group>"; };
-		BEFEB2DA1D9A751500C7378C /* WYDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYDotView.m; sourceTree = "<group>"; };
-		BEFEB2DB1D9A751500C7378C /* WYOperationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYOperationView.h; sourceTree = "<group>"; };
-		BEFEB2DC1D9A751500C7378C /* WYOperationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYOperationView.m; sourceTree = "<group>"; };
-		BEFEB2DE1D9A751500C7378C /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		BEFEB2DF1D9A751500C7378C /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F5D240231E64265600F08C52 /* WYBezierLineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYBezierLineModel.h; sourceTree = "<group>"; };
+		F5D240241E64265600F08C52 /* WYBezierLineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYBezierLineModel.m; sourceTree = "<group>"; };
+		F5D240261E64265600F08C52 /* WYCoordinateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYCoordinateView.h; sourceTree = "<group>"; };
+		F5D240271E64265600F08C52 /* WYCoordinateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYCoordinateView.m; sourceTree = "<group>"; };
+		F5D240281E64265600F08C52 /* WYDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYDotView.h; sourceTree = "<group>"; };
+		F5D240291E64265600F08C52 /* WYDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYDotView.m; sourceTree = "<group>"; };
+		F5D2402A1E64265600F08C52 /* WYOperationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYOperationView.h; sourceTree = "<group>"; };
+		F5D2402B1E64265600F08C52 /* WYOperationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYOperationView.m; sourceTree = "<group>"; };
+		F5D2402D1E64265600F08C52 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F5D2402E1E64265600F08C52 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +114,7 @@
 		BED01F1D1D93B05E0039CDEB /* WYBezierTool */ = {
 			isa = PBXGroup;
 			children = (
-				BEFEB2D21D9A751500C7378C /* ToolClasses */,
+				F5D240211E64265600F08C52 /* ToolClasses */,
 				BEFEB2CE1D9A750B00C7378C /* Categore */,
 				BED01F1E1D93B05E0039CDEB /* AppDelegate.h */,
 				BED01F1F1D93B05E0039CDEB /* AppDelegate.m */,
@@ -161,44 +161,43 @@
 			path = Categore;
 			sourceTree = "<group>";
 		};
-		BEFEB2D21D9A751500C7378C /* ToolClasses */ = {
+		F5D240211E64265600F08C52 /* ToolClasses */ = {
 			isa = PBXGroup;
 			children = (
-				BEFEB2D31D9A751500C7378C /* Model */,
-				BEFEB2D61D9A751500C7378C /* View */,
-				BEFEB2DD1D9A751500C7378C /* ViewControl */,
+				F5D240221E64265600F08C52 /* Model */,
+				F5D240251E64265600F08C52 /* View */,
+				F5D2402C1E64265600F08C52 /* ViewControl */,
 			);
-			name = ToolClasses;
-			path = Categore/ToolClasses;
+			path = ToolClasses;
 			sourceTree = "<group>";
 		};
-		BEFEB2D31D9A751500C7378C /* Model */ = {
+		F5D240221E64265600F08C52 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BEFEB2D41D9A751500C7378C /* WYBezierLineModel.h */,
-				BEFEB2D51D9A751500C7378C /* WYBezierLineModel.m */,
+				F5D240231E64265600F08C52 /* WYBezierLineModel.h */,
+				F5D240241E64265600F08C52 /* WYBezierLineModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		BEFEB2D61D9A751500C7378C /* View */ = {
+		F5D240251E64265600F08C52 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BEFEB2D71D9A751500C7378C /* WYCoordinateView.h */,
-				BEFEB2D81D9A751500C7378C /* WYCoordinateView.m */,
-				BEFEB2D91D9A751500C7378C /* WYDotView.h */,
-				BEFEB2DA1D9A751500C7378C /* WYDotView.m */,
-				BEFEB2DB1D9A751500C7378C /* WYOperationView.h */,
-				BEFEB2DC1D9A751500C7378C /* WYOperationView.m */,
+				F5D240261E64265600F08C52 /* WYCoordinateView.h */,
+				F5D240271E64265600F08C52 /* WYCoordinateView.m */,
+				F5D240281E64265600F08C52 /* WYDotView.h */,
+				F5D240291E64265600F08C52 /* WYDotView.m */,
+				F5D2402A1E64265600F08C52 /* WYOperationView.h */,
+				F5D2402B1E64265600F08C52 /* WYOperationView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		BEFEB2DD1D9A751500C7378C /* ViewControl */ = {
+		F5D2402C1E64265600F08C52 /* ViewControl */ = {
 			isa = PBXGroup;
 			children = (
-				BEFEB2DE1D9A751500C7378C /* ViewController.h */,
-				BEFEB2DF1D9A751500C7378C /* ViewController.m */,
+				F5D2402D1E64265600F08C52 /* ViewController.h */,
+				F5D2402E1E64265600F08C52 /* ViewController.m */,
 			);
 			path = ViewControl;
 			sourceTree = "<group>";
@@ -332,13 +331,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEFEB2E41D9A751500C7378C /* ViewController.m in Sources */,
-				BEFEB2E31D9A751500C7378C /* WYOperationView.m in Sources */,
-				BEFEB2E01D9A751500C7378C /* WYBezierLineModel.m in Sources */,
+				F5D240321E64265600F08C52 /* WYOperationView.m in Sources */,
+				F5D2402F1E64265600F08C52 /* WYBezierLineModel.m in Sources */,
 				BEFEB2D11D9A750B00C7378C /* NSObject+RelationPool.m in Sources */,
-				BEFEB2E21D9A751500C7378C /* WYDotView.m in Sources */,
+				F5D240331E64265600F08C52 /* ViewController.m in Sources */,
+				F5D240301E64265600F08C52 /* WYCoordinateView.m in Sources */,
 				BED01F231D93B05E0039CDEB /* main.m in Sources */,
-				BEFEB2E11D9A751500C7378C /* WYCoordinateView.m in Sources */,
+				F5D240311E64265600F08C52 /* WYDotView.m in Sources */,
 				BED01F201D93B05E0039CDEB /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -472,6 +471,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = WYBezierTool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yunyao.demo.WYBezierTool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -484,6 +484,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = WYBezierTool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yunyao.demo.WYBezierTool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

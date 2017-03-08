@@ -1,0 +1,1 @@
+../../../../ShareSDK3/ShareSDK/Support/Optional/ShareSDKConfigFile.framework/Headers/ShareSDK+XML.h
