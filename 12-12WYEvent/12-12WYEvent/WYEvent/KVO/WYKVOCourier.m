@@ -7,13 +7,10 @@
 //
 
 #import "WYKVOCourier.h"
-#import "WYKVOEvent.h"
 #import <objc/runtime.h>
+#import "NSObject+WYKVO.h"
 
 @interface WYKVOCourier ()
-
-/** 存储执行block */
-@property (nonatomic, strong) NSMutableDictionary <NSString *, WYKVOEvent *> *wy_map;
 
 @end
 
@@ -44,7 +41,8 @@ static WYKVOCourier *shareCourier = nil;
     event.target = makeWeakReference(target);
     event.path = path;
     event.handle = handle;
-
+    event.targetHash = [NSString stringWithFormat:@"%zd", [[target wy_kvoTarget] hash]];
+    
     // kvo这个属性
     void *context = (__bridge void *)(key);
     [target addObserver:self forKeyPath:path options:options context:context];

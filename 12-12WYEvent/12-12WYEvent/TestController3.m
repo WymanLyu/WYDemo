@@ -8,6 +8,7 @@
 
 #import "TestController3.h"
 #import "WYEvent.h"
+#import "WYKVOCourier.h"
 
 @interface TestController3 ()
 @property (weak, nonatomic) IBOutlet UISlider *slider;
@@ -16,16 +17,20 @@
 
 @end
 
+static id obj = nil;
+
 @implementation TestController3
 
 - (void)dealloc {
     NSLog(@"%s", __func__);
+//    无需移除
+//    [self.slider removeObserver:[WYKVOCourier shareCourier] forKeyPath:@"value"];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    obj = [NSObject new];
     __weak typeof(self)weakSelf = self;
     [self wy_observePath:@"value" target:self.slider options:NSKeyValueObservingOptionNew change:^(NSDictionary<NSKeyValueChangeKey,id> *change) {
         NSLog(@"====");

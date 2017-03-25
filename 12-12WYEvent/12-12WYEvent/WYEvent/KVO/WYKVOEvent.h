@@ -23,4 +23,7 @@
 /** 回调 */
 @property (nonatomic, strong) void(^handle)(NSDictionary<NSKeyValueChangeKey,id> *change);
 
+/** 目标对象hash key */
+@property (nonatomic, copy) NSString *targetHash;
+
 @end

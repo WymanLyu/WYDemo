@@ -7,8 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WYKVOEvent.h"
 
 @interface WYKVOCourier : NSObject
+
+/** 存储执行block */
+@property (nonatomic, strong) NSMutableDictionary <NSString *, WYKVOEvent *> *wy_map;
 
 + (instancetype)shareCourier;
 

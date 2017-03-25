@@ -9,6 +9,7 @@
 #import "NSObject+WYEvent.h"
 #import "WYEventCenter.h"
 #import <objc/runtime.h>
+#import "NSObject+WYKVO.h"
 
 static void *WYCustomObjectEventMarkingArrMKey = &WYCustomObjectEventMarkingArrMKey;
 
@@ -65,9 +66,10 @@ static void *WYCustomObjectEventMarkingArrMKey = &WYCustomObjectEventMarkingArrM
 }
 
 #pragma mark - KVO方式
+
 /** 监听某个属性 */
 - (void)wy_observePath:(NSString *)path target:(NSObject *)target options:(NSKeyValueObservingOptions)options change:(void(^)(NSDictionary<NSKeyValueChangeKey,id> * change))handle {
-    [WYEventCenter wy_observePath:path observe:self target:target options:options change:handle];
+    [WYEventCenter wy_observePath:path observe:[self wy_kvoObserver] target:target options:options change:handle];
 }
 
 @end
