@@ -1,0 +1,87 @@
+//
+//  PrefixHeader.pch
+//  
+//
+//  Created by sialice on 16/3/5.
+//  Copyright © 2016年 sialice. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#ifdef __OBJC__
+
+// ******************** 函数 ****************************
+#define URL() 
+
+// ******************** 颜色 ****************************
+#define kBlackColor         [UIColor blackColor]
+#define kDarkGrayColor      [UIColor darkGrayColor]
+#define kLightGrayColor     [UIColor lightGrayColor]
+#define kWhiteColor         [UIColor whiteColor]
+#define kGrayColor          [UIColor grayColor]
+#define kRedColor           [UIColor redColor]
+#define kGreenColor         [UIColor greenColor]
+#define kBlueColor          [UIColor blueColor]
+#define kCyanColor          [UIColor cyanColor]
+#define kYellowColor        [UIColor yellowColor]
+#define kMagentaColor       [UIColor magentaColor]
+#define kOrangeColor        [UIColor orangeColor]
+#define kPurpleColor        [UIColor purpleColor]
+#define kClearColor         [UIColor clearColor]
+
+// ******************** 尺寸宏 ****************************
+#define IPHONE6_PLUS_SCREENSIZE CGSizeMake(414, 736)
+#define IPHONE6_SCREENSIZE CGSizeMake(375, 667)
+#define IPHONE5_SCREENSIZE CGSizeMake(320, 568)
+#define IPHONE4_SCREENSIZE CGSizeMake(320, 480)
+#define CURRENTSCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define CURRENTSCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+
+
+// ******************** 打印 ****************************
+#ifdef DEBUG
+#define WYLog(FORMAT,...) fprintf(stderr, "%s\n",[[NSString stringWithFormat:FORMAT,##__VA_ARGS__]UTF8String]);
+#else
+#define WYLog(...)
+#endif
+
+#ifdef DEBUG
+#define WYprintf(FORMAT, ...) fprintf(stderr,"%s:%d\t%s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#else
+#define WYprintf(FORMAT, ...) nil
+#endif
+
+// 屏幕适配 750×1334
+#define fitW(w)  (((w)/(750.0))*([UIScreen mainScreen].bounds.size.width))
+#define fitH(h)  (((h)/(1334.0))*([UIScreen mainScreen].bounds.size.height))
+// ******************** 头文件 **************************
+#import "WYExtension.h"
+#import "Masonry.h"
+//#import "WYNetTool.h"
+//#import "WYConstValue.h"
+//#import <AFNetworking.h>
+//#import <MJExtension.h>
+//#import <SVProgressHUD.h>
+//#import <UIImageView+WebCache.h>
+//#import <Masonry.h>
+//#import <MJRefresh.h>
+
+typedef NS_ENUM(NSUInteger, SharePlatform) {
+    SharePlatformWechatSession      = 2,    // 微信聊天
+    SharePlatformQQSession          = 4,    // qq聊天
+    SharePlatformSinaWeibo          = 8,    // 新浪微博
+    SharePlatformWechatTimeline     = 16,   // 微信朋友圈
+    SharePlatformWechatFav          = 32,   // 微信收藏
+    SharePlatformQZone              = 64,   // qq空间
+    SharePlatformAllIfExist         = 126,  // 所有平台
+};
+
+
+#endif
+
+
+
+#endif /* PrefixHeader_pch */

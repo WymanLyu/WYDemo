@@ -32,7 +32,7 @@
     config.width = diaplayView.frame.size.width;
     
     // 3.创建文本模型
-    CoreTextData *data = [CTFrameParser parseContent:@" 按照以上原则，我们将`CTDisplayView`中的部分内容拆开。" config:config];
+    CoreTextData *data = [CTFrameParser parseContent:@"xxoo xxoo " config:config];
     
     // 4.根据模型设置view的内容和大小
     diaplayView.data = data;

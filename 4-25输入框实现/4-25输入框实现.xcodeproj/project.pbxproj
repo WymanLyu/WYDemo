@@ -1,0 +1,560 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F51BF75E1EAF3ADB0019ACD8 /* WYInputAccessoryToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = F51BF75D1EAF3ADB0019ACD8 /* WYInputAccessoryToolView.m */; };
+		F5DB6C3C1EAEFE9900BD58A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DB6C3B1EAEFE9900BD58A8 /* main.m */; };
+		F5DB6C3F1EAEFE9900BD58A8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DB6C3E1EAEFE9900BD58A8 /* AppDelegate.m */; };
+		F5DB6C421EAEFE9900BD58A8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DB6C411EAEFE9900BD58A8 /* ViewController.m */; };
+		F5DB6C451EAEFE9900BD58A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5DB6C431EAEFE9900BD58A8 /* Main.storyboard */; };
+		F5DB6C471EAEFE9900BD58A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5DB6C461EAEFE9900BD58A8 /* Assets.xcassets */; };
+		F5DB6C4A1EAEFE9900BD58A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5DB6C481EAEFE9900BD58A8 /* LaunchScreen.storyboard */; };
+		F5DB6C551EAEFE9900BD58A8 /* __25_____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DB6C541EAEFE9900BD58A8 /* __25_____Tests.m */; };
+		F5DB6C601EAEFE9900BD58A8 /* __25_____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DB6C5F1EAEFE9900BD58A8 /* __25_____UITests.m */; };
+		F5DB6C6F1EAEFEC000BD58A8 /* WYTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DB6C6E1EAEFEC000BD58A8 /* WYTextView.m */; };
+		F5DB6CCC1EAF367400BD58A8 /* UIViewController+WY.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DB6CCB1EAF367400BD58A8 /* UIViewController+WY.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F5DB6C511EAEFE9900BD58A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F5DB6C2F1EAEFE9900BD58A8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5DB6C361EAEFE9900BD58A8;
+			remoteInfo = "4-25输入框实现";
+		};
+		F5DB6C5C1EAEFE9900BD58A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F5DB6C2F1EAEFE9900BD58A8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5DB6C361EAEFE9900BD58A8;
+			remoteInfo = "4-25输入框实现";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F51BF75C1EAF3ADB0019ACD8 /* WYInputAccessoryToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYInputAccessoryToolView.h; sourceTree = "<group>"; };
+		F51BF75D1EAF3ADB0019ACD8 /* WYInputAccessoryToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYInputAccessoryToolView.m; sourceTree = "<group>"; };
+		F5DB6C371EAEFE9900BD58A8 /* 4-25输入框实现.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "4-25输入框实现.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5DB6C3B1EAEFE9900BD58A8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F5DB6C3D1EAEFE9900BD58A8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F5DB6C3E1EAEFE9900BD58A8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F5DB6C401EAEFE9900BD58A8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F5DB6C411EAEFE9900BD58A8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F5DB6C441EAEFE9900BD58A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F5DB6C461EAEFE9900BD58A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F5DB6C491EAEFE9900BD58A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F5DB6C4B1EAEFE9900BD58A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5DB6C501EAEFE9900BD58A8 /* 4-25输入框实现Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "4-25输入框实现Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5DB6C541EAEFE9900BD58A8 /* __25_____Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "__25_____Tests.m"; sourceTree = "<group>"; };
+		F5DB6C561EAEFE9900BD58A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5DB6C5B1EAEFE9900BD58A8 /* 4-25输入框实现UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "4-25输入框实现UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5DB6C5F1EAEFE9900BD58A8 /* __25_____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "__25_____UITests.m"; sourceTree = "<group>"; };
+		F5DB6C611EAEFE9900BD58A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5DB6C6D1EAEFEC000BD58A8 /* WYTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYTextView.h; sourceTree = "<group>"; };
+		F5DB6C6E1EAEFEC000BD58A8 /* WYTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYTextView.m; sourceTree = "<group>"; };
+		F5DB6CCA1EAF367400BD58A8 /* UIViewController+WY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+WY.h"; sourceTree = "<group>"; };
+		F5DB6CCB1EAF367400BD58A8 /* UIViewController+WY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+WY.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F5DB6C341EAEFE9900BD58A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5DB6C4D1EAEFE9900BD58A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5DB6C581EAEFE9900BD58A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F5DB6C2E1EAEFE9900BD58A8 = {
+			isa = PBXGroup;
+			children = (
+				F5DB6C391EAEFE9900BD58A8 /* 4-25输入框实现 */,
+				F5DB6C531EAEFE9900BD58A8 /* 4-25输入框实现Tests */,
+				F5DB6C5E1EAEFE9900BD58A8 /* 4-25输入框实现UITests */,
+				F5DB6C381EAEFE9900BD58A8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F5DB6C381EAEFE9900BD58A8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F5DB6C371EAEFE9900BD58A8 /* 4-25输入框实现.app */,
+				F5DB6C501EAEFE9900BD58A8 /* 4-25输入框实现Tests.xctest */,
+				F5DB6C5B1EAEFE9900BD58A8 /* 4-25输入框实现UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F5DB6C391EAEFE9900BD58A8 /* 4-25输入框实现 */ = {
+			isa = PBXGroup;
+			children = (
+				F5DB6C3D1EAEFE9900BD58A8 /* AppDelegate.h */,
+				F5DB6C3E1EAEFE9900BD58A8 /* AppDelegate.m */,
+				F5DB6CCA1EAF367400BD58A8 /* UIViewController+WY.h */,
+				F5DB6CCB1EAF367400BD58A8 /* UIViewController+WY.m */,
+				F5DB6C401EAEFE9900BD58A8 /* ViewController.h */,
+				F5DB6C411EAEFE9900BD58A8 /* ViewController.m */,
+				F5DB6C431EAEFE9900BD58A8 /* Main.storyboard */,
+				F5DB6C461EAEFE9900BD58A8 /* Assets.xcassets */,
+				F5DB6C481EAEFE9900BD58A8 /* LaunchScreen.storyboard */,
+				F5DB6C4B1EAEFE9900BD58A8 /* Info.plist */,
+				F5DB6C3A1EAEFE9900BD58A8 /* Supporting Files */,
+				F5DB6C6D1EAEFEC000BD58A8 /* WYTextView.h */,
+				F5DB6C6E1EAEFEC000BD58A8 /* WYTextView.m */,
+				F51BF75C1EAF3ADB0019ACD8 /* WYInputAccessoryToolView.h */,
+				F51BF75D1EAF3ADB0019ACD8 /* WYInputAccessoryToolView.m */,
+			);
+			path = "4-25输入框实现";
+			sourceTree = "<group>";
+		};
+		F5DB6C3A1EAEFE9900BD58A8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F5DB6C3B1EAEFE9900BD58A8 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F5DB6C531EAEFE9900BD58A8 /* 4-25输入框实现Tests */ = {
+			isa = PBXGroup;
+			children = (
+				F5DB6C541EAEFE9900BD58A8 /* __25_____Tests.m */,
+				F5DB6C561EAEFE9900BD58A8 /* Info.plist */,
+			);
+			path = "4-25输入框实现Tests";
+			sourceTree = "<group>";
+		};
+		F5DB6C5E1EAEFE9900BD58A8 /* 4-25输入框实现UITests */ = {
+			isa = PBXGroup;
+			children = (
+				F5DB6C5F1EAEFE9900BD58A8 /* __25_____UITests.m */,
+				F5DB6C611EAEFE9900BD58A8 /* Info.plist */,
+			);
+			path = "4-25输入框实现UITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F5DB6C361EAEFE9900BD58A8 /* 4-25输入框实现 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5DB6C641EAEFE9900BD58A8 /* Build configuration list for PBXNativeTarget "4-25输入框实现" */;
+			buildPhases = (
+				F5DB6C331EAEFE9900BD58A8 /* Sources */,
+				F5DB6C341EAEFE9900BD58A8 /* Frameworks */,
+				F5DB6C351EAEFE9900BD58A8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "4-25输入框实现";
+			productName = "4-25输入框实现";
+			productReference = F5DB6C371EAEFE9900BD58A8 /* 4-25输入框实现.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F5DB6C4F1EAEFE9900BD58A8 /* 4-25输入框实现Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5DB6C671EAEFE9900BD58A8 /* Build configuration list for PBXNativeTarget "4-25输入框实现Tests" */;
+			buildPhases = (
+				F5DB6C4C1EAEFE9900BD58A8 /* Sources */,
+				F5DB6C4D1EAEFE9900BD58A8 /* Frameworks */,
+				F5DB6C4E1EAEFE9900BD58A8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F5DB6C521EAEFE9900BD58A8 /* PBXTargetDependency */,
+			);
+			name = "4-25输入框实现Tests";
+			productName = "4-25输入框实现Tests";
+			productReference = F5DB6C501EAEFE9900BD58A8 /* 4-25输入框实现Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F5DB6C5A1EAEFE9900BD58A8 /* 4-25输入框实现UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5DB6C6A1EAEFE9900BD58A8 /* Build configuration list for PBXNativeTarget "4-25输入框实现UITests" */;
+			buildPhases = (
+				F5DB6C571EAEFE9900BD58A8 /* Sources */,
+				F5DB6C581EAEFE9900BD58A8 /* Frameworks */,
+				F5DB6C591EAEFE9900BD58A8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F5DB6C5D1EAEFE9900BD58A8 /* PBXTargetDependency */,
+			);
+			name = "4-25输入框实现UITests";
+			productName = "4-25输入框实现UITests";
+			productReference = F5DB6C5B1EAEFE9900BD58A8 /* 4-25输入框实现UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F5DB6C2F1EAEFE9900BD58A8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = wyman;
+				TargetAttributes = {
+					F5DB6C361EAEFE9900BD58A8 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 9T725P7UDK;
+						ProvisioningStyle = Automatic;
+					};
+					F5DB6C4F1EAEFE9900BD58A8 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 9T725P7UDK;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F5DB6C361EAEFE9900BD58A8;
+					};
+					F5DB6C5A1EAEFE9900BD58A8 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 9T725P7UDK;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F5DB6C361EAEFE9900BD58A8;
+					};
+				};
+			};
+			buildConfigurationList = F5DB6C321EAEFE9900BD58A8 /* Build configuration list for PBXProject "4-25输入框实现" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F5DB6C2E1EAEFE9900BD58A8;
+			productRefGroup = F5DB6C381EAEFE9900BD58A8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F5DB6C361EAEFE9900BD58A8 /* 4-25输入框实现 */,
+				F5DB6C4F1EAEFE9900BD58A8 /* 4-25输入框实现Tests */,
+				F5DB6C5A1EAEFE9900BD58A8 /* 4-25输入框实现UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F5DB6C351EAEFE9900BD58A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5DB6C4A1EAEFE9900BD58A8 /* LaunchScreen.storyboard in Resources */,
+				F5DB6C471EAEFE9900BD58A8 /* Assets.xcassets in Resources */,
+				F5DB6C451EAEFE9900BD58A8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5DB6C4E1EAEFE9900BD58A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5DB6C591EAEFE9900BD58A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F5DB6C331EAEFE9900BD58A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5DB6C421EAEFE9900BD58A8 /* ViewController.m in Sources */,
+				F5DB6C3F1EAEFE9900BD58A8 /* AppDelegate.m in Sources */,
+				F51BF75E1EAF3ADB0019ACD8 /* WYInputAccessoryToolView.m in Sources */,
+				F5DB6C3C1EAEFE9900BD58A8 /* main.m in Sources */,
+				F5DB6C6F1EAEFEC000BD58A8 /* WYTextView.m in Sources */,
+				F5DB6CCC1EAF367400BD58A8 /* UIViewController+WY.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5DB6C4C1EAEFE9900BD58A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5DB6C551EAEFE9900BD58A8 /* __25_____Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5DB6C571EAEFE9900BD58A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5DB6C601EAEFE9900BD58A8 /* __25_____UITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F5DB6C521EAEFE9900BD58A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5DB6C361EAEFE9900BD58A8 /* 4-25输入框实现 */;
+			targetProxy = F5DB6C511EAEFE9900BD58A8 /* PBXContainerItemProxy */;
+		};
+		F5DB6C5D1EAEFE9900BD58A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5DB6C361EAEFE9900BD58A8 /* 4-25输入框实现 */;
+			targetProxy = F5DB6C5C1EAEFE9900BD58A8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F5DB6C431EAEFE9900BD58A8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F5DB6C441EAEFE9900BD58A8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F5DB6C481EAEFE9900BD58A8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F5DB6C491EAEFE9900BD58A8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F5DB6C621EAEFE9900BD58A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F5DB6C631EAEFE9900BD58A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F5DB6C651EAEFE9900BD58A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9T725P7UDK;
+				INFOPLIST_FILE = "4-25输入框实现/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "wyman.--25-----";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F5DB6C661EAEFE9900BD58A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9T725P7UDK;
+				INFOPLIST_FILE = "4-25输入框实现/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "wyman.--25-----";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F5DB6C681EAEFE9900BD58A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 9T725P7UDK;
+				INFOPLIST_FILE = "4-25输入框实现Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "wyman.--25-----Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/4-25输入框实现.app/4-25输入框实现";
+			};
+			name = Debug;
+		};
+		F5DB6C691EAEFE9900BD58A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 9T725P7UDK;
+				INFOPLIST_FILE = "4-25输入框实现Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "wyman.--25-----Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/4-25输入框实现.app/4-25输入框实现";
+			};
+			name = Release;
+		};
+		F5DB6C6B1EAEFE9900BD58A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 9T725P7UDK;
+				INFOPLIST_FILE = "4-25输入框实现UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "wyman.--25-----UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "4-25输入框实现";
+			};
+			name = Debug;
+		};
+		F5DB6C6C1EAEFE9900BD58A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 9T725P7UDK;
+				INFOPLIST_FILE = "4-25输入框实现UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "wyman.--25-----UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "4-25输入框实现";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F5DB6C321EAEFE9900BD58A8 /* Build configuration list for PBXProject "4-25输入框实现" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5DB6C621EAEFE9900BD58A8 /* Debug */,
+				F5DB6C631EAEFE9900BD58A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F5DB6C641EAEFE9900BD58A8 /* Build configuration list for PBXNativeTarget "4-25输入框实现" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5DB6C651EAEFE9900BD58A8 /* Debug */,
+				F5DB6C661EAEFE9900BD58A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F5DB6C671EAEFE9900BD58A8 /* Build configuration list for PBXNativeTarget "4-25输入框实现Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5DB6C681EAEFE9900BD58A8 /* Debug */,
+				F5DB6C691EAEFE9900BD58A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F5DB6C6A1EAEFE9900BD58A8 /* Build configuration list for PBXNativeTarget "4-25输入框实现UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5DB6C6B1EAEFE9900BD58A8 /* Debug */,
+				F5DB6C6C1EAEFE9900BD58A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F5DB6C2F1EAEFE9900BD58A8 /* Project object */;
+}
