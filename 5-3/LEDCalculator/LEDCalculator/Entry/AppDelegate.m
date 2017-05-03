@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "LEDMainViewController.h"
 
 @interface AppDelegate ()
 
@@ -22,7 +21,7 @@
     UIWindow *window = [[UIWindow alloc] init];
     self.window = window;
     LEDMainViewController *mainVc = [[LEDMainViewController alloc] init];
-    UINavigationController *navVc = [[UINavigationController alloc] initWithRootViewController:mainVc];
+    LEDNavController *navVc = [[LEDNavController alloc] initWithRootViewController:mainVc];
     self.window.rootViewController = navVc;
     [self.window makeKeyAndVisible];
   
