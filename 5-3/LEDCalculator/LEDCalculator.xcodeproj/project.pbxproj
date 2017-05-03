@@ -1,0 +1,809 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		563E94E0803F3F6734AE91DA /* libPods-LEDCalculatorTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 045AABAD930D979762B243A2 /* libPods-LEDCalculatorTests.a */; };
+		8C84B4256A387A563DDD151F /* libPods-LEDCalculatorUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D49EF24B0B9B61BA207F63 /* libPods-LEDCalculatorUITests.a */; };
+		CBBB5A6DE5D8BBECC207A751 /* libPods-LEDCalculator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 17FD9CA2370EEE1B6D9F636E /* libPods-LEDCalculator.a */; };
+		F51BF7B81EBA155C0019ACD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F51BF7B71EBA155C0019ACD8 /* Assets.xcassets */; };
+		F51BF7BB1EBA155C0019ACD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F51BF7B91EBA155C0019ACD8 /* LaunchScreen.storyboard */; };
+		F51BF7C61EBA155C0019ACD8 /* LEDCalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F51BF7C51EBA155C0019ACD8 /* LEDCalculatorTests.m */; };
+		F51BF7D11EBA155C0019ACD8 /* LEDCalculatorUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F51BF7D01EBA155C0019ACD8 /* LEDCalculatorUITests.m */; };
+		F51BF7E81EBA16620019ACD8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F51BF7E41EBA16620019ACD8 /* AppDelegate.m */; };
+		F51BF7EC1EBA16A50019ACD8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F51BF7EB1EBA16A50019ACD8 /* main.m */; };
+		F51BF7F11EBA17B80019ACD8 /* LEDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F51BF7F01EBA17B80019ACD8 /* LEDBaseViewController.m */; };
+		F51BF7F71EBA18040019ACD8 /* LEDMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F51BF7F61EBA18040019ACD8 /* LEDMainViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F51BF7C21EBA155C0019ACD8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F51BF7A01EBA155B0019ACD8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F51BF7A71EBA155C0019ACD8;
+			remoteInfo = LEDCalculator;
+		};
+		F51BF7CD1EBA155C0019ACD8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F51BF7A01EBA155B0019ACD8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F51BF7A71EBA155C0019ACD8;
+			remoteInfo = LEDCalculator;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		045AABAD930D979762B243A2 /* libPods-LEDCalculatorTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LEDCalculatorTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		17FD9CA2370EEE1B6D9F636E /* libPods-LEDCalculator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LEDCalculator.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		211EC648F00A2924CEF8030B /* Pods-LEDCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEDCalculator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LEDCalculator/Pods-LEDCalculator.debug.xcconfig"; sourceTree = "<group>"; };
+		2DFEF3CA35E3FDD452BC3919 /* Pods-LEDCalculatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEDCalculatorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LEDCalculatorTests/Pods-LEDCalculatorTests.debug.xcconfig"; sourceTree = "<group>"; };
+		57D49EF24B0B9B61BA207F63 /* libPods-LEDCalculatorUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LEDCalculatorUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AC68CA7CEBB21DCE5D3DB8E /* Pods-LEDCalculatorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEDCalculatorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LEDCalculatorUITests/Pods-LEDCalculatorUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7F7921B1A17DD36BDB160EA6 /* Pods-LEDCalculatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEDCalculatorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LEDCalculatorTests/Pods-LEDCalculatorTests.release.xcconfig"; sourceTree = "<group>"; };
+		8DE0BC62A33B4F870177F38A /* Pods-LEDCalculatorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEDCalculatorUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LEDCalculatorUITests/Pods-LEDCalculatorUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F51BF7A81EBA155C0019ACD8 /* LEDCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LEDCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F51BF7B71EBA155C0019ACD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F51BF7BA1EBA155C0019ACD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F51BF7C11EBA155C0019ACD8 /* LEDCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LEDCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F51BF7C51EBA155C0019ACD8 /* LEDCalculatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LEDCalculatorTests.m; sourceTree = "<group>"; };
+		F51BF7C71EBA155C0019ACD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F51BF7CC1EBA155C0019ACD8 /* LEDCalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LEDCalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F51BF7D01EBA155C0019ACD8 /* LEDCalculatorUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LEDCalculatorUITests.m; sourceTree = "<group>"; };
+		F51BF7D21EBA155C0019ACD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F51BF7E31EBA16620019ACD8 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F51BF7E41EBA16620019ACD8 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F51BF7EB1EBA16A50019ACD8 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = LEDCalculator/main.m; sourceTree = "<group>"; };
+		F51BF7ED1EBA17140019ACD8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = LEDCalculator/Info.plist; sourceTree = "<group>"; };
+		F51BF7EF1EBA17B80019ACD8 /* LEDBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LEDBaseViewController.h; sourceTree = "<group>"; };
+		F51BF7F01EBA17B80019ACD8 /* LEDBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LEDBaseViewController.m; sourceTree = "<group>"; };
+		F51BF7F51EBA18040019ACD8 /* LEDMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LEDMainViewController.h; sourceTree = "<group>"; };
+		F51BF7F61EBA18040019ACD8 /* LEDMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LEDMainViewController.m; sourceTree = "<group>"; };
+		F51BF7F91EBA1A730019ACD8 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		FA7D1CBB9FED26B32A87B688 /* Pods-LEDCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEDCalculator.release.xcconfig"; path = "Pods/Target Support Files/Pods-LEDCalculator/Pods-LEDCalculator.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F51BF7A51EBA155C0019ACD8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBBB5A6DE5D8BBECC207A751 /* libPods-LEDCalculator.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F51BF7BE1EBA155C0019ACD8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				563E94E0803F3F6734AE91DA /* libPods-LEDCalculatorTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F51BF7C91EBA155C0019ACD8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C84B4256A387A563DDD151F /* libPods-LEDCalculatorUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2AD6A54287E41C4CF77C8641 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				211EC648F00A2924CEF8030B /* Pods-LEDCalculator.debug.xcconfig */,
+				FA7D1CBB9FED26B32A87B688 /* Pods-LEDCalculator.release.xcconfig */,
+				2DFEF3CA35E3FDD452BC3919 /* Pods-LEDCalculatorTests.debug.xcconfig */,
+				7F7921B1A17DD36BDB160EA6 /* Pods-LEDCalculatorTests.release.xcconfig */,
+				8DE0BC62A33B4F870177F38A /* Pods-LEDCalculatorUITests.debug.xcconfig */,
+				6AC68CA7CEBB21DCE5D3DB8E /* Pods-LEDCalculatorUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C12E090E5ADD23A16B116097 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				17FD9CA2370EEE1B6D9F636E /* libPods-LEDCalculator.a */,
+				045AABAD930D979762B243A2 /* libPods-LEDCalculatorTests.a */,
+				57D49EF24B0B9B61BA207F63 /* libPods-LEDCalculatorUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F51BF79F1EBA155B0019ACD8 = {
+			isa = PBXGroup;
+			children = (
+				F51BF7AA1EBA155C0019ACD8 /* LEDCalculator */,
+				F51BF7EB1EBA16A50019ACD8 /* main.m */,
+				F51BF7ED1EBA17140019ACD8 /* Info.plist */,
+				F51BF7C41EBA155C0019ACD8 /* LEDCalculatorTests */,
+				F51BF7CF1EBA155C0019ACD8 /* LEDCalculatorUITests */,
+				F51BF7A91EBA155C0019ACD8 /* Products */,
+				2AD6A54287E41C4CF77C8641 /* Pods */,
+				C12E090E5ADD23A16B116097 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F51BF7A91EBA155C0019ACD8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F51BF7A81EBA155C0019ACD8 /* LEDCalculator.app */,
+				F51BF7C11EBA155C0019ACD8 /* LEDCalculatorTests.xctest */,
+				F51BF7CC1EBA155C0019ACD8 /* LEDCalculatorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F51BF7AA1EBA155C0019ACD8 /* LEDCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				F51BF7DE1EBA16620019ACD8 /* Classes */,
+				F51BF7E21EBA16620019ACD8 /* Entry */,
+				F51BF7AB1EBA155C0019ACD8 /* Supporting Files */,
+			);
+			path = LEDCalculator;
+			sourceTree = "<group>";
+		};
+		F51BF7AB1EBA155C0019ACD8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F51BF7B71EBA155C0019ACD8 /* Assets.xcassets */,
+				F51BF7B91EBA155C0019ACD8 /* LaunchScreen.storyboard */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F51BF7C41EBA155C0019ACD8 /* LEDCalculatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				F51BF7C51EBA155C0019ACD8 /* LEDCalculatorTests.m */,
+				F51BF7C71EBA155C0019ACD8 /* Info.plist */,
+			);
+			path = LEDCalculatorTests;
+			sourceTree = "<group>";
+		};
+		F51BF7CF1EBA155C0019ACD8 /* LEDCalculatorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F51BF7D01EBA155C0019ACD8 /* LEDCalculatorUITests.m */,
+				F51BF7D21EBA155C0019ACD8 /* Info.plist */,
+			);
+			path = LEDCalculatorUITests;
+			sourceTree = "<group>";
+		};
+		F51BF7DE1EBA16620019ACD8 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F51BF7F81EBA1A430019ACD8 /* Global */,
+				F51BF7DF1EBA16620019ACD8 /* Base */,
+				F51BF7E01EBA16620019ACD8 /* Calculator */,
+				F51BF7E11EBA16620019ACD8 /* Lib */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		F51BF7DF1EBA16620019ACD8 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				F51BF7EF1EBA17B80019ACD8 /* LEDBaseViewController.h */,
+				F51BF7F01EBA17B80019ACD8 /* LEDBaseViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		F51BF7E01EBA16620019ACD8 /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				F51BF7F21EBA17E30019ACD8 /* Controller */,
+				F51BF7F31EBA17E30019ACD8 /* Model */,
+				F51BF7F41EBA17E30019ACD8 /* View */,
+			);
+			path = Calculator;
+			sourceTree = "<group>";
+		};
+		F51BF7E11EBA16620019ACD8 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		F51BF7E21EBA16620019ACD8 /* Entry */ = {
+			isa = PBXGroup;
+			children = (
+				F51BF7E31EBA16620019ACD8 /* AppDelegate.h */,
+				F51BF7E41EBA16620019ACD8 /* AppDelegate.m */,
+			);
+			path = Entry;
+			sourceTree = "<group>";
+		};
+		F51BF7F21EBA17E30019ACD8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F51BF7F51EBA18040019ACD8 /* LEDMainViewController.h */,
+				F51BF7F61EBA18040019ACD8 /* LEDMainViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F51BF7F31EBA17E30019ACD8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F51BF7F41EBA17E30019ACD8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F51BF7F81EBA1A430019ACD8 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				F51BF7F91EBA1A730019ACD8 /* PrefixHeader.pch */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F51BF7A71EBA155C0019ACD8 /* LEDCalculator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F51BF7D51EBA155C0019ACD8 /* Build configuration list for PBXNativeTarget "LEDCalculator" */;
+			buildPhases = (
+				746676FB2EB92E97FC4D04A5 /* [CP] Check Pods Manifest.lock */,
+				F51BF7A41EBA155C0019ACD8 /* Sources */,
+				F51BF7A51EBA155C0019ACD8 /* Frameworks */,
+				F51BF7A61EBA155C0019ACD8 /* Resources */,
+				1515A43B48427CC0FB2994EA /* [CP] Embed Pods Frameworks */,
+				F935D2C039B8CA5339077CD1 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LEDCalculator;
+			productName = LEDCalculator;
+			productReference = F51BF7A81EBA155C0019ACD8 /* LEDCalculator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F51BF7C01EBA155C0019ACD8 /* LEDCalculatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F51BF7D81EBA155C0019ACD8 /* Build configuration list for PBXNativeTarget "LEDCalculatorTests" */;
+			buildPhases = (
+				624A97929239DE9EBBA0FB7C /* [CP] Check Pods Manifest.lock */,
+				F51BF7BD1EBA155C0019ACD8 /* Sources */,
+				F51BF7BE1EBA155C0019ACD8 /* Frameworks */,
+				F51BF7BF1EBA155C0019ACD8 /* Resources */,
+				53540DD8B757206F4D40C4DC /* [CP] Embed Pods Frameworks */,
+				6E686BCFE7329E3CA1031619 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F51BF7C31EBA155C0019ACD8 /* PBXTargetDependency */,
+			);
+			name = LEDCalculatorTests;
+			productName = LEDCalculatorTests;
+			productReference = F51BF7C11EBA155C0019ACD8 /* LEDCalculatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F51BF7CB1EBA155C0019ACD8 /* LEDCalculatorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F51BF7DB1EBA155C0019ACD8 /* Build configuration list for PBXNativeTarget "LEDCalculatorUITests" */;
+			buildPhases = (
+				1D45755486E2AC860D0A2142 /* [CP] Check Pods Manifest.lock */,
+				F51BF7C81EBA155C0019ACD8 /* Sources */,
+				F51BF7C91EBA155C0019ACD8 /* Frameworks */,
+				F51BF7CA1EBA155C0019ACD8 /* Resources */,
+				F0E5F6564A97921F4E3F35F8 /* [CP] Embed Pods Frameworks */,
+				9C36D7872247FCD64B59DCA6 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F51BF7CE1EBA155C0019ACD8 /* PBXTargetDependency */,
+			);
+			name = LEDCalculatorUITests;
+			productName = LEDCalculatorUITests;
+			productReference = F51BF7CC1EBA155C0019ACD8 /* LEDCalculatorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F51BF7A01EBA155B0019ACD8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = wyman;
+				TargetAttributes = {
+					F51BF7A71EBA155C0019ACD8 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 9T725P7UDK;
+						ProvisioningStyle = Automatic;
+					};
+					F51BF7C01EBA155C0019ACD8 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 9T725P7UDK;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F51BF7A71EBA155C0019ACD8;
+					};
+					F51BF7CB1EBA155C0019ACD8 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 9T725P7UDK;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F51BF7A71EBA155C0019ACD8;
+					};
+				};
+			};
+			buildConfigurationList = F51BF7A31EBA155B0019ACD8 /* Build configuration list for PBXProject "LEDCalculator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F51BF79F1EBA155B0019ACD8;
+			productRefGroup = F51BF7A91EBA155C0019ACD8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F51BF7A71EBA155C0019ACD8 /* LEDCalculator */,
+				F51BF7C01EBA155C0019ACD8 /* LEDCalculatorTests */,
+				F51BF7CB1EBA155C0019ACD8 /* LEDCalculatorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F51BF7A61EBA155C0019ACD8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F51BF7BB1EBA155C0019ACD8 /* LaunchScreen.storyboard in Resources */,
+				F51BF7B81EBA155C0019ACD8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F51BF7BF1EBA155C0019ACD8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F51BF7CA1EBA155C0019ACD8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1515A43B48427CC0FB2994EA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LEDCalculator/Pods-LEDCalculator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1D45755486E2AC860D0A2142 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		53540DD8B757206F4D40C4DC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LEDCalculatorTests/Pods-LEDCalculatorTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		624A97929239DE9EBBA0FB7C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6E686BCFE7329E3CA1031619 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LEDCalculatorTests/Pods-LEDCalculatorTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		746676FB2EB92E97FC4D04A5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9C36D7872247FCD64B59DCA6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LEDCalculatorUITests/Pods-LEDCalculatorUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0E5F6564A97921F4E3F35F8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LEDCalculatorUITests/Pods-LEDCalculatorUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F935D2C039B8CA5339077CD1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LEDCalculator/Pods-LEDCalculator-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F51BF7A41EBA155C0019ACD8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F51BF7E81EBA16620019ACD8 /* AppDelegate.m in Sources */,
+				F51BF7EC1EBA16A50019ACD8 /* main.m in Sources */,
+				F51BF7F11EBA17B80019ACD8 /* LEDBaseViewController.m in Sources */,
+				F51BF7F71EBA18040019ACD8 /* LEDMainViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F51BF7BD1EBA155C0019ACD8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F51BF7C61EBA155C0019ACD8 /* LEDCalculatorTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F51BF7C81EBA155C0019ACD8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F51BF7D11EBA155C0019ACD8 /* LEDCalculatorUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F51BF7C31EBA155C0019ACD8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F51BF7A71EBA155C0019ACD8 /* LEDCalculator */;
+			targetProxy = F51BF7C21EBA155C0019ACD8 /* PBXContainerItemProxy */;
+		};
+		F51BF7CE1EBA155C0019ACD8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F51BF7A71EBA155C0019ACD8 /* LEDCalculator */;
+			targetProxy = F51BF7CD1EBA155C0019ACD8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F51BF7B91EBA155C0019ACD8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F51BF7BA1EBA155C0019ACD8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F51BF7D31EBA155C0019ACD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F51BF7D41EBA155C0019ACD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F51BF7D61EBA155C0019ACD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 211EC648F00A2924CEF8030B /* Pods-LEDCalculator.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9T725P7UDK;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = LEDCalculator/Classes/Global/PrefixHeader.pch;
+				INFOPLIST_FILE = LEDCalculator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = wyman.LEDCalculator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F51BF7D71EBA155C0019ACD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA7D1CBB9FED26B32A87B688 /* Pods-LEDCalculator.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9T725P7UDK;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = LEDCalculator/Classes/Global/PrefixHeader.pch;
+				INFOPLIST_FILE = LEDCalculator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = wyman.LEDCalculator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F51BF7D91EBA155C0019ACD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DFEF3CA35E3FDD452BC3919 /* Pods-LEDCalculatorTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 9T725P7UDK;
+				INFOPLIST_FILE = LEDCalculatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = wyman.LEDCalculatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LEDCalculator.app/LEDCalculator";
+			};
+			name = Debug;
+		};
+		F51BF7DA1EBA155C0019ACD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F7921B1A17DD36BDB160EA6 /* Pods-LEDCalculatorTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 9T725P7UDK;
+				INFOPLIST_FILE = LEDCalculatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = wyman.LEDCalculatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LEDCalculator.app/LEDCalculator";
+			};
+			name = Release;
+		};
+		F51BF7DC1EBA155C0019ACD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DE0BC62A33B4F870177F38A /* Pods-LEDCalculatorUITests.debug.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 9T725P7UDK;
+				INFOPLIST_FILE = LEDCalculatorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = wyman.LEDCalculatorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = LEDCalculator;
+			};
+			name = Debug;
+		};
+		F51BF7DD1EBA155C0019ACD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6AC68CA7CEBB21DCE5D3DB8E /* Pods-LEDCalculatorUITests.release.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 9T725P7UDK;
+				INFOPLIST_FILE = LEDCalculatorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = wyman.LEDCalculatorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = LEDCalculator;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F51BF7A31EBA155B0019ACD8 /* Build configuration list for PBXProject "LEDCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F51BF7D31EBA155C0019ACD8 /* Debug */,
+				F51BF7D41EBA155C0019ACD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F51BF7D51EBA155C0019ACD8 /* Build configuration list for PBXNativeTarget "LEDCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F51BF7D61EBA155C0019ACD8 /* Debug */,
+				F51BF7D71EBA155C0019ACD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F51BF7D81EBA155C0019ACD8 /* Build configuration list for PBXNativeTarget "LEDCalculatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F51BF7D91EBA155C0019ACD8 /* Debug */,
+				F51BF7DA1EBA155C0019ACD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F51BF7DB1EBA155C0019ACD8 /* Build configuration list for PBXNativeTarget "LEDCalculatorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F51BF7DC1EBA155C0019ACD8 /* Debug */,
+				F51BF7DD1EBA155C0019ACD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F51BF7A01EBA155B0019ACD8 /* Project object */;
+}
