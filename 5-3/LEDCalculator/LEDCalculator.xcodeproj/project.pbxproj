@@ -172,6 +172,7 @@
 				C12E090E5ADD23A16B116097 /* Frameworks */,
 			);
 			sourceTree = "<group>";
+			wrapsLines = 0;
 		};
 		F51BF7A91EBA155C0019ACD8 /* Products */ = {
 			isa = PBXGroup;
@@ -773,6 +774,7 @@
 			baseConfigurationReference = 211EC648F00A2924CEF8030B /* Pods-LEDCalculator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 9T725P7UDK;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = LEDCalculator/Classes/Global/PrefixHeader.pch;
@@ -789,6 +791,7 @@
 			baseConfigurationReference = FA7D1CBB9FED26B32A87B688 /* Pods-LEDCalculator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 9T725P7UDK;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = LEDCalculator/Classes/Global/PrefixHeader.pch;
