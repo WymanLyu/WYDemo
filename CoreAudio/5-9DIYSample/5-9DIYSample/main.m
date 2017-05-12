@@ -82,11 +82,13 @@ int main(int argc, const char * argv[]) {
         asdb.mSampleRate = SAMPLE_RATE;   // 设置采样率
         asdb.mFormatID = kAudioFormatLinearPCM; // 线性PCM
         asdb.mFormatFlags = kAudioFormatFlagIsBigEndian | kAudioFormatFlagIsSignedInteger | kAudioFormatFlagIsPacked; // 音频数据在buff中的内存细节:大端存储 | 有符号整形 | 每个bit都有意义
-        asdb.mBytesPerPacket = 2;    // 线性PCM，packet就是frame,而1个frame是2字节（8bit）
-        asdb.mFramesPerPacket = 1;   // 线性PCM，packet就是frame
-        asdb.mBytesPerFrame = 2;     // 每个样本占据2个字节（说明位深是8bit*2）
-        asdb.mChannelsPerFrame = 1;  // 每个样本有一条声道，这是
-        asdb.mBitsPerChannel = 16;   // 位深16bit
+//        kAudioFormatFlagsAudioUnitCanonical
+        int numberChannel = 1; // 通道数
+        asdb.mBytesPerPacket = 2*numberChannel;    // 线性PCM，packet就是frame,而1个frame是2字节（8bit）
+        asdb.mFramesPerPacket = 1;                 // 线性PCM，1packet==1frame
+        asdb.mBytesPerFrame = 2*numberChannel;     // 每个frame占据2个字节（说明位深是8bit*2）
+        asdb.mChannelsPerFrame = 1*numberChannel;  // 每个frame有一条声道
+        asdb.mBitsPerChannel = 16;                 // 位深16bit
         
         // 5.设置准备写入的文件
         AudioFileID audioFile; // CoreAudio中的媒体文件标识
@@ -95,7 +97,7 @@ int main(int argc, const char * argv[]) {
         assert(theErr == noErr);// 断言
         
         // 6.写入采样值【就是音频波的采样数字】
-        long maxSampleCount = SAMPLE_RATE * DURATION; // 整个音频的采样数
+        long maxSampleCount = SAMPLE_RATE * DURATION; // 整个音频的采样数[实际上duration还要根据channel数决定]
         long currentSampleCount = 0; // 当前写入的采样数
         UInt32 byteToWrite = 2; // 每个采样数据写入的字节数
         double wavelengthInSamples = SAMPLE_RATE / hz; // 每秒的样本数 / 每秒的震荡周期数 == 每个波周期内的采样数
