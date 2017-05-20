@@ -83,7 +83,7 @@ int main(int argc, const char * argv[]) {
         asdb.mFormatID = kAudioFormatLinearPCM; // 线性PCM
         asdb.mFormatFlags = kAudioFormatFlagIsBigEndian | kAudioFormatFlagIsSignedInteger | kAudioFormatFlagIsPacked; // 音频数据在buff中的内存细节:大端存储 | 有符号整形 | 每个bit都有意义
 //        kAudioFormatFlagsAudioUnitCanonical
-        int numberChannel = 1; // 通道数
+        int numberChannel = 2; // 通道数
         asdb.mBytesPerPacket = 2*numberChannel;    // 线性PCM，packet就是frame,而1个frame是2字节（8bit）
         asdb.mFramesPerPacket = 1;                 // 线性PCM，1packet==1frame
         asdb.mBytesPerFrame = 2*numberChannel;     // 每个frame占据2个字节（说明位深是8bit*2）

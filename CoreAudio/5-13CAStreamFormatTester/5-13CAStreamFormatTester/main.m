@@ -13,7 +13,7 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // insert code here...
         
-        // 0.文件类型和媒体格式
+        // 0.文件类型和媒体格式  【容器格式 && 音频格式 -》 ？】
         AudioFileTypeAndFormatID fileTypeAndFormat;
         fileTypeAndFormat.mFileType = kAudioFileAIFFType;
         fileTypeAndFormat.mFormatID = kAudioFormatLinearPCM;
@@ -40,7 +40,7 @@ int main(int argc, const char * argv[]) {
             UInt32 format4cc = CFSwapInt32HostToBig(asbd.mFormatID); // 大端读取
 
             
-            NSLog (@"mFormatId:%4.4s, mFormatFlags:%d, mBitsPerChannel:%d",(char*)&format4cc,asbd.mFormatFlags,asbd.mBitsPerChannel);
+            NSLog (@"mSampleRate:%f, mFormatId:%4.4s, mFormatFlags:%d, mBitsPerChannel:%d",asbd.mSampleRate,(char*)&format4cc,asbd.mFormatFlags,asbd.mBitsPerChannel);
         
 //            NSLog(@"序号%zd --- mSampleRate:%f-AudioFormatID:%s-AudioFormatFlags:%zd-mBytesPerPacket:%zd-mFramesPerPacket:%zd-mBytesPerFrame:%zd-mChannelsPerFrame:%zd-mBitsPerChannel:%zd-mReserved:%zd",i, asbd.mSampleRate, (char *)&format4cc, asbd.mFormatFlags, asbd.mBytesPerPacket, asbd.mFramesPerPacket, asbd.mBytesPerFrame, asbd.mChannelsPerFrame,asbd.mBitsPerChannel, asbd.mReserved);
             
