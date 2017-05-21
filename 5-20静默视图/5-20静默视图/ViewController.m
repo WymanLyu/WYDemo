@@ -32,17 +32,6 @@
     }];
     // 空视图事件
     [self.view wy_nullViewAddTarget:self action:@selector(revert)];
-    
-    
-    
-    dispatch_async(dispatch_get_main_queue(), <#^(void)block#>)
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        <#code to be executed after a specified delay#>
-    });
-    
-    [self performSelector:<#(nonnull SEL)#> withObject:<#(nullable id)#> afterDelay:<#(NSTimeInterval)#> inModes:<#(nonnull NSArray<NSRunLoopMode> *)#>]
-    
 }
 
 - (void)revert {
