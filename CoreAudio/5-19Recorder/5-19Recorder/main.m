@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <AudioToolbox/AudioToolbox.h>
 
+#define LOG_ASDB
 #define kNumberRecordBuffers 3 // buffer数
 
 // 错误校验
@@ -29,6 +30,38 @@ static void CheckError(OSStatus error, const char *operation)
     // 打印错误并退出程序
     fprintf(stderr, "Error: %s (%s)\n", operation, errorString);
     exit(1);
+}
+
+// 打印格式
+static void LogASBD(AudioStreamBasicDescription *asbd, const char *operaton)
+{
+#ifdef LOG_ASDB
+    // 转换4字符格式
+    char str[20];
+    *(UInt32 *)(str+1) = CFSwapInt32HostToBig(asbd->mFormatID);
+    if (isprint(str[1]) && isprint(str[2]) && isprint(str[3]) && isprint(str[4])) {
+        str[0] = str[5] = '\''; // 补上个引号，为了好看点
+        str[6] = '\0'; // 字符串结尾
+    } else { // 其他错误码，格式化写入字符串
+        sprintf(str, "%d", (int)asbd->mFormatID);
+    }
+    printf("\n");
+    printf("======AudioStreamBasicDescription======\n");
+    printf("=======================================\n");
+    printf(">>> operation        : %s \n", operaton);
+    printf(">>> mSampleRate      : %f\n", asbd->mSampleRate);
+    printf(">>> mFormatID        : %s\n", str);
+    printf(">>> mFormatFlags     : %d\n", asbd->mFormatFlags);
+    printf(">>> mBytesPerPacket  : %d\n", asbd->mBytesPerPacket);
+    printf(">>> mFramesPerPacket : %d\n", asbd->mFramesPerPacket);
+    printf(">>> mBytesPerFrame   : %d\n", asbd->mBytesPerFrame);
+    printf(">>> mChannelsPerFrame: %d\n", asbd->mChannelsPerFrame);
+    printf(">>> mBitsPerChannel  : %d\n", asbd->mBitsPerChannel);
+    printf(">>> mReserved        : %d\n", asbd->mReserved);
+    printf("=======================================\n");
+    printf("======AudioStreamBasicDescription======\n");
+    printf("\n");
+#endif
 }
 
 // 录音机
@@ -82,7 +115,7 @@ static OSStatus MyGetDefaultInputDeviceSampleRate(Float64 *sampleRate)
     // 1.2.获取audioDeviceID
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-    error = AudioHardwareServiceGetPropertyData(kAudioObjectSystemObject, &propertyAddress, 0, NULL, &propertySize, &audioDeviceID); // HAL对象 - 硬件默认配置 - 属性缓存区大小【不是所有属性都有置0】 - 属性缓存指针【不是所有属性都有置NULL】- AudioDeviceID
+    error = AudioHardwareServiceGetPropertyData(kAudioObjectSystemObject, &propertyAddress, 0, NULL, &propertySize, &audioDeviceID); // 对象地址【HAL对象】 - 硬件默认配置 - 属性缓存区大小【不是所有属性都有，无则置0】 - 属性缓存指针【不是所有属性都有，无则置NULL】- AudioDeviceID
 #pragma clang diagnostic pop
 
     if (error) {
@@ -129,7 +162,7 @@ static int MyComputeRecordBufferSize(const AudioStreamBasicDescription *format, 
     frames = ceil(second * format->mSampleRate);
     
     // 1.获取所有帧的字节大小
-    if (format->mBytesPerFrame > 0) { // 1.1.CBR下的字节数下是个没帧大小常量
+    if (format->mBytesPerFrame > 0) { // 1.1.CBR下的字节数下是个每帧大小常量
         bytes = frames * format->mBytesPerFrame;
     } else {
         // 1.2.VBR下只能通过packet来计算帧的大小
@@ -178,18 +211,22 @@ int main(int argc, const char * argv[]) {
         theErr = MyGetDefaultInputDeviceSampleRate(&recorderFormat.mSampleRate);
         CheckError(theErr, "MyGetDefaultInputDeviceSampleRate");
         // 1.4.其余给系统Audio进行设置
+        LogASBD(&recorderFormat, "获取系统formatInfo前");
         UInt32 propertySize = sizeof(recorderFormat);
         theErr = AudioFormatGetProperty(kAudioFormatProperty_FormatInfo, 0, NULL, &propertySize, &recorderFormat);
         CheckError(theErr, "AudioFormatGetProperty");
+        LogASBD(&recorderFormat, "获取系统formatInfo后");
         
         // 2.创建AudioQueue
         AudioQueueRef queue = {0};
         theErr =  AudioQueueNewInput(&recorderFormat, MyAQInputCallback, &recorder, NULL, NULL, 0, &queue);
         CheckError(theErr, "AudioQueueNewInput");
-        // 2.1.通过audioQueue补充更完整的格式
-        propertySize = sizeof(recorderFormat);
-        theErr = AudioQueueGetProperty(queue, kAudioConverterCurrentOutputStreamDescription, &recorderFormat, &propertySize);
-        CheckError(theErr, "AudioQueueGetProperty");
+//        // 2.1.通过audioQueue补充更完整的格式【这个好像完全木有必要】
+//        LogASBD(&recorderFormat, "AudioQueue补充格式前");
+//        propertySize = sizeof(recorderFormat);
+//        theErr = AudioQueueGetProperty(queue, kAudioConverterCurrentOutputStreamDescription, &recorderFormat, &propertySize);
+//        CheckError(theErr, "AudioQueueGetProperty");
+//        LogASBD(&recorderFormat, "AudioQueue补充格式后");
         
         // 3.设置文件
         // 3.1.输出文件URL
