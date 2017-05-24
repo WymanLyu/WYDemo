@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F5618DA61ED5180400843B56 /* CoreAudioUtil.c in Sources */ = {isa = PBXBuildFile; fileRef = F5618DA41ED5180400843B56 /* CoreAudioUtil.c */; };
-		F5EBFBAE1ECECE430027A6DA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F5EBFBAD1ECECE430027A6DA /* main.m */; };
+		F5618DA91ED5271600843B56 /* CoreAudioUtil.c in Sources */ = {isa = PBXBuildFile; fileRef = F5618DA71ED5271600843B56 /* CoreAudioUtil.c */; };
+		F5EBFC0D1ED289F20027A6DA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F5EBFC0C1ED289F20027A6DA /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		F5EBFBA81ECECE430027A6DA /* CopyFiles */ = {
+		F5EBFC071ED289F20027A6DA /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -24,14 +24,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		F5618DA41ED5180400843B56 /* CoreAudioUtil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CoreAudioUtil.c; sourceTree = "<group>"; };
-		F5618DA51ED5180400843B56 /* CoreAudioUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreAudioUtil.h; sourceTree = "<group>"; };
-		F5EBFBAA1ECECE430027A6DA /* 5-19Recorder */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "5-19Recorder"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F5EBFBAD1ECECE430027A6DA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F5618DA71ED5271600843B56 /* CoreAudioUtil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CoreAudioUtil.c; sourceTree = "<group>"; };
+		F5618DA81ED5271600843B56 /* CoreAudioUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreAudioUtil.h; sourceTree = "<group>"; };
+		F5618DAA1ED535E500843B56 /* 辛晓琪歌曲.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "辛晓琪歌曲.m4a"; sourceTree = "<group>"; };
+		F5EBFC091ED289F20027A6DA /* 5-22Playback */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "5-22Playback"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5EBFC0C1ED289F20027A6DA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F5EBFBA71ECECE430027A6DA /* Frameworks */ = {
+		F5EBFC061ED289F20027A6DA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,99 +42,100 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F5EBFBA11ECECE430027A6DA = {
+		F5EBFC001ED289F20027A6DA = {
 			isa = PBXGroup;
 			children = (
-				F5EBFBAC1ECECE430027A6DA /* 5-19Recorder */,
-				F5EBFBAB1ECECE430027A6DA /* Products */,
+				F5EBFC0B1ED289F20027A6DA /* 5-22Playback */,
+				F5EBFC0A1ED289F20027A6DA /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		F5EBFBAB1ECECE430027A6DA /* Products */ = {
+		F5EBFC0A1ED289F20027A6DA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F5EBFBAA1ECECE430027A6DA /* 5-19Recorder */,
+				F5EBFC091ED289F20027A6DA /* 5-22Playback */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F5EBFBAC1ECECE430027A6DA /* 5-19Recorder */ = {
+		F5EBFC0B1ED289F20027A6DA /* 5-22Playback */ = {
 			isa = PBXGroup;
 			children = (
-				F5EBFBAD1ECECE430027A6DA /* main.m */,
-				F5618DA41ED5180400843B56 /* CoreAudioUtil.c */,
-				F5618DA51ED5180400843B56 /* CoreAudioUtil.h */,
+				F5618DA71ED5271600843B56 /* CoreAudioUtil.c */,
+				F5618DA81ED5271600843B56 /* CoreAudioUtil.h */,
+				F5EBFC0C1ED289F20027A6DA /* main.m */,
+				F5618DAA1ED535E500843B56 /* 辛晓琪歌曲.m4a */,
 			);
-			path = "5-19Recorder";
+			path = "5-22Playback";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F5EBFBA91ECECE430027A6DA /* 5-19Recorder */ = {
+		F5EBFC081ED289F20027A6DA /* 5-22Playback */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F5EBFBB11ECECE430027A6DA /* Build configuration list for PBXNativeTarget "5-19Recorder" */;
+			buildConfigurationList = F5EBFC101ED289F20027A6DA /* Build configuration list for PBXNativeTarget "5-22Playback" */;
 			buildPhases = (
-				F5EBFBA61ECECE430027A6DA /* Sources */,
-				F5EBFBA71ECECE430027A6DA /* Frameworks */,
-				F5EBFBA81ECECE430027A6DA /* CopyFiles */,
+				F5EBFC051ED289F20027A6DA /* Sources */,
+				F5EBFC061ED289F20027A6DA /* Frameworks */,
+				F5EBFC071ED289F20027A6DA /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "5-19Recorder";
-			productName = "5-19Recorder";
-			productReference = F5EBFBAA1ECECE430027A6DA /* 5-19Recorder */;
+			name = "5-22Playback";
+			productName = "5-22Playback";
+			productReference = F5EBFC091ED289F20027A6DA /* 5-22Playback */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		F5EBFBA21ECECE430027A6DA /* Project object */ = {
+		F5EBFC011ED289F20027A6DA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = wyman;
 				TargetAttributes = {
-					F5EBFBA91ECECE430027A6DA = {
+					F5EBFC081ED289F20027A6DA = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 9T725P7UDK;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = F5EBFBA51ECECE430027A6DA /* Build configuration list for PBXProject "5-19Recorder" */;
+			buildConfigurationList = F5EBFC041ED289F20027A6DA /* Build configuration list for PBXProject "5-22Playback" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = F5EBFBA11ECECE430027A6DA;
-			productRefGroup = F5EBFBAB1ECECE430027A6DA /* Products */;
+			mainGroup = F5EBFC001ED289F20027A6DA;
+			productRefGroup = F5EBFC0A1ED289F20027A6DA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F5EBFBA91ECECE430027A6DA /* 5-19Recorder */,
+				F5EBFC081ED289F20027A6DA /* 5-22Playback */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F5EBFBA61ECECE430027A6DA /* Sources */ = {
+		F5EBFC051ED289F20027A6DA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5EBFBAE1ECECE430027A6DA /* main.m in Sources */,
-				F5618DA61ED5180400843B56 /* CoreAudioUtil.c in Sources */,
+				F5EBFC0D1ED289F20027A6DA /* main.m in Sources */,
+				F5618DA91ED5271600843B56 /* CoreAudioUtil.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		F5EBFBAF1ECECE430027A6DA /* Debug */ = {
+		F5EBFC0E1ED289F20027A6DA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -180,7 +182,7 @@
 			};
 			name = Debug;
 		};
-		F5EBFBB01ECECE430027A6DA /* Release */ = {
+		F5EBFC0F1ED289F20027A6DA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -220,7 +222,7 @@
 			};
 			name = Release;
 		};
-		F5EBFBB21ECECE430027A6DA /* Debug */ = {
+		F5EBFC111ED289F20027A6DA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 9T725P7UDK;
@@ -228,7 +230,7 @@
 			};
 			name = Debug;
 		};
-		F5EBFBB31ECECE430027A6DA /* Release */ = {
+		F5EBFC121ED289F20027A6DA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 9T725P7UDK;
@@ -239,25 +241,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F5EBFBA51ECECE430027A6DA /* Build configuration list for PBXProject "5-19Recorder" */ = {
+		F5EBFC041ED289F20027A6DA /* Build configuration list for PBXProject "5-22Playback" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F5EBFBAF1ECECE430027A6DA /* Debug */,
-				F5EBFBB01ECECE430027A6DA /* Release */,
+				F5EBFC0E1ED289F20027A6DA /* Debug */,
+				F5EBFC0F1ED289F20027A6DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F5EBFBB11ECECE430027A6DA /* Build configuration list for PBXNativeTarget "5-19Recorder" */ = {
+		F5EBFC101ED289F20027A6DA /* Build configuration list for PBXNativeTarget "5-22Playback" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F5EBFBB21ECECE430027A6DA /* Debug */,
-				F5EBFBB31ECECE430027A6DA /* Release */,
+				F5EBFC111ED289F20027A6DA /* Debug */,
+				F5EBFC121ED289F20027A6DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = F5EBFBA21ECECE430027A6DA /* Project object */;
+	rootObject = F5EBFC011ED289F20027A6DA /* Project object */;
 }
