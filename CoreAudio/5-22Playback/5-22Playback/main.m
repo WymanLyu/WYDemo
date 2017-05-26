@@ -54,7 +54,7 @@ static void MyAQOutputCallback ( void * __nullable       inUserData,
         CheckError(theErr, "AudioQueueEnqueueBuffer");
         player->packetPosition += nPackets; // 增加读取packet的索引
     } else { // 什么都没有读取到，可能是读完了
-        theErr = AudioQueueStop(inAQ, TRUE);
+        theErr = AudioQueueStop(inAQ, FALSE); // false 还是把缓存的播放完毕
         CheckError(theErr, "AudioQueueStop");
         player->isDone = TRUE;
         
