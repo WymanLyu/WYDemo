@@ -42,7 +42,11 @@
 - (IBAction)switchNullView:(UISwitch *)sender {
     if (sender.isOn) {
         // 这里也可以自定义类似 css原理 这里修改自定义view是最高优先级的
-        [self.view wy_showNullView:nil heightOffset:0];
+        [self.view wy_showNullView:^UIView *(NullView *defaultNullView) {
+            defaultNullView.frame = CGRectMake(0, 100, 22, 22);
+            defaultNullView.backgroundColor = [UIColor redColor];
+            return defaultNullView;
+        } heightOffset:0];
     } else {
         sender.on = NO;
         [self.view wy_hideNullView];
