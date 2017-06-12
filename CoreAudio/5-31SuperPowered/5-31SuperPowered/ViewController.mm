@@ -47,6 +47,7 @@
     float *_audioFileBuffer;
     
     float *recoreder_buffer;
+    float *recoreder_buffer_mono;
 
     SuperpoweredLimiter *_limiter;
     
@@ -70,7 +71,7 @@ void *playerContext = &playerContext;
     _waveView.frame = self.waveBgView.bounds;
     [self.waveBgView addSubview:_waveView];
     
-    self.renderBufferQueue = [[WYSoundWaveRenderBufferQueue alloc] initQueueWithObserver:self inputBufferSize:pow(2, BUFFER_SIZE) outputBufferSize:12 callBackFrequency:1.0/20.0 enqueueBufferFrequency:((pow(2, BUFFER_SIZE)*1.0)/FS)];
+    self.renderBufferQueue = [[WYSoundWaveRenderBufferQueue alloc] initQueueWithObserver:self inputBufferSize:pow(2, BUFFER_SIZE) outputBufferSize:3 callBackFrequency:1.0/20.0 enqueueBufferFrequency:((pow(2, BUFFER_SIZE)*1.0)/FS)];
     
     // 配置
 //    _webConfig.limiterEnable = kAgcTrue;
@@ -95,7 +96,7 @@ void *playerContext = &playerContext;
 //    _recorder = new SuperpoweredRecorder("/Users/wyman/Desktop/SuperpoweredTest/xxoo.wav", FS, 1);
     
     // 播放器
-    if (posix_memalign((void **)&_audioFileBuffer, 16, 4096*2 + 128) != 0) {
+    if (posix_memalign((void **)&_audioFileBuffer, 16, 4096 + 128) != 0) {
         //  32-bit interleaved stereo input/output buffer. Should be numberOfSamples * 8 + 64 bytes big
         abort();
     };
@@ -109,7 +110,7 @@ void *playerContext = &playerContext;
     
     
     // 初始化IO回调
-    _output = [[SuperpoweredIOSAudioIO alloc] initWithDelegate:self preferredBufferSize:BUFFER_SIZE preferredMinimumSamplerate:FS audioSessionCategory:AVAudioSessionCategoryPlayAndRecord channels:8 audioProcessingCallback:audioProcessing clientdata:(__bridge void *)self];
+    _output = [[SuperpoweredIOSAudioIO alloc] initWithDelegate:self preferredBufferSize:BUFFER_SIZE preferredMinimumSamplerate:FS audioSessionCategory:AVAudioSessionCategoryPlayAndRecord channels:2 audioProcessingCallback:audioProcessing clientdata:(__bridge void *)self];
      [_output start];
     
 }
@@ -121,7 +122,7 @@ void *playerContext = &playerContext;
 
 #pragma mark - 处理渲染波形回调
 - (void)renderBufferQueueOutCallback:(SInt16 *)reSamples reSampleCount:(int)reSampleCount {
-    NSLog(@"%s", __func__);
+//    NSLog(@"%s", __func__);
     [self->_waveView drawSaveWithSamples:reSamples sampleCount:reSampleCount];
 }
 
@@ -130,7 +131,7 @@ void *playerContext = &playerContext;
 static bool audioProcessing (void *clientdata, float **buffers, unsigned int inputChannels, unsigned int outputChannels, unsigned int numberOfSamples, unsigned int samplerate, uint64_t hostTime) {
     
     
-    NSLog(@"inputChannels:%zd -- outputChannels:%zd -- numberOfSamples:%zd",inputChannels, outputChannels, numberOfSamples);
+//    NSLog(@"inputChannels:%zd -- outputChannels:%zd -- numberOfSamples:%zd",inputChannels, outputChannels, numberOfSamples);
     
     // 0.回调上下文对象
     __unsafe_unretained ViewController *self = (__bridge ViewController *)clientdata;
@@ -140,21 +141,25 @@ static bool audioProcessing (void *clientdata, float **buffers, unsigned int inp
     
     // 2.读取文件
     bool silence = !self->_player->process(self->_audioFileBuffer, false, numberOfSamples, 1.0, 0.0, -1.0);
-
+    silence = NO;
+    
     // 2.1.画人声波形
     if (!silence) {
         @autoreleasepool {
             if (NULL == self->int16Samples) {
-                self->int16Samples = (short *)malloc(sizeof(short)*numberOfSamples*2 + 64);// new short[numberOfSamples+2];
+                self->int16Samples = (short *)malloc(sizeof(SInt16)*numberOfSamples + 32);
             }
             if (NULL == self->recoreder_buffer) {
                 self->recoreder_buffer = (float *)malloc(sizeof(float)*numberOfSamples*2 + 64);
             }
+            if (NULL == self->recoreder_buffer_mono) {
+                self->recoreder_buffer_mono = (float *)malloc(sizeof(float)*numberOfSamples+32);
+            }
             SuperpoweredInterleave(buffers[0], buffers[1], self->recoreder_buffer, numberOfSamples);
-            SuperpoweredFloatToShortInt(self->recoreder_buffer, self->int16Samples, (unsigned  int)numberOfSamples);
             // 入列
+            SuperpoweredStereoToMono(self->recoreder_buffer, self->recoreder_buffer_mono, 0.5, 0.5, 0.5, 0.5, numberOfSamples);
+            SuperpoweredFloatToShortInt(self->recoreder_buffer_mono, self->int16Samples, (unsigned  int)numberOfSamples);
             [self.renderBufferQueue enqueueBuffer:self->int16Samples sampleCount:numberOfSamples];
-//            [self.waveView drawSaveWithSamples:self->int16Samples sampleCount:numberOfSamples];
         }
     }
     
@@ -253,7 +258,7 @@ void playerEventCallback (void *clientData, SuperpoweredAdvancedAudioPlayerEvent
         _recorder->start(p);
         
         
-        _player->play(false);
+//        _player->play(false);
     } else { // 开始->暂停
         _recorder->stop();
         _player->pause();

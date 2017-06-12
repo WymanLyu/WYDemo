@@ -37,6 +37,8 @@ typedef struct BufferUnit {
 
 @property (nonatomic, strong) CADisplayLink *displayLink;
 
+@property (nonatomic, assign, getter=isRunning) BOOL running;
+
 @end
 
 @implementation WYSoundWaveRenderBufferQueue
@@ -60,6 +62,8 @@ typedef struct BufferUnit {
         index++;
     }
     free(_bufferList);
+    [self.displayLink invalidate];
+    self.displayLink = nil;
 }
 
 - (instancetype)initQueueWithObserver:(id<WYSoundWaveRenderBufferQueueDelegate>)observer inputBufferSize:(int)inputSampleCount outputBufferSize:(int)outputSampleCount callBackFrequency:(double)callbackFrequency enqueueBufferFrequency:(double)enqueueFrequency {
@@ -92,7 +96,7 @@ typedef struct BufferUnit {
         // 2.设置定时器，进行回调
         self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(displayLinkCallback)];
         self.displayLink.frameInterval = callbackFrequency * 1.0/60.0; // 跳过多少帧调用
-        
+        _running = NO;
     }
     return self;
 }
@@ -100,7 +104,7 @@ typedef struct BufferUnit {
 #pragma mark - 回调
 
 - (void)displayLinkCallback {
-    NSLog(@"displayLinkCallback");
+    [self dequeueBuffer];
 }
 
 #pragma mark - 出队
@@ -111,9 +115,15 @@ typedef struct BufferUnit {
     int index = 0;
     while (index < self->_bufferListLenght) {
         BufferUnit *bufferUnitRef = (BufferUnit *)self->_bufferList[index];
+        if (NULL == bufferUnitRef) {
+            continue;
+        }
         totalBufferLenght += bufferUnitRef->sampleCount;
         index++;
     }
+//    if (!totalBufferLenght) { // 可能最开始还木有填充数据，则无数据就不处理
+//        return;
+//    }
     
     // 2.根据 回调的buffer列表长度 获取降采样间距
     int sampleInterval =  floor((totalBufferLenght*1.0) / self->_callBackBufferListLenght);
@@ -130,6 +140,7 @@ typedef struct BufferUnit {
             continue;
         }
         SInt16 sampleVolum = bufferUnitRef->bufferRef[sampleIntervalIndex];
+//        NSLog(@"xxxxxxxxxxx->%zd", sampleVolum);
         self->_callBackBufferList[callBackListIndex] = sampleVolum;
         sampleIntervalIndex += sampleInterval;
         callBackListIndex++;
@@ -148,10 +159,6 @@ typedef struct BufferUnit {
 #pragma mark - 入队
 
 - (void)enqueueBuffer:(SInt16 *)samples sampleCount:(int)sampleCount {
-    
-    if (self.displayLink.isPaused) {
-//        [self.displayLink ]
-    }
     
     // 1.删除最后一个
     // 1.1清空最后一个内容
@@ -181,8 +188,14 @@ typedef struct BufferUnit {
     self->_bufferList[0] = (BufferUnit *)malloc(sizeof(BufferUnit));
     BufferUnit *newBuffer = self->_bufferList[0];
     newBuffer->bufferRef = (SInt16 *)malloc(sizeof(SInt16)*sampleCount);
+    memset(newBuffer->bufferRef, 0, sizeof(SInt16)*sampleCount);
     memcpy(newBuffer->bufferRef, samples, sampleCount);
     newBuffer->sampleCount = sampleCount;
+    
+    if (!self.isRunning) {
+        [self.displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+        _running = YES;
+    }
     
 }
 
