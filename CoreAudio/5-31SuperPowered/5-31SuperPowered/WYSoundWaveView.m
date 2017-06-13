@@ -6,6 +6,8 @@
 //  Copyright © 2017年 wyman. All rights reserved.
 //
 
+#define SAMPLE_LINECOUNT 8
+
 #import "WYSoundWaveView.h"
 
 @interface WYSoundWaveView()
@@ -39,7 +41,7 @@
         
         
         _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
-//        _scrollView.backgroundColor = [UIColor blackColor];
+        _scrollView.backgroundColor = [UIColor blackColor];
         [self addSubview:_scrollView];
         
     }
@@ -94,7 +96,7 @@
             _currentWaveImageView.image = renderedImage;
             CGRect tmpRect = _currentWaveImageView.frame;
             tmpRect.size.width = renderedImage.size.width;
-            tmpRect.size.height = renderedImage.size.height-10;
+            tmpRect.size.height = renderedImage.size.height;
             tmpRect.origin.x = _lastWaveImageView.frame.origin.x + tmpRect.size.width;//  (self.frame.size.width - renderedImage.size.width) / 2;
             tmpRect.origin.y = 0;
             _currentWaveImageView.frame = tmpRect;
@@ -167,7 +169,7 @@
     }
     
     // 1.获取画布大小
-    CGSize samplesImgSize = CGSizeMake(sampleCount*0.5 + 1, self.frame.size.height);
+    CGSize samplesImgSize = CGSizeMake(SAMPLE_LINECOUNT*0.5 + 1, self.frame.size.height);
     UIGraphicsBeginImageContextWithOptions(samplesImgSize, NO, 0);
     
     // 2.获取上下文
@@ -180,13 +182,14 @@
     
     
     // 2.绘制值
-    for (int i = 0; i < sampleCount; i++) {
-        SInt16 val = ABS(samples[i]);
+    for (int index = 0; index < sampleCount; index++) {
+        int i = index % SAMPLE_LINECOUNT;
+        SInt16 val = ABS(samples[index]);
         float volum  = ((val*1.0) / 65535); // 缩小到0~1的float 0xFFFF
         if (0 == volum || volum < 0.01) {
             volum = 0.01;
         }
-        CGFloat h = volum * samplesImgSize.height;
+        CGFloat h = volum * samplesImgSize.height*2;
         CGFloat w = 0.5;
         NSLog(@"%zd ====== %f",val, volum);
 //        NSLog(@"x : %f === y : %f w : %f ====== h : %f",w+w*i,(samplesImgSize.height-h) * 0.5 + h, w, h);

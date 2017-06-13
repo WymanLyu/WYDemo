@@ -140,7 +140,7 @@ typedef struct BufferUnit {
             continue;
         }
         SInt16 sampleVolum = bufferUnitRef->bufferRef[sampleIntervalIndex];
-//        NSLog(@"xxxxxxxxxxx->%zd", sampleVolum);
+        NSLog(@"xxxxxxxxxxx->%zd", sampleVolum);
         self->_callBackBufferList[callBackListIndex] = sampleVolum;
         sampleIntervalIndex += sampleInterval;
         callBackListIndex++;

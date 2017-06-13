@@ -71,7 +71,7 @@ void *playerContext = &playerContext;
     _waveView.frame = self.waveBgView.bounds;
     [self.waveBgView addSubview:_waveView];
     
-    self.renderBufferQueue = [[WYSoundWaveRenderBufferQueue alloc] initQueueWithObserver:self inputBufferSize:pow(2, BUFFER_SIZE) outputBufferSize:3 callBackFrequency:1.0/20.0 enqueueBufferFrequency:((pow(2, BUFFER_SIZE)*1.0)/FS)];
+    self.renderBufferQueue = [[WYSoundWaveRenderBufferQueue alloc] initQueueWithObserver:self inputBufferSize:pow(2, BUFFER_SIZE) outputBufferSize:5*8 callBackFrequency:1.0/20.0 enqueueBufferFrequency:((pow(2, BUFFER_SIZE)*1.0)/FS)];
     
     // 配置
 //    _webConfig.limiterEnable = kAgcTrue;
@@ -155,10 +155,19 @@ static bool audioProcessing (void *clientdata, float **buffers, unsigned int inp
             if (NULL == self->recoreder_buffer_mono) {
                 self->recoreder_buffer_mono = (float *)malloc(sizeof(float)*numberOfSamples+32);
             }
+            //
             SuperpoweredInterleave(buffers[0], buffers[1], self->recoreder_buffer, numberOfSamples);
             // 入列
             SuperpoweredStereoToMono(self->recoreder_buffer, self->recoreder_buffer_mono, 0.5, 0.5, 0.5, 0.5, numberOfSamples);
             SuperpoweredFloatToShortInt(self->recoreder_buffer_mono, self->int16Samples, (unsigned  int)numberOfSamples);
+            
+            int index = 0;
+            while (index < numberOfSamples) {
+               
+                NSLog(@"ooooooooooooooo->%hd", self->int16Samples[index]);
+                index++;
+            }
+            
             [self.renderBufferQueue enqueueBuffer:self->int16Samples sampleCount:numberOfSamples];
         }
     }
