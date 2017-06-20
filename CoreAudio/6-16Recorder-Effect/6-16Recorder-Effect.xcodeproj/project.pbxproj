@@ -1,0 +1,715 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F514358B1EF375CE0056900D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F514358A1EF375CE0056900D /* main.m */; };
+		F514358E1EF375CE0056900D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F514358D1EF375CE0056900D /* AppDelegate.m */; };
+		F51435911EF375CE0056900D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F51435901EF375CE0056900D /* ViewController.m */; };
+		F51435941EF375CE0056900D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F51435921EF375CE0056900D /* Main.storyboard */; };
+		F51435961EF375CE0056900D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F51435951EF375CE0056900D /* Assets.xcassets */; };
+		F51435991EF375CE0056900D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F51435971EF375CE0056900D /* LaunchScreen.storyboard */; };
+		F51435A41EF375CE0056900D /* __16Recorder_EffectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F51435A31EF375CE0056900D /* __16Recorder_EffectTests.m */; };
+		F51435AF1EF375CE0056900D /* __16Recorder_EffectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F51435AE1EF375CE0056900D /* __16Recorder_EffectUITests.m */; };
+		F51435DE1EF376480056900D /* libSuperpoweredAudioIOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F51435BD1EF376480056900D /* libSuperpoweredAudioIOS.a */; };
+		F51435E01EF376480056900D /* SuperpoweredNBandEQ.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F51435D21EF376480056900D /* SuperpoweredNBandEQ.cpp */; };
+		F51435E11EF376480056900D /* SuperpoweredOfflineProcessingExample-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F51435D41EF376480056900D /* SuperpoweredOfflineProcessingExample-Info.plist */; };
+		F51435E71EF376520056900D /* WYSoundWaveBufferQueue.mm in Sources */ = {isa = PBXBuildFile; fileRef = F51435E41EF376520056900D /* WYSoundWaveBufferQueue.mm */; };
+		F51435E81EF376520056900D /* WYSoundWaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = F51435E61EF376520056900D /* WYSoundWaveView.m */; };
+		F51435F51EF3B0BF0056900D /* SuperpoweredIOSAudioIO.mm in Sources */ = {isa = PBXBuildFile; fileRef = F51435F11EF3B0BF0056900D /* SuperpoweredIOSAudioIO.mm */; };
+		F51435F81EF3B41E0056900D /* AudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F51435F71EF3B41E0056900D /* AudioManager.m */; };
+		F51435FB1EF3B5990056900D /* TYAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F51435FA1EF3B5990056900D /* TYAudioPlayer.m */; };
+		F51435FE1EF3B5A90056900D /* TYAudioRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = F51435FD1EF3B5A90056900D /* TYAudioRecorder.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F51435A01EF375CE0056900D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F514357E1EF375CE0056900D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F51435851EF375CE0056900D;
+			remoteInfo = "6-16Recorder-Effect";
+		};
+		F51435AB1EF375CE0056900D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F514357E1EF375CE0056900D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F51435851EF375CE0056900D;
+			remoteInfo = "6-16Recorder-Effect";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F51435861EF375CE0056900D /* 6-16Recorder-Effect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "6-16Recorder-Effect.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F514358A1EF375CE0056900D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F514358C1EF375CE0056900D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F514358D1EF375CE0056900D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F514358F1EF375CE0056900D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F51435901EF375CE0056900D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F51435931EF375CE0056900D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F51435951EF375CE0056900D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F51435981EF375CE0056900D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F514359A1EF375CE0056900D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F514359F1EF375CE0056900D /* 6-16Recorder-EffectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "6-16Recorder-EffectTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F51435A31EF375CE0056900D /* __16Recorder_EffectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = __16Recorder_EffectTests.m; sourceTree = "<group>"; };
+		F51435A51EF375CE0056900D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F51435AA1EF375CE0056900D /* 6-16Recorder-EffectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "6-16Recorder-EffectUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F51435AE1EF375CE0056900D /* __16Recorder_EffectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = __16Recorder_EffectUITests.m; sourceTree = "<group>"; };
+		F51435B01EF375CE0056900D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F51435BD1EF376480056900D /* libSuperpoweredAudioIOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSuperpoweredAudioIOS.a; sourceTree = "<group>"; };
+		F51435BE1EF376480056900D /* Superpowered3BandEQ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Superpowered3BandEQ.h; sourceTree = "<group>"; };
+		F51435BF1EF376480056900D /* SuperpoweredAdvancedAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperpoweredAdvancedAudioPlayer.h; sourceTree = "<group>"; };
+		F51435C01EF376480056900D /* SuperpoweredAnalyzer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperpoweredAnalyzer.h; sourceTree = "<group>"; };
+		F51435C11EF376480056900D /* SuperpoweredAudioBuffers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperpoweredAudioBuffers.h; sourceTree = "<group>"; };
+		F51435C21EF376480056900D /* SuperpoweredBandpassFilterbank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperpoweredBandpassFilterbank.h; sourceTree = "<group>"; };
+		F51435C31EF376480056900D /* SuperpoweredClipper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperpoweredClipper.h; sourceTree = "<group>"; };
+		F51435C41EF376480056900D /* SuperpoweredCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperpoweredCompressor.h; sourceTree = "<group>"; };
+		F51435C51EF376480056900D /* SuperpoweredCPU.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperpoweredCPU.h; sourceTree = "<group>"; };
+		F51435C61EF376480056900D /* SuperpoweredDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperpoweredDecoder.h; sourceTree = "<group>"; };
+		F51435C71EF376480056900D /* SuperpoweredEcho.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperpoweredEcho.h; sourceTree = "<group>"; };
+		F51435C81EF376480056900D /* SuperpoweredFFT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperpoweredFFT.h; sourceTree = "<group>"; };
+		F51435C91EF376480056900D /* SuperpoweredFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperpoweredFilter.h; sourceTree = "<group>"; };
+		F51435CA1EF376480056900D /* SuperpoweredFlanger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperpoweredFlanger.h; sourceTree = "<group>"; };
+		F51435CB1EF376480056900D /* SuperpoweredFrequencyDomain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperpoweredFrequencyDomain.h; sourceTree = "<group>"; };
+		F51435CC1EF376480056900D /* SuperpoweredFX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperpoweredFX.h; sourceTree = "<group>"; };
+		F51435CD1EF376480056900D /* SuperpoweredGate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperpoweredGate.h; sourceTree = "<group>"; };
+		F51435D01EF376480056900D /* SuperpoweredLimiter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperpoweredLimiter.h; sourceTree = "<group>"; };
+		F51435D11EF376480056900D /* SuperpoweredMixer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperpoweredMixer.h; sourceTree = "<group>"; };
+		F51435D21EF376480056900D /* SuperpoweredNBandEQ.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SuperpoweredNBandEQ.cpp; sourceTree = "<group>"; };
+		F51435D31EF376480056900D /* SuperpoweredNBandEQ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperpoweredNBandEQ.h; sourceTree = "<group>"; };
+		F51435D41EF376480056900D /* SuperpoweredOfflineProcessingExample-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SuperpoweredOfflineProcessingExample-Info.plist"; sourceTree = "<group>"; };
+		F51435D51EF376480056900D /* SuperpoweredOfflineProcessingExample-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SuperpoweredOfflineProcessingExample-Prefix.pch"; sourceTree = "<group>"; };
+		F51435D61EF376480056900D /* SuperpoweredRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperpoweredRecorder.h; sourceTree = "<group>"; };
+		F51435D71EF376480056900D /* SuperpoweredResampler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperpoweredResampler.h; sourceTree = "<group>"; };
+		F51435D81EF376480056900D /* SuperpoweredReverb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperpoweredReverb.h; sourceTree = "<group>"; };
+		F51435D91EF376480056900D /* SuperpoweredRoll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperpoweredRoll.h; sourceTree = "<group>"; };
+		F51435DA1EF376480056900D /* SuperpoweredSimple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperpoweredSimple.h; sourceTree = "<group>"; };
+		F51435DB1EF376480056900D /* SuperpoweredSpatializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperpoweredSpatializer.h; sourceTree = "<group>"; };
+		F51435DC1EF376480056900D /* SuperpoweredTimeStretching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperpoweredTimeStretching.h; sourceTree = "<group>"; };
+		F51435DD1EF376480056900D /* SuperpoweredWhoosh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperpoweredWhoosh.h; sourceTree = "<group>"; };
+		F51435E31EF376520056900D /* WYSoundWaveBufferQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYSoundWaveBufferQueue.h; sourceTree = "<group>"; };
+		F51435E41EF376520056900D /* WYSoundWaveBufferQueue.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WYSoundWaveBufferQueue.mm; sourceTree = "<group>"; };
+		F51435E51EF376520056900D /* WYSoundWaveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYSoundWaveView.h; sourceTree = "<group>"; };
+		F51435E61EF376520056900D /* WYSoundWaveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYSoundWaveView.m; sourceTree = "<group>"; };
+		F51435F01EF3B0BF0056900D /* SuperpoweredIOSAudioIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperpoweredIOSAudioIO.h; sourceTree = "<group>"; };
+		F51435F11EF3B0BF0056900D /* SuperpoweredIOSAudioIO.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SuperpoweredIOSAudioIO.mm; sourceTree = "<group>"; };
+		F51435F61EF3B41E0056900D /* AudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioManager.h; sourceTree = "<group>"; };
+		F51435F71EF3B41E0056900D /* AudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioManager.m; sourceTree = "<group>"; };
+		F51435F91EF3B5990056900D /* TYAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYAudioPlayer.h; sourceTree = "<group>"; };
+		F51435FA1EF3B5990056900D /* TYAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYAudioPlayer.m; sourceTree = "<group>"; };
+		F51435FC1EF3B5A90056900D /* TYAudioRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYAudioRecorder.h; sourceTree = "<group>"; };
+		F51435FD1EF3B5A90056900D /* TYAudioRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYAudioRecorder.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F51435831EF375CE0056900D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F51435DE1EF376480056900D /* libSuperpoweredAudioIOS.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F514359C1EF375CE0056900D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F51435A71EF375CE0056900D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F514357D1EF375CE0056900D = {
+			isa = PBXGroup;
+			children = (
+				F51435881EF375CE0056900D /* 6-16Recorder-Effect */,
+				F51435A21EF375CE0056900D /* 6-16Recorder-EffectTests */,
+				F51435AD1EF375CE0056900D /* 6-16Recorder-EffectUITests */,
+				F51435871EF375CE0056900D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F51435871EF375CE0056900D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F51435861EF375CE0056900D /* 6-16Recorder-Effect.app */,
+				F514359F1EF375CE0056900D /* 6-16Recorder-EffectTests.xctest */,
+				F51435AA1EF375CE0056900D /* 6-16Recorder-EffectUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F51435881EF375CE0056900D /* 6-16Recorder-Effect */ = {
+			isa = PBXGroup;
+			children = (
+				F51435ED1EF3B0BF0056900D /* AudioManager */,
+				F51435E21EF376520056900D /* WYSoundWaveView */,
+				F51435BC1EF376480056900D /* Superpowered */,
+				F514358C1EF375CE0056900D /* AppDelegate.h */,
+				F514358D1EF375CE0056900D /* AppDelegate.m */,
+				F514358F1EF375CE0056900D /* ViewController.h */,
+				F51435901EF375CE0056900D /* ViewController.m */,
+				F51435921EF375CE0056900D /* Main.storyboard */,
+				F51435951EF375CE0056900D /* Assets.xcassets */,
+				F51435971EF375CE0056900D /* LaunchScreen.storyboard */,
+				F514359A1EF375CE0056900D /* Info.plist */,
+				F51435891EF375CE0056900D /* Supporting Files */,
+			);
+			path = "6-16Recorder-Effect";
+			sourceTree = "<group>";
+		};
+		F51435891EF375CE0056900D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F514358A1EF375CE0056900D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F51435A21EF375CE0056900D /* 6-16Recorder-EffectTests */ = {
+			isa = PBXGroup;
+			children = (
+				F51435A31EF375CE0056900D /* __16Recorder_EffectTests.m */,
+				F51435A51EF375CE0056900D /* Info.plist */,
+			);
+			path = "6-16Recorder-EffectTests";
+			sourceTree = "<group>";
+		};
+		F51435AD1EF375CE0056900D /* 6-16Recorder-EffectUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F51435AE1EF375CE0056900D /* __16Recorder_EffectUITests.m */,
+				F51435B01EF375CE0056900D /* Info.plist */,
+			);
+			path = "6-16Recorder-EffectUITests";
+			sourceTree = "<group>";
+		};
+		F51435BC1EF376480056900D /* Superpowered */ = {
+			isa = PBXGroup;
+			children = (
+				F51435BD1EF376480056900D /* libSuperpoweredAudioIOS.a */,
+				F51435BE1EF376480056900D /* Superpowered3BandEQ.h */,
+				F51435BF1EF376480056900D /* SuperpoweredAdvancedAudioPlayer.h */,
+				F51435C01EF376480056900D /* SuperpoweredAnalyzer.h */,
+				F51435C11EF376480056900D /* SuperpoweredAudioBuffers.h */,
+				F51435C21EF376480056900D /* SuperpoweredBandpassFilterbank.h */,
+				F51435C31EF376480056900D /* SuperpoweredClipper.h */,
+				F51435C41EF376480056900D /* SuperpoweredCompressor.h */,
+				F51435C51EF376480056900D /* SuperpoweredCPU.h */,
+				F51435C61EF376480056900D /* SuperpoweredDecoder.h */,
+				F51435C71EF376480056900D /* SuperpoweredEcho.h */,
+				F51435C81EF376480056900D /* SuperpoweredFFT.h */,
+				F51435C91EF376480056900D /* SuperpoweredFilter.h */,
+				F51435CA1EF376480056900D /* SuperpoweredFlanger.h */,
+				F51435CB1EF376480056900D /* SuperpoweredFrequencyDomain.h */,
+				F51435CC1EF376480056900D /* SuperpoweredFX.h */,
+				F51435CD1EF376480056900D /* SuperpoweredGate.h */,
+				F51435D01EF376480056900D /* SuperpoweredLimiter.h */,
+				F51435D11EF376480056900D /* SuperpoweredMixer.h */,
+				F51435D21EF376480056900D /* SuperpoweredNBandEQ.cpp */,
+				F51435D31EF376480056900D /* SuperpoweredNBandEQ.h */,
+				F51435D41EF376480056900D /* SuperpoweredOfflineProcessingExample-Info.plist */,
+				F51435D51EF376480056900D /* SuperpoweredOfflineProcessingExample-Prefix.pch */,
+				F51435D61EF376480056900D /* SuperpoweredRecorder.h */,
+				F51435D71EF376480056900D /* SuperpoweredResampler.h */,
+				F51435D81EF376480056900D /* SuperpoweredReverb.h */,
+				F51435D91EF376480056900D /* SuperpoweredRoll.h */,
+				F51435DA1EF376480056900D /* SuperpoweredSimple.h */,
+				F51435DB1EF376480056900D /* SuperpoweredSpatializer.h */,
+				F51435DC1EF376480056900D /* SuperpoweredTimeStretching.h */,
+				F51435DD1EF376480056900D /* SuperpoweredWhoosh.h */,
+			);
+			path = Superpowered;
+			sourceTree = "<group>";
+		};
+		F51435E21EF376520056900D /* WYSoundWaveView */ = {
+			isa = PBXGroup;
+			children = (
+				F51435E31EF376520056900D /* WYSoundWaveBufferQueue.h */,
+				F51435E41EF376520056900D /* WYSoundWaveBufferQueue.mm */,
+				F51435E51EF376520056900D /* WYSoundWaveView.h */,
+				F51435E61EF376520056900D /* WYSoundWaveView.m */,
+			);
+			path = WYSoundWaveView;
+			sourceTree = "<group>";
+		};
+		F51435ED1EF3B0BF0056900D /* AudioManager */ = {
+			isa = PBXGroup;
+			children = (
+				F51435EE1EF3B0BF0056900D /* AudioFX */,
+				F51435EF1EF3B0BF0056900D /* AudioIO */,
+				F51435F21EF3B0BF0056900D /* Manager */,
+				F51435F31EF3B0BF0056900D /* Player */,
+				F51435F41EF3B0BF0056900D /* Recorder */,
+			);
+			path = AudioManager;
+			sourceTree = "<group>";
+		};
+		F51435EE1EF3B0BF0056900D /* AudioFX */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AudioFX;
+			sourceTree = "<group>";
+		};
+		F51435EF1EF3B0BF0056900D /* AudioIO */ = {
+			isa = PBXGroup;
+			children = (
+				F51435F01EF3B0BF0056900D /* SuperpoweredIOSAudioIO.h */,
+				F51435F11EF3B0BF0056900D /* SuperpoweredIOSAudioIO.mm */,
+			);
+			path = AudioIO;
+			sourceTree = "<group>";
+		};
+		F51435F21EF3B0BF0056900D /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				F51435F61EF3B41E0056900D /* AudioManager.h */,
+				F51435F71EF3B41E0056900D /* AudioManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		F51435F31EF3B0BF0056900D /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				F51435F91EF3B5990056900D /* TYAudioPlayer.h */,
+				F51435FA1EF3B5990056900D /* TYAudioPlayer.m */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		F51435F41EF3B0BF0056900D /* Recorder */ = {
+			isa = PBXGroup;
+			children = (
+				F51435FC1EF3B5A90056900D /* TYAudioRecorder.h */,
+				F51435FD1EF3B5A90056900D /* TYAudioRecorder.m */,
+			);
+			path = Recorder;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F51435851EF375CE0056900D /* 6-16Recorder-Effect */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F51435B31EF375CE0056900D /* Build configuration list for PBXNativeTarget "6-16Recorder-Effect" */;
+			buildPhases = (
+				F51435821EF375CE0056900D /* Sources */,
+				F51435831EF375CE0056900D /* Frameworks */,
+				F51435841EF375CE0056900D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "6-16Recorder-Effect";
+			productName = "6-16Recorder-Effect";
+			productReference = F51435861EF375CE0056900D /* 6-16Recorder-Effect.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F514359E1EF375CE0056900D /* 6-16Recorder-EffectTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F51435B61EF375CE0056900D /* Build configuration list for PBXNativeTarget "6-16Recorder-EffectTests" */;
+			buildPhases = (
+				F514359B1EF375CE0056900D /* Sources */,
+				F514359C1EF375CE0056900D /* Frameworks */,
+				F514359D1EF375CE0056900D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F51435A11EF375CE0056900D /* PBXTargetDependency */,
+			);
+			name = "6-16Recorder-EffectTests";
+			productName = "6-16Recorder-EffectTests";
+			productReference = F514359F1EF375CE0056900D /* 6-16Recorder-EffectTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F51435A91EF375CE0056900D /* 6-16Recorder-EffectUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F51435B91EF375CE0056900D /* Build configuration list for PBXNativeTarget "6-16Recorder-EffectUITests" */;
+			buildPhases = (
+				F51435A61EF375CE0056900D /* Sources */,
+				F51435A71EF375CE0056900D /* Frameworks */,
+				F51435A81EF375CE0056900D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F51435AC1EF375CE0056900D /* PBXTargetDependency */,
+			);
+			name = "6-16Recorder-EffectUITests";
+			productName = "6-16Recorder-EffectUITests";
+			productReference = F51435AA1EF375CE0056900D /* 6-16Recorder-EffectUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F514357E1EF375CE0056900D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = wyman;
+				TargetAttributes = {
+					F51435851EF375CE0056900D = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 9T725P7UDK;
+						ProvisioningStyle = Automatic;
+					};
+					F514359E1EF375CE0056900D = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 9T725P7UDK;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F51435851EF375CE0056900D;
+					};
+					F51435A91EF375CE0056900D = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 9T725P7UDK;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F51435851EF375CE0056900D;
+					};
+				};
+			};
+			buildConfigurationList = F51435811EF375CE0056900D /* Build configuration list for PBXProject "6-16Recorder-Effect" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F514357D1EF375CE0056900D;
+			productRefGroup = F51435871EF375CE0056900D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F51435851EF375CE0056900D /* 6-16Recorder-Effect */,
+				F514359E1EF375CE0056900D /* 6-16Recorder-EffectTests */,
+				F51435A91EF375CE0056900D /* 6-16Recorder-EffectUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F51435841EF375CE0056900D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F51435991EF375CE0056900D /* LaunchScreen.storyboard in Resources */,
+				F51435961EF375CE0056900D /* Assets.xcassets in Resources */,
+				F51435941EF375CE0056900D /* Main.storyboard in Resources */,
+				F51435E11EF376480056900D /* SuperpoweredOfflineProcessingExample-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F514359D1EF375CE0056900D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F51435A81EF375CE0056900D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F51435821EF375CE0056900D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F51435E81EF376520056900D /* WYSoundWaveView.m in Sources */,
+				F51435911EF375CE0056900D /* ViewController.m in Sources */,
+				F514358E1EF375CE0056900D /* AppDelegate.m in Sources */,
+				F51435F51EF3B0BF0056900D /* SuperpoweredIOSAudioIO.mm in Sources */,
+				F51435FB1EF3B5990056900D /* TYAudioPlayer.m in Sources */,
+				F51435FE1EF3B5A90056900D /* TYAudioRecorder.m in Sources */,
+				F51435E71EF376520056900D /* WYSoundWaveBufferQueue.mm in Sources */,
+				F514358B1EF375CE0056900D /* main.m in Sources */,
+				F51435F81EF3B41E0056900D /* AudioManager.m in Sources */,
+				F51435E01EF376480056900D /* SuperpoweredNBandEQ.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F514359B1EF375CE0056900D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F51435A41EF375CE0056900D /* __16Recorder_EffectTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F51435A61EF375CE0056900D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F51435AF1EF375CE0056900D /* __16Recorder_EffectUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F51435A11EF375CE0056900D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F51435851EF375CE0056900D /* 6-16Recorder-Effect */;
+			targetProxy = F51435A01EF375CE0056900D /* PBXContainerItemProxy */;
+		};
+		F51435AC1EF375CE0056900D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F51435851EF375CE0056900D /* 6-16Recorder-Effect */;
+			targetProxy = F51435AB1EF375CE0056900D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F51435921EF375CE0056900D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F51435931EF375CE0056900D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F51435971EF375CE0056900D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F51435981EF375CE0056900D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F51435B11EF375CE0056900D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F51435B21EF375CE0056900D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F51435B41EF375CE0056900D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9T725P7UDK;
+				INFOPLIST_FILE = "6-16Recorder-Effect/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/6-16Recorder-Effect/Superpowered",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "wyman.--16Recorder-Effect";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F51435B51EF375CE0056900D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9T725P7UDK;
+				INFOPLIST_FILE = "6-16Recorder-Effect/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/6-16Recorder-Effect/Superpowered",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "wyman.--16Recorder-Effect";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F51435B71EF375CE0056900D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 9T725P7UDK;
+				INFOPLIST_FILE = "6-16Recorder-EffectTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "wyman.--16Recorder-EffectTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/6-16Recorder-Effect.app/6-16Recorder-Effect";
+			};
+			name = Debug;
+		};
+		F51435B81EF375CE0056900D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 9T725P7UDK;
+				INFOPLIST_FILE = "6-16Recorder-EffectTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "wyman.--16Recorder-EffectTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/6-16Recorder-Effect.app/6-16Recorder-Effect";
+			};
+			name = Release;
+		};
+		F51435BA1EF375CE0056900D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 9T725P7UDK;
+				INFOPLIST_FILE = "6-16Recorder-EffectUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "wyman.--16Recorder-EffectUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "6-16Recorder-Effect";
+			};
+			name = Debug;
+		};
+		F51435BB1EF375CE0056900D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 9T725P7UDK;
+				INFOPLIST_FILE = "6-16Recorder-EffectUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "wyman.--16Recorder-EffectUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "6-16Recorder-Effect";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F51435811EF375CE0056900D /* Build configuration list for PBXProject "6-16Recorder-Effect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F51435B11EF375CE0056900D /* Debug */,
+				F51435B21EF375CE0056900D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F51435B31EF375CE0056900D /* Build configuration list for PBXNativeTarget "6-16Recorder-Effect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F51435B41EF375CE0056900D /* Debug */,
+				F51435B51EF375CE0056900D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F51435B61EF375CE0056900D /* Build configuration list for PBXNativeTarget "6-16Recorder-EffectTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F51435B71EF375CE0056900D /* Debug */,
+				F51435B81EF375CE0056900D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F51435B91EF375CE0056900D /* Build configuration list for PBXNativeTarget "6-16Recorder-EffectUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F51435BA1EF375CE0056900D /* Debug */,
+				F51435BB1EF375CE0056900D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F514357E1EF375CE0056900D /* Project object */;
+}

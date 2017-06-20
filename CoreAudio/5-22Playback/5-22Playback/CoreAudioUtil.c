@@ -7,6 +7,7 @@
 //
 
 #include "CoreAudioUtil.h"
+#include <pthread.h>
 
 // 错误校验
 extern void CheckError(OSStatus error, const char *operation)
@@ -26,6 +27,20 @@ extern void CheckError(OSStatus error, const char *operation)
     // 打印错误并退出程序
     fprintf(stderr, "Error: %s (%s)\n", operation, errorString);
     exit(1);
+}
+
+// 打印线程信息
+extern void print_ids(const char *str)
+{
+    pid_t pid;      //进程id
+    pthread_t tid;  //线程id
+    pid = getpid();       //获取当前进程id
+    tid = pthread_self(); //获取当前线程id
+    printf("%s 进程id: %u 线程id: %u (0x%x)\n",
+           str,
+           (unsigned int)pid,
+           (unsigned int)tid,
+           (unsigned int)tid);
 }
 
 // 打印格式

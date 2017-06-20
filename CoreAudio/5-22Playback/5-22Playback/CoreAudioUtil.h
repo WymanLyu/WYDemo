@@ -20,6 +20,11 @@
 extern void CheckError(OSStatus error, const char *operation);
 
 /**
+ * 打印线程信息
+ */
+extern void print_ids(const char *str);
+
+/**
  * 打印AudioStreamBasicDescription
  */
 extern void LogASBD(AudioStreamBasicDescription *asbd, const char *operaton);

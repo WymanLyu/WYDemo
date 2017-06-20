@@ -7,7 +7,7 @@
 //
 
 #include "CoreAudioUtil.h"
-
+#include <pthread.h>
 
 // 错误校验
 extern void CheckError(OSStatus error, const char *operation)
@@ -27,6 +27,20 @@ extern void CheckError(OSStatus error, const char *operation)
     // 打印错误并退出程序
     fprintf(stderr, "Error: %s (%s)\n", operation, errorString);
     exit(1);
+}
+
+// 打印线程信息
+extern void print_ids(const char *str)
+{
+    pid_t pid;      //进程id
+    pthread_t tid;  //线程id
+    pid = getpid();       //获取当前进程id
+    tid = pthread_self(); //获取当前线程id
+    printf("%s 进程id: %u 线程id: %u (0x%x)\n",
+           str,
+           (unsigned int)pid,
+           (unsigned int)tid,
+           (unsigned int)tid);
 }
 
 // 打印格式
@@ -154,6 +168,68 @@ extern int MyComputeRecordBufferSize(const AudioStreamBasicDescription *format, 
     return bytes;
 }
 
+// 拷贝queue的migic cookie 到文件
+extern void MyCopyEncoderCookieToQueue(AudioFileID recordFile, AudioQueueRef queue)
+{
+    OSStatus error = noErr;
+    // 1.在文件描述中获取cookie大小
+    UInt32 propertySize;
+    UInt32 isWritable = 1;
+    error = AudioFileGetPropertyInfo(recordFile, kAudioFilePropertyMagicCookieData, &propertySize, &isWritable); // 文件直接读取 kAudioFilePropertyMagicCookieData 而不是 kAudioConverterCompressionMagicCookie
+    CheckError(error, "AudioFileGetPropertyInfo");
+    // 2.拷贝queue的cookie 到文件file中
+    if (propertySize > 0) {
+        // 2.1.获取magicCookie
+        Byte *magicCookie = (Byte *)malloc(propertySize*sizeof(UInt8));
+        error = AudioFileGetProperty(recordFile, kAudioFilePropertyMagicCookieData, &propertySize, magicCookie);
+        CheckError(error, "AudioFileGetProperty");
+        
+        // 2.2.深拷贝到file
+        error = AudioQueueSetProperty(queue, kAudioQueueProperty_MagicCookie, magicCookie, propertySize);
+        CheckError(error, "AudioFileSetProperty");
+        free(magicCookie);
+    }
+}
+
+extern int MyComputePlaybackBufferSize(AudioFileID fileID, AudioStreamBasicDescription *format, float seconds, UInt32 *outNumPackets)
+{
+    UInt32 outBufferSize;
+    OSStatus error = noErr;
+    // 1.获取最大的packetSize
+    UInt32 maxPacketSize;
+    UInt32 propertySize = sizeof(maxPacketSize);
+    error = AudioFileGetProperty(fileID, kAudioFilePropertyPacketSizeUpperBound, &propertySize, &maxPacketSize);
+    CheckError(error, "AudioFileGetProperty");
+    
+    // 2.最大最小限制
+    const int maxBufferSize = 0x10000; // 64kb
+    const int minBufferSize = 0x4000;  // 16kb
+    
+    // 3.获取packet数, 计算buffer大小【多个则按多个算，一个则按一个算】
+    if (format->mFramesPerPacket) { // 每个packet的frame固定 CBR
+        // 根据时间内的frame数计算packet数
+        Float64 numPacketsForTime = (format->mSampleRate * seconds) / format->mFramesPerPacket;
+        // 计算需要的packetSize
+        outBufferSize = numPacketsForTime * maxPacketSize;
+    } else { // 不然就按照一个packet传（如果packet不足最大buffer就按最大buffer传）
+        outBufferSize = maxBufferSize > maxPacketSize ? maxBufferSize : maxPacketSize;
+    }
+    
+    // 4.校验bufferSize，获取合理的buffer大小【大于阈值时且packet多于1包，则按最大值算；小于阈值时则按最小值算】大于阈值还少于1packet则按1packet传
+    if (outBufferSize > maxBufferSize && outBufferSize > maxPacketSize) { // 最后的输出的buffersize 大于阈值的同时 且 多于一包 按最大buffer传
+        outBufferSize = maxBufferSize;
+    } else { // 最后的输出的buffersize 小于阈值的同时 或者 少于等于一包 限制最小值
+        if (outBufferSize < minBufferSize) { // 小于阈值时 按最小buffer算
+            outBufferSize = minBufferSize;
+        }
+    }
+    *outNumPackets = outBufferSize / maxPacketSize;
+    if (*outNumPackets == 0) {
+        *outNumPackets = 1;
+    }
+    return outBufferSize;
+    
+}
 
 
 

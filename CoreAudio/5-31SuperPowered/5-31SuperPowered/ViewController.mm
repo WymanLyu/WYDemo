@@ -18,6 +18,7 @@
 
 #import "WYSoundWaveView.h"
 #import "WYSoundWaveRenderBufferQueue.h"
+#import "WYSoundWaveBufferQueue.h"
 
 #define FS 44100// 48000
 
@@ -25,7 +26,7 @@
 
 #define WEBRTC_AGC_BUFFER_SIZE (FS*0.01)
 
-@interface ViewController ()<SuperpoweredIOSAudioIODelegate, WYSoundWaveRenderBufferQueueDelegate>
+@interface ViewController ()<SuperpoweredIOSAudioIODelegate, WYSoundWaveRenderBufferQueueDelegate, WYSoundWaveBufferQueueDelegate>
 
 @property (nonatomic, assign) BOOL isMix;
 
@@ -33,6 +34,7 @@
 
 @property (nonatomic, strong) WYSoundWaveView *waveView;
 @property (nonatomic, strong) WYSoundWaveRenderBufferQueue *renderBufferQueue;
+@property (nonatomic, strong) WYSoundWaveBufferQueue *bufferQueue;
 
 @end
 
@@ -71,7 +73,9 @@ void *playerContext = &playerContext;
     _waveView.frame = self.waveBgView.bounds;
     [self.waveBgView addSubview:_waveView];
     
-    self.renderBufferQueue = [[WYSoundWaveRenderBufferQueue alloc] initQueueWithObserver:self inputBufferSize:pow(2, BUFFER_SIZE) outputBufferSize:5*8 callBackFrequency:1.0/20.0 enqueueBufferFrequency:((pow(2, BUFFER_SIZE)*1.0)/FS)];
+//    self.renderBufferQueue = [[WYSoundWaveRenderBufferQueue alloc] initQueueWithObserver:self inputBufferSize:pow(2, BUFFER_SIZE) outputBufferSize:5*8 callBackFrequency:1.0/20.0 enqueueBufferFrequency:((pow(2, BUFFER_SIZE)*1.0)/FS)];
+    self.waveView.sampleLineCount = 5;
+    self.bufferQueue = [[WYSoundWaveBufferQueue alloc] initQueueWithObserver:self inputBufferSize:pow(2, BUFFER_SIZE) outputBufferSize:5*10 callBackFrequency:1.0/20.0 enqueueBufferFrequency:((pow(2, BUFFER_SIZE)*1.0)/FS)];
     
     // 配置
 //    _webConfig.limiterEnable = kAgcTrue;
@@ -126,12 +130,16 @@ void *playerContext = &playerContext;
     [self->_waveView drawSaveWithSamples:reSamples sampleCount:reSampleCount];
 }
 
+- (void)soundWaveBufferQueueOutCallback:(SInt16 *)reSamples reSampleCount:(int)reSampleCount {
+    [self->_waveView drawSaveWithSamples:reSamples sampleCount:reSampleCount];
+}
+
 #pragma mark - IO回调
 
 static bool audioProcessing (void *clientdata, float **buffers, unsigned int inputChannels, unsigned int outputChannels, unsigned int numberOfSamples, unsigned int samplerate, uint64_t hostTime) {
     
     
-//    NSLog(@"inputChannels:%zd -- outputChannels:%zd -- numberOfSamples:%zd",inputChannels, outputChannels, numberOfSamples);
+    NSLog(@"inputChannels:%zd -- outputChannels:%zd -- numberOfSamples:%zd -- sizeof(float):%zd",inputChannels, outputChannels, numberOfSamples, sizeof(float*));
     
     // 0.回调上下文对象
     __unsafe_unretained ViewController *self = (__bridge ViewController *)clientdata;
@@ -159,16 +167,17 @@ static bool audioProcessing (void *clientdata, float **buffers, unsigned int inp
             SuperpoweredInterleave(buffers[0], buffers[1], self->recoreder_buffer, numberOfSamples);
             // 入列
             SuperpoweredStereoToMono(self->recoreder_buffer, self->recoreder_buffer_mono, 0.5, 0.5, 0.5, 0.5, numberOfSamples);
-            SuperpoweredFloatToShortInt(self->recoreder_buffer_mono, self->int16Samples, (unsigned  int)numberOfSamples);
+            SuperpoweredFloatToShortInt(self->recoreder_buffer_mono, self->int16Samples, (unsigned  int)numberOfSamples, 1);
             
-            int index = 0;
-            while (index < numberOfSamples) {
-               
-                NSLog(@"ooooooooooooooo->%hd", self->int16Samples[index]);
-                index++;
-            }
+//            int index = 0;
+//            while (index < numberOfSamples) {
+//               
+//                NSLog(@"ooooooooooooooo->%hd", self->int16Samples[index]);
+//                index++;
+//            }
             
-            [self.renderBufferQueue enqueueBuffer:self->int16Samples sampleCount:numberOfSamples];
+//            [self.renderBufferQueue enqueueBuffer:self->int16Samples sampleCount:numberOfSamples];
+            [self.bufferQueue enqueueBuffer:self->int16Samples sampleCount:numberOfSamples];
         }
     }
     
@@ -267,7 +276,7 @@ void playerEventCallback (void *clientData, SuperpoweredAdvancedAudioPlayerEvent
         _recorder->start(p);
         
         
-//        _player->play(false);
+        _player->play(false);
     } else { // 开始->暂停
         _recorder->stop();
         _player->pause();

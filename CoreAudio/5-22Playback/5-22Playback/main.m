@@ -30,6 +30,7 @@ static void MyAQOutputCallback ( void * __nullable       inUserData,
                                  AudioQueueRef           inAQ,
                                  AudioQueueBufferRef     inBuffer)
 {
+    print_ids("播放回调");
     OSStatus theErr = noErr;
     MyPlayer *player = (MyPlayer *)inUserData;
     if (player->isDone) return; // 关闭了
@@ -109,6 +110,7 @@ int main(int argc, const char * argv[]) {
         }
         
         // 4.播放文件
+        print_ids("main");
         theErr = AudioQueueStart(queue, NULL);
         CheckError(theErr, "AudioQueueStart");
         

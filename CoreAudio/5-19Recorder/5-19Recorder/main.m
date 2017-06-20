@@ -30,7 +30,7 @@ static void MyAQInputCallback ( void * __nullable               inUserData,
                                 UInt32                          inNumberPacketDescriptions,
                                 const AudioStreamPacketDescription * __nullable inPacketDescs)
 {
-    
+    print_ids("录音回调");
     MyRecorder *recorder = (MyRecorder *)inUserData;
     OSStatus theRrr = noErr;
     if (inNumberPacketDescriptions > 0) {
@@ -109,6 +109,7 @@ int main(int argc, const char * argv[]) {
         
         // 5.开启queue
         recorder.running = TRUE;
+        print_ids("main函数");
         theErr = AudioQueueStart(queue, NULL); // 队列 - 开启时间[NULL立刻开启]
         CheckError(theErr, "AudioQueueStart");
         // 5.1.处理暂停逻辑

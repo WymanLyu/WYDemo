@@ -20,7 +20,6 @@
 		F524A16A1EE4FF8200D0FF26 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F524A1691EE4FF8200D0FF26 /* MediaPlayer.framework */; };
 		F524A16C1EE4FF8B00D0FF26 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F524A16B1EE4FF8B00D0FF26 /* UIKit.framework */; };
 		F524A16E1EE4FF9F00D0FF26 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F524A16D1EE4FF9F00D0FF26 /* QuartzCore.framework */; };
-		F544941B1EE66D6F006861D6 /* lycka.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F544941A1EE66D6F006861D6 /* lycka.mp3 */; };
 		F544944A1EE7C93B006861D6 /* FIT_UI.m in Sources */ = {isa = PBXBuildFile; fileRef = F54494491EE7C93B006861D6 /* FIT_UI.m */; };
 		F544944D1EE7C991006861D6 /* FIT_UI_FOR_DYNAMICSCREENSIZE.m in Sources */ = {isa = PBXBuildFile; fileRef = F544944C1EE7C991006861D6 /* FIT_UI_FOR_DYNAMICSCREENSIZE.m */; };
 		F544945B1EE8EE15006861D6 /* WYSoundWaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = F544945A1EE8EE15006861D6 /* WYSoundWaveView.m */; };
@@ -97,7 +96,6 @@
 		F524A1691EE4FF8200D0FF26 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		F524A16B1EE4FF8B00D0FF26 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F524A16D1EE4FF9F00D0FF26 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		F544941A1EE66D6F006861D6 /* lycka.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lycka.mp3; sourceTree = "<group>"; };
 		F54494491EE7C93B006861D6 /* FIT_UI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FIT_UI.m; sourceTree = "<group>"; };
 		F544944B1EE7C991006861D6 /* FIT_UI_FOR_DYNAMICSCREENSIZE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIT_UI_FOR_DYNAMICSCREENSIZE.h; sourceTree = "<group>"; };
 		F544944C1EE7C991006861D6 /* FIT_UI_FOR_DYNAMICSCREENSIZE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FIT_UI_FOR_DYNAMICSCREENSIZE.m; sourceTree = "<group>"; };
@@ -257,7 +255,6 @@
 				F587BFFD1EDE501B00A73353 /* LaunchScreen.storyboard */,
 				F587C0001EDE501B00A73353 /* Info.plist */,
 				F575FA9E1EEE345600767D0B /* KakiImp.mp3 */,
-				F544941A1EE66D6F006861D6 /* lycka.mp3 */,
 				F587BFEF1EDE501B00A73353 /* Supporting Files */,
 				F54494491EE7C93B006861D6 /* FIT_UI.m */,
 				F544944B1EE7C991006861D6 /* FIT_UI_FOR_DYNAMICSCREENSIZE.h */,
@@ -403,7 +400,6 @@
 			files = (
 				F587BFFF1EDE501B00A73353 /* LaunchScreen.storyboard in Resources */,
 				F587BFFC1EDE501B00A73353 /* Assets.xcassets in Resources */,
-				F544941B1EE66D6F006861D6 /* lycka.mp3 in Resources */,
 				F587BFFA1EDE501B00A73353 /* Main.storyboard in Resources */,
 				F524A15A1EE4FE3B00D0FF26 /* SuperpoweredOfflineProcessingExample-Info.plist in Resources */,
 				F575FA9F1EEE345600767D0B /* KakiImp.mp3 in Resources */,

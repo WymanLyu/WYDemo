@@ -6,7 +6,7 @@
 //  Copyright © 2017年 wyman. All rights reserved.
 //
 
-#define SAMPLE_LINECOUNT 8
+#define SAMPLE_LINECOUNT 1
 
 #import "WYSoundWaveView.h"
 
@@ -37,6 +37,7 @@
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [UIColor clearColor];
         self.waveColor = [[UIColor whiteColor] colorWithAlphaComponent:.8];
+        self.waveColor = [UIColor colorWithRed:128/255.0 green:128/255.0 blue:128/255.0 alpha:0.8];
         _drawSpaces = YES;
         
         
@@ -44,6 +45,9 @@
         _scrollView.backgroundColor = [UIColor blackColor];
         [self addSubview:_scrollView];
         
+        
+        _sampleLineCount = 0;
+        _needDrawHorizonLine = NO;
     }
     return self;
 }
@@ -117,50 +121,6 @@
     
 }
 
-- (UIImage*)_drawImageFromSamples:(SInt16*)samples
-                         maxValue:(SInt16)maxValue
-                      sampleCount:(NSInteger)sampleCount {
-    
-    CGSize imageSize = CGSizeMake(sampleCount * (_drawSpaces ? 2 : 0), self.frame.size.height);
-    UIGraphicsBeginImageContextWithOptions(imageSize, NO, 0);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    CGContextSetFillColorWithColor(context, self.backgroundColor.CGColor);
-    CGContextSetAlpha(context, 1.0);
-    
-    CGRect rect;
-    rect.size = imageSize;
-    rect.origin.x = 0;
-    rect.origin.y = 0;
-    
-    CGColorRef waveColor = self.waveColor.CGColor;
-    
-    CGContextFillRect(context, rect);
-    
-    CGContextSetLineWidth(context, 1.0);
-    
-    float channelCenterY = imageSize.height / 2;
-    float sampleAdjustmentFactor = imageSize.height / (float)maxValue;
-    
-    for (NSInteger i = 0; i < sampleCount; i++)
-    {
-        float val = *samples++;
-        val = val * sampleAdjustmentFactor;
-        if ((int)val == 0)
-            val = 1.0; // draw dots instead emptyness
-        CGContextMoveToPoint(context, i * (_drawSpaces ? 2 : 1), channelCenterY - val / 2.0);
-        CGContextAddLineToPoint(context, i * (_drawSpaces ? 2 : 1), channelCenterY + val / 2.0);
-        CGContextSetStrokeColorWithColor(context, waveColor);
-        CGContextStrokePath(context);
-    }
-    
-    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-    
-    UIGraphicsEndImageContext();
-    return newImage;
-//    return nil;
-}
-
 - (UIImage *)_drawImageFromSamples:(SInt16 *)samples sampleCount:(NSInteger)sampleCount {
     
     // 0.返回空
@@ -168,8 +128,10 @@
         return nil;
     }
     
+    NSInteger sample_count = self.sampleLineCount > 0 ? ceil(self.sampleLineCount) : sampleCount;
+    
     // 1.获取画布大小
-    CGSize samplesImgSize = CGSizeMake(SAMPLE_LINECOUNT*0.5 + 1, self.frame.size.height);
+    CGSize samplesImgSize = CGSizeMake(sample_count*0.5 + 1, self.frame.size.height);
     UIGraphicsBeginImageContextWithOptions(samplesImgSize, NO, 0);
     
     // 2.获取上下文
@@ -183,15 +145,15 @@
     
     // 2.绘制值
     for (int index = 0; index < sampleCount; index++) {
-        int i = index % SAMPLE_LINECOUNT;
+        int i =  self.sampleLineCount > 0 ? index%sample_count : index;
         SInt16 val = ABS(samples[index]);
         float volum  = ((val*1.0) / 65535); // 缩小到0~1的float 0xFFFF
-        if (0 == volum || volum < 0.01) {
-            volum = 0.01;
+        if (0 == volum || volum < 0.005) { // 限制最小值
+            volum = 0.005;
         }
         CGFloat h = volum * samplesImgSize.height*2;
         CGFloat w = 0.5;
-        NSLog(@"%zd ====== %f",val, volum);
+        NSLog(@"%hd ====== %f",val, volum);
 //        NSLog(@"x : %f === y : %f w : %f ====== h : %f",w+w*i,(samplesImgSize.height-h) * 0.5 + h, w, h);
         
         CGContextMoveToPoint(context, w+w*i, (samplesImgSize.height-h) * 0.5);
@@ -199,11 +161,12 @@
         CGContextSetStrokeColorWithColor(context, waveColor);
         CGContextStrokePath(context);
         
-//        CGContextSetLineWidth(context, 0.25);
-//        CGContextMoveToPoint(context, 0, samplesImgSize.height * 0.5);
-//        CGContextAddLineToPoint(context, sampleCount*0.5 + 1, samplesImgSize.height * 0.5);
-//        CGContextStrokePath(context);
-        
+        if (self.needDrawHorizonLine) {
+            CGContextSetLineWidth(context, 0.25);
+            CGContextMoveToPoint(context, 0, samplesImgSize.height * 0.5);
+            CGContextAddLineToPoint(context, samplesImgSize.width, samplesImgSize.height * 0.5);
+            CGContextStrokePath(context);
+        }
     }
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
