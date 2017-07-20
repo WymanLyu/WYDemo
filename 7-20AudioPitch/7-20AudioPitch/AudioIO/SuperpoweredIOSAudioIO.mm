@@ -16,50 +16,35 @@ _Pragma("clang diagnostic pop")                                     \
 #define USES_AUDIO_INPUT 1
 
 typedef enum audioDeviceType {
-    audioDeviceType_USB = 1,
-    audioDeviceType_headphone = 2,
-    audioDeviceType_HDMI = 3,
-    audioDeviceType_other = 4
+    audioDeviceType_USB = 1, audioDeviceType_headphone = 2, audioDeviceType_HDMI = 3, audioDeviceType_other = 4
 } audioDeviceType;
 
 static audioDeviceType NSStringToAudioDeviceType(NSString *str) {
-    if ([str isEqualToString:AVAudioSessionPortHeadphones]) {
-       return audioDeviceType_headphone;
-    } else if ([str isEqualToString:AVAudioSessionPortUSBAudio]) {
-      return audioDeviceType_USB;
-    } else if ([str isEqualToString:AVAudioSessionPortHDMI]) {
-        return audioDeviceType_HDMI;
-    } else {
-        return audioDeviceType_other;
-    }
+    if ([str isEqualToString:AVAudioSessionPortHeadphones]) return audioDeviceType_headphone;
+    else if ([str isEqualToString:AVAudioSessionPortUSBAudio]) return audioDeviceType_USB;
+    else if ([str isEqualToString:AVAudioSessionPortHDMI]) return audioDeviceType_HDMI;
+    else return audioDeviceType_other;
 }
 
 // Initialization
 @implementation SuperpoweredIOSAudioIO {
-    id<SuperpoweredIOSAudioIODelegate>delegate; // 代理
-    NSString *externalAudioDeviceName;
-    NSString *audioSessionCategory; // session类型
-    NSTimer *stopTimer; // 时钟
+    id<SuperpoweredIOSAudioIODelegate>delegate;
+    NSString *externalAudioDeviceName, *audioSessionCategory;
+    NSTimer *stopTimer;
     NSMutableString *audioSystemInfo;
-    audioProcessingCallback processingCallback; // 回调
-    void *processingClientdata; // 上下文
-    AudioBufferList *inputBufferListForRecordingCategory; // 录音类型下的buffer
-    AudioComponentInstance audioUnit; // AUUnit
-    multiOutputChannelMap outputChannelMap; // 多轨输出对应的结构
-    multiInputChannelMap inputChannelMap; // 多轨输入对应的结构
+    audioProcessingCallback processingCallback;
+    void *processingClientdata;
+    AudioBufferList *inputBufferListForRecordingCategory;
+    AudioComponentInstance audioUnit;
+    multiOutputChannelMap outputChannelMap;
+    multiInputChannelMap inputChannelMap;
     audioDeviceType RemoteIOOutputChannelMap[64];
-    int numChannels; //  通道数
-    int silenceFrames; // 静音帧
-    int samplerate; // 采样率
-    int minimumNumberOfFrames; // 最小帧数
-    int maximumNumberOfFrames; // 最大帧数
-    int preferredMinimumSamplerate; // 期待的最小采样
+    int numChannels, silenceFrames, samplerate, minimumNumberOfFrames, maximumNumberOfFrames, preferredMinimumSamplerate;
     bool audioUnitRunning, iOS6, background, inputEnabled;
 }
 
 @synthesize preferredBufferSizeMs, saveBatteryInBackground, started;
 
-// 初始化buffer
 - (void)createAudioBuffersForRecordingCategory {
     inputBufferListForRecordingCategory = (AudioBufferList *)malloc(sizeof(AudioBufferList) + (sizeof(AudioBuffer) * numChannels));
     inputBufferListForRecordingCategory->mNumberBuffers = numChannels;
@@ -73,7 +58,6 @@ static audioDeviceType NSStringToAudioDeviceType(NSString *str) {
 - (id)initWithDelegate:(NSObject<SuperpoweredIOSAudioIODelegate> *)d preferredBufferSize:(unsigned int)preferredBufferSize preferredMinimumSamplerate:(unsigned int)prefsamplerate audioSessionCategory:(NSString *)category channels:(int)channels audioProcessingCallback:(audioProcessingCallback)callback clientdata:(void *)clientdata {
     self = [super init];
     if (self) {
-        // 1.记录参数
         iOS6 = ([[[UIDevice currentDevice] systemVersion] compare:@"6.0" options:NSNumericSearch] != NSOrderedAscending);
         numChannels = !iOS6 ? 2 : channels;
 #if !__has_feature(objc_arc)
@@ -101,14 +85,8 @@ static audioDeviceType NSStringToAudioDeviceType(NSString *str) {
         samplerate = minimumNumberOfFrames = maximumNumberOfFrames = 0;
         externalAudioDeviceName = nil;
         audioUnit = NULL;
-        if (recordOnly) { // 只是录音时创建录音的buffer
-            [self createAudioBuffersForRecordingCategory];
-        } else {
-            inputBufferListForRecordingCategory = NULL;
-        }
-        // 开启每秒的定时器-》用来省电，在太多静音时候关闭IO
+        if (recordOnly) [self createAudioBuffersForRecordingCategory]; else inputBufferListForRecordingCategory = NULL;
         stopTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(everySecond) userInfo:nil repeats:YES];
-        // 设置AU
         [self resetAudio];
 
         // Need to listen for a few app and audio session related events.
@@ -298,37 +276,26 @@ static audioDeviceType NSStringToAudioDeviceType(NSString *str) {
 
 - (void)setSamplerateAndBuffersize {
     if (samplerate > 0) {
-        // 1.取最小的采样率
-        double sr = samplerate < preferredMinimumSamplerate ? preferredMinimumSamplerate : 0;
-        double current;
-        // 2.取系统推荐的采样率
+        double sr = samplerate < preferredMinimumSamplerate ? preferredMinimumSamplerate : 0, current;
         if (!iOS6) {
             SILENCE_DEPRECATION(current = [[AVAudioSession sharedInstance] preferredHardwareSampleRate]); // iOS 5 compatibility
-        } else {
-            current = [[AVAudioSession sharedInstance] preferredSampleRate];
-        }
-        // 3.如果和系统不一致则重新赋值
+        } else current = [[AVAudioSession sharedInstance] preferredSampleRate];
         if (current != sr) {
             if (!iOS6) {
                 SILENCE_DEPRECATION([[AVAudioSession sharedInstance] setPreferredHardwareSampleRate:sr error:NULL]); // iOS 5 compatibility
-            } else {
-                [[AVAudioSession sharedInstance] setPreferredSampleRate:sr error:NULL];
-            }
+            } else [[AVAudioSession sharedInstance] setPreferredSampleRate:sr error:NULL];
         };
     };
-    // 4.设置回调时间
     [[AVAudioSession sharedInstance] setPreferredIOBufferDuration:double(preferredBufferSizeMs) * 0.001 error:NULL];
 }
 
 - (void)resetAudio {
-    // 0.干掉原有AU
     if (audioUnit != NULL) {
         AudioUnitUninitialize(audioUnit);
         AudioComponentInstanceDispose(audioUnit);
         audioUnit = NULL;
     };
 
-    // 1.查找当前音频路由的输出设备，如果有USB则标记为多路由
     bool multiRoute = false;
     if ((numChannels > 2) && [audioSessionCategory isEqualToString:AVAudioSessionCategoryPlayback]) {
         for (AVAudioSessionPortDescription *port in [[[AVAudioSession sharedInstance] currentRoute] outputs]) {
@@ -339,32 +306,18 @@ static audioDeviceType NSStringToAudioDeviceType(NSString *str) {
         }
     };
 #ifdef ALLOW_BLUETOOTH
-    if (multiRoute){
-        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryMultiRoute error:NULL];
-    } else {
-        [[AVAudioSession sharedInstance] setCategory:audioSessionCategory withOptions:AVAudioSessionCategoryOptionAllowBluetoothA2DP | AVAudioSessionCategoryOptionMixWithOthers error:NULL];
-    }
+    if (multiRoute)  [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryMultiRoute error:NULL];
+    else [[AVAudioSession sharedInstance] setCategory:audioSessionCategory withOptions:AVAudioSessionCategoryOptionAllowBluetoothA2DP | AVAudioSessionCategoryOptionMixWithOthers error:NULL];
 #else
     [[AVAudioSession sharedInstance] setCategory:multiRoute ? AVAudioSessionCategoryMultiRoute : audioSessionCategory error:NULL];
 #endif
     [[AVAudioSession sharedInstance] setMode:AVAudioSessionModeDefault error:NULL];
-    
-    // 2.设置采样率和回调buffer
     [self setSamplerateAndBuffersize];
-    
-    // 3.音频会话生效
     [[AVAudioSession sharedInstance] setActive:YES error:NULL];
 
-    // 4.创建远程IO AU
     audioUnit = [self createRemoteIO];
-    
-    // 5.多轨的则更新会话
     if (!multiRoute) {
-        if (iOS6) {
-            [self onRouteChange:nil];
-        } else {
-            [self mapChannels];
-        }
+        if (iOS6) [self onRouteChange:nil]; else [self mapChannels];
     };
 }
 
@@ -423,32 +376,29 @@ static OSStatus coreAudioProcessingCallback(void *inRefCon, AudioUnitRenderActio
 
 - (AudioUnit)createRemoteIO {
     AudioUnit au;
-    // 1.音频组件描述
+
     AudioComponentDescription desc;
 	desc.componentType = kAudioUnitType_Output;
 	desc.componentSubType = kAudioUnitSubType_RemoteIO;
 	desc.componentFlags = 0;
 	desc.componentFlagsMask = 0;
 	desc.componentManufacturer = kAudioUnitManufacturer_Apple;
-    // 2.根据描述查找音频组件 【等同于音频单元】
 	AudioComponent component = AudioComponentFindNext(NULL, &desc);
-    if (AudioComponentInstanceNew(component, &au) != 0) {
-        return NULL;
-    }
-    // 3.设置音频单元的IO开关
+	if (AudioComponentInstanceNew(component, &au) != 0) return NULL;
+
     bool recordOnly = [audioSessionCategory isEqualToString:AVAudioSessionCategoryRecord];
     UInt32 value = recordOnly ? 0 : 1;
 	if (AudioUnitSetProperty(au, kAudioOutputUnitProperty_EnableIO, kAudioUnitScope_Output, 0, &value, sizeof(value))) { AudioComponentInstanceDispose(au); return NULL; };
     value = inputEnabled ? 1 : 0;
 	if (AudioUnitSetProperty(au, kAudioOutputUnitProperty_EnableIO, kAudioUnitScope_Input, 1, &value, sizeof(value))) { AudioComponentInstanceDispose(au); return NULL; };
-    
+
     AudioUnitAddPropertyListener(au, kAudioUnitProperty_StreamFormat, streamFormatChangedCallback, (__bridge void *)self);
-    // 4.获取流格式
+
     UInt32 size = 0;
     AudioUnitGetPropertyInfo(au, kAudioUnitProperty_StreamFormat, kAudioUnitScope_Output, 0, &size, NULL);
     AudioStreamBasicDescription format;
     AudioUnitGetProperty(au, kAudioUnitProperty_StreamFormat, kAudioUnitScope_Output, 0, &format, &size);
-    // 5.重新设置采样率
+
     samplerate = (int)format.mSampleRate;
     [self setSamplerateAndBuffersize];
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F53149721F07F1140002D12C /* WYAudioIO.m in Sources */ = {isa = PBXBuildFile; fileRef = F53149711F07F1140002D12C /* WYAudioIO.m */; };
 		F531BE161EFCBFA20002D12C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F531BE151EFCBFA20002D12C /* main.m */; };
 		F531BE191EFCBFA20002D12C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F531BE181EFCBFA20002D12C /* AppDelegate.m */; };
 		F531BE1C1EFCBFA20002D12C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F531BE1B1EFCBFA20002D12C /* ViewController.m */; };
@@ -45,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F53149701F07F1140002D12C /* WYAudioIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYAudioIO.h; sourceTree = "<group>"; };
+		F53149711F07F1140002D12C /* WYAudioIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYAudioIO.m; sourceTree = "<group>"; };
 		F531BE111EFCBFA20002D12C /* 6-23IOTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "6-23IOTest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F531BE151EFCBFA20002D12C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F531BE171EFCBFA20002D12C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -135,6 +138,8 @@
 				F531BE471EFCBFAF0002D12C /* AudioIO */,
 				F531BE171EFCBFA20002D12C /* AppDelegate.h */,
 				F531BE181EFCBFA20002D12C /* AppDelegate.m */,
+				F53149701F07F1140002D12C /* WYAudioIO.h */,
+				F53149711F07F1140002D12C /* WYAudioIO.m */,
 				F531BE1A1EFCBFA20002D12C /* ViewController.h */,
 				F531BE1B1EFCBFA20002D12C /* ViewController.m */,
 				F531BE1D1EFCBFA20002D12C /* Main.storyboard */,
@@ -266,6 +271,11 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 9T725P7UDK;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					F531BE291EFCBFA20002D12C = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -337,6 +347,7 @@
 				F531BE191EFCBFA20002D12C /* AppDelegate.m in Sources */,
 				F531BE161EFCBFA20002D12C /* main.m in Sources */,
 				F531BE4A1EFCBFAF0002D12C /* SuperpoweredIOSAudioIO.mm in Sources */,
+				F53149721F07F1140002D12C /* WYAudioIO.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,6 +587,7 @@
 				F531BE401EFCBFA20002D12C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F531BE411EFCBFA20002D12C /* Build configuration list for PBXNativeTarget "6-23IOTestTests" */ = {
 			isa = XCConfigurationList;
@@ -584,6 +596,7 @@
 				F531BE431EFCBFA20002D12C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F531BE441EFCBFA20002D12C /* Build configuration list for PBXNativeTarget "6-23IOTestUITests" */ = {
 			isa = XCConfigurationList;
@@ -592,6 +605,7 @@
 				F531BE461EFCBFA20002D12C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
