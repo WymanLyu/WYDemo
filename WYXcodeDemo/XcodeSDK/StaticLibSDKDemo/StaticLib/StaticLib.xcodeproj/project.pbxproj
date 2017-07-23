@@ -10,6 +10,7 @@
 		F5E1A4D61F24FB4B00BD533A /* StaticLib.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E1A4D51F24FB4B00BD533A /* StaticLib.m */; };
 		F5E1A4D71F24FB4B00BD533A /* StaticLib.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5E1A4D41F24FB4B00BD533A /* StaticLib.h */; };
 		F5E1A4F11F24FCFE00BD533A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A4F01F24FCA600BD533A /* Assets.xcassets */; };
+		F5E1A5271F25041F00BD533A /* FrameworkLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E1A5261F25041F00BD533A /* FrameworkLib.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,6 +33,7 @@
 		F5E1A4EA1F24FC5800BD533A /* StaticLibBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StaticLibBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5E1A4EC1F24FC5800BD533A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5E1A4F01F24FCA600BD533A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F5E1A5261F25041F00BD533A /* FrameworkLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FrameworkLib.framework; path = "../FrameworkLib/build/Debug-iphoneos/FrameworkLib.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5E1A5271F25041F00BD533A /* FrameworkLib.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +62,7 @@
 				F5E1A4D31F24FB4B00BD533A /* StaticLib */,
 				F5E1A4EB1F24FC5800BD533A /* StaticLibBundle */,
 				F5E1A4D21F24FB4B00BD533A /* Products */,
+				F5E1A5251F25041F00BD533A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +90,14 @@
 				F5E1A4EC1F24FC5800BD533A /* Info.plist */,
 			);
 			path = StaticLibBundle;
+			sourceTree = "<group>";
+		};
+		F5E1A5251F25041F00BD533A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F5E1A5261F25041F00BD533A /* FrameworkLib.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -7,7 +7,9 @@
 //
 
 #import "ViewController.h"
-#import <StaticLib.h>
+//#import <StaticLib.h>
+//#import "StaticLib/StaticLib.h"
+# import <FrameworkLib/FrameworkLib.h>
 
 @interface ViewController ()
 
@@ -19,7 +21,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    [[StaticLib new] lib_log];
+//    [[StaticLib new] lib_log];
+    [[FrameworkLib new] print_x86];
     
 }
 

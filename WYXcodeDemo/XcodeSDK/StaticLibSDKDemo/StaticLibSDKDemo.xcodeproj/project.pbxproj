@@ -15,7 +15,7 @@
 		F5E1A4751F24FA9F00BD533A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A4731F24FA9F00BD533A /* LaunchScreen.storyboard */; };
 		F5E1A4801F24FA9F00BD533A /* StaticLibSDKDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E1A47F1F24FA9F00BD533A /* StaticLibSDKDemoTests.m */; };
 		F5E1A48B1F24FA9F00BD533A /* StaticLibSDKDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E1A48A1F24FA9F00BD533A /* StaticLibSDKDemoUITests.m */; };
-		F5E1A4E31F24FB6D00BD533A /* libStaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E1A4E21F24FB4C00BD533A /* libStaticLib.a */; };
+		F5E1A5241F25037A00BD533A /* FrameworkLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E1A51F1F2502D000BD533A /* FrameworkLib.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +47,27 @@
 			remoteGlobalIDString = F5E1A4D01F24FB4B00BD533A;
 			remoteInfo = StaticLib;
 		};
+		F5E1A4F31F24FFBD00BD533A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F5E1A4DD1F24FB4B00BD533A /* StaticLib.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F5E1A4EA1F24FC5800BD533A;
+			remoteInfo = StaticLibBundle;
+		};
+		F5E1A51E1F2502D000BD533A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F5E1A5191F2502CF00BD533A /* FrameworkLib.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F5E1A4FF1F2502CF00BD533A;
+			remoteInfo = FrameworkLib;
+		};
+		F5E1A5201F2502D000BD533A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F5E1A5191F2502CF00BD533A /* FrameworkLib.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F5E1A5081F2502CF00BD533A;
+			remoteInfo = FrameworkLibTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +88,7 @@
 		F5E1A48A1F24FA9F00BD533A /* StaticLibSDKDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StaticLibSDKDemoUITests.m; sourceTree = "<group>"; };
 		F5E1A48C1F24FA9F00BD533A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5E1A4DD1F24FB4B00BD533A /* StaticLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = StaticLib.xcodeproj; path = StaticLib/StaticLib.xcodeproj; sourceTree = "<group>"; };
+		F5E1A5191F2502CF00BD533A /* FrameworkLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FrameworkLib.xcodeproj; path = FrameworkLib/FrameworkLib.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5E1A4E31F24FB6D00BD533A /* libStaticLib.a in Frameworks */,
+				F5E1A5241F25037A00BD533A /* FrameworkLib.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +120,7 @@
 		F5E1A4591F24FA9F00BD533A = {
 			isa = PBXGroup;
 			children = (
+				F5E1A5191F2502CF00BD533A /* FrameworkLib.xcodeproj */,
 				F5E1A4DD1F24FB4B00BD533A /* StaticLib.xcodeproj */,
 				F5E1A4641F24FA9F00BD533A /* StaticLibSDKDemo */,
 				F5E1A47E1F24FA9F00BD533A /* StaticLibSDKDemoTests */,
@@ -162,6 +185,16 @@
 			isa = PBXGroup;
 			children = (
 				F5E1A4E21F24FB4C00BD533A /* libStaticLib.a */,
+				F5E1A4F41F24FFBD00BD533A /* StaticLibBundle.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F5E1A51A1F2502CF00BD533A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F5E1A51F1F2502D000BD533A /* FrameworkLib.framework */,
+				F5E1A5211F2502D000BD533A /* FrameworkLibTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -264,6 +297,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = F5E1A51A1F2502CF00BD533A /* Products */;
+					ProjectRef = F5E1A5191F2502CF00BD533A /* FrameworkLib.xcodeproj */;
+				},
+				{
 					ProductGroup = F5E1A4DE1F24FB4B00BD533A /* Products */;
 					ProjectRef = F5E1A4DD1F24FB4B00BD533A /* StaticLib.xcodeproj */;
 				},
@@ -283,6 +320,27 @@
 			fileType = archive.ar;
 			path = libStaticLib.a;
 			remoteRef = F5E1A4E11F24FB4C00BD533A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F5E1A4F41F24FFBD00BD533A /* StaticLibBundle.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = StaticLibBundle.bundle;
+			remoteRef = F5E1A4F31F24FFBD00BD533A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F5E1A51F1F2502D000BD533A /* FrameworkLib.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FrameworkLib.framework;
+			remoteRef = F5E1A51E1F2502D000BD533A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F5E1A5211F2502D000BD533A /* FrameworkLibTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = FrameworkLibTests.xctest;
+			remoteRef = F5E1A5201F2502D000BD533A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -481,11 +539,13 @@
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/StaticLib\"",
 					"\"$(SRCROOT)/StaticLib/StaticLib\"",
+					"\"$(SRCROOT)/FrameworkLib\"",
 				);
 				INFOPLIST_FILE = StaticLibSDKDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wyman.StaticLibSDKDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/StaticLib\"";
 			};
 			name = Debug;
 		};
@@ -497,11 +557,13 @@
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/StaticLib\"",
 					"\"$(SRCROOT)/StaticLib/StaticLib\"",
+					"\"$(SRCROOT)/FrameworkLib\"",
 				);
 				INFOPLIST_FILE = StaticLibSDKDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wyman.StaticLibSDKDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/StaticLib\"";
 			};
 			name = Release;
 		};
