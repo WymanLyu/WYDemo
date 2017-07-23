@@ -1,0 +1,4 @@
+
+target4依赖于target2编译的静态库无法链接到实现【实际上在target的编译出来的.a直接添加到target4中是可以的】 ？？
+
+target4y依赖于target3编译的framework是可以直接。。
