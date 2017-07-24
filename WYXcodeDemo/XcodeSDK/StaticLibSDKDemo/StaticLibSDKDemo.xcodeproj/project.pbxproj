@@ -68,6 +68,13 @@
 			remoteGlobalIDString = F5E1A5081F2502CF00BD533A;
 			remoteInfo = FrameworkLibTests;
 		};
+		F5E1A53C1F2577FE00BD533A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F5E1A5191F2502CF00BD533A /* FrameworkLib.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F5E1A5311F25775300BD533A;
+			remoteInfo = FrameworkBundle;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -195,6 +202,7 @@
 			children = (
 				F5E1A51F1F2502D000BD533A /* FrameworkLib.framework */,
 				F5E1A5211F2502D000BD533A /* FrameworkLibTests.xctest */,
+				F5E1A53D1F2577FE00BD533A /* FrameworkBundle.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -341,6 +349,13 @@
 			fileType = wrapper.cfbundle;
 			path = FrameworkLibTests.xctest;
 			remoteRef = F5E1A5201F2502D000BD533A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F5E1A53D1F2577FE00BD533A /* FrameworkBundle.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = FrameworkBundle.bundle;
+			remoteRef = F5E1A53C1F2577FE00BD533A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -636,6 +651,7 @@
 				F5E1A4911F24FA9F00BD533A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F5E1A4921F24FA9F00BD533A /* Build configuration list for PBXNativeTarget "StaticLibSDKDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -644,6 +660,7 @@
 				F5E1A4941F24FA9F00BD533A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F5E1A4951F24FA9F00BD533A /* Build configuration list for PBXNativeTarget "StaticLibSDKDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -652,6 +669,7 @@
 				F5E1A4971F24FA9F00BD533A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,15 +1,13 @@
 //
 //  ViewController.m
-//  StaticLibSDKDemo
+//  FrameworkUse
 //
-//  Created by wyman on 2017/7/23.
+//  Created by wyman on 2017/7/24.
 //  Copyright © 2017年 wyman. All rights reserved.
 //
 
 #import "ViewController.h"
-//#import <StaticLib.h>
-//#import "StaticLib/StaticLib.h"
-# import <FrameworkLib/FrameworkLib.h>
+#import "FrameworkLib.framework/Headers/FrameworkLib.h"
 
 @interface ViewController ()
 
@@ -20,10 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
-//    [[StaticLib new] lib_log];
     [[FrameworkLib new] lib_log];
-    
 }
 
 

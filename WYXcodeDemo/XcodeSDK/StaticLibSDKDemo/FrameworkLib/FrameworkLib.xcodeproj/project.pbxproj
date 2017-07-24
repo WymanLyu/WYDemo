@@ -9,8 +9,10 @@
 /* Begin PBXBuildFile section */
 		F5E1A5091F2502CF00BD533A /* FrameworkLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E1A4FF1F2502CF00BD533A /* FrameworkLib.framework */; };
 		F5E1A50E1F2502CF00BD533A /* FrameworkLibTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E1A50D1F2502CF00BD533A /* FrameworkLibTests.m */; };
-		F5E1A5101F2502CF00BD533A /* FrameworkLib.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A5021F2502CF00BD533A /* FrameworkLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F5E1A5231F2502EE00BD533A /* FrameworkLib.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E1A5221F2502EE00BD533A /* FrameworkLib.m */; };
+		F5E1A5391F25778A00BD533A /* FrameworkLib.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A5371F25778A00BD533A /* FrameworkLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F5E1A53A1F25778A00BD533A /* FrameworkLib.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E1A5381F25778A00BD533A /* FrameworkLib.m */; };
+		F5E1A5881F257E9300BD533A /* FrameworkBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A5311F25775300BD533A /* FrameworkBundle.bundle */; };
+		F5E1A58A1F257F7300BD533A /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A5891F257F7300BD533A /* Media.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,12 +27,15 @@
 
 /* Begin PBXFileReference section */
 		F5E1A4FF1F2502CF00BD533A /* FrameworkLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FrameworkLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F5E1A5021F2502CF00BD533A /* FrameworkLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FrameworkLib.h; sourceTree = "<group>"; };
 		F5E1A5031F2502CF00BD533A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5E1A5081F2502CF00BD533A /* FrameworkLibTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FrameworkLibTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5E1A50D1F2502CF00BD533A /* FrameworkLibTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FrameworkLibTests.m; sourceTree = "<group>"; };
 		F5E1A50F1F2502CF00BD533A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F5E1A5221F2502EE00BD533A /* FrameworkLib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrameworkLib.m; sourceTree = "<group>"; };
+		F5E1A5311F25775300BD533A /* FrameworkBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FrameworkBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5E1A5331F25775400BD533A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5E1A5371F25778A00BD533A /* FrameworkLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameworkLib.h; sourceTree = "<group>"; };
+		F5E1A5381F25778A00BD533A /* FrameworkLib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrameworkLib.m; sourceTree = "<group>"; };
+		F5E1A5891F257F7300BD533A /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,14 +54,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F5E1A52E1F25775300BD533A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		F5E1A4F51F2502CE00BD533A = {
 			isa = PBXGroup;
 			children = (
+				F5E1A5891F257F7300BD533A /* Media.xcassets */,
 				F5E1A5011F2502CF00BD533A /* FrameworkLib */,
 				F5E1A50C1F2502CF00BD533A /* FrameworkLibTests */,
+				F5E1A5321F25775400BD533A /* FrameworkBundle */,
 				F5E1A5001F2502CF00BD533A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,6 +80,7 @@
 			children = (
 				F5E1A4FF1F2502CF00BD533A /* FrameworkLib.framework */,
 				F5E1A5081F2502CF00BD533A /* FrameworkLibTests.xctest */,
+				F5E1A5311F25775300BD533A /* FrameworkBundle.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,9 +88,9 @@
 		F5E1A5011F2502CF00BD533A /* FrameworkLib */ = {
 			isa = PBXGroup;
 			children = (
-				F5E1A5021F2502CF00BD533A /* FrameworkLib.h */,
 				F5E1A5031F2502CF00BD533A /* Info.plist */,
-				F5E1A5221F2502EE00BD533A /* FrameworkLib.m */,
+				F5E1A5371F25778A00BD533A /* FrameworkLib.h */,
+				F5E1A5381F25778A00BD533A /* FrameworkLib.m */,
 			);
 			path = FrameworkLib;
 			sourceTree = "<group>";
@@ -89,6 +104,14 @@
 			path = FrameworkLibTests;
 			sourceTree = "<group>";
 		};
+		F5E1A5321F25775400BD533A /* FrameworkBundle */ = {
+			isa = PBXGroup;
+			children = (
+				F5E1A5331F25775400BD533A /* Info.plist */,
+			);
+			path = FrameworkBundle;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -96,7 +119,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5E1A5101F2502CF00BD533A /* FrameworkLib.h in Headers */,
+				F5E1A5391F25778A00BD533A /* FrameworkLib.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +162,23 @@
 			productReference = F5E1A5081F2502CF00BD533A /* FrameworkLibTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		F5E1A5301F25775300BD533A /* FrameworkBundle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5E1A5361F25775400BD533A /* Build configuration list for PBXNativeTarget "FrameworkBundle" */;
+			buildPhases = (
+				F5E1A52D1F25775300BD533A /* Sources */,
+				F5E1A52E1F25775300BD533A /* Frameworks */,
+				F5E1A52F1F25775300BD533A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FrameworkBundle;
+			productName = FrameworkBundle;
+			productReference = F5E1A5311F25775300BD533A /* FrameworkBundle.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -154,6 +194,11 @@
 						ProvisioningStyle = Automatic;
 					};
 					F5E1A5071F2502CF00BD533A = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 9T725P7UDK;
+						ProvisioningStyle = Automatic;
+					};
+					F5E1A5301F25775300BD533A = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 9T725P7UDK;
 						ProvisioningStyle = Automatic;
@@ -174,6 +219,7 @@
 			targets = (
 				F5E1A4FE1F2502CF00BD533A /* FrameworkLib */,
 				F5E1A5071F2502CF00BD533A /* FrameworkLibTests */,
+				F5E1A5301F25775300BD533A /* FrameworkBundle */,
 			);
 		};
 /* End PBXProject section */
@@ -183,10 +229,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5E1A58A1F257F7300BD533A /* Media.xcassets in Resources */,
+				F5E1A5881F257E9300BD533A /* FrameworkBundle.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F5E1A5061F2502CF00BD533A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5E1A52F1F25775300BD533A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -200,7 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5E1A5231F2502EE00BD533A /* FrameworkLib.m in Sources */,
+				F5E1A53A1F25778A00BD533A /* FrameworkLib.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +264,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5E1A50E1F2502CF00BD533A /* FrameworkLibTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5E1A52D1F25775300BD533A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +441,42 @@
 			};
 			name = Release;
 		};
+		F5E1A5341F25775400BD533A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 9T725P7UDK;
+				INFOPLIST_FILE = FrameworkBundle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACH_O_TYPE = mh_bundle;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = wyman.FrameworkBundle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		F5E1A5351F25775400BD533A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 9T725P7UDK;
+				INFOPLIST_FILE = FrameworkBundle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACH_O_TYPE = mh_bundle;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = wyman.FrameworkBundle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -398,12 +496,22 @@
 				F5E1A5151F2502CF00BD533A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F5E1A5161F2502CF00BD533A /* Build configuration list for PBXNativeTarget "FrameworkLibTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F5E1A5171F2502CF00BD533A /* Debug */,
 				F5E1A5181F2502CF00BD533A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F5E1A5361F25775400BD533A /* Build configuration list for PBXNativeTarget "FrameworkBundle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5E1A5341F25775400BD533A /* Debug */,
+				F5E1A5351F25775400BD533A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

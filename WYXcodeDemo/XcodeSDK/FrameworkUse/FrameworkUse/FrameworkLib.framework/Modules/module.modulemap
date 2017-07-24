@@ -1,0 +1,6 @@
+framework module FrameworkLib {
+  umbrella header "FrameworkLib.h"
+
+  export *
+  module * { export * }
+}
