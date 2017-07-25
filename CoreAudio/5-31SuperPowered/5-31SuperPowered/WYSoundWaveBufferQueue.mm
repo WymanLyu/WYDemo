@@ -133,6 +133,12 @@ typedef struct BufferUnit {
         _running = YES;
     }
     
+    // 4.头指针循环往前移动
+    _head_index++;
+    if (_head_index >= _bufferListLenght) {
+        _head_index %= _bufferListLenght;
+    }
+    
     pthread_mutex_unlock(&_mutex_lock);
 }
 
@@ -181,11 +187,11 @@ typedef struct BufferUnit {
         }
     }
     
-    // 4.头指针循环往前移动
-    _head_index++;
-    if (_head_index >= _bufferListLenght) {
-        _head_index %= _bufferListLenght;
-    }
+//    // 4.头指针循环往前移动
+//    _head_index++;
+//    if (_head_index >= _bufferListLenght) {
+//        _head_index %= _bufferListLenght;
+//    }
     
     // 5.回调
     if ([self.observer respondsToSelector:@selector(soundWaveBufferQueueOutCallback:reSampleCount:)]) {
