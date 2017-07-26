@@ -42,6 +42,9 @@
         return;
     }
     _fileURL = fileURL;
+    if (!_fileURL.absoluteString.length) {
+        [self stop];
+    }
     if (_fileURL.absoluteString.length) {
         [self pause];
 #ifdef FXAM_IOS_LOG

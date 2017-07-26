@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F510D8051F28E5C900B4B4D4 /* FlangerFxUnit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F510D7FD1F28E5C900B4B4D4 /* FlangerFxUnit.cpp */; };
+		F510D8061F28E5C900B4B4D4 /* FlangerFxUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = F510D7FE1F28E5C900B4B4D4 /* FlangerFxUnit.h */; };
+		F510D8071F28E5C900B4B4D4 /* FxChain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F510D7FF1F28E5C900B4B4D4 /* FxChain.cpp */; };
+		F510D8081F28E5C900B4B4D4 /* FxChain.h in Headers */ = {isa = PBXBuildFile; fileRef = F510D8001F28E5C900B4B4D4 /* FxChain.h */; };
+		F510D8091F28E5C900B4B4D4 /* FxConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = F510D8011F28E5C900B4B4D4 /* FxConstants.h */; };
+		F510D80A1F28E5C900B4B4D4 /* FxUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = F510D8021F28E5C900B4B4D4 /* FxUnit.h */; };
+		F510D80B1F28E5C900B4B4D4 /* ReverbFxUnit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F510D8031F28E5C900B4B4D4 /* ReverbFxUnit.cpp */; };
+		F510D80C1F28E5C900B4B4D4 /* ReverbFxUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = F510D8041F28E5C900B4B4D4 /* ReverbFxUnit.h */; };
 		F5E1A6191F27A86300BD533A /* FXAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E1A60F1F27A86300BD533A /* FXAudio.framework */; };
 		F5E1A61E1F27A86300BD533A /* FXAudioTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E1A61D1F27A86300BD533A /* FXAudioTests.m */; };
 		F5E1A6201F27A86300BD533A /* FXAudio.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6121F27A86300BD533A /* FXAudio.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -2158,6 +2166,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F510D7FD1F28E5C900B4B4D4 /* FlangerFxUnit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FlangerFxUnit.cpp; sourceTree = "<group>"; };
+		F510D7FE1F28E5C900B4B4D4 /* FlangerFxUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlangerFxUnit.h; sourceTree = "<group>"; };
+		F510D7FF1F28E5C900B4B4D4 /* FxChain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FxChain.cpp; sourceTree = "<group>"; };
+		F510D8001F28E5C900B4B4D4 /* FxChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FxChain.h; sourceTree = "<group>"; };
+		F510D8011F28E5C900B4B4D4 /* FxConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FxConstants.h; sourceTree = "<group>"; };
+		F510D8021F28E5C900B4B4D4 /* FxUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FxUnit.h; sourceTree = "<group>"; };
+		F510D8031F28E5C900B4B4D4 /* ReverbFxUnit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ReverbFxUnit.cpp; sourceTree = "<group>"; };
+		F510D8041F28E5C900B4B4D4 /* ReverbFxUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReverbFxUnit.h; sourceTree = "<group>"; };
 		F5E1A60F1F27A86300BD533A /* FXAudio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FXAudio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5E1A6121F27A86300BD533A /* FXAudio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FXAudio.h; sourceTree = "<group>"; };
 		F5E1A6131F27A86300BD533A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -4330,6 +4346,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F510D7FC1F28E5C900B4B4D4 /* AudioFX */ = {
+			isa = PBXGroup;
+			children = (
+				F510D7FD1F28E5C900B4B4D4 /* FlangerFxUnit.cpp */,
+				F510D7FE1F28E5C900B4B4D4 /* FlangerFxUnit.h */,
+				F510D7FF1F28E5C900B4B4D4 /* FxChain.cpp */,
+				F510D8001F28E5C900B4B4D4 /* FxChain.h */,
+				F510D8011F28E5C900B4B4D4 /* FxConstants.h */,
+				F510D8021F28E5C900B4B4D4 /* FxUnit.h */,
+				F510D8031F28E5C900B4B4D4 /* ReverbFxUnit.cpp */,
+				F510D8041F28E5C900B4B4D4 /* ReverbFxUnit.h */,
+			);
+			name = AudioFX;
+			path = ../../../../../../tuyakj/Git/FXAudio/AudioFX;
+			sourceTree = "<group>";
+		};
 		F5E1A6051F27A86300BD533A = {
 			isa = PBXGroup;
 			children = (
@@ -4384,6 +4416,7 @@
 		F5E1A6331F27A8C600BD533A /* AudioFX */ = {
 			isa = PBXGroup;
 			children = (
+				F510D7FC1F28E5C900B4B4D4 /* AudioFX */,
 				F5E1A6341F27A8C600BD533A /* RingBuffer */,
 				F5E1A6391F27A8C600BD533A /* webRTC */,
 			);
@@ -9793,6 +9826,7 @@
 				F5E1B4641F27A8CB00BD533A /* common.h in Headers */,
 				F5E1B3FD1F27A8CB00BD533A /* audio_processing_impl.h in Headers */,
 				F5E1B5B81F27A8CC00BD533A /* protection_bitrate_calculator.h in Headers */,
+				F510D8061F28E5C900B4B4D4 /* FlangerFxUnit.h in Headers */,
 				F5E1B1971F27A8CA00BD533A /* video_render_frames.h in Headers */,
 				F5E1B3121F27A8CB00BD533A /* legacy_encoded_audio_frame.h in Headers */,
 				F5E1B5A81F27A8CC00BD533A /* video_codec_interface.h in Headers */,
@@ -10364,6 +10398,7 @@
 				F5E1B2C51F27A8CB00BD533A /* smooth_out_data.h in Headers */,
 				F5E1B63E1F27A8CC00BD533A /* fakeperiodicvideocapturer.h in Headers */,
 				F5E1B0831F27A8CA00BD533A /* i420_buffer.h in Headers */,
+				F510D8091F28E5C900B4B4D4 /* FxConstants.h in Headers */,
 				F5E1B0581F27A8CA00BD533A /* jsep.h in Headers */,
 				F5E1B1811F27A8CA00BD533A /* vad_gmm.h in Headers */,
 				F5E1B5591F27A8CC00BD533A /* average_residual_loss_xor_codes.h in Headers */,
@@ -10456,6 +10491,7 @@
 				F5E1B2FE1F27A8CB00BD533A /* entropy_coding.h in Headers */,
 				F5E1B7C31F27A8CD00BD533A /* rtp_file_reader.h in Headers */,
 				F5E1B10B1F27A8CA00BD533A /* safe_minmax.h in Headers */,
+				F510D8081F28E5C900B4B4D4 /* FxChain.h in Headers */,
 				F5E1B12E1F27A8CA00BD533A /* testutils.h in Headers */,
 				F5E1B4C41F27A8CB00BD533A /* dxgi_texture.h in Headers */,
 				F5E1B24C1F27A8CA00BD533A /* videodecodersoftwarefallbackwrapper.h in Headers */,
@@ -10812,6 +10848,7 @@
 				F5E1B6601F27A8CC00BD533A /* androidvideotracksource.h in Headers */,
 				F5E1B2601F27A8CB00BD533A /* codec_manager.h in Headers */,
 				F5E1B4E91F27A8CB00BD533A /* overuse_detector.h in Headers */,
+				F510D80A1F28E5C900B4B4D4 /* FxUnit.h in Headers */,
 				F5E1B67B1F27A8CC00BD533A /* RTCAVFoundationVideoSource+Private.h in Headers */,
 				F5E1B1E71F27A8CA00BD533A /* ARDSettingsViewController.h in Headers */,
 				F5E1B5B41F27A8CC00BD533A /* nack_module.h in Headers */,
@@ -11071,6 +11108,7 @@
 				F5E1B3FC1F27A8CB00BD533A /* audio_buffer.h in Headers */,
 				F5E1B2251F27A8CA00BD533A /* device.h in Headers */,
 				F5E1B6E51F27A8CC00BD533A /* file_wrapper.h in Headers */,
+				F510D80C1F28E5C900B4B4D4 /* ReverbFxUnit.h in Headers */,
 				F5E1B8451F27A8CD00BD533A /* audio_level.h in Headers */,
 				F5E1B1461F27A8CA00BD533A /* call.h in Headers */,
 				F5E1B5071F27A8CB00BD533A /* receive_statistics.h in Headers */,
@@ -11782,14 +11820,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5E1B01B1F27A8CA00BD533A /* AMRecorderPlayerControl.mm in Sources */,
+				F510D8051F28E5C900B4B4D4 /* FlangerFxUnit.cpp in Sources */,
 				F5E1B01D1F27A8CA00BD533A /* AudioManager.mm in Sources */,
 				F5E1B0181F27A8CA00BD533A /* SuperpoweredIOSAudioIO.mm in Sources */,
 				F5E1B00F1F27A8CA00BD533A /* WYAudioRingBuffer.cc in Sources */,
+				F510D8071F28E5C900B4B4D4 /* FxChain.cpp in Sources */,
 				F5E1B0351F27A8CA00BD533A /* SuperpoweredNBandEQ.cpp in Sources */,
 				F5E1B0211F27A8CA00BD533A /* AMAudioRecorder.mm in Sources */,
 				F5E1B0131F27A8CA00BD533A /* AudioProcessingProxy.cpp in Sources */,
 				F5E1B01F1F27A8CA00BD533A /* AMAudioPlayer.mm in Sources */,
 				F5E1B0151F27A8CA00BD533A /* FXWebRTC.cpp in Sources */,
+				F510D80B1F28E5C900B4B4D4 /* ReverbFxUnit.cpp in Sources */,
 				F5E1B0111F27A8CA00BD533A /* WYRingBuffer.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -11927,8 +11968,12 @@
 					"WEBRTC_INTELLIGIBILITY_ENHANCER=1",
 					WEBRTC_IOS,
 					WEBRTC_POSIX,
+					IOS,
 				);
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/FXAudio/webRTC";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/FXAudio/webRTC",
+					"$(PROJECT_DIR)/FXAudio",
+				);
 				INFOPLIST_FILE = FXAudio/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -11960,7 +12005,10 @@
 					WEBRTC_IOS,
 					WEBRTC_POSIX,
 				);
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/FXAudio/webRTC";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/FXAudio/webRTC",
+					"$(PROJECT_DIR)/FXAudio",
+				);
 				INFOPLIST_FILE = FXAudio/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
