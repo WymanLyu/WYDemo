@@ -32,8 +32,6 @@ using namespace webrtc;
     SuperpoweredIOSAudioIO *_audioIO;
     
     float *_buffers_Interleave;
-//    float *_buffers_Interleave_mono;
-//    SInt16 *_buffers_Interleave_mono_shortInt;
     
     Agc *_agc;
     
@@ -49,8 +47,6 @@ using namespace webrtc;
     delete _limiter;
     delete _clipper;
     free(_buffers_Interleave);
-//    free(_buffers_Interleave_mono);
-//    free(_buffers_Interleave_mono_shortInt);
 }
 
 void printBuffer(float **buffers, unsigned int numberOfSamples)
