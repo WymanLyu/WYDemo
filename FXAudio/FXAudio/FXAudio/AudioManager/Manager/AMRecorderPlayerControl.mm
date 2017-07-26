@@ -30,22 +30,12 @@
 
 @implementation AMRecorderPlayerControl
 {
-    float *_recorder_buffer_interleaved_stereo;
-    float *_recorder_buffer_mono;
-    SInt16 *_recorder_buffer_mono_shortInt;
-    
     float *_player_buffer_interleaved_stereo;
-    float *_player_buffer_interleaved_mono;
-    
     bool _silence;
 }
 
 - (void)dealloc {
-    free(_recorder_buffer_interleaved_stereo);
-    free(_recorder_buffer_mono);
-    free(_recorder_buffer_mono_shortInt);
     free(_player_buffer_interleaved_stereo);
-    free(_player_buffer_interleaved_mono);
 }
 
 /** 获取conrtol */
@@ -64,11 +54,8 @@
     control.volume = 1.0;
     control.openReturnVoicePropertyActivityWhenHeadSetPlugging = NO;
     // 初始化
-    posix_memalign((void **)&control->_recorder_buffer_interleaved_stereo, 16, (sizeof(float)*BUFFER_SAMPLE_COUNT+64)*CHANNELS);
-    posix_memalign((void **)&control->_recorder_buffer_mono, 16, (sizeof(float)*BUFFER_SAMPLE_COUNT+64));
-    posix_memalign((void**)&control->_recorder_buffer_mono_shortInt, 16, (sizeof(SInt16)*BUFFER_SAMPLE_COUNT+64));
     posix_memalign((void **)&control->_player_buffer_interleaved_stereo, 16, (sizeof(float)*BUFFER_SAMPLE_COUNT+64)*CHANNELS);
-    posix_memalign((void **)&control->_player_buffer_interleaved_mono, 16, (sizeof(float)*BUFFER_SAMPLE_COUNT+64));
+    
     return control;
 }
 
@@ -81,10 +68,6 @@
     self->_silence = ![self.player playWithBuffers:self->_player_buffer_interleaved_stereo numberOfSamples:numberOfSamples];
     
     // 2.录制未处理前的音频
-    // 2.1.回调绘制的降采样
-    SuperpoweredStereoToMono(buffers, self->_recorder_buffer_mono, 0.5, 0.5, 0.5, 0.5, numberOfSamples);
-    SuperpoweredFloatToShortInt(self->_recorder_buffer_mono, self->_recorder_buffer_mono_shortInt, numberOfSamples);
-    // 2.2.录制
     [self.originRecorder recordWithBuffers:buffers numberOfSamples:numberOfSamples];
     
     return self->_silence;
@@ -94,10 +77,6 @@
 - (BOOL)audioManagerIOAfterPreFX:(AudioManager *)manager buffers:(float *)buffers numberOfSamples:(int)numberOfSamples {
     
     // 1.录制处理后的音频
-    // 1.1.回调绘制的降采样
-    SuperpoweredStereoToMono(buffers, self->_recorder_buffer_mono, 0.5, 0.5, 0.5, 0.5, numberOfSamples);
-    SuperpoweredFloatToShortInt(self->_recorder_buffer_mono, self->_recorder_buffer_mono_shortInt, numberOfSamples);
-    // 1.2.录制
     [self.recorder recordWithBuffers:buffers numberOfSamples:numberOfSamples];
    
     // 2.根据是否进行mix 前提是在播放伴奏
@@ -216,6 +195,11 @@
     NSURL *urlOrigin = [NSURL fileURLWithPath:urlPathOrigin];
     
     return @{@"url" : url, @"urlOrigin" : urlOrigin};
+}
+
+- (void)setPlayFileURL:(NSURL *)playFileURL {
+    _playFileURL = playFileURL;
+    [self.player setFileURL:_playFileURL];
 }
 
 

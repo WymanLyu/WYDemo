@@ -15,6 +15,10 @@
     SuperpoweredRecorder *_recorder;
 }
 
+- (void)dealloc {
+    delete _recorder;
+}
+
 #pragma mark - 初始化
 - (instancetype)initWithFileURL:(NSURL *)url {
     if (self = [super init]) {
@@ -62,8 +66,8 @@
 }
 
 - (void)stop {
-    self->_recorder->stop();
     _paused = YES;
+    self->_recorder->stop();
 }
 
 

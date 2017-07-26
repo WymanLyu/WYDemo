@@ -19,7 +19,7 @@
 #define BLUE_COLOR [UIColor colorWithRed:15/255.0 green:222/255.0 blue:200/255.0 alpha:1]
 #define ORIGIN_COLOR [UIColor colorWithRed:237/255.0 green:140/255.0 blue:84/255.0 alpha:1]
 
-@interface ViewController ()
+@interface ViewController ()<UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property (nonatomic, strong) AMRecorderPlayerControl *control;
 @property (nonatomic, strong) AudioManager *manager;
@@ -47,6 +47,12 @@
 @property (nonatomic, strong) CAGradientLayer *afterFXWaveViewMask;
 @property (nonatomic, strong) CAGradientLayer *beforeFXWaveViewMask;
 
+#pragma mark - 数据
+@property (nonatomic, strong) NSMutableArray *recordFileListArrM;
+@property (nonatomic, strong) NSURL *bgFileURL;
+@property (nonatomic, strong) NSURL *selectedBgFileURL;
+@property (nonatomic, weak)  UIPickerView *bgFilePickView;
+
 @end
 
 @implementation ViewController
@@ -63,8 +69,10 @@
 
 #pragma mark - 音频
 - (void)audioManage {
-    NSURL *fileURL = [[NSBundle mainBundle] URLForResource:@"lycka" withExtension:@"mp3"];
-    _control = [AMRecorderPlayerControl controlWithRecordFileURL:nil playFileURL:fileURL];
+    _bgFileURL = [[NSBundle mainBundle] URLForResource:@"lycka" withExtension:@"mp3"];
+    _selectedBgFileURL = _bgFileURL;
+    [self.recordFileListArrM addObject:_bgFileURL];
+    _control = [AMRecorderPlayerControl controlWithRecordFileURL:nil playFileURL:_bgFileURL];
     _manager = [[AudioManager alloc] initWithDelegate:_control];
 }
 
@@ -88,10 +96,24 @@
     fileMask.contentMode = UIViewContentModeScaleAspectFit;
     fileMask.frame = self.fileImageView.bounds;
     self.fileImageView.maskView = fileMask;
+    
+    UIPickerView *bgFilePickView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width, 200)];
+    bgFilePickView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:bgFilePickView];
+    _bgFilePickView = bgFilePickView;
+    bgFilePickView.dataSource = self;
+    bgFilePickView.delegate = self;
+    [_bgFilePickView selectedRowInComponent:0];
+    
+    
 }
 
 #pragma mark - 事件
 - (void)setupEvent {
+    
+    self.fileImageView.userInteractionEnabled = YES;
+    [self.fileImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(fileImageViewClick:)]];
+    
     __weak typeof(self)weakSelf = self;
     self.IOSwitch.action =  ^(BOOL isOn){
         if (isOn) { // 关闭
@@ -101,11 +123,11 @@
             weakSelf.IOLineView.backgroundColor = BLUE_COLOR;
 
             [weakSelf.control stopRecorder];
-            [weakSelf.manager closeAudioIO];
             if (!weakSelf.filePlayerSwitch.isOn) { // 播放中
                 [weakSelf.filePlayerSwitch setOn:YES animated:YES];
                 weakSelf.filePlayerSwitch.action(YES);
             }
+            [weakSelf.manager closeAudioIO];
             
         } else { // 打开
             [weakSelf.IOLineView start];
@@ -122,7 +144,6 @@
             [weakSelf.fileLineRight stop];
             [weakSelf.fileLineTop1 stop];
             [weakSelf.fileLineTop2 stop];
-            [weakSelf.control pausePlayer];
             
             weakSelf.fileImageView.backgroundColor = BLUE_COLOR;
             weakSelf.fileLineRight.backgroundColor = BLUE_COLOR;
@@ -195,6 +216,107 @@
     }
 }
 
+-(void)dismissPickView:(UIButton *)maskBtn {
+    CGRect tempR = self.bgFilePickView.frame;
+    tempR.origin.y += tempR.size.height;
+    [UIView animateWithDuration:0.25 animations:^{
+        self.bgFilePickView.frame = tempR;
+    } completion:^(BOOL finished) {
+        [maskBtn removeFromSuperview];
+    }];
+}
+
+- (void)fileImageViewClick:(UITapGestureRecognizer *)tap {
+    [self.IOSwitch setOn:YES animated:YES];
+    self.IOSwitch.action(YES);
+    [self scanRecordFileURL];
+    [self.bgFilePickView reloadComponent:0];
+    CGRect tempR = self.bgFilePickView.frame;
+    tempR.origin.y -= tempR.size.height;
+    UIButton *makBtn = [[UIButton alloc] initWithFrame:self.view.bounds];
+    makBtn.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.25];
+    [makBtn addTarget:self action:@selector(dismissPickView:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view insertSubview:makBtn belowSubview:self.bgFilePickView];
+    [UIView animateWithDuration:0.25 animations:^{
+        self.bgFilePickView.frame = tempR;
+    }];
+}
+
+#pragma mark - 扫描录音文件
+
+- (NSMutableArray *)recordFileListArrM {
+    if (!_recordFileListArrM) {
+        _recordFileListArrM = [NSMutableArray array];
+    }
+    return _recordFileListArrM;
+}
+
+- (void)scanRecordFileURL {
+    [self.recordFileListArrM removeAllObjects];
+    if (self.bgFileURL) {
+         [self.recordFileListArrM addObject:self.bgFileURL];
+    }
+    NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSFileManager *manager = [NSFileManager defaultManager];
+    NSString *recordDirPath = [NSString stringWithFormat:@"%@/FXAudioDemoRecorder", path];
+    NSArray *contentsList= [manager contentsOfDirectoryAtPath:recordDirPath error:nil];
+    if (!contentsList.count) {
+        NSLog(@"扫描结果为空!");
+        return;
+    }
+    for (NSString *fileName in contentsList) {
+        if ([fileName hasSuffix:@".wav"]) {
+            [self.recordFileListArrM addObject:[NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@", recordDirPath, fileName]]];
+        }
+    }
+}
+
+#pragma mark - UIPickView
+
+// returns the number of 'columns' to display.
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
+// returns the # of rows in each component..
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return self.recordFileListArrM.count;
+}
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component  {
+    return 44;
+}
+
+- (nullable NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    NSString *path = [[self.recordFileListArrM objectAtIndex:row] absoluteString];
+    NSString *fileName = [path lastPathComponent];
+    return fileName;
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    self.selectedBgFileURL = self.recordFileListArrM[row];
+//    self.control.playFileURL = self.selectedBgFileURL;
+    _control = [AMRecorderPlayerControl controlWithRecordFileURL:nil playFileURL:self.selectedBgFileURL];
+    self.manager.delegate = _control;
+}
+
+
+- (IBAction)xxoo:(id)sender {
+//    [self scanRecordFileURL];
+//    for (int i = 0; i < 3; i++) {
+//        [self.IOSwitch setOn:YES animated:YES];
+//        self.IOSwitch.action(YES);
+//        [self.control stopPlayer];
+//        if ([self.recordFileListArrM objectAtIndex:i] == self.selectedBgFileURL) {
+//            continue;
+//        }
+//        self.selectedBgFileURL = [self.recordFileListArrM objectAtIndex:i];
+////        _control = nil;
+//        _control = [AMRecorderPlayerControl controlWithRecordFileURL:nil playFileURL:self.selectedBgFileURL];
+//        self.manager.delegate = _control;
+//    }
+
+}
 
 
 @end

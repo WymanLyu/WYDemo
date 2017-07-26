@@ -15,3 +15,5 @@ FOUNDATION_EXPORT double FXAudioVersionNumber;
 FOUNDATION_EXPORT const unsigned char FXAudioVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <FXAudio/PublicHeader.h>
+#import <FXAudio/AudioManager.h>
+#import <FXAudio/AMRecorderPlayerControl.h>

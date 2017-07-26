@@ -32,8 +32,8 @@ using namespace webrtc;
     SuperpoweredIOSAudioIO *_audioIO;
     
     float *_buffers_Interleave;
-    float *_buffers_Interleave_mono;
-    SInt16 *_buffers_Interleave_mono_shortInt;
+//    float *_buffers_Interleave_mono;
+//    SInt16 *_buffers_Interleave_mono_shortInt;
     
     Agc *_agc;
     
@@ -49,11 +49,9 @@ using namespace webrtc;
     delete _limiter;
     delete _clipper;
     free(_buffers_Interleave);
-    free(_buffers_Interleave_mono);
-    free(_buffers_Interleave_mono_shortInt);
+//    free(_buffers_Interleave_mono);
+//    free(_buffers_Interleave_mono_shortInt);
 }
-
-static int call_count = 0;
 
 void printBuffer(float **buffers, unsigned int numberOfSamples)
 {
@@ -85,10 +83,6 @@ static bool audioProcessing (void *clientdata, float **buffers, unsigned int inp
     // 1.初始化各种内存数据
     // 1.1.交错类型
     SuperpoweredInterleave(buffers[0], buffers[1], self->_buffers_Interleave, numberOfSamples);
-    // 1.2.交错单声道
-    SuperpoweredStereoToMono(self->_buffers_Interleave, self->_buffers_Interleave_mono, 0.5, 0.5, 0.5, 0.5, numberOfSamples);
-    // 1.3.交错单声道短整型
-    SuperpoweredFloatToShortInt(self->_buffers_Interleave_mono, self->_buffers_Interleave_mono_shortInt, numberOfSamples);
     
     // 2.BeforePreFX回调
     if ([self.delegate respondsToSelector:@selector(audioManagerIOBeforePreFX:buffers:numberOfSamples:)]) {
@@ -99,7 +93,7 @@ static bool audioProcessing (void *clientdata, float **buffers, unsigned int inp
     if (self.openPreFX) {
         silence = !self->_webRTC->process(buffers, numberOfSamples, CHANNELS);
         if (!silence) {
-            [self refreshMemBuffer:buffers numberOfSamples:numberOfSamples];
+            SuperpoweredInterleave(buffers[0], buffers[1], self->_buffers_Interleave, numberOfSamples);
         }
     }
     
@@ -141,16 +135,6 @@ static bool audioProcessing (void *clientdata, float **buffers, unsigned int inp
 - (void)mapChannels:(multiOutputChannelMap *)outputMap inputMap:(multiInputChannelMap *)inputMap externalAudioDeviceName:(NSString *)externalAudioDeviceName outputsAndInputs:(NSString *)outputsAndInputs {}
 - (void)interruptionEnded {}
 
-// 刷新buffer数据
-- (void)refreshMemBuffer:(float **)buffers  numberOfSamples:(int)numberOfSamples {
-    // 1.1.交错类型
-    SuperpoweredInterleave(buffers[0], buffers[1], self->_buffers_Interleave, numberOfSamples);
-    // 1.2.交错单声道
-    SuperpoweredStereoToMono(self->_buffers_Interleave, self->_buffers_Interleave_mono, 0.5, 0.5, 0.5, 0.5, numberOfSamples);
-    // 1.3.交错单声道短整型
-    SuperpoweredFloatToShortInt(self->_buffers_Interleave_mono, self->_buffers_Interleave_mono_shortInt, numberOfSamples);
-}
-
 #pragma mark - 构造
 - (instancetype)initWithDelegate:(id<AudioManagerDelegate>)delegate {
     if (self = [super init]) {
@@ -162,8 +146,6 @@ static bool audioProcessing (void *clientdata, float **buffers, unsigned int inp
         [_audioIO stop];
         
         // 初始化内存
-        posix_memalign((void **)&self->_buffers_Interleave_mono, 16, (sizeof(float)*BUFFER_SAMPLE_COUNT+64));
-        posix_memalign((void**)&self->_buffers_Interleave_mono_shortInt, 16, (sizeof(SInt16)*BUFFER_SAMPLE_COUNT+64));
         posix_memalign((void **)&self->_buffers_Interleave, 16, (sizeof(float)*BUFFER_SAMPLE_COUNT+64)*CHANNELS);
         
         // 效果器

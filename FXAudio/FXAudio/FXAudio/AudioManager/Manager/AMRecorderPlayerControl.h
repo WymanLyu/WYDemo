@@ -22,6 +22,8 @@
 /** 伴奏混音比重大小 0是无伴奏声音 1是最大声 默认1.0 */
 @property (nonatomic, assign) float volume;
 
+@property (nonatomic, strong) NSURL *playFileURL;
+
 #pragma mark - 控制
 - (void)startRecorder;
 - (void)pauseRecorder;

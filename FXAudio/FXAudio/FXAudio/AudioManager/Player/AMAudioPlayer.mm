@@ -14,24 +14,36 @@
 @implementation AMAudioPlayer
 {
     SuperpoweredAdvancedAudioPlayer *_player;
-    float *_audioFileBuffer;
+     SuperpoweredAdvancedAudioPlayer *_player1;
+}
+
+- (void)dealloc {
+    _player->pause();
+    delete _player;
+     NSLog(@"delete play ===");
 }
 
 #pragma mark - 初始化
 - (instancetype)initWithFileURL:(NSURL *)url {
     if (self = [super init]) {
-        if (posix_memalign((void **)&_audioFileBuffer, 16, (BUFFER_SAMPLE_COUNT*sizeof(float)*CHANNELS + 64)) != 0) {
-            //  32-bit interleaved stereo input/output buffer. Should be numberOfSamples * 8 + 64 bytes big
-            abort();
-        };
         _player = new SuperpoweredAdvancedAudioPlayer((__bridge void *)self, playerEventCallback, FS, 0);
-        _fileURL = url;
-        if (_fileURL.absoluteString.length) {
-            _player->open(_fileURL.fileSystemRepresentation);
-        }
-        _paused = YES;
+        NSLog(@"new play -----");
+        [self setFileURL:url];
     }
     return self;
+}
+
+- (void)setFileURL:(NSURL *)fileURL {
+    if ([fileURL.absoluteString isEqualToString:_fileURL.absoluteString]) {
+        _player->seek(0);
+        return;
+    }
+    _fileURL = fileURL;
+    if (_fileURL.absoluteString.length) {
+        _player->pause();
+        _player->open(_fileURL.fileSystemRepresentation);
+    }
+    _paused = YES;
 }
 
 #pragma mark - 控制
@@ -64,19 +76,8 @@
 }
 
 - (void)stop {
-    _paused = YES;
-    free(_audioFileBuffer);
-    _audioFileBuffer = NULL;
-    delete _player;
-    _player = NULL;
-    if (posix_memalign((void **)&_audioFileBuffer, 16, (BUFFER_SAMPLE_COUNT*sizeof(float)*CHANNELS + 64)) != 0) {
-        //  32-bit interleaved stereo input/output buffer. Should be numberOfSamples * 8 + 64 bytes big
-        abort();
-    };
-    _player = new SuperpoweredAdvancedAudioPlayer((__bridge void *)self, playerEventCallback, FS, 0);
-    if (_fileURL.absoluteString.length) {
-        _player->open(_fileURL.fileSystemRepresentation);
-    }
+    [self pause];
+    _player->seek(0);
 }
 
 #pragma mark - 播放事件回调
