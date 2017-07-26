@@ -14,20 +14,23 @@
 @implementation AMAudioPlayer
 {
     SuperpoweredAdvancedAudioPlayer *_player;
-     SuperpoweredAdvancedAudioPlayer *_player1;
 }
 
 - (void)dealloc {
-    _player->pause();
+    [self stop];
     delete _player;
-     NSLog(@"delete play ===");
+#ifdef FXAM_IOS_LOG
+    printf("delete play ===\n");
+#endif
 }
 
 #pragma mark - 初始化
 - (instancetype)initWithFileURL:(NSURL *)url {
     if (self = [super init]) {
         _player = new SuperpoweredAdvancedAudioPlayer((__bridge void *)self, playerEventCallback, FS, 0);
-        NSLog(@"new play -----");
+#ifdef FXAM_IOS_LOG
+        printf("new play -----\n");
+#endif
         [self setFileURL:url];
     }
     return self;
@@ -40,10 +43,13 @@
     }
     _fileURL = fileURL;
     if (_fileURL.absoluteString.length) {
-        _player->pause();
+        [self pause];
+#ifdef FXAM_IOS_LOG
+        printf("%s\n\n", _fileURL.fileSystemRepresentation);
+#endif
         _player->open(_fileURL.fileSystemRepresentation);
+        [self pause];
     }
-    _paused = YES;
 }
 
 #pragma mark - 控制
@@ -71,6 +77,7 @@
 }
 
 - (void)start {
+    [self stop];
     _paused = NO;
     _player->play(false);
 }

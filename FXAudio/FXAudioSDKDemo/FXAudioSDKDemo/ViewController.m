@@ -72,7 +72,7 @@
     _bgFileURL = [[NSBundle mainBundle] URLForResource:@"lycka" withExtension:@"mp3"];
     _selectedBgFileURL = _bgFileURL;
     [self.recordFileListArrM addObject:_bgFileURL];
-    _control = [AMRecorderPlayerControl controlWithRecordFileURL:nil playFileURL:_bgFileURL];
+    _control = [AMRecorderPlayerControl controlWithRecordFileURL:nil playFileURL:_selectedBgFileURL];
     _manager = [[AudioManager alloc] initWithDelegate:_control];
 }
 
@@ -295,15 +295,16 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     self.selectedBgFileURL = self.recordFileListArrM[row];
-//    self.control.playFileURL = self.selectedBgFileURL;
-    _control = [AMRecorderPlayerControl controlWithRecordFileURL:nil playFileURL:self.selectedBgFileURL];
-    self.manager.delegate = _control;
+    self.control.playFileURL = self.selectedBgFileURL;
+//    _control = [AMRecorderPlayerControl controlWithRecordFileURL:nil playFileURL:self.selectedBgFileURL];
+//    self.manager.delegate = _control;
 }
 
 
 - (IBAction)xxoo:(id)sender {
-//    [self scanRecordFileURL];
-//    for (int i = 0; i < 3; i++) {
+    [self scanRecordFileURL];
+    [_control setPlayFileURL:[self.recordFileListArrM lastObject]];
+//    for (int i = 0; i < 5; i++) {
 //        [self.IOSwitch setOn:YES animated:YES];
 //        self.IOSwitch.action(YES);
 //        [self.control stopPlayer];
@@ -312,8 +313,8 @@
 //        }
 //        self.selectedBgFileURL = [self.recordFileListArrM objectAtIndex:i];
 ////        _control = nil;
-//        _control = [AMRecorderPlayerControl controlWithRecordFileURL:nil playFileURL:self.selectedBgFileURL];
-//        self.manager.delegate = _control;
+////        _control = [AMRecorderPlayerControl controlWithRecordFileURL:nil playFileURL:self.selectedBgFileURL];
+////        self.manager.delegate = _control;
 //    }
 
 }

@@ -13,6 +13,8 @@
 #import <AVFoundation/AVFoundation.h>
 #import "AMConst.h"
 
+#import "SuperpoweredAdvancedAudioPlayer.h"
+
 #define PREFX_RECORDER_DEBUG
 
 @interface AMRecorderPlayerControl ()
@@ -23,7 +25,7 @@
 /** 处理后的录音器 */
 @property (nonatomic, strong) AMAudioRecorder *recorder;
 
-/** 处理前的人声 */
+/** 处理前的录音器 */
 @property (nonatomic, strong) AMAudioRecorder *originRecorder;
 
 @end
@@ -42,6 +44,7 @@
 + (instancetype)controlWithRecordFileURL:(NSURL *)recordFileURL playFileURL:(NSURL *)playFileURL {
     AMRecorderPlayerControl *control = [self new];
     control.player = [[AMAudioPlayer alloc] initWithFileURL:playFileURL];
+    
     NSDictionary *dict = [self creatRecorderURL];
     if (!recordFileURL.absoluteString.length) {
         recordFileURL = dict[@"url"];
@@ -66,7 +69,7 @@
     
     // 1.读取播放文件
     self->_silence = ![self.player playWithBuffers:self->_player_buffer_interleaved_stereo numberOfSamples:numberOfSamples];
-    
+
     // 2.录制未处理前的音频
     [self.originRecorder recordWithBuffers:buffers numberOfSamples:numberOfSamples];
     
@@ -199,8 +202,42 @@
 
 - (void)setPlayFileURL:(NSURL *)playFileURL {
     _playFileURL = playFileURL;
-    [self.player setFileURL:_playFileURL];
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [self.player setFileURL:_playFileURL];
+        [self.player start];
+    });
 }
+
+#pragma mark - test
+
+void playerEventCallback (void *clientData, SuperpoweredAdvancedAudioPlayerEvent event, void *value) {
+    switch (event) {
+        case SuperpoweredAdvancedAudioPlayerEvent_LoadSuccess:
+            NSLog(@"SuperpoweredAdvancedAudioPlayerEvent_LoadSuccess");
+            break;
+        case SuperpoweredAdvancedAudioPlayerEvent_LoadError:
+            NSLog(@"SuperpoweredAdvancedAudioPlayerEvent_LoadError");
+            break;
+        case SuperpoweredAdvancedAudioPlayerEvent_NetworkError:
+            NSLog(@"SuperpoweredAdvancedAudioPlayerEvent_NetworkError");
+            break;
+        case SuperpoweredAdvancedAudioPlayerEvent_EOF:
+            NSLog(@"SuperpoweredAdvancedAudioPlayerEvent_EOF");
+            break;
+        case SuperpoweredAdvancedAudioPlayerEvent_JogParameter:
+            NSLog(@"SuperpoweredAdvancedAudioPlayerEvent_JogParameter");
+            break;
+        case SuperpoweredAdvancedAudioPlayerEvent_DurationChanged:
+            NSLog(@"SuperpoweredAdvancedAudioPlayerEvent_DurationChanged");
+            break;
+        case SuperpoweredAdvancedAudioPlayerEvent_LoopEnd:
+            NSLog(@"SuperpoweredAdvancedAudioPlayerEvent_LoopEnd");
+        default:
+            break;
+    }
+
+}
+
 
 
 @end

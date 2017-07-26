@@ -56,6 +56,7 @@
 }
 
 - (void)start {
+    [self stop];
     _paused = NO;
     // [_fileURL.absoluteString cStringUsingEncoding:NSUTF8StringEncoding] 带文件协议头
     bool r = false;

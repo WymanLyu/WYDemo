@@ -7,17 +7,15 @@
 //
 
 #import "AudioManager.h"
-#import "SuperpoweredIOSAudioIO.h"
+#import "AMConst.h"
 #import "SuperpoweredSimple.h"
+#import "SuperpoweredIOSAudioIO.h"
 
-#import "webrtc/modules/audio_processing/agc/agc.h"
-#import "webrtc/modules/audio_processing/audio_processing_impl.h"
-
+#import "FXWebRTC.h"
 #import "SuperpoweredLimiter.h"
 #import "SuperpoweredClipper.h"
 
-#import "FXWebRTC.h"
-#import "AMConst.h"
+
 
 using namespace webrtc;
 
@@ -33,8 +31,6 @@ using namespace webrtc;
     
     float *_buffers_Interleave;
     
-    Agc *_agc;
-    
     SuperpoweredLimiter *_limiter;
     SuperpoweredClipper *_clipper;
     FXWebRTC *_webRTC;
@@ -42,7 +38,6 @@ using namespace webrtc;
 }
 
 - (void)dealloc {
-    delete _agc;
     delete _webRTC;
     delete _limiter;
     delete _clipper;
@@ -62,6 +57,35 @@ void printBuffer(float **buffers, unsigned int numberOfSamples)
     printf(">>>>buffers_debug_print==============================\n");
 }
 
+#pragma mark - 构造
+- (instancetype)initWithDelegate:(id<AudioManagerDelegate>)delegate {
+    if (self = [super init]) {
+        self.delegate = delegate;
+        // 初始化IO回调
+        _audioIO = [[SuperpoweredIOSAudioIO alloc] initWithDelegate:self preferredBufferSize:BUFFER_SIZE preferredMinimumSamplerate:FS audioSessionCategory:AVAudioSessionCategoryPlayAndRecord channels:CHANNELS audioProcessingCallback:audioProcessing clientdata:(__bridge void *)self];
+        _openIO = NO;
+        _openPreFX = NO;
+        [_audioIO stop];
+        
+        // 初始化内存
+        posix_memalign((void **)&self->_buffers_Interleave, 16, (sizeof(float)*BUFFER_SAMPLE_COUNT+64)*CHANNELS);
+        
+        // 效果器
+        self->_webRTC = new FXWebRTC(BUFFER_SAMPLE_COUNT, WEBRTC_BUFFER_SAMPLE_COUNT, CHANNELS);
+        
+        self->_clipper = new SuperpoweredClipper();
+        self->_clipper->thresholdDb = -2.0;
+        self->_clipper->maximumDb = -3.0;
+        
+        self->_limiter = new SuperpoweredLimiter(FS);
+        self->_limiter->enable(YES);
+        self->_limiter->ceilingDb = -1.0;
+        self->_limiter->thresholdDb = 0.0;
+        
+    }
+    return self;
+}
+
 #pragma mark - IO回调
 static bool audioProcessing (void *clientdata, float **buffers, unsigned int inputChannels, unsigned int outputChannels, unsigned int numberOfSamples, unsigned int samplerate, uint64_t hostTime) {
 
@@ -70,7 +94,6 @@ static bool audioProcessing (void *clientdata, float **buffers, unsigned int inp
 //    printBuffer(buffers, numberOfSamples);
 #endif
 
-    
     bool silence = true;
 
     // 0.回调上下文对象
@@ -130,35 +153,6 @@ static bool audioProcessing (void *clientdata, float **buffers, unsigned int inp
 - (void)recordPermissionRefused {}
 - (void)mapChannels:(multiOutputChannelMap *)outputMap inputMap:(multiInputChannelMap *)inputMap externalAudioDeviceName:(NSString *)externalAudioDeviceName outputsAndInputs:(NSString *)outputsAndInputs {}
 - (void)interruptionEnded {}
-
-#pragma mark - 构造
-- (instancetype)initWithDelegate:(id<AudioManagerDelegate>)delegate {
-    if (self = [super init]) {
-        self.delegate = delegate;
-        // 初始化IO回调
-        _audioIO = [[SuperpoweredIOSAudioIO alloc] initWithDelegate:self preferredBufferSize:BUFFER_SIZE preferredMinimumSamplerate:FS audioSessionCategory:AVAudioSessionCategoryPlayAndRecord channels:CHANNELS audioProcessingCallback:audioProcessing clientdata:(__bridge void *)self];
-        _openIO = NO;
-        _openPreFX = NO;
-        [_audioIO stop];
-        
-        // 初始化内存
-        posix_memalign((void **)&self->_buffers_Interleave, 16, (sizeof(float)*BUFFER_SAMPLE_COUNT+64)*CHANNELS);
-        
-        // 效果器
-        self->_webRTC = new FXWebRTC(BUFFER_SAMPLE_COUNT, WEBRTC_BUFFER_SAMPLE_COUNT, CHANNELS);
-        
-        self->_clipper = new SuperpoweredClipper();
-        self->_clipper->thresholdDb = -2.0;
-        self->_clipper->maximumDb = -3.0;
-        
-        self->_limiter = new SuperpoweredLimiter(FS);
-        self->_limiter->enable(YES);
-        self->_limiter->ceilingDb = -1.0;
-        self->_limiter->thresholdDb = 0.0;
-        
-    }
-    return self;
-}
 
 #pragma mark - IO开关
 - (void)openAudioIO {
