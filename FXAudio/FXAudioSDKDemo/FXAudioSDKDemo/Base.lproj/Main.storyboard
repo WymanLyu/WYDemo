@@ -153,6 +153,17 @@
                                     <action selector="fileVolum:" destination="BYZ-38-t0r" eventType="valueChanged" id="CEb-ox-Vco"/>
                                 </connections>
                             </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="av1-lK-8ep">
+                                <rect key="frame" x="112" y="262" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="Nq2-kd-4Ba"/>
+                                    <constraint firstAttribute="height" constant="30" id="s74-mG-HNs"/>
+                                </constraints>
+                                <state key="normal" title="效果器"/>
+                                <connections>
+                                    <action selector="fxBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Xu-l2-EGB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -171,6 +182,7 @@
                             <constraint firstItem="gFy-X9-sOL" firstAttribute="top" secondItem="FEP-5P-gCd" secondAttribute="bottom" constant="110.5" id="MtQ-Fx-jE3"/>
                             <constraint firstItem="tZf-SE-oec" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="TkA-04-JfJ"/>
                             <constraint firstItem="tZf-SE-oec" firstAttribute="top" secondItem="f3Q-ra-PBy" secondAttribute="bottom" id="XDa-5T-CgY"/>
+                            <constraint firstItem="av1-lK-8ep" firstAttribute="leading" secondItem="g7x-jE-7Uw" secondAttribute="trailing" constant="30" id="Z5F-Ln-cRr"/>
                             <constraint firstItem="g7x-jE-7Uw" firstAttribute="top" secondItem="f3Q-ra-PBy" secondAttribute="bottom" id="b7D-qh-sN7"/>
                             <constraint firstItem="gFy-X9-sOL" firstAttribute="leading" secondItem="g7x-jE-7Uw" secondAttribute="trailing" constant="30" id="bWf-aT-fno"/>
                             <constraint firstItem="g7x-jE-7Uw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="57" id="cvF-ZJ-GJ6"/>
@@ -178,6 +190,7 @@
                             <constraint firstItem="fCe-Jn-iyZ" firstAttribute="centerX" secondItem="yXF-7A-GbT" secondAttribute="centerX" id="hNY-gU-4Ee"/>
                             <constraint firstItem="OmL-dJ-USJ" firstAttribute="leading" secondItem="g7x-jE-7Uw" secondAttribute="trailing" constant="1" id="j55-kW-sWJ"/>
                             <constraint firstItem="FEP-5P-gCd" firstAttribute="top" secondItem="f3Q-ra-PBy" secondAttribute="bottom" constant="45" id="jQC-ca-BH9"/>
+                            <constraint firstItem="gFy-X9-sOL" firstAttribute="top" secondItem="av1-lK-8ep" secondAttribute="bottom" constant="27" id="jpx-CW-GJB"/>
                             <constraint firstItem="Max-E6-vaT" firstAttribute="top" secondItem="FEP-5P-gCd" secondAttribute="bottom" id="oue-JH-Eqf"/>
                             <constraint firstItem="FEP-5P-gCd" firstAttribute="leading" secondItem="g7x-jE-7Uw" secondAttribute="trailing" constant="1" id="pZt-cw-zew"/>
                             <constraint firstItem="bqC-cW-s0r" firstAttribute="centerX" secondItem="R43-7p-vMm" secondAttribute="centerX" id="uJv-lp-ebP"/>

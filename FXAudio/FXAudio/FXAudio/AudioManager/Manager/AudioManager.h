@@ -47,7 +47,9 @@
 #pragma mark - preFX控制
 - (void)setAgcState:(bool)enable;
 - (void)setNsLevel:(bool)enable;
+
 @property (nonatomic, strong) NSMutableArray<FXItem *> *fxArrayM;
+- (void)updateFX;
 
 
 

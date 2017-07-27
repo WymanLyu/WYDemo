@@ -10,11 +10,18 @@
 
 #import <FXAudio/AudioManager.h>
 #import <FXAudio/AMRecorderPlayerControl.h>
+#import <FXAudio/FxConstants.h>
+#import <FXAudio/FXHeader.h>
 
 #import "WYMeteorLightView.h"
 #import "VGGradientSwitch.h"
 
 #import <AVFoundation/AVFoundation.h>
+
+#import "FXReverbView.h"
+#import "FXFlangerView.h"
+#import "FXEchoView.h"
+#import "FXLimiterView.h"
 
 #define BLUE_COLOR [UIColor colorWithRed:15/255.0 green:222/255.0 blue:200/255.0 alpha:1]
 #define ORIGIN_COLOR [UIColor colorWithRed:237/255.0 green:140/255.0 blue:84/255.0 alpha:1]
@@ -53,6 +60,9 @@
 @property (nonatomic, strong) NSURL *selectedBgFileURL;
 @property (nonatomic, weak)  UIPickerView *bgFilePickView;
 
+#pragma mark - 效果器
+@property (nonatomic, weak) UIScrollView *fxScrollView;
+
 @end
 
 @implementation ViewController
@@ -72,8 +82,16 @@
     _bgFileURL = [[NSBundle mainBundle] URLForResource:@"lycka" withExtension:@"mp3"];
     _selectedBgFileURL = _bgFileURL;
     [self.recordFileListArrM addObject:_bgFileURL];
-    _control = [AMRecorderPlayerControl controlWithRecordFileURL:nil playFileURL:nil];
+    _control = [AMRecorderPlayerControl controlWithRecordFileURL:nil playFileURL:_selectedBgFileURL];
     _manager = [[AudioManager alloc] initWithDelegate:_control];
+    _manager.openFX = YES;
+    
+    // 设置效果器
+    [self.manager.fxArrayM addObject:[[FXReverbItem alloc] initWithFXId:FX_TYPE_REVERB]];
+    [self.manager.fxArrayM addObject:[[FXFlangerItem alloc] initWithFXId:FX_TYPE_FLANGER]];
+    [self.manager.fxArrayM addObject:[[FXEchoItem alloc] initWithFXId:FX_TYPE_ECHO]];
+    [self.manager.fxArrayM addObject:[[FXLimiterItem alloc] initWithFXId:FX_TYPE_LIMITER]];
+    
 }
 
 #pragma mark - 界面
@@ -105,6 +123,7 @@
     bgFilePickView.delegate = self;
     [_bgFilePickView selectedRowInComponent:0];
     
+    [self setFXUI];
     
 }
 
@@ -300,6 +319,128 @@
 //    self.manager.delegate = _control;
 }
 
+#pragma mark - 效果器
+- (FXItem *)checkFXFromFXArr:(NSArray <FXItem *>*)fxArray fxId:(long)fxId {
+    for (FXItem *item in self.manager.fxArrayM) {
+        if (item.fxId == fxId) {
+            return item;
+        }
+    }
+    return nil;
+}
+
+- (void)dismissFXView:(UIButton *)maskBtn {
+    CGRect tempR = self.bgFilePickView.frame;
+    tempR.origin.y += tempR.size.height;
+    [UIView animateWithDuration:0.25 animations:^{
+        self.fxScrollView.frame = tempR;
+    } completion:^(BOOL finished) {
+        [maskBtn removeFromSuperview];
+    }];
+
+}
+
+- (IBAction)fxBtnClick:(id)sender {
+    CGRect tempR = self.bgFilePickView.frame;
+    tempR.origin.y -= tempR.size.height;
+    UIButton *makBtn = [[UIButton alloc] initWithFrame:self.view.bounds];
+    makBtn.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.25];
+    [makBtn addTarget:self action:@selector(dismissFXView:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view insertSubview:makBtn belowSubview:self.bgFilePickView];
+    [UIView animateWithDuration:0.25 animations:^{
+        self.fxScrollView.frame = tempR;
+    }];
+}
+
+- (void)setFXUI {
+    UIScrollView *fxScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width, 200)];
+    fxScrollView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:fxScrollView];
+    _fxScrollView = fxScrollView;
+    _fxScrollView.pagingEnabled = YES;
+
+    CGFloat contentSizeW = 0.0;
+    CGFloat sizeW = [UIScreen mainScreen].bounds.size.width;
+    CGFloat sizeH = 200;
+    for (int i=0; i<self.manager.fxArrayM.count; i++) {
+        FXItem *item = self.manager.fxArrayM[i];
+        switch (item.fxId) {
+            case FX_TYPE_FILTER:
+            {
+                
+            }
+                break;
+            case FX_TYPE_REVERB:
+            {
+                FXReverbItem *realItem = (FXReverbItem *)item;
+                FXReverbView *reverbView = [FXReverbView viewFromNibNamed:@"FXReverbView" owner:nil];
+                reverbView.frame = CGRectMake(sizeW*i, 0, sizeW, sizeH);
+                reverbView.tag = FX_TYPE_REVERB;
+                reverbView.item = realItem;
+                [_fxScrollView addSubview:reverbView];
+                contentSizeW+=sizeW;
+            }
+                break;
+            case FX_TYPE_FLANGER:
+            {
+                FXFlangerItem *realItem = (FXFlangerItem *)item;
+                FXFlangerView *flangerView = [FXFlangerView viewFromNibNamed:@"FXFlangerView" owner:nil];
+                flangerView.frame = CGRectMake(sizeW*i, 0, sizeW, sizeH);
+                flangerView.tag = FX_TYPE_FLANGER;
+                flangerView.item = realItem;
+                [_fxScrollView addSubview:flangerView];
+                 contentSizeW+=sizeW;
+            }
+                break;
+            case FX_TYPE_3_BAND_EQ:
+            {
+                
+            }
+                break;
+            case FX_TYPE_GATE:
+            {
+                
+            }
+                break;
+            case FX_TYPE_ROLL:
+            {
+                
+            }
+                break;
+            case FX_TYPE_ECHO:
+            {
+                FXEchoItem *realItem = (FXEchoItem *)item;
+                FXEchoView *echoView = [FXEchoView viewFromNibNamed:@"FXEchoView" owner:nil];
+                echoView.frame = CGRectMake(sizeW*i, 0, sizeW, sizeH);
+                echoView.tag = FX_TYPE_FLANGER;
+                echoView.item = realItem;
+                [_fxScrollView addSubview:echoView];
+                contentSizeW+=sizeW;
+            }
+                break;
+            case FX_TYPE_WOOSH:
+            {
+                
+            }
+                break;
+            case FX_TYPE_LIMITER:
+            {
+                FXLimiterItem *realItem = (FXLimiterItem *)item;
+                FXLimiterView *limiteView = [FXLimiterView viewFromNibNamed:@"FXLimiterView" owner:nil];
+                limiteView.frame = CGRectMake(sizeW*i, 0, sizeW, sizeH);
+                limiteView.tag = FX_TYPE_FLANGER;
+                limiteView.item = realItem;
+                [_fxScrollView addSubview:limiteView];
+                contentSizeW+=sizeW;
+            }
+                break;
+            default:
+                break;
+        }
+    }
+    _fxScrollView.contentSize = CGSizeMake(contentSizeW, sizeH);
+
+}
 
 
 

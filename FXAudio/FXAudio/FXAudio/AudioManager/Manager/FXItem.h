@@ -6,26 +6,28 @@
 //  Copyright © 2017年 wyman. All rights reserved.
 //
 //
-//  name            :       controlValueDict
-//  Flanger         :      Wet Depth LFOBeats
-//  Reverb          :      Dry Wet Mix Width Damp RoomSize 
-//  
-//
 
 #import <Foundation/Foundation.h>
+#import "FxConstants.h"
+
+extern NSString * const UPDATE_FX_PROPERTY;
 
 @interface FXItem : NSObject
 
 /** 名称 */
 @property (nonatomic, copy) NSString *fxName;
 
-/** 属性名-》值[0-1] */
-@property (nonatomic, strong, readonly) NSDictionary *controlValueDict;
+/** id */
+@property (nonatomic, assign) long fxId;
 
 /** 开关,默认关闭 */
 @property (nonatomic, assign) BOOL enble;
 
-- (instancetype)initWithName:(NSString *)name controlValueDict:(NSDictionary *)controlValueDict;
+/** 更新效果器,子类在set方法中标记为YES，设置成功后会置为NO */
+@property (nonatomic, assign, getter=isDirty) BOOL dirty;
 
+- (instancetype)initWithFXId:(long)fxId;
+
++ (NSString *)getFXNameFromFXId:(long)fxId;
 
 @end

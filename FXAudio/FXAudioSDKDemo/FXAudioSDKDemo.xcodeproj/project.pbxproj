@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F510D8281F298A1900B4B4D4 /* FXBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = F510D8271F298A1900B4B4D4 /* FXBaseView.m */; };
+		F510D82A1F298A2200B4B4D4 /* FXBaseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F510D8291F298A2200B4B4D4 /* FXBaseView.xib */; };
+		F510D82D1F298B7700B4B4D4 /* FXReverbView.m in Sources */ = {isa = PBXBuildFile; fileRef = F510D82C1F298B7700B4B4D4 /* FXReverbView.m */; };
+		F510D82F1F298B9400B4B4D4 /* FXReverbView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F510D82E1F298B9400B4B4D4 /* FXReverbView.xib */; };
+		F510D8321F298C8F00B4B4D4 /* FXFlangerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F510D8311F298C8F00B4B4D4 /* FXFlangerView.m */; };
+		F510D8341F298C9D00B4B4D4 /* FXFlangerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F510D8331F298C9D00B4B4D4 /* FXFlangerView.xib */; };
+		F510D83F1F29B8BC00B4B4D4 /* FXEchoView.m in Sources */ = {isa = PBXBuildFile; fileRef = F510D83E1F29B8BC00B4B4D4 /* FXEchoView.m */; };
+		F510D8411F29B8ED00B4B4D4 /* FXEchoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F510D8401F29B8ED00B4B4D4 /* FXEchoView.xib */; };
+		F510D8481F29C0F700B4B4D4 /* FXLimiterView.m in Sources */ = {isa = PBXBuildFile; fileRef = F510D8471F29C0F700B4B4D4 /* FXLimiterView.m */; };
+		F510D84A1F29C10200B4B4D4 /* FXLimiterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F510D8491F29C10200B4B4D4 /* FXLimiterView.xib */; };
 		F5DFB6EF1F27B92600356DD9 /* lycka.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F5DFB6EE1F27B92600356DD9 /* lycka.mp3 */; };
 		F5E1A5A71F27A78400BD533A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E1A5A61F27A78400BD533A /* main.m */; };
 		F5E1A5AA1F27A78400BD533A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E1A5A91F27A78400BD533A /* AppDelegate.m */; };
@@ -79,6 +89,21 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F510D8261F298A1900B4B4D4 /* FXBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBaseView.h; sourceTree = "<group>"; };
+		F510D8271F298A1900B4B4D4 /* FXBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBaseView.m; sourceTree = "<group>"; };
+		F510D8291F298A2200B4B4D4 /* FXBaseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FXBaseView.xib; sourceTree = "<group>"; };
+		F510D82B1F298B7700B4B4D4 /* FXReverbView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXReverbView.h; sourceTree = "<group>"; };
+		F510D82C1F298B7700B4B4D4 /* FXReverbView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXReverbView.m; sourceTree = "<group>"; };
+		F510D82E1F298B9400B4B4D4 /* FXReverbView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FXReverbView.xib; sourceTree = "<group>"; };
+		F510D8301F298C8F00B4B4D4 /* FXFlangerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXFlangerView.h; sourceTree = "<group>"; };
+		F510D8311F298C8F00B4B4D4 /* FXFlangerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXFlangerView.m; sourceTree = "<group>"; };
+		F510D8331F298C9D00B4B4D4 /* FXFlangerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FXFlangerView.xib; sourceTree = "<group>"; };
+		F510D83D1F29B8BC00B4B4D4 /* FXEchoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXEchoView.h; sourceTree = "<group>"; };
+		F510D83E1F29B8BC00B4B4D4 /* FXEchoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXEchoView.m; sourceTree = "<group>"; };
+		F510D8401F29B8ED00B4B4D4 /* FXEchoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FXEchoView.xib; sourceTree = "<group>"; };
+		F510D8461F29C0F700B4B4D4 /* FXLimiterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXLimiterView.h; sourceTree = "<group>"; };
+		F510D8471F29C0F700B4B4D4 /* FXLimiterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXLimiterView.m; sourceTree = "<group>"; };
+		F510D8491F29C10200B4B4D4 /* FXLimiterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FXLimiterView.xib; sourceTree = "<group>"; };
 		F5DFB6EE1F27B92600356DD9 /* lycka.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lycka.mp3; sourceTree = "<group>"; };
 		F5E1A5A21F27A78400BD533A /* FXAudioSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FXAudioSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5E1A5A61F27A78400BD533A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -140,6 +165,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F510D8241F2989D900B4B4D4 /* FXUI */ = {
+			isa = PBXGroup;
+			children = (
+				F510D8261F298A1900B4B4D4 /* FXBaseView.h */,
+				F510D8271F298A1900B4B4D4 /* FXBaseView.m */,
+				F510D8291F298A2200B4B4D4 /* FXBaseView.xib */,
+				F510D82B1F298B7700B4B4D4 /* FXReverbView.h */,
+				F510D82C1F298B7700B4B4D4 /* FXReverbView.m */,
+				F510D82E1F298B9400B4B4D4 /* FXReverbView.xib */,
+				F510D8301F298C8F00B4B4D4 /* FXFlangerView.h */,
+				F510D8311F298C8F00B4B4D4 /* FXFlangerView.m */,
+				F510D8331F298C9D00B4B4D4 /* FXFlangerView.xib */,
+				F510D83D1F29B8BC00B4B4D4 /* FXEchoView.h */,
+				F510D83E1F29B8BC00B4B4D4 /* FXEchoView.m */,
+				F510D8401F29B8ED00B4B4D4 /* FXEchoView.xib */,
+				F510D8461F29C0F700B4B4D4 /* FXLimiterView.h */,
+				F510D8471F29C0F700B4B4D4 /* FXLimiterView.m */,
+				F510D8491F29C10200B4B4D4 /* FXLimiterView.xib */,
+			);
+			path = FXUI;
+			sourceTree = "<group>";
+		};
 		F5E1A5991F27A78400BD533A = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				F5DFB6EE1F27B92600356DD9 /* lycka.mp3 */,
+				F510D8241F2989D900B4B4D4 /* FXUI */,
 				F5E1B86F1F27AA0200BD533A /* VGGradientSwitch */,
 				F5E1B8761F27AA0200BD533A /* WYMeteorLight */,
 				F5E1A5A81F27A78400BD533A /* AppDelegate.h */,
@@ -384,10 +432,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F510D82F1F298B9400B4B4D4 /* FXReverbView.xib in Resources */,
+				F510D8341F298C9D00B4B4D4 /* FXFlangerView.xib in Resources */,
+				F510D84A1F29C10200B4B4D4 /* FXLimiterView.xib in Resources */,
 				F5E1A5B51F27A78400BD533A /* LaunchScreen.storyboard in Resources */,
+				F510D82A1F298A2200B4B4D4 /* FXBaseView.xib in Resources */,
 				F5E1A5B21F27A78400BD533A /* Assets.xcassets in Resources */,
 				F5E1A5B01F27A78400BD533A /* Main.storyboard in Resources */,
 				F5DFB6EF1F27B92600356DD9 /* lycka.mp3 in Resources */,
+				F510D8411F29B8ED00B4B4D4 /* FXEchoView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,9 +467,14 @@
 			files = (
 				F5E1B87A1F27AA0200BD533A /* VGKnobView.m in Sources */,
 				F5E1B87C1F27AA0200BD533A /* WYMeteorLightView.m in Sources */,
+				F510D8321F298C8F00B4B4D4 /* FXFlangerView.m in Sources */,
+				F510D82D1F298B7700B4B4D4 /* FXReverbView.m in Sources */,
 				F5E1A5AD1F27A78400BD533A /* ViewController.m in Sources */,
+				F510D8481F29C0F700B4B4D4 /* FXLimiterView.m in Sources */,
+				F510D8281F298A1900B4B4D4 /* FXBaseView.m in Sources */,
 				F5E1A5AA1F27A78400BD533A /* AppDelegate.m in Sources */,
 				F5E1B8791F27AA0200BD533A /* VGGradientSwitch.m in Sources */,
+				F510D83F1F29B8BC00B4B4D4 /* FXEchoView.m in Sources */,
 				F5E1A5A71F27A78400BD533A /* main.m in Sources */,
 				F5E1B87B1F27AA0200BD533A /* VGSwitchAnimationManager.m in Sources */,
 			);
