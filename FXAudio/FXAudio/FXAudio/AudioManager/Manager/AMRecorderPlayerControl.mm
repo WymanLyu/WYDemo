@@ -9,11 +9,9 @@
 #import "AMRecorderPlayerControl.h"
 #import "AMAudioPlayer.h"
 #import "AMAudioRecorder.h"
-#import "SuperpoweredSimple.h"
 #import <AVFoundation/AVFoundation.h>
 #import "AMConst.h"
-
-#import "SuperpoweredAdvancedAudioPlayer.h"
+#import "AMMixer.h"
 
 #define PREFX_RECORDER_DEBUG
 
@@ -86,13 +84,13 @@
     if (!self->_silence && !self.player.paused) {
         if (self->_openReturnVoicePropertyActivityWhenHeadSetPlugging) { // 仅当插入耳机时有效
             if (self.isOpenReturnVoice && [self isHeadSetPlugging]) { // 插了耳机并开启了返听时 MIX
-                SuperpoweredVolumeAdd(self->_player_buffer_interleaved_stereo, buffers, self.volume, self.volume, numberOfSamples);
+                [AMMixer mixInputBuffer:self->_player_buffer_interleaved_stereo outBuffer:buffers volume:self.volume numberOfSamples:numberOfSamples];
             } else { // 纯播放
                 memcpy(buffers,self->_player_buffer_interleaved_stereo, (sizeof(float)*BUFFER_SAMPLE_COUNT+64)*CHANNELS); // 直接覆盖
             }
         } else {  // 没有耳机时也生效
             if (self.isOpenReturnVoice) { // MIX
-                SuperpoweredVolumeAdd(self->_player_buffer_interleaved_stereo, buffers, self.volume, self.volume, numberOfSamples);
+                 [AMMixer mixInputBuffer:self->_player_buffer_interleaved_stereo outBuffer:buffers volume:self.volume numberOfSamples:numberOfSamples];
             } else { // 纯播放
                 memcpy(buffers,self->_player_buffer_interleaved_stereo, (sizeof(float)*BUFFER_SAMPLE_COUNT+64)*CHANNELS); // 直接覆盖
             }
@@ -207,37 +205,6 @@
         [self.player start];
     });
 }
-
-#pragma mark - test
-
-void playerEventCallback (void *clientData, SuperpoweredAdvancedAudioPlayerEvent event, void *value) {
-    switch (event) {
-        case SuperpoweredAdvancedAudioPlayerEvent_LoadSuccess:
-            NSLog(@"SuperpoweredAdvancedAudioPlayerEvent_LoadSuccess");
-            break;
-        case SuperpoweredAdvancedAudioPlayerEvent_LoadError:
-            NSLog(@"SuperpoweredAdvancedAudioPlayerEvent_LoadError");
-            break;
-        case SuperpoweredAdvancedAudioPlayerEvent_NetworkError:
-            NSLog(@"SuperpoweredAdvancedAudioPlayerEvent_NetworkError");
-            break;
-        case SuperpoweredAdvancedAudioPlayerEvent_EOF:
-            NSLog(@"SuperpoweredAdvancedAudioPlayerEvent_EOF");
-            break;
-        case SuperpoweredAdvancedAudioPlayerEvent_JogParameter:
-            NSLog(@"SuperpoweredAdvancedAudioPlayerEvent_JogParameter");
-            break;
-        case SuperpoweredAdvancedAudioPlayerEvent_DurationChanged:
-            NSLog(@"SuperpoweredAdvancedAudioPlayerEvent_DurationChanged");
-            break;
-        case SuperpoweredAdvancedAudioPlayerEvent_LoopEnd:
-            NSLog(@"SuperpoweredAdvancedAudioPlayerEvent_LoopEnd");
-        default:
-            break;
-    }
-
-}
-
 
 
 @end

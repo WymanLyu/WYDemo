@@ -37,14 +37,6 @@ AudioProcessingProxy::AudioProcessingProxy() {
                             kDefaultAgcState);
 #endif
     }
-    //>>
-    if (agc->set_target_level_dbfs(-3.0)!=0) {
-        
-    }
-//    if (agc->set_compression_gain_db(28.0)!=0) {
-//        
-//    }
-    //>>
 
     //default config for ns
     NoiseSuppression *ns = apm->noise_suppression();

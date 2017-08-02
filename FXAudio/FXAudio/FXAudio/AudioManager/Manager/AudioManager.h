@@ -13,6 +13,11 @@
 @protocol AudioManagerDelegate <NSObject>
 
 @optional
+
+//
+// 音频IO线程回调，buffers为交错双声道float格式，返回值代表喇叭是否静音，YES则代表静音，NO代表有非静音
+//
+
 /** 前处理器，处理前回调 */
 - (BOOL)audioManagerIOBeforePreFX:(AudioManager *)manager buffers:(float *)buffers numberOfSamples:(int)numberOfSamples;
 
@@ -48,6 +53,7 @@
 - (void)setAgcState:(bool)enable;
 - (void)setNsLevel:(bool)enable;
 
+#pragma mark - FX控制
 @property (nonatomic, strong) NSMutableArray<FXItem *> *fxArrayM;
 
 

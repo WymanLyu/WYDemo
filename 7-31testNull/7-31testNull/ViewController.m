@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "WYNullView.h"
 
 @interface ViewController ()
 
@@ -17,8 +18,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [self.view wy_nullViewAddTarget:self.view action:@selector(wy_hideNullView)];
 }
 
+- (IBAction)showNullView:(UISwitch *)sender {
+    sender.isOn ? [self.view wy_showNullView] : [self.view wy_hideNullView];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

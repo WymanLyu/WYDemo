@@ -38,6 +38,8 @@
 		F517D0E21F2F040D00228BBF /* ThreeBandEQFxUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = F517D0DE1F2F040D00228BBF /* ThreeBandEQFxUnit.h */; };
 		F517D0E61F317BA800228BBF /* FXRollItem.h in Headers */ = {isa = PBXBuildFile; fileRef = F517D0E41F317BA800228BBF /* FXRollItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F517D0E71F317BA800228BBF /* FXRollItem.mm in Sources */ = {isa = PBXBuildFile; fileRef = F517D0E51F317BA800228BBF /* FXRollItem.mm */; };
+		F517D0ED1F31A59A00228BBF /* AMMixer.h in Headers */ = {isa = PBXBuildFile; fileRef = F517D0EB1F31A59A00228BBF /* AMMixer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F517D0EE1F31A59A00228BBF /* AMMixer.mm in Sources */ = {isa = PBXBuildFile; fileRef = F517D0EC1F31A59A00228BBF /* AMMixer.mm */; };
 		F5E1A6191F27A86300BD533A /* FXAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E1A60F1F27A86300BD533A /* FXAudio.framework */; };
 		F5E1A61E1F27A86300BD533A /* FXAudioTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E1A61D1F27A86300BD533A /* FXAudioTests.m */; };
 		F5E1A6201F27A86300BD533A /* FXAudio.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6121F27A86300BD533A /* FXAudio.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -56,9 +58,9 @@
 		F5E1B01B1F27A8CA00BD533A /* AMRecorderPlayerControl.mm in Sources */ = {isa = PBXBuildFile; fileRef = F5E1A6441F27A8C600BD533A /* AMRecorderPlayerControl.mm */; };
 		F5E1B01C1F27A8CA00BD533A /* AudioManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6451F27A8C600BD533A /* AudioManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F5E1B01D1F27A8CA00BD533A /* AudioManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = F5E1A6461F27A8C600BD533A /* AudioManager.mm */; };
-		F5E1B01E1F27A8CA00BD533A /* AMAudioPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6481F27A8C600BD533A /* AMAudioPlayer.h */; };
+		F5E1B01E1F27A8CA00BD533A /* AMAudioPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6481F27A8C600BD533A /* AMAudioPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F5E1B01F1F27A8CA00BD533A /* AMAudioPlayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = F5E1A6491F27A8C600BD533A /* AMAudioPlayer.mm */; };
-		F5E1B0201F27A8CA00BD533A /* AMAudioRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A64B1F27A8C600BD533A /* AMAudioRecorder.h */; };
+		F5E1B0201F27A8CA00BD533A /* AMAudioRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A64B1F27A8C600BD533A /* AMAudioRecorder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F5E1B0211F27A8CA00BD533A /* AMAudioRecorder.mm in Sources */ = {isa = PBXBuildFile; fileRef = F5E1A64C1F27A8C600BD533A /* AMAudioRecorder.mm */; };
 		F5E1B0221F27A8CA00BD533A /* libSuperpoweredAudioIOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E1A64E1F27A8C600BD533A /* libSuperpoweredAudioIOS.a */; };
 		F5E1B0231F27A8CA00BD533A /* Superpowered3BandEQ.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A64F1F27A8C600BD533A /* Superpowered3BandEQ.h */; };
@@ -81,7 +83,6 @@
 		F5E1B0341F27A8CA00BD533A /* SuperpoweredMixer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6601F27A8C600BD533A /* SuperpoweredMixer.h */; };
 		F5E1B0351F27A8CA00BD533A /* SuperpoweredNBandEQ.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F5E1A6611F27A8C600BD533A /* SuperpoweredNBandEQ.cpp */; };
 		F5E1B0361F27A8CA00BD533A /* SuperpoweredNBandEQ.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6621F27A8C600BD533A /* SuperpoweredNBandEQ.h */; };
-		F5E1B0371F27A8CA00BD533A /* SuperpoweredOfflineProcessingExample-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A6631F27A8C600BD533A /* SuperpoweredOfflineProcessingExample-Info.plist */; };
 		F5E1B0381F27A8CA00BD533A /* SuperpoweredOfflineProcessingExample-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6641F27A8C600BD533A /* SuperpoweredOfflineProcessingExample-Prefix.pch */; };
 		F5E1B0391F27A8CA00BD533A /* SuperpoweredRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6651F27A8C600BD533A /* SuperpoweredRecorder.h */; };
 		F5E1B03A1F27A8CA00BD533A /* SuperpoweredResampler.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6661F27A8C600BD533A /* SuperpoweredResampler.h */; };
@@ -92,7 +93,6 @@
 		F5E1B03F1F27A8CA00BD533A /* SuperpoweredTimeStretching.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A66B1F27A8C600BD533A /* SuperpoweredTimeStretching.h */; };
 		F5E1B0401F27A8CA00BD533A /* SuperpoweredWhoosh.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A66C1F27A8C600BD533A /* SuperpoweredWhoosh.h */; };
 		F5E1B0411F27A8CA00BD533A /* librtc_sdk_objc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E1A66F1F27A8C600BD533A /* librtc_sdk_objc.a */; };
-		F5E1B0421F27A8CA00BD533A /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A6711F27A8C600BD533A /* .gitignore */; };
 		F5E1B0431F27A8CA00BD533A /* audio_mixer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6741F27A8C600BD533A /* audio_mixer.h */; };
 		F5E1B0441F27A8CA00BD533A /* audio_decoder.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6761F27A8C600BD533A /* audio_decoder.h */; };
 		F5E1B0451F27A8CA00BD533A /* audio_decoder_factory.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6771F27A8C600BD533A /* audio_decoder_factory.h */; };
@@ -106,12 +106,10 @@
 		F5E1B04D1F27A8CA00BD533A /* audio_decoder_g722.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6801F27A8C600BD533A /* audio_decoder_g722.h */; };
 		F5E1B04E1F27A8CA00BD533A /* audio_encoder_g722.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6811F27A8C600BD533A /* audio_encoder_g722.h */; };
 		F5E1B04F1F27A8CA00BD533A /* audio_encoder_g722_config.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6821F27A8C600BD533A /* audio_encoder_g722_config.h */; };
-		F5E1B0501F27A8CA00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A6831F27A8C600BD533A /* OWNERS */; };
 		F5E1B0511F27A8CA00BD533A /* audio_sink.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6861F27A8C600BD533A /* audio_sink.h */; };
 		F5E1B0521F27A8CA00BD533A /* transport.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6871F27A8C600BD533A /* transport.h */; };
 		F5E1B0531F27A8CA00BD533A /* datachannel.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6881F27A8C600BD533A /* datachannel.h */; };
 		F5E1B0541F27A8CA00BD533A /* datachannelinterface.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6891F27A8C600BD533A /* datachannelinterface.h */; };
-		F5E1B0551F27A8CA00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A68A1F27A8C600BD533A /* DEPS */; };
 		F5E1B0561F27A8CA00BD533A /* dtmfsenderinterface.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A68B1F27A8C600BD533A /* dtmfsenderinterface.h */; };
 		F5E1B0571F27A8CA00BD533A /* fakemetricsobserver.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A68C1F27A8C600BD533A /* fakemetricsobserver.h */; };
 		F5E1B0581F27A8CA00BD533A /* jsep.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A68D1F27A8C600BD533A /* jsep.h */; };
@@ -135,7 +133,6 @@
 		F5E1B06A1F27A8CA00BD533A /* sessiondescription.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6A01F27A8C600BD533A /* sessiondescription.h */; };
 		F5E1B06B1F27A8CA00BD533A /* srtptransportinterface.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6A11F27A8C600BD533A /* srtptransportinterface.h */; };
 		F5E1B06C1F27A8CA00BD533A /* udptransportinterface.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6A21F27A8C600BD533A /* udptransportinterface.h */; };
-		F5E1B06D1F27A8CA00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A6A31F27A8C600BD533A /* OWNERS */; };
 		F5E1B06E1F27A8CA00BD533A /* peerconnectionfactoryproxy.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6A41F27A8C600BD533A /* peerconnectionfactoryproxy.h */; };
 		F5E1B06F1F27A8CA00BD533A /* peerconnectioninterface.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6A51F27A8C600BD533A /* peerconnectioninterface.h */; };
 		F5E1B0701F27A8CA00BD533A /* peerconnectionproxy.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6A61F27A8C600BD533A /* peerconnectionproxy.h */; };
@@ -145,7 +142,6 @@
 		F5E1B0741F27A8CA00BD533A /* rtpreceiverinterface.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6AA1F27A8C600BD533A /* rtpreceiverinterface.h */; };
 		F5E1B0751F27A8CA00BD533A /* rtpsender.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6AB1F27A8C600BD533A /* rtpsender.h */; };
 		F5E1B0761F27A8CA00BD533A /* rtpsenderinterface.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6AC1F27A8C600BD533A /* rtpsenderinterface.h */; };
-		F5E1B0771F27A8CA00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A6AE1F27A8C600BD533A /* OWNERS */; };
 		F5E1B0781F27A8CA00BD533A /* rtcstats.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6AF1F27A8C600BD533A /* rtcstats.h */; };
 		F5E1B0791F27A8CA00BD533A /* rtcstats_objects.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6B01F27A8C600BD533A /* rtcstats_objects.h */; };
 		F5E1B07A1F27A8CA00BD533A /* rtcstatscollectorcallback.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6B11F27A8C600BD533A /* rtcstatscollectorcallback.h */; };
@@ -173,13 +169,9 @@
 		F5E1B0901F27A8CA00BD533A /* audio_state.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6CB1F27A8C600BD533A /* audio_state.h */; };
 		F5E1B0911F27A8CA00BD533A /* audio_transport_proxy.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6CC1F27A8C600BD533A /* audio_transport_proxy.h */; };
 		F5E1B0921F27A8CA00BD533A /* conversion.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6CD1F27A8C600BD533A /* conversion.h */; };
-		F5E1B0931F27A8CA00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A6CE1F27A8C600BD533A /* DEPS */; };
-		F5E1B0941F27A8CA00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A6CF1F27A8C600BD533A /* OWNERS */; };
 		F5E1B0951F27A8CA00BD533A /* scoped_voe_interface.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6D01F27A8C600BD533A /* scoped_voe_interface.h */; };
 		F5E1B0961F27A8CA00BD533A /* audio_bwe_integration_test.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6D21F27A8C600BD533A /* audio_bwe_integration_test.h */; };
 		F5E1B0971F27A8CA00BD533A /* low_bandwidth_audio_test.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6D31F27A8C600BD533A /* low_bandwidth_audio_test.h */; };
-		F5E1B0981F27A8CA00BD533A /* low_bandwidth_audio_test.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A6D41F27A8C600BD533A /* low_bandwidth_audio_test.py */; };
-		F5E1B0991F27A8CA00BD533A /* low_bandwidth_audio_test_test.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A6D61F27A8C600BD533A /* low_bandwidth_audio_test_test.py */; };
 		F5E1B09A1F27A8CA00BD533A /* audio_frame_operations.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6D81F27A8C600BD533A /* audio_frame_operations.h */; };
 		F5E1B09B1F27A8CA00BD533A /* array_view.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6DA1F27A8C600BD533A /* array_view.h */; };
 		F5E1B09C1F27A8CA00BD533A /* arraysize.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6DB1F27A8C600BD533A /* arraysize.h */; };
@@ -200,7 +192,6 @@
 		F5E1B0AB1F27A8CA00BD533A /* bytebuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6EA1F27A8C600BD533A /* bytebuffer.h */; };
 		F5E1B0AC1F27A8CA00BD533A /* byteorder.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6EB1F27A8C600BD533A /* byteorder.h */; };
 		F5E1B0AD1F27A8CA00BD533A /* callback.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6EC1F27A8C600BD533A /* callback.h */; };
-		F5E1B0AE1F27A8CA00BD533A /* callback.h.pump in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A6ED1F27A8C600BD533A /* callback.h.pump */; };
 		F5E1B0AF1F27A8CA00BD533A /* checks.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6EE1F27A8C600BD533A /* checks.h */; };
 		F5E1B0B01F27A8CA00BD533A /* compile_assert_c.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6EF1F27A8C600BD533A /* compile_assert_c.h */; };
 		F5E1B0B11F27A8CA00BD533A /* constructormagic.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6F01F27A8C600BD533A /* constructormagic.h */; };
@@ -210,7 +201,6 @@
 		F5E1B0B51F27A8CA00BD533A /* criticalsection.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6F41F27A8C600BD533A /* criticalsection.h */; };
 		F5E1B0B61F27A8CA00BD533A /* cryptstring.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6F51F27A8C600BD533A /* cryptstring.h */; };
 		F5E1B0B71F27A8CA00BD533A /* deprecation.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6F61F27A8C600BD533A /* deprecation.h */; };
-		F5E1B0B81F27A8CA00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A6F71F27A8C600BD533A /* DEPS */; };
 		F5E1B0B91F27A8CA00BD533A /* dscp.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6F81F27A8C600BD533A /* dscp.h */; };
 		F5E1B0BA1F27A8CA00BD533A /* event.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6F91F27A8C600BD533A /* event.h */; };
 		F5E1B0BB1F27A8CA00BD533A /* event_tracer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6FA1F27A8C600BD533A /* event_tracer.h */; };
@@ -236,7 +226,6 @@
 		F5E1B0CF1F27A8CA00BD533A /* ifaddrs_converter.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A70E1F27A8C600BD533A /* ifaddrs_converter.h */; };
 		F5E1B0D01F27A8CA00BD533A /* ignore_wundef.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A70F1F27A8C600BD533A /* ignore_wundef.h */; };
 		F5E1B0D11F27A8CA00BD533A /* ipaddress.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7101F27A8C600BD533A /* ipaddress.h */; };
-		F5E1B0D21F27A8CA00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A7151F27A8C700BD533A /* OWNERS */; };
 		F5E1B0D31F27A8CA00BD533A /* json.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7161F27A8C700BD533A /* json.h */; };
 		F5E1B0D41F27A8CA00BD533A /* keep_ref_until_done.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7171F27A8C700BD533A /* keep_ref_until_done.h */; };
 		F5E1B0D51F27A8CA00BD533A /* location.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7181F27A8C700BD533A /* location.h */; };
@@ -269,7 +258,6 @@
 		F5E1B0F01F27A8CA00BD533A /* opensslstreamadapter.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7341F27A8C700BD533A /* opensslstreamadapter.h */; };
 		F5E1B0F11F27A8CA00BD533A /* optional.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7351F27A8C700BD533A /* optional.h */; };
 		F5E1B0F21F27A8CA00BD533A /* optionsfile.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7361F27A8C700BD533A /* optionsfile.h */; };
-		F5E1B0F31F27A8CA00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A7371F27A8C700BD533A /* OWNERS */; };
 		F5E1B0F41F27A8CA00BD533A /* pathutils.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7381F27A8C700BD533A /* pathutils.h */; };
 		F5E1B0F51F27A8CA00BD533A /* physicalsocketserver.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7391F27A8C700BD533A /* physicalsocketserver.h */; };
 		F5E1B0F61F27A8CA00BD533A /* platform_file.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A73A1F27A8C700BD533A /* platform_file.h */; };
@@ -303,7 +291,6 @@
 		F5E1B1121F27A8CA00BD533A /* signalthread.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7561F27A8C700BD533A /* signalthread.h */; };
 		F5E1B1131F27A8CA00BD533A /* sigslot.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7571F27A8C700BD533A /* sigslot.h */; };
 		F5E1B1141F27A8CA00BD533A /* sigslottester.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7581F27A8C700BD533A /* sigslottester.h */; };
-		F5E1B1151F27A8CA00BD533A /* sigslottester.h.pump in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A7591F27A8C700BD533A /* sigslottester.h.pump */; };
 		F5E1B1161F27A8CA00BD533A /* socket.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A75A1F27A8C700BD533A /* socket.h */; };
 		F5E1B1171F27A8CA00BD533A /* socketadapters.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A75B1F27A8C700BD533A /* socketadapters.h */; };
 		F5E1B1181F27A8CA00BD533A /* socketaddress.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A75C1F27A8C700BD533A /* socketaddress.h */; };
@@ -355,11 +342,9 @@
 		F5E1B1461F27A8CA00BD533A /* call.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A78B1F27A8C700BD533A /* call.h */; };
 		F5E1B1471F27A8CA00BD533A /* callfactory.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A78C1F27A8C700BD533A /* callfactory.h */; };
 		F5E1B1481F27A8CA00BD533A /* callfactoryinterface.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A78D1F27A8C700BD533A /* callfactoryinterface.h */; };
-		F5E1B1491F27A8CA00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A78E1F27A8C700BD533A /* DEPS */; };
 		F5E1B14A1F27A8CA00BD533A /* fake_rtp_transport_controller_send.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A78F1F27A8C700BD533A /* fake_rtp_transport_controller_send.h */; };
 		F5E1B14B1F27A8CA00BD533A /* flexfec_receive_stream.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7901F27A8C700BD533A /* flexfec_receive_stream.h */; };
 		F5E1B14C1F27A8CA00BD533A /* flexfec_receive_stream_impl.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7911F27A8C700BD533A /* flexfec_receive_stream_impl.h */; };
-		F5E1B14D1F27A8CA00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A7921F27A8C700BD533A /* OWNERS */; };
 		F5E1B14E1F27A8CA00BD533A /* rampup_tests.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7931F27A8C700BD533A /* rampup_tests.h */; };
 		F5E1B14F1F27A8CA00BD533A /* rsid_resolution_observer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7941F27A8C700BD533A /* rsid_resolution_observer.h */; };
 		F5E1B1501F27A8CA00BD533A /* rtcp_demuxer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7951F27A8C700BD533A /* rtcp_demuxer.h */; };
@@ -373,12 +358,10 @@
 		F5E1B1581F27A8CA00BD533A /* rtp_transport_controller_send_interface.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A79D1F27A8C700BD533A /* rtp_transport_controller_send_interface.h */; };
 		F5E1B1591F27A8CA00BD533A /* rtx_receive_stream.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A79E1F27A8C700BD533A /* rtx_receive_stream.h */; };
 		F5E1B15A1F27A8CA00BD533A /* syncable.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A79F1F27A8C700BD533A /* syncable.h */; };
-		F5E1B15B1F27A8CA00BD533A /* codereview.settings in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A7A01F27A8C700BD533A /* codereview.settings */; };
 		F5E1B15C1F27A8CA00BD533A /* audio_converter.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7A21F27A8C700BD533A /* audio_converter.h */; };
 		F5E1B15D1F27A8CA00BD533A /* audio_ring_buffer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7A31F27A8C700BD533A /* audio_ring_buffer.h */; };
 		F5E1B15E1F27A8CA00BD533A /* blocker.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7A41F27A8C700BD533A /* blocker.h */; };
 		F5E1B15F1F27A8CA00BD533A /* channel_buffer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7A51F27A8C700BD533A /* channel_buffer.h */; };
-		F5E1B1601F27A8CA00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A7A61F27A8C700BD533A /* DEPS */; };
 		F5E1B1611F27A8CA00BD533A /* fft4g.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7A71F27A8C700BD533A /* fft4g.h */; };
 		F5E1B1621F27A8CA00BD533A /* fir_filter.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7A81F27A8C700BD533A /* fir_filter.h */; };
 		F5E1B1631F27A8CA00BD533A /* fir_filter_neon.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7A91F27A8C700BD533A /* fir_filter_neon.h */; };
@@ -386,7 +369,6 @@
 		F5E1B1651F27A8CA00BD533A /* audio_util.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7AC1F27A8C700BD533A /* audio_util.h */; };
 		F5E1B1661F27A8CA00BD533A /* lapped_transform.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7AD1F27A8C700BD533A /* lapped_transform.h */; };
 		F5E1B1671F27A8CA00BD533A /* mock_smoothing_filter.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7AF1F27A8C700BD533A /* mock_smoothing_filter.h */; };
-		F5E1B1681F27A8CA00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A7B01F27A8C700BD533A /* OWNERS */; };
 		F5E1B1691F27A8CA00BD533A /* real_fourier.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7B11F27A8C700BD533A /* real_fourier.h */; };
 		F5E1B16A1F27A8CA00BD533A /* real_fourier_ooura.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7B21F27A8C700BD533A /* real_fourier_ooura.h */; };
 		F5E1B16B1F27A8CA00BD533A /* real_fourier_openmax.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7B31F27A8C700BD533A /* real_fourier_openmax.h */; };
@@ -417,7 +399,6 @@
 		F5E1B1841F27A8CA00BD533A /* wav_header.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7D31F27A8C700BD533A /* wav_header.h */; };
 		F5E1B1851F27A8CA00BD533A /* window_generator.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7D41F27A8C700BD533A /* window_generator.h */; };
 		F5E1B1861F27A8CA00BD533A /* common_types.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7D51F27A8C700BD533A /* common_types.h */; };
-		F5E1B1871F27A8CA00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A7D71F27A8C700BD533A /* DEPS */; };
 		F5E1B1881F27A8CA00BD533A /* h264_bitstream_parser.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7D91F27A8C700BD533A /* h264_bitstream_parser.h */; };
 		F5E1B1891F27A8CA00BD533A /* h264_common.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7DA1F27A8C700BD533A /* h264_common.h */; };
 		F5E1B18A1F27A8CA00BD533A /* pps_parser.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7DB1F27A8C700BD533A /* pps_parser.h */; };
@@ -432,49 +413,8 @@
 		F5E1B1931F27A8CA00BD533A /* video_frame.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7E51F27A8C700BD533A /* video_frame.h */; };
 		F5E1B1941F27A8CA00BD533A /* video_frame_buffer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7E61F27A8C700BD533A /* video_frame_buffer.h */; };
 		F5E1B1951F27A8CA00BD533A /* webrtc_libyuv.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7E91F27A8C700BD533A /* webrtc_libyuv.h */; };
-		F5E1B1961F27A8CA00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A7EA1F27A8C700BD533A /* OWNERS */; };
 		F5E1B1971F27A8CA00BD533A /* video_render_frames.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7EB1F27A8C700BD533A /* video_render_frames.h */; };
 		F5E1B1981F27A8CA00BD533A /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A7EC1F27A8C700BD533A /* config.h */; };
-		F5E1B1991F27A8CA00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A7ED1F27A8C700BD533A /* DEPS */; };
-		F5E1B19A1F27A8CA00BD533A /* AndroidManifest.xml in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A7F01F27A8C700BD533A /* AndroidManifest.xml */; };
-		F5E1B19B1F27A8CA00BD533A /* ant.properties in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A7F11F27A8C700BD533A /* ant.properties */; };
-		F5E1B19C1F27A8CA00BD533A /* build.xml in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A7F21F27A8C700BD533A /* build.xml */; };
-		F5E1B19D1F27A8CA00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A7F31F27A8C700BD533A /* OWNERS */; };
-		F5E1B19E1F27A8CA00BD533A /* project.properties in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A7F41F27A8C700BD533A /* project.properties */; };
-		F5E1B19F1F27A8CA00BD533A /* README in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A7F51F27A8C700BD533A /* README */; };
-		F5E1B1A01F27A8CA00BD533A /* disconnect.png in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A7F81F27A8C700BD533A /* disconnect.png */; };
-		F5E1B1A41F27A8CA00BD533A /* ic_loopback_call.png in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A7FC1F27A8C700BD533A /* ic_loopback_call.png */; };
-		F5E1B1A51F27A8CA00BD533A /* disconnect.png in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A7FE1F27A8C700BD533A /* disconnect.png */; };
-		F5E1B1A91F27A8CA00BD533A /* ic_loopback_call.png in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8021F27A8C700BD533A /* ic_loopback_call.png */; };
-		F5E1B1AA1F27A8CA00BD533A /* disconnect.png in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8041F27A8C700BD533A /* disconnect.png */; };
-		F5E1B1AE1F27A8CA00BD533A /* ic_loopback_call.png in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8081F27A8C700BD533A /* ic_loopback_call.png */; };
-		F5E1B1AF1F27A8CA00BD533A /* disconnect.png in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A80A1F27A8C700BD533A /* disconnect.png */; };
-		F5E1B1B31F27A8CA00BD533A /* ic_loopback_call.png in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A80E1F27A8C700BD533A /* ic_loopback_call.png */; };
-		F5E1B1B41F27A8CA00BD533A /* activity_call.xml in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8101F27A8C700BD533A /* activity_call.xml */; };
-		F5E1B1B51F27A8CA00BD533A /* activity_connect.xml in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8111F27A8C700BD533A /* activity_connect.xml */; };
-		F5E1B1B61F27A8CA00BD533A /* fragment_call.xml in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8121F27A8C700BD533A /* fragment_call.xml */; };
-		F5E1B1B71F27A8CA00BD533A /* fragment_hud.xml in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8131F27A8C700BD533A /* fragment_hud.xml */; };
-		F5E1B1B81F27A8CA00BD533A /* connect_menu.xml in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8151F27A8C700BD533A /* connect_menu.xml */; };
-		F5E1B1B91F27A8CA00BD533A /* arrays.xml in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8171F27A8C700BD533A /* arrays.xml */; };
-		F5E1B1BA1F27A8CA00BD533A /* strings.xml in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8181F27A8C700BD533A /* strings.xml */; };
-		F5E1B1BB1F27A8CA00BD533A /* styles.xml in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A81A1F27A8C700BD533A /* styles.xml */; };
-		F5E1B1BC1F27A8CA00BD533A /* styles.xml in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A81C1F27A8C700BD533A /* styles.xml */; };
-		F5E1B1BD1F27A8CA00BD533A /* preferences.xml in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A81E1F27A8C700BD533A /* preferences.xml */; };
-		F5E1B1BE1F27A8CA00BD533A /* start_loopback_stubbed_camera_saved_video_out.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8241F27A8C700BD533A /* start_loopback_stubbed_camera_saved_video_out.py */; };
-		F5E1B1C01F27A8CA00BD533A /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8291F27A8C700BD533A /* LICENSE */; };
-		F5E1B1C11F27A8CA00BD533A /* NOTICE in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A82A1F27A8C700BD533A /* NOTICE */; };
-		F5E1B1C21F27A8CA00BD533A /* README in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A82C1F27A8C700BD533A /* README */; };
-		F5E1B1C31F27A8CA00BD533A /* AndroidManifest.xml in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8321F27A8C700BD533A /* AndroidManifest.xml */; };
-		F5E1B1C41F27A8CA00BD533A /* ant.properties in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8331F27A8C700BD533A /* ant.properties */; };
-		F5E1B1C51F27A8CA00BD533A /* build.xml in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8341F27A8C700BD533A /* build.xml */; };
-		F5E1B1C61F27A8CA00BD533A /* gradle_project_test.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8351F27A8C700BD533A /* gradle_project_test.py */; };
-		F5E1B1C71F27A8CA00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8361F27A8C700BD533A /* OWNERS */; };
-		F5E1B1C81F27A8CA00BD533A /* project.properties in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8371F27A8C700BD533A /* project.properties */; };
-		F5E1B1C91F27A8CA00BD533A /* README in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8381F27A8C700BD533A /* README */; };
-		F5E1B1CA1F27A8CA00BD533A /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A83F1F27A8C700BD533A /* .gitignore */; };
-		F5E1B1CB1F27A8CA00BD533A /* README.webrtc in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8401F27A8C700BD533A /* README.webrtc */; };
-		F5E1B1CC1F27A8CA00BD533A /* video_quality_loopback_test.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8411F27A8C700BD533A /* video_quality_loopback_test.py */; };
-		F5E1B1CD1F27A8CA00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8421F27A8C700BD533A /* DEPS */; };
 		F5E1B1CE1F27A8CA00BD533A /* ARDAppClient+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8451F27A8C700BD533A /* ARDAppClient+Internal.h */; };
 		F5E1B1CF1F27A8CA00BD533A /* ARDAppClient.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8461F27A8C700BD533A /* ARDAppClient.h */; };
 		F5E1B1D01F27A8CA00BD533A /* ARDAppEngineClient.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8471F27A8C700BD533A /* ARDAppEngineClient.h */; };
@@ -504,56 +444,27 @@
 		F5E1B1E81F27A8CA00BD533A /* ARDStatsView.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8611F27A8C700BD533A /* ARDStatsView.h */; };
 		F5E1B1E91F27A8CA00BD533A /* ARDVideoCallView.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8621F27A8C700BD533A /* ARDVideoCallView.h */; };
 		F5E1B1EA1F27A8CA00BD533A /* ARDVideoCallViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8631F27A8C700BD533A /* ARDVideoCallViewController.h */; };
-		F5E1B1EB1F27A8CA00BD533A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8641F27A8C700BD533A /* Info.plist */; };
-		F5E1B1EC1F27A8CA00BD533A /* ic_call_end_black_24dp.png in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8661F27A8C700BD533A /* ic_call_end_black_24dp.png */; };
-		F5E1B1ED1F27A8CA00BD533A /* ic_call_end_black_24dp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8671F27A8C700BD533A /* ic_call_end_black_24dp@2x.png */; };
-		F5E1B1EE1F27A8CA00BD533A /* ic_clear_black_24dp.png in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8681F27A8C700BD533A /* ic_clear_black_24dp.png */; };
-		F5E1B1EF1F27A8CA00BD533A /* ic_clear_black_24dp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8691F27A8C700BD533A /* ic_clear_black_24dp@2x.png */; };
-		F5E1B1F01F27A8CA00BD533A /* ic_settings_black_24dp.png in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A86A1F27A8C700BD533A /* ic_settings_black_24dp.png */; };
-		F5E1B1F11F27A8CA00BD533A /* ic_settings_black_24dp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A86B1F27A8C700BD533A /* ic_settings_black_24dp@2x.png */; };
-		F5E1B1F21F27A8CA00BD533A /* ic_surround_sound_black_24dp.png in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A86C1F27A8C700BD533A /* ic_surround_sound_black_24dp.png */; };
-		F5E1B1F31F27A8CA00BD533A /* ic_surround_sound_black_24dp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A86D1F27A8C700BD533A /* ic_surround_sound_black_24dp@2x.png */; };
-		F5E1B1F41F27A8CA00BD533A /* ic_switch_video_black_24dp.png in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A86E1F27A8C700BD533A /* ic_switch_video_black_24dp.png */; };
-		F5E1B1F51F27A8CA00BD533A /* ic_switch_video_black_24dp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A86F1F27A8C700BD533A /* ic_switch_video_black_24dp@2x.png */; };
-		F5E1B1F61F27A8CA00BD533A /* iPhone5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8701F27A8C700BD533A /* iPhone5@2x.png */; };
-		F5E1B1F71F27A8CA00BD533A /* iPhone6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8711F27A8C700BD533A /* iPhone6@2x.png */; };
-		F5E1B1F81F27A8CA00BD533A /* iPhone6p@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8721F27A8C700BD533A /* iPhone6p@3x.png */; };
-		F5E1B1F91F27A8CA00BD533A /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8731F27A8C700BD533A /* Roboto-Regular.ttf */; };
 		F5E1B1FA1F27A8CA00BD533A /* UIImage+ARDUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8741F27A8C700BD533A /* UIImage+ARDUtilities.h */; };
 		F5E1B1FB1F27A8CA00BD533A /* APPRTCAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8761F27A8C700BD533A /* APPRTCAppDelegate.h */; };
 		F5E1B1FC1F27A8CA00BD533A /* APPRTCViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8771F27A8C700BD533A /* APPRTCViewController.h */; };
-		F5E1B1FD1F27A8CA00BD533A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8781F27A8C700BD533A /* Info.plist */; };
 		F5E1B1FE1F27A8CA00BD533A /* RTCIceCandidate+JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8791F27A8C700BD533A /* RTCIceCandidate+JSON.h */; };
 		F5E1B1FF1F27A8CA00BD533A /* RTCIceServer+JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A87A1F27A8C700BD533A /* RTCIceServer+JSON.h */; };
 		F5E1B2001F27A8CA00BD533A /* RTCMediaConstraints+JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A87B1F27A8C700BD533A /* RTCMediaConstraints+JSON.h */; };
 		F5E1B2011F27A8CA00BD533A /* RTCSessionDescription+JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A87C1F27A8C700BD533A /* RTCSessionDescription+JSON.h */; };
-		F5E1B2021F27A8CA00BD533A /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8801F27A8C700BD533A /* LICENSE */; };
 		F5E1B2031F27A8CA00BD533A /* SRWebSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8811F27A8C700BD533A /* SRWebSocket.h */; };
-		F5E1B2041F27A8CA00BD533A /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8821F27A8C700BD533A /* Icon.png */; };
-		F5E1B2051F27A8CA00BD533A /* README in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8831F27A8C700BD533A /* README */; };
-		F5E1B2061F27A8CA00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8841F27A8C700BD533A /* OWNERS */; };
 		F5E1B2071F27A8CA00BD533A /* conductor.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8871F27A8C700BD533A /* conductor.h */; };
 		F5E1B2081F27A8CA00BD533A /* defaults.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8881F27A8C700BD533A /* defaults.h */; };
 		F5E1B2091F27A8CA00BD533A /* flagdefs.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8891F27A8C700BD533A /* flagdefs.h */; };
 		F5E1B20A1F27A8CA00BD533A /* main_wnd.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A88B1F27A8C700BD533A /* main_wnd.h */; };
 		F5E1B20B1F27A8CA00BD533A /* main_wnd.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A88C1F27A8C700BD533A /* main_wnd.h */; };
 		F5E1B20C1F27A8CA00BD533A /* peer_connection_client.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A88D1F27A8C700BD533A /* peer_connection_client.h */; };
-		F5E1B20D1F27A8CA00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A88E1F27A8C700BD533A /* OWNERS */; };
 		F5E1B20E1F27A8CA00BD533A /* data_socket.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8901F27A8C700BD533A /* data_socket.h */; };
 		F5E1B20F1F27A8CA00BD533A /* peer_channel.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8911F27A8C700BD533A /* peer_channel.h */; };
-		F5E1B2101F27A8CA00BD533A /* server_test.html in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8921F27A8C700BD533A /* server_test.html */; };
 		F5E1B2111F27A8CA00BD533A /* utils.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8931F27A8C700BD533A /* utils.h */; };
-		F5E1B2121F27A8CA00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8991F27A8C700BD533A /* OWNERS */; };
-		F5E1B2131F27A8CA00BD533A /* README in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A89A1F27A8C700BD533A /* README */; };
 		F5E1B2141F27A8CA00BD533A /* simple_peer_connection.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A89B1F27A8C700BD533A /* simple_peer_connection.h */; };
 		F5E1B2151F27A8CA00BD533A /* unity_plugin_apis.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A89C1F27A8C700BD533A /* unity_plugin_apis.h */; };
-		F5E1B2161F27A8CA00BD533A /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A89D1F27A8C700BD533A /* LICENSE */; };
-		F5E1B2171F27A8CA00BD533A /* LICENSE_THIRD_PARTY in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A89E1F27A8C700BD533A /* LICENSE_THIRD_PARTY */; };
-		F5E1B2181F27A8CA00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8A01F27A8C700BD533A /* OWNERS */; };
-		F5E1B2191F27A8CA00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8A21F27A8C700BD533A /* DEPS */; };
 		F5E1B21A1F27A8CA00BD533A /* mock_rtc_event_log.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8A41F27A8C700BD533A /* mock_rtc_event_log.h */; };
 		F5E1B21B1F27A8CA00BD533A /* rtc_event_log.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8A51F27A8C700BD533A /* rtc_event_log.h */; };
-		F5E1B21C1F27A8CA00BD533A /* rtc_event_log.proto in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8A61F27A8C700BD533A /* rtc_event_log.proto */; };
 		F5E1B21D1F27A8CA00BD533A /* rtc_event_log_factory.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8A71F27A8C700BD533A /* rtc_event_log_factory.h */; };
 		F5E1B21E1F27A8CA00BD533A /* rtc_event_log_factory_interface.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8A81F27A8C700BD533A /* rtc_event_log_factory_interface.h */; };
 		F5E1B21F1F27A8CA00BD533A /* rtc_event_log_helper_thread.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8A91F27A8C700BD533A /* rtc_event_log_helper_thread.h */; };
@@ -586,7 +497,6 @@
 		F5E1B23A1F27A8CA00BD533A /* videosinkinterface.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8C71F27A8C700BD533A /* videosinkinterface.h */; };
 		F5E1B23B1F27A8CA00BD533A /* videosourcebase.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8C81F27A8C700BD533A /* videosourcebase.h */; };
 		F5E1B23C1F27A8CA00BD533A /* videosourceinterface.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8C91F27A8C700BD533A /* videosourceinterface.h */; };
-		F5E1B23D1F27A8CA00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8CA1F27A8C700BD533A /* DEPS */; };
 		F5E1B23E1F27A8CA00BD533A /* adm_helpers.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8CC1F27A8C700BD533A /* adm_helpers.h */; };
 		F5E1B23F1F27A8CA00BD533A /* apm_helpers.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8CD1F27A8C700BD533A /* apm_helpers.h */; };
 		F5E1B2401F27A8CA00BD533A /* constants.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8CE1F27A8C700BD533A /* constants.h */; };
@@ -612,7 +522,6 @@
 		F5E1B2541F27A8CA00BD533A /* webrtcvideoengine.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8E21F27A8C700BD533A /* webrtcvideoengine.h */; };
 		F5E1B2551F27A8CA00BD533A /* webrtcvoe.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8E31F27A8C700BD533A /* webrtcvoe.h */; };
 		F5E1B2561F27A8CA00BD533A /* webrtcvoiceengine.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8E41F27A8C700BD533A /* webrtcvoiceengine.h */; };
-		F5E1B2571F27A8CA00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8E51F27A8C700BD533A /* OWNERS */; };
 		F5E1B2581F27A8CA00BD533A /* sctptransport.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8E71F27A8C700BD533A /* sctptransport.h */; };
 		F5E1B2591F27A8CA00BD533A /* sctptransportinternal.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8E81F27A8C700BD533A /* sctptransportinternal.h */; };
 		F5E1B25A1F27A8CA00BD533A /* acm_codec_database.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8EC1F27A8C700BD533A /* acm_codec_database.h */; };
@@ -626,10 +535,8 @@
 		F5E1B2621F27A8CB00BD533A /* audio_network_adaptor_impl.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8F51F27A8C700BD533A /* audio_network_adaptor_impl.h */; };
 		F5E1B2631F27A8CB00BD533A /* bitrate_controller.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8F61F27A8C700BD533A /* bitrate_controller.h */; };
 		F5E1B2641F27A8CB00BD533A /* channel_controller.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8F71F27A8C700BD533A /* channel_controller.h */; };
-		F5E1B2651F27A8CB00BD533A /* config.proto in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8F81F27A8C700BD533A /* config.proto */; };
 		F5E1B2661F27A8CB00BD533A /* controller.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8F91F27A8C700BD533A /* controller.h */; };
 		F5E1B2671F27A8CB00BD533A /* controller_manager.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8FA1F27A8C700BD533A /* controller_manager.h */; };
-		F5E1B2681F27A8CB00BD533A /* debug_dump.proto in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A8FB1F27A8C700BD533A /* debug_dump.proto */; };
 		F5E1B2691F27A8CB00BD533A /* debug_dump_writer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8FC1F27A8C700BD533A /* debug_dump_writer.h */; };
 		F5E1B26A1F27A8CB00BD533A /* dtx_controller.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8FD1F27A8C700BD533A /* dtx_controller.h */; };
 		F5E1B26B1F27A8CB00BD533A /* event_log_writer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A8FE1F27A8C700BD533A /* event_log_writer.h */; };
@@ -641,7 +548,6 @@
 		F5E1B2711F27A8CB00BD533A /* mock_controller.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A9061F27A8C700BD533A /* mock_controller.h */; };
 		F5E1B2721F27A8CB00BD533A /* mock_controller_manager.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A9071F27A8C700BD533A /* mock_controller_manager.h */; };
 		F5E1B2731F27A8CB00BD533A /* mock_debug_dump_writer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A9081F27A8C700BD533A /* mock_debug_dump_writer.h */; };
-		F5E1B2741F27A8CB00BD533A /* parse_ana_dump.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A9091F27A8C700BD533A /* parse_ana_dump.py */; };
 		F5E1B2751F27A8CB00BD533A /* threshold_curve.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A90B1F27A8C700BD533A /* threshold_curve.h */; };
 		F5E1B2761F27A8CB00BD533A /* audio_decoder.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A90D1F27A8C700BD533A /* audio_decoder.h */; };
 		F5E1B2771F27A8CB00BD533A /* audio_encoder.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A90E1F27A8C700BD533A /* audio_encoder.h */; };
@@ -656,7 +562,6 @@
 		F5E1B2801F27A8CB00BD533A /* audio_encoder_pcm.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A9191F27A8C700BD533A /* audio_encoder_pcm.h */; };
 		F5E1B2811F27A8CB00BD533A /* g711.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A91A1F27A8C700BD533A /* g711.h */; };
 		F5E1B2821F27A8CB00BD533A /* g711_interface.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A91B1F27A8C700BD533A /* g711_interface.h */; };
-		F5E1B2831F27A8CB00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A91C1F27A8C700BD533A /* OWNERS */; };
 		F5E1B2841F27A8CB00BD533A /* audio_decoder_g722.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A91F1F27A8C700BD533A /* audio_decoder_g722.h */; };
 		F5E1B2851F27A8CB00BD533A /* audio_encoder_g722.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A9201F27A8C700BD533A /* audio_encoder_g722.h */; };
 		F5E1B2861F27A8CB00BD533A /* g722_enc_dec.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A9211F27A8C700BD533A /* g722_enc_dec.h */; };
@@ -728,7 +633,6 @@
 		F5E1B2C81F27A8CB00BD533A /* state_construct.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A9651F27A8C700BD533A /* state_construct.h */; };
 		F5E1B2C91F27A8CB00BD533A /* state_search.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A9661F27A8C700BD533A /* state_search.h */; };
 		F5E1B2CA1F27A8CB00BD533A /* swap_bytes.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A9671F27A8C700BD533A /* swap_bytes.h */; };
-		F5E1B2CB1F27A8CB00BD533A /* iLBCtestscript.txt in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A9691F27A8C700BD533A /* iLBCtestscript.txt */; };
 		F5E1B2CC1F27A8CB00BD533A /* unpack_bits.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A96A1F27A8C700BD533A /* unpack_bits.h */; };
 		F5E1B2CD1F27A8CB00BD533A /* vq3.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A96B1F27A8C700BD533A /* vq3.h */; };
 		F5E1B2CE1F27A8CB00BD533A /* vq4.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A96C1F27A8C700BD533A /* vq4.h */; };
@@ -758,18 +662,6 @@
 		F5E1B2E61F27A8CB00BD533A /* settings.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A9881F27A8C700BD533A /* settings.h */; };
 		F5E1B2E71F27A8CB00BD533A /* spectrum_ar_model_tables.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A9891F27A8C700BD533A /* spectrum_ar_model_tables.h */; };
 		F5E1B2E81F27A8CB00BD533A /* structs.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A98A1F27A8C700BD533A /* structs.h */; };
-		F5E1B2E91F27A8CB00BD533A /* ChannelFiles.txt in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A98D1F27A8C700BD533A /* ChannelFiles.txt */; };
-		F5E1B2EA1F27A8CB00BD533A /* diffiSAC.txt in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A98E1F27A8C700BD533A /* diffiSAC.txt */; };
-		F5E1B2EB1F27A8CB00BD533A /* diffiSACPLC.txt in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A98F1F27A8C700BD533A /* diffiSACPLC.txt */; };
-		F5E1B2EC1F27A8CB00BD533A /* InputFiles.txt in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A9901F27A8C700BD533A /* InputFiles.txt */; };
-		F5E1B2ED1F27A8CB00BD533A /* InputFilesFew.txt in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A9911F27A8C700BD533A /* InputFilesFew.txt */; };
-		F5E1B2EE1F27A8CB00BD533A /* ListOfTestCases.xls in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A9921F27A8C700BD533A /* ListOfTestCases.xls */; };
-		F5E1B2EF1F27A8CB00BD533A /* runiSACfault.txt in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A9931F27A8C700BD533A /* runiSACfault.txt */; };
-		F5E1B2F01F27A8CB00BD533A /* runiSACfixfloat.txt in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A9941F27A8C700BD533A /* runiSACfixfloat.txt */; };
-		F5E1B2F11F27A8CB00BD533A /* runiSACLongtest.txt in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A9951F27A8C700BD533A /* runiSACLongtest.txt */; };
-		F5E1B2F21F27A8CB00BD533A /* runiSACNB.txt in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A9961F27A8C700BD533A /* runiSACNB.txt */; };
-		F5E1B2F31F27A8CB00BD533A /* runiSACPLC.txt in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A9971F27A8C700BD533A /* runiSACPLC.txt */; };
-		F5E1B2F41F27A8CB00BD533A /* runiSACRate.txt in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A9981F27A8C700BD533A /* runiSACRate.txt */; };
 		F5E1B2F51F27A8CB00BD533A /* locked_bandwidth_info.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A9991F27A8C700BD533A /* locked_bandwidth_info.h */; };
 		F5E1B2F61F27A8CB00BD533A /* audio_decoder_isac.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A99C1F27A8C700BD533A /* audio_decoder_isac.h */; };
 		F5E1B2F71F27A8CB00BD533A /* audio_encoder_isac.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A99D1F27A8C700BD533A /* audio_encoder_isac.h */; };
@@ -795,22 +687,17 @@
 		F5E1B30B1F27A8CB00BD533A /* settings.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A9B21F27A8C700BD533A /* settings.h */; };
 		F5E1B30C1F27A8CB00BD533A /* spectrum_ar_model_tables.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A9B31F27A8C700BD533A /* spectrum_ar_model_tables.h */; };
 		F5E1B30D1F27A8CB00BD533A /* structs.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A9B41F27A8C700BD533A /* structs.h */; };
-		F5E1B30E1F27A8CB00BD533A /* runiSACfault.txt in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A9B71F27A8C700BD533A /* runiSACfault.txt */; };
-		F5E1B30F1F27A8CB00BD533A /* runiSACfixfloat.txt in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A9B81F27A8C700BD533A /* runiSACfixfloat.txt */; };
-		F5E1B3101F27A8CB00BD533A /* runiSACLongtest.txt in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A9B91F27A8C700BD533A /* runiSACLongtest.txt */; };
 		F5E1B3111F27A8CB00BD533A /* utility.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A9BD1F27A8C700BD533A /* utility.h */; };
 		F5E1B3121F27A8CB00BD533A /* legacy_encoded_audio_frame.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A9BE1F27A8C700BD533A /* legacy_encoded_audio_frame.h */; };
 		F5E1B3131F27A8CB00BD533A /* audio_decoder_opus.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A9C01F27A8C700BD533A /* audio_decoder_opus.h */; };
 		F5E1B3141F27A8CB00BD533A /* audio_encoder_opus.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A9C11F27A8C700BD533A /* audio_encoder_opus.h */; };
 		F5E1B3151F27A8CB00BD533A /* opus_inst.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A9C21F27A8C700BD533A /* opus_inst.h */; };
 		F5E1B3161F27A8CB00BD533A /* opus_interface.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A9C31F27A8C700BD533A /* opus_interface.h */; };
-		F5E1B3171F27A8CB00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A9C41F27A8C700BD533A /* OWNERS */; };
 		F5E1B3181F27A8CB00BD533A /* audio_decoder_pcm16b.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A9C61F27A8C700BD533A /* audio_decoder_pcm16b.h */; };
 		F5E1B3191F27A8CB00BD533A /* audio_encoder_pcm16b.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A9C71F27A8C700BD533A /* audio_encoder_pcm16b.h */; };
 		F5E1B31A1F27A8CB00BD533A /* pcm16b.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A9C81F27A8C700BD533A /* pcm16b.h */; };
 		F5E1B31B1F27A8CB00BD533A /* audio_encoder_copy_red.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A9CA1F27A8C700BD533A /* audio_encoder_copy_red.h */; };
 		F5E1B31C1F27A8CB00BD533A /* audio_codec_speed_test.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A9CC1F27A8C700BD533A /* audio_codec_speed_test.h */; };
-		F5E1B31D1F27A8CB00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A9CD1F27A8C700BD533A /* DEPS */; };
 		F5E1B31E1F27A8CB00BD533A /* audio_coding_module.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A9CF1F27A8C700BD533A /* audio_coding_module.h */; };
 		F5E1B31F1F27A8CB00BD533A /* audio_coding_module_typedefs.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A9D01F27A8C700BD533A /* audio_coding_module_typedefs.h */; };
 		F5E1B3201F27A8CB00BD533A /* accelerate.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A9D21F27A8C700BD533A /* accelerate.h */; };
@@ -847,7 +734,6 @@
 		F5E1B33F1F27A8CB00BD533A /* nack_tracker.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A9F31F27A8C700BD533A /* nack_tracker.h */; };
 		F5E1B3401F27A8CB00BD533A /* neteq_decoder_enum.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A9F41F27A8C700BD533A /* neteq_decoder_enum.h */; };
 		F5E1B3411F27A8CB00BD533A /* neteq_impl.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A9F51F27A8C700BD533A /* neteq_impl.h */; };
-		F5E1B3421F27A8CB00BD533A /* neteq_unittest.proto in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A9F61F27A8C700BD533A /* neteq_unittest.proto */; };
 		F5E1B3431F27A8CB00BD533A /* normal.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A9F71F27A8C700BD533A /* normal.h */; };
 		F5E1B3441F27A8CB00BD533A /* packet.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A9F81F27A8C800BD533A /* packet.h */; };
 		F5E1B3451F27A8CB00BD533A /* packet_buffer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A9F91F27A8C800BD533A /* packet_buffer.h */; };
@@ -868,7 +754,6 @@
 		F5E1B3541F27A8CB00BD533A /* audio_loop.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA0B1F27A8C800BD533A /* audio_loop.h */; };
 		F5E1B3551F27A8CB00BD533A /* audio_sink.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA0C1F27A8C800BD533A /* audio_sink.h */; };
 		F5E1B3561F27A8CB00BD533A /* constant_pcm_packet_source.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA0D1F27A8C800BD533A /* constant_pcm_packet_source.h */; };
-		F5E1B3571F27A8CB00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AA0E1F27A8C800BD533A /* DEPS */; };
 		F5E1B3581F27A8CB00BD533A /* encode_neteq_input.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA0F1F27A8C800BD533A /* encode_neteq_input.h */; };
 		F5E1B3591F27A8CB00BD533A /* fake_decode_from_file.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA101F27A8C800BD533A /* fake_decode_from_file.h */; };
 		F5E1B35A1F27A8CB00BD533A /* input_audio_file.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA111F27A8C800BD533A /* input_audio_file.h */; };
@@ -888,7 +773,6 @@
 		F5E1B3681F27A8CB00BD533A /* rtc_event_log_source.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA1F1F27A8C800BD533A /* rtc_event_log_source.h */; };
 		F5E1B3691F27A8CB00BD533A /* rtp_file_source.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA201F27A8C800BD533A /* rtp_file_source.h */; };
 		F5E1B36A1F27A8CB00BD533A /* rtp_generator.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA211F27A8C800BD533A /* rtp_generator.h */; };
-		F5E1B36B1F27A8CB00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AA221F27A8C800BD533A /* OWNERS */; };
 		F5E1B36C1F27A8CB00BD533A /* ACMTest.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA241F27A8C800BD533A /* ACMTest.h */; };
 		F5E1B36D1F27A8CB00BD533A /* APITest.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA251F27A8C800BD533A /* APITest.h */; };
 		F5E1B36E1F27A8CB00BD533A /* Channel.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA261F27A8C800BD533A /* Channel.h */; };
@@ -904,10 +788,8 @@
 		F5E1B3781F27A8CB00BD533A /* TestVADDTX.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA301F27A8C800BD533A /* TestVADDTX.h */; };
 		F5E1B3791F27A8CB00BD533A /* TwoWayCommunication.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA311F27A8C800BD533A /* TwoWayCommunication.h */; };
 		F5E1B37A1F27A8CB00BD533A /* utility.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA321F27A8C800BD533A /* utility.h */; };
-		F5E1B37B1F27A8CB00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AA341F27A8C800BD533A /* DEPS */; };
 		F5E1B37C1F27A8CB00BD533A /* audio_conference_mixer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA361F27A8C800BD533A /* audio_conference_mixer.h */; };
 		F5E1B37D1F27A8CB00BD533A /* audio_conference_mixer_defines.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA371F27A8C800BD533A /* audio_conference_mixer_defines.h */; };
-		F5E1B37E1F27A8CB00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AA381F27A8C800BD533A /* OWNERS */; };
 		F5E1B37F1F27A8CB00BD533A /* audio_conference_mixer_impl.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA3A1F27A8C800BD533A /* audio_conference_mixer_impl.h */; };
 		F5E1B3801F27A8CB00BD533A /* audio_frame_manipulator.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA3B1F27A8C800BD533A /* audio_frame_manipulator.h */; };
 		F5E1B3811F27A8CB00BD533A /* memory_pool.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA3C1F27A8C800BD533A /* memory_pool.h */; };
@@ -928,7 +810,6 @@
 		F5E1B3901F27A8CB00BD533A /* audio_device_config.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA531F27A8C800BD533A /* audio_device_config.h */; };
 		F5E1B3911F27A8CB00BD533A /* audio_device_generic.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA541F27A8C800BD533A /* audio_device_generic.h */; };
 		F5E1B3921F27A8CB00BD533A /* audio_device_impl.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA551F27A8C800BD533A /* audio_device_impl.h */; };
-		F5E1B3931F27A8CB00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AA561F27A8C800BD533A /* DEPS */; };
 		F5E1B3941F27A8CB00BD533A /* audio_device_dummy.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA581F27A8C800BD533A /* audio_device_dummy.h */; };
 		F5E1B3951F27A8CB00BD533A /* file_audio_device.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA591F27A8C800BD533A /* file_audio_device.h */; };
 		F5E1B3961F27A8CB00BD533A /* file_audio_device_factory.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA5A1F27A8C800BD533A /* file_audio_device_factory.h */; };
@@ -957,17 +838,14 @@
 		F5E1B3AD1F27A8CB00BD533A /* pa_memorybarrier.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA771F27A8C800BD533A /* pa_memorybarrier.h */; };
 		F5E1B3AE1F27A8CB00BD533A /* pa_ringbuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA781F27A8C800BD533A /* pa_ringbuffer.h */; };
 		F5E1B3AF1F27A8CB00BD533A /* mock_audio_device_buffer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA791F27A8C800BD533A /* mock_audio_device_buffer.h */; };
-		F5E1B3B01F27A8CB00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AA7A1F27A8C800BD533A /* OWNERS */; };
 		F5E1B3B11F27A8CB00BD533A /* audio_device_test_defines.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA7C1F27A8C800BD533A /* audio_device_test_defines.h */; };
 		F5E1B3B21F27A8CB00BD533A /* audio_device_core_win.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA7E1F27A8C800BD533A /* audio_device_core_win.h */; };
 		F5E1B3B31F27A8CB00BD533A /* audio_frame_manipulator.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA801F27A8C800BD533A /* audio_frame_manipulator.h */; };
 		F5E1B3B41F27A8CB00BD533A /* audio_mixer_impl.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA811F27A8C800BD533A /* audio_mixer_impl.h */; };
 		F5E1B3B51F27A8CB00BD533A /* default_output_rate_calculator.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA821F27A8C800BD533A /* default_output_rate_calculator.h */; };
-		F5E1B3B61F27A8CB00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AA831F27A8C800BD533A /* DEPS */; };
 		F5E1B3B71F27A8CB00BD533A /* frame_combiner.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA841F27A8C800BD533A /* frame_combiner.h */; };
 		F5E1B3B81F27A8CB00BD533A /* gain_change_calculator.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA851F27A8C800BD533A /* gain_change_calculator.h */; };
 		F5E1B3B91F27A8CB00BD533A /* output_rate_calculator.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA861F27A8C800BD533A /* output_rate_calculator.h */; };
-		F5E1B3BA1F27A8CB00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AA871F27A8C800BD533A /* OWNERS */; };
 		F5E1B3BB1F27A8CB00BD533A /* sine_wave_generator.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA881F27A8C800BD533A /* sine_wave_generator.h */; };
 		F5E1B3BC1F27A8CB00BD533A /* aec_common.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA8B1F27A8C800BD533A /* aec_common.h */; };
 		F5E1B3BD1F27A8CB00BD533A /* aec_core.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AA8C1F27A8C800BD533A /* aec_core.h */; };
@@ -1043,8 +921,6 @@
 		F5E1B4031F27A8CB00BD533A /* mock_nonlinear_beamformer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AADA1F27A8C800BD533A /* mock_nonlinear_beamformer.h */; };
 		F5E1B4041F27A8CB00BD533A /* nonlinear_beamformer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AADB1F27A8C800BD533A /* nonlinear_beamformer.h */; };
 		F5E1B4051F27A8CB00BD533A /* common.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AADC1F27A8C800BD533A /* common.h */; };
-		F5E1B4061F27A8CB00BD533A /* debug.proto in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AADD1F27A8C800BD533A /* debug.proto */; };
-		F5E1B4071F27A8CB00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AADE1F27A8C800BD533A /* DEPS */; };
 		F5E1B4081F27A8CB00BD533A /* echo_cancellation_impl.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AADF1F27A8C800BD533A /* echo_cancellation_impl.h */; };
 		F5E1B4091F27A8CB00BD533A /* echo_control_mobile_impl.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AAE01F27A8C800BD533A /* echo_control_mobile_impl.h */; };
 		F5E1B40A1F27A8CB00BD533A /* circular_buffer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AAE21F27A8C800BD533A /* circular_buffer.h */; };
@@ -1081,15 +957,11 @@
 		F5E1B4291F27A8CB00BD533A /* nsx_core.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB071F27A8C800BD533A /* nsx_core.h */; };
 		F5E1B42A1F27A8CB00BD533A /* nsx_defines.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB081F27A8C800BD533A /* nsx_defines.h */; };
 		F5E1B42B1F27A8CB00BD533A /* windows_private.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB091F27A8C800BD533A /* windows_private.h */; };
-		F5E1B42C1F27A8CB00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AB0A1F27A8C800BD533A /* OWNERS */; };
 		F5E1B42D1F27A8CB00BD533A /* render_queue_item_verifier.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB0B1F27A8C800BD533A /* render_queue_item_verifier.h */; };
 		F5E1B42E1F27A8CB00BD533A /* residual_echo_detector.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB0C1F27A8C800BD533A /* residual_echo_detector.h */; };
 		F5E1B42F1F27A8CB00BD533A /* rms_level.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB0D1F27A8C800BD533A /* rms_level.h */; };
 		F5E1B4301F27A8CB00BD533A /* splitting_filter.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB0E1F27A8C800BD533A /* splitting_filter.h */; };
 		F5E1B4311F27A8CB00BD533A /* aec_dump_based_simulator.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB101F27A8C800BD533A /* aec_dump_based_simulator.h */; };
-		F5E1B4321F27A8CB00BD533A /* AndroidManifest.xml in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AB131F27A8C800BD533A /* AndroidManifest.xml */; };
-		F5E1B4331F27A8CB00BD533A /* default.properties in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AB141F27A8C800BD533A /* default.properties */; };
-		F5E1B4341F27A8CB00BD533A /* strings.xml in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AB181F27A8C800BD533A /* strings.xml */; };
 		F5E1B4351F27A8CB00BD533A /* audio_buffer_tools.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB191F27A8C800BD533A /* audio_buffer_tools.h */; };
 		F5E1B4361F27A8CB00BD533A /* audio_processing_simulator.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB1A1F27A8C800BD533A /* audio_processing_simulator.h */; };
 		F5E1B4371F27A8CB00BD533A /* bitexactness_tools.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB1B1F27A8C800BD533A /* bitexactness_tools.h */; };
@@ -1097,7 +969,6 @@
 		F5E1B4391F27A8CB00BD533A /* mock_wavreader.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB1E1F27A8C800BD533A /* mock_wavreader.h */; };
 		F5E1B43A1F27A8CB00BD533A /* mock_wavreader_factory.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB1F1F27A8C800BD533A /* mock_wavreader_factory.h */; };
 		F5E1B43B1F27A8CB00BD533A /* multiend_call.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB201F27A8C800BD533A /* multiend_call.h */; };
-		F5E1B43C1F27A8CB00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AB211F27A8C800BD533A /* OWNERS */; };
 		F5E1B43D1F27A8CB00BD533A /* simulator.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB221F27A8C800BD533A /* simulator.h */; };
 		F5E1B43E1F27A8CB00BD533A /* timing.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB231F27A8C800BD533A /* timing.h */; };
 		F5E1B43F1F27A8CB00BD533A /* wavreader_abstract_factory.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB241F27A8C800BD533A /* wavreader_abstract_factory.h */; };
@@ -1107,34 +978,8 @@
 		F5E1B4431F27A8CB00BD533A /* echo_canceller_test_tools.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB281F27A8C800BD533A /* echo_canceller_test_tools.h */; };
 		F5E1B4441F27A8CB00BD533A /* performance_timer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB291F27A8C800BD533A /* performance_timer.h */; };
 		F5E1B4451F27A8CB00BD533A /* protobuf_utils.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB2A1F27A8C800BD533A /* protobuf_utils.h */; };
-		F5E1B4461F27A8CB00BD533A /* default.json in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AB2D1F27A8C800BD533A /* default.json */; };
-		F5E1B4471F27A8CB00BD533A /* apm_quality_assessment.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AB2E1F27A8C800BD533A /* apm_quality_assessment.py */; };
-		F5E1B4481F27A8CB00BD533A /* apm_quality_assessment.sh in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AB2F1F27A8C800BD533A /* apm_quality_assessment.sh */; };
-		F5E1B4491F27A8CB00BD533A /* apm_quality_assessment_export.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AB301F27A8C800BD533A /* apm_quality_assessment_export.py */; };
-		F5E1B44A1F27A8CB00BD533A /* apm_quality_assessment_gencfgs.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AB311F27A8C800BD533A /* apm_quality_assessment_gencfgs.py */; };
-		F5E1B44B1F27A8CB00BD533A /* apm_quality_assessment_unittest.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AB321F27A8C800BD533A /* apm_quality_assessment_unittest.py */; };
-		F5E1B44C1F27A8CB00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AB341F27A8C800BD533A /* OWNERS */; };
-		F5E1B44D1F27A8CB00BD533A /* __init__.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AB361F27A8C800BD533A /* __init__.py */; };
-		F5E1B44E1F27A8CB00BD533A /* default.json in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AB381F27A8C800BD533A /* default.json */; };
-		F5E1B44F1F27A8CB00BD533A /* audioproc_wrapper.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AB391F27A8C800BD533A /* audioproc_wrapper.py */; };
-		F5E1B4501F27A8CB00BD533A /* data_access.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AB3A1F27A8C800BD533A /* data_access.py */; };
-		F5E1B4511F27A8CB00BD533A /* eval_scores.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AB3B1F27A8C800BD533A /* eval_scores.py */; };
-		F5E1B4521F27A8CB00BD533A /* eval_scores_factory.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AB3C1F27A8C800BD533A /* eval_scores_factory.py */; };
-		F5E1B4531F27A8CB00BD533A /* eval_scores_unittest.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AB3D1F27A8C800BD533A /* eval_scores_unittest.py */; };
-		F5E1B4541F27A8CB00BD533A /* evaluation.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AB3E1F27A8C800BD533A /* evaluation.py */; };
-		F5E1B4551F27A8CB00BD533A /* exceptions.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AB3F1F27A8C800BD533A /* exceptions.py */; };
-		F5E1B4561F27A8CB00BD533A /* export.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AB401F27A8C800BD533A /* export.py */; };
-		F5E1B4571F27A8CB00BD533A /* results.js in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AB411F27A8C800BD533A /* results.js */; };
-		F5E1B4581F27A8CB00BD533A /* signal_processing.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AB421F27A8C800BD533A /* signal_processing.py */; };
-		F5E1B4591F27A8CB00BD533A /* signal_processing_unittest.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AB431F27A8C800BD533A /* signal_processing_unittest.py */; };
-		F5E1B45A1F27A8CB00BD533A /* simulation.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AB441F27A8C800BD533A /* simulation.py */; };
-		F5E1B45B1F27A8CB00BD533A /* simulation_unittest.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AB451F27A8C800BD533A /* simulation_unittest.py */; };
-		F5E1B45C1F27A8CB00BD533A /* test_data_generation.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AB461F27A8C800BD533A /* test_data_generation.py */; };
-		F5E1B45D1F27A8CB00BD533A /* test_data_generation_factory.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AB471F27A8C800BD533A /* test_data_generation_factory.py */; };
-		F5E1B45E1F27A8CB00BD533A /* test_data_generation_unittest.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AB481F27A8C800BD533A /* test_data_generation_unittest.py */; };
 		F5E1B45F1F27A8CB00BD533A /* simulator_buffers.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB491F27A8C800BD533A /* simulator_buffers.h */; };
 		F5E1B4601F27A8CB00BD533A /* test_utils.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB4A1F27A8C800BD533A /* test_utils.h */; };
-		F5E1B4611F27A8CB00BD533A /* unittest.proto in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AB4B1F27A8C800BD533A /* unittest.proto */; };
 		F5E1B4621F27A8CB00BD533A /* wav_based_simulator.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB4C1F27A8C800BD533A /* wav_based_simulator.h */; };
 		F5E1B4631F27A8CB00BD533A /* three_band_filter_bank.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB4D1F27A8C800BD533A /* three_band_filter_bank.h */; };
 		F5E1B4641F27A8CB00BD533A /* common.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB4F1F27A8C800BD533A /* common.h */; };
@@ -1168,22 +1013,18 @@
 		F5E1B4801F27A8CB00BD533A /* voice_gmm_tables.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB6E1F27A8C800BD533A /* voice_gmm_tables.h */; };
 		F5E1B4811F27A8CB00BD533A /* voice_detection_impl.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB6F1F27A8C800BD533A /* voice_detection_impl.h */; };
 		F5E1B4821F27A8CB00BD533A /* bitrate_controller_impl.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB711F27A8C800BD533A /* bitrate_controller_impl.h */; };
-		F5E1B4831F27A8CB00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AB721F27A8C800BD533A /* DEPS */; };
 		F5E1B4841F27A8CB00BD533A /* bitrate_controller.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB741F27A8C800BD533A /* bitrate_controller.h */; };
 		F5E1B4851F27A8CB00BD533A /* mock_bitrate_controller.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB761F27A8C800BD533A /* mock_bitrate_controller.h */; };
-		F5E1B4861F27A8CB00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AB771F27A8C800BD533A /* OWNERS */; };
 		F5E1B4871F27A8CB00BD533A /* send_side_bandwidth_estimation.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB781F27A8C800BD533A /* send_side_bandwidth_estimation.h */; };
 		F5E1B4881F27A8CB00BD533A /* acknowledged_bitrate_estimator.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB7A1F27A8C800BD533A /* acknowledged_bitrate_estimator.h */; };
 		F5E1B4891F27A8CB00BD533A /* bitrate_estimator.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB7B1F27A8C800BD533A /* bitrate_estimator.h */; };
 		F5E1B48A1F27A8CB00BD533A /* delay_based_bwe.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB7C1F27A8C800BD533A /* delay_based_bwe.h */; };
-		F5E1B48B1F27A8CB00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AB7D1F27A8C800BD533A /* DEPS */; };
 		F5E1B48C1F27A8CB00BD533A /* congestion_controller.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB7F1F27A8C800BD533A /* congestion_controller.h */; };
 		F5E1B48D1F27A8CB00BD533A /* mock_congestion_observer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB811F27A8C800BD533A /* mock_congestion_observer.h */; };
 		F5E1B48E1F27A8CB00BD533A /* mock_send_side_congestion_controller.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB821F27A8C800BD533A /* mock_send_side_congestion_controller.h */; };
 		F5E1B48F1F27A8CB00BD533A /* receive_side_congestion_controller.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB831F27A8C800BD533A /* receive_side_congestion_controller.h */; };
 		F5E1B4901F27A8CB00BD533A /* send_side_congestion_controller.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB841F27A8C800BD533A /* send_side_congestion_controller.h */; };
 		F5E1B4911F27A8CB00BD533A /* median_slope_estimator.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB851F27A8C800BD533A /* median_slope_estimator.h */; };
-		F5E1B4921F27A8CB00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AB861F27A8C800BD533A /* OWNERS */; };
 		F5E1B4931F27A8CB00BD533A /* probe_bitrate_estimator.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB871F27A8C800BD533A /* probe_bitrate_estimator.h */; };
 		F5E1B4941F27A8CB00BD533A /* probe_controller.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB881F27A8C800BD533A /* probe_controller.h */; };
 		F5E1B4951F27A8CB00BD533A /* transport_feedback_adapter.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB891F27A8C800BD533A /* transport_feedback_adapter.h */; };
@@ -1191,7 +1032,6 @@
 		F5E1B4971F27A8CB00BD533A /* blank_detector_desktop_capturer_wrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB8C1F27A8C800BD533A /* blank_detector_desktop_capturer_wrapper.h */; };
 		F5E1B4981F27A8CB00BD533A /* cropped_desktop_frame.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB8D1F27A8C800BD533A /* cropped_desktop_frame.h */; };
 		F5E1B4991F27A8CB00BD533A /* cropping_window_capturer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB8E1F27A8C800BD533A /* cropping_window_capturer.h */; };
-		F5E1B49A1F27A8CB00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AB8F1F27A8C800BD533A /* DEPS */; };
 		F5E1B49B1F27A8CB00BD533A /* desktop_and_cursor_composer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB901F27A8C800BD533A /* desktop_and_cursor_composer.h */; };
 		F5E1B49C1F27A8CB00BD533A /* desktop_capture_options.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB911F27A8C800BD533A /* desktop_capture_options.h */; };
 		F5E1B49D1F27A8CB00BD533A /* desktop_capture_types.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AB921F27A8C800BD533A /* desktop_capture_types.h */; };
@@ -1215,7 +1055,6 @@
 		F5E1B4AF1F27A8CB00BD533A /* mock_desktop_capturer_callback.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ABA51F27A8C800BD533A /* mock_desktop_capturer_callback.h */; };
 		F5E1B4B01F27A8CB00BD533A /* mouse_cursor.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ABA61F27A8C800BD533A /* mouse_cursor.h */; };
 		F5E1B4B11F27A8CB00BD533A /* mouse_cursor_monitor.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ABA71F27A8C800BD533A /* mouse_cursor_monitor.h */; };
-		F5E1B4B21F27A8CB00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1ABA81F27A8C800BD533A /* OWNERS */; };
 		F5E1B4B31F27A8CB00BD533A /* resolution_change_detector.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ABA91F27A8C800BD533A /* resolution_change_detector.h */; };
 		F5E1B4B41F27A8CB00BD533A /* rgba_color.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ABAA1F27A8C800BD533A /* rgba_color.h */; };
 		F5E1B4B51F27A8CB00BD533A /* screen_capture_frame_queue.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ABAB1F27A8C800BD533A /* screen_capture_frame_queue.h */; };
@@ -1225,7 +1064,6 @@
 		F5E1B4B91F27A8CB00BD533A /* shared_memory.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ABAF1F27A8C800BD533A /* shared_memory.h */; };
 		F5E1B4BA1F27A8CB00BD533A /* test_utils.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ABB01F27A8C800BD533A /* test_utils.h */; };
 		F5E1B4BB1F27A8CB00BD533A /* cursor.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ABB21F27A8C800BD533A /* cursor.h */; };
-		F5E1B4BC1F27A8CB00BD533A /* cursor_unittest_resources.rc in Resources */ = {isa = PBXBuildFile; fileRef = F5E1ABB41F27A8C800BD533A /* cursor_unittest_resources.rc */; };
 		F5E1B4BD1F27A8CB00BD533A /* d3d_device.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ABB51F27A8C800BD533A /* d3d_device.h */; };
 		F5E1B4BE1F27A8CB00BD533A /* desktop.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ABB61F27A8C800BD533A /* desktop.h */; };
 		F5E1B4BF1F27A8CB00BD533A /* dxgi_adapter_duplicator.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ABB71F27A8C800BD533A /* dxgi_adapter_duplicator.h */; };
@@ -1246,25 +1084,18 @@
 		F5E1B4CE1F27A8CB00BD533A /* shared_x_display.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ABC71F27A8C800BD533A /* shared_x_display.h */; };
 		F5E1B4CF1F27A8CB00BD533A /* x_error_trap.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ABC81F27A8C800BD533A /* x_error_trap.h */; };
 		F5E1B4D01F27A8CB00BD533A /* x_server_pixel_buffer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ABC91F27A8C800BD533A /* x_server_pixel_buffer.h */; };
-		F5E1B4D11F27A8CB00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1ABCB1F27A8C800BD533A /* DEPS */; };
 		F5E1B4D21F27A8CB00BD533A /* module.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ABCC1F27A8C800BD533A /* module.h */; };
 		F5E1B4D31F27A8CB00BD533A /* module_common_types.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ABCD1F27A8C800BD533A /* module_common_types.h */; };
-		F5E1B4D41F27A8CB00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1ABCF1F27A8C800BD533A /* DEPS */; };
 		F5E1B4D51F27A8CB00BD533A /* media_file.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ABD01F27A8C800BD533A /* media_file.h */; };
 		F5E1B4D61F27A8CB00BD533A /* media_file_defines.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ABD11F27A8C800BD533A /* media_file_defines.h */; };
 		F5E1B4D71F27A8CB00BD533A /* media_file_impl.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ABD21F27A8C800BD533A /* media_file_impl.h */; };
 		F5E1B4D81F27A8CB00BD533A /* media_file_utility.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ABD31F27A8C800BD533A /* media_file_utility.h */; };
-		F5E1B4D91F27A8CB00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1ABD41F27A8C800BD533A /* OWNERS */; };
-		F5E1B4DA1F27A8CB00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1ABD51F27A8C800BD533A /* OWNERS */; };
 		F5E1B4DB1F27A8CB00BD533A /* alr_detector.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ABD71F27A8C800BD533A /* alr_detector.h */; };
 		F5E1B4DC1F27A8CB00BD533A /* bitrate_prober.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ABD81F27A8C800BD533A /* bitrate_prober.h */; };
-		F5E1B4DD1F27A8CB00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1ABD91F27A8C800BD533A /* DEPS */; };
 		F5E1B4DE1F27A8CB00BD533A /* mock_paced_sender.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ABDB1F27A8C800BD533A /* mock_paced_sender.h */; };
-		F5E1B4DF1F27A8CB00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1ABDC1F27A8C800BD533A /* OWNERS */; };
 		F5E1B4E01F27A8CB00BD533A /* paced_sender.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ABDD1F27A8C800BD533A /* paced_sender.h */; };
 		F5E1B4E11F27A8CB00BD533A /* packet_router.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ABDE1F27A8C800BD533A /* packet_router.h */; };
 		F5E1B4E21F27A8CB00BD533A /* aimd_rate_control.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ABE01F27A8C800BD533A /* aimd_rate_control.h */; };
-		F5E1B4E31F27A8CB00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1ABE11F27A8C800BD533A /* DEPS */; };
 		F5E1B4E41F27A8CB00BD533A /* bwe_defines.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ABE31F27A8C800BD533A /* bwe_defines.h */; };
 		F5E1B4E51F27A8CB00BD533A /* mock_remote_bitrate_observer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ABE51F27A8C800BD533A /* mock_remote_bitrate_observer.h */; };
 		F5E1B4E61F27A8CB00BD533A /* remote_bitrate_estimator.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ABE61F27A8C800BD533A /* remote_bitrate_estimator.h */; };
@@ -1272,7 +1103,6 @@
 		F5E1B4E81F27A8CB00BD533A /* inter_arrival.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ABE81F27A8C800BD533A /* inter_arrival.h */; };
 		F5E1B4E91F27A8CB00BD533A /* overuse_detector.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ABE91F27A8C800BD533A /* overuse_detector.h */; };
 		F5E1B4EA1F27A8CB00BD533A /* overuse_estimator.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ABEA1F27A8C800BD533A /* overuse_estimator.h */; };
-		F5E1B4EB1F27A8CB00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1ABEB1F27A8C800BD533A /* OWNERS */; };
 		F5E1B4EC1F27A8CB00BD533A /* remote_bitrate_estimator_abs_send_time.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ABEC1F27A8C800BD533A /* remote_bitrate_estimator_abs_send_time.h */; };
 		F5E1B4ED1F27A8CB00BD533A /* remote_bitrate_estimator_single_stream.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ABED1F27A8C800BD533A /* remote_bitrate_estimator_single_stream.h */; };
 		F5E1B4EE1F27A8CB00BD533A /* remote_estimator_proxy.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ABEE1F27A8C800BD533A /* remote_estimator_proxy.h */; };
@@ -1294,10 +1124,7 @@
 		F5E1B4FE1F27A8CB00BD533A /* packet.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AC001F27A8C800BD533A /* packet.h */; };
 		F5E1B4FF1F27A8CB00BD533A /* packet_receiver.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AC011F27A8C800BD533A /* packet_receiver.h */; };
 		F5E1B5001F27A8CB00BD533A /* packet_sender.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AC021F27A8C800BD533A /* packet_sender.h */; };
-		F5E1B5011F27A8CB00BD533A /* plot_bars.sh in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AC031F27A8C800BD533A /* plot_bars.sh */; };
-		F5E1B5021F27A8CB00BD533A /* plot_dynamics.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AC041F27A8C800BD533A /* plot_dynamics.py */; };
 		F5E1B5031F27A8CB00BD533A /* bwe_rtp.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AC061F27A8C800BD533A /* bwe_rtp.h */; };
-		F5E1B5041F27A8CB00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AC081F27A8C800BD533A /* DEPS */; };
 		F5E1B5051F27A8CB00BD533A /* flexfec_receiver.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AC0A1F27A8C800BD533A /* flexfec_receiver.h */; };
 		F5E1B5061F27A8CB00BD533A /* flexfec_sender.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AC0B1F27A8C800BD533A /* flexfec_sender.h */; };
 		F5E1B5071F27A8CB00BD533A /* receive_statistics.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AC0C1F27A8C800BD533A /* receive_statistics.h */; };
@@ -1313,7 +1140,6 @@
 		F5E1B5111F27A8CB00BD533A /* mock_recovered_packet_receiver.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AC171F27A8C800BD533A /* mock_recovered_packet_receiver.h */; };
 		F5E1B5121F27A8CB00BD533A /* mock_rtcp_rtt_stats.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AC181F27A8C800BD533A /* mock_rtcp_rtt_stats.h */; };
 		F5E1B5131F27A8CB00BD533A /* mock_rtp_rtcp.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AC191F27A8C800BD533A /* mock_rtp_rtcp.h */; };
-		F5E1B5141F27A8CB00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AC1A1F27A8C800BD533A /* OWNERS */; };
 		F5E1B5151F27A8CB00BD533A /* byte_io.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AC1C1F27A8C800BD533A /* byte_io.h */; };
 		F5E1B5161F27A8CB00BD533A /* dtmf_queue.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AC1D1F27A8C800BD533A /* dtmf_queue.h */; };
 		F5E1B5171F27A8CB00BD533A /* fec_private_tables_bursty.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AC1E1F27A8C800BD533A /* fec_private_tables_bursty.h */; };
@@ -1383,15 +1209,12 @@
 		F5E1B5571F27A8CC00BD533A /* video_codec_information.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AC5F1F27A8C800BD533A /* video_codec_information.h */; };
 		F5E1B5581F27A8CC00BD533A /* test_api.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AC621F27A8C800BD533A /* test_api.h */; };
 		F5E1B5591F27A8CC00BD533A /* average_residual_loss_xor_codes.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AC641F27A8C800BD533A /* average_residual_loss_xor_codes.h */; };
-		F5E1B55A1F27A8CC00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AC661F27A8C800BD533A /* DEPS */; };
 		F5E1B55B1F27A8CC00BD533A /* audio_frame_operations.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AC681F27A8C800BD533A /* audio_frame_operations.h */; };
 		F5E1B55C1F27A8CC00BD533A /* helpers_android.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AC691F27A8C800BD533A /* helpers_android.h */; };
 		F5E1B55D1F27A8CC00BD533A /* jvm_android.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AC6A1F27A8C800BD533A /* jvm_android.h */; };
 		F5E1B55E1F27A8CC00BD533A /* mock_process_thread.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AC6C1F27A8C800BD533A /* mock_process_thread.h */; };
 		F5E1B55F1F27A8CC00BD533A /* process_thread.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AC6D1F27A8C800BD533A /* process_thread.h */; };
-		F5E1B5601F27A8CC00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AC6E1F27A8C800BD533A /* OWNERS */; };
 		F5E1B5611F27A8CC00BD533A /* process_thread_impl.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AC701F27A8C800BD533A /* process_thread_impl.h */; };
-		F5E1B5621F27A8CC00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AC721F27A8C800BD533A /* DEPS */; };
 		F5E1B5631F27A8CC00BD533A /* device_info_impl.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AC731F27A8C800BD533A /* device_info_impl.h */; };
 		F5E1B5641F27A8CC00BD533A /* device_info_linux.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AC761F27A8C800BD533A /* device_info_linux.h */; };
 		F5E1B5651F27A8CC00BD533A /* video_capture_linux.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AC771F27A8C800BD533A /* video_capture_linux.h */; };
@@ -1399,7 +1222,6 @@
 		F5E1B5671F27A8CC00BD533A /* device_info_objc.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AC7A1F27A8C800BD533A /* device_info_objc.h */; };
 		F5E1B5681F27A8CC00BD533A /* rtc_video_capture_objc.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AC7B1F27A8C800BD533A /* rtc_video_capture_objc.h */; };
 		F5E1B5691F27A8CC00BD533A /* video_capture.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AC7C1F27A8C800BD533A /* video_capture.h */; };
-		F5E1B56A1F27A8CC00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AC7D1F27A8C800BD533A /* OWNERS */; };
 		F5E1B56B1F27A8CC00BD533A /* video_capture.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AC7F1F27A8C800BD533A /* video_capture.h */; };
 		F5E1B56C1F27A8CC00BD533A /* video_capture_config.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AC801F27A8C800BD533A /* video_capture_config.h */; };
 		F5E1B56D1F27A8CC00BD533A /* video_capture_defines.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AC811F27A8C800BD533A /* video_capture_defines.h */; };
@@ -1422,11 +1244,9 @@
 		F5E1B57E1F27A8CC00BD533A /* mock_video_codec_interface.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AC9C1F27A8C800BD533A /* mock_video_codec_interface.h */; };
 		F5E1B57F1F27A8CC00BD533A /* video_codec_interface.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AC9D1F27A8C800BD533A /* video_codec_interface.h */; };
 		F5E1B5801F27A8CC00BD533A /* video_error_codes.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AC9E1F27A8C800BD533A /* video_error_codes.h */; };
-		F5E1B5811F27A8CC00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AC9F1F27A8C800BD533A /* OWNERS */; };
 		F5E1B5821F27A8CC00BD533A /* android_test_initializer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ACA11F27A8C800BD533A /* android_test_initializer.h */; };
 		F5E1B5831F27A8CC00BD533A /* mock_packet_manipulator.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ACA31F27A8C800BD533A /* mock_packet_manipulator.h */; };
 		F5E1B5841F27A8CC00BD533A /* packet_manipulator.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ACA41F27A8C800BD533A /* packet_manipulator.h */; };
-		F5E1B5851F27A8CC00BD533A /* plot_webrtc_test_logs.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1ACA51F27A8C800BD533A /* plot_webrtc_test_logs.py */; };
 		F5E1B5861F27A8CC00BD533A /* predictive_packet_manipulator.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ACA61F27A8C800BD533A /* predictive_packet_manipulator.h */; };
 		F5E1B5871F27A8CC00BD533A /* stats.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ACA71F27A8C800BD533A /* stats.h */; };
 		F5E1B5881F27A8CC00BD533A /* video_codec_test.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ACA81F27A8C800BD533A /* video_codec_test.h */; };
@@ -1447,7 +1267,6 @@
 		F5E1B5971F27A8CC00BD533A /* vp9_frame_buffer_pool.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ACBE1F27A8C800BD533A /* vp9_frame_buffer_pool.h */; };
 		F5E1B5981F27A8CC00BD533A /* vp9_impl.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ACBF1F27A8C800BD533A /* vp9_impl.h */; };
 		F5E1B5991F27A8CC00BD533A /* decoding_state.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ACC01F27A8C800BD533A /* decoding_state.h */; };
-		F5E1B59A1F27A8CC00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1ACC11F27A8C800BD533A /* DEPS */; };
 		F5E1B59B1F27A8CC00BD533A /* encoded_frame.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ACC21F27A8C800BD533A /* encoded_frame.h */; };
 		F5E1B59C1F27A8CC00BD533A /* fec_rate_table.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ACC31F27A8C800BD533A /* fec_rate_table.h */; };
 		F5E1B59D1F27A8CC00BD533A /* frame_buffer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ACC41F27A8C800BD533A /* frame_buffer.h */; };
@@ -1474,7 +1293,6 @@
 		F5E1B5B21F27A8CC00BD533A /* media_optimization.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ACDB1F27A8C800BD533A /* media_optimization.h */; };
 		F5E1B5B31F27A8CC00BD533A /* nack_fec_tables.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ACDC1F27A8C800BD533A /* nack_fec_tables.h */; };
 		F5E1B5B41F27A8CC00BD533A /* nack_module.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ACDD1F27A8C800BD533A /* nack_module.h */; };
-		F5E1B5B51F27A8CC00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1ACDE1F27A8C800BD533A /* OWNERS */; };
 		F5E1B5B61F27A8CC00BD533A /* packet.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ACDF1F27A8C800BD533A /* packet.h */; };
 		F5E1B5B71F27A8CC00BD533A /* packet_buffer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ACE01F27A8C800BD533A /* packet_buffer.h */; };
 		F5E1B5B81F27A8CC00BD533A /* protection_bitrate_calculator.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ACE11F27A8C800BD533A /* protection_bitrate_calculator.h */; };
@@ -1497,8 +1315,6 @@
 		F5E1B5C91F27A8CC00BD533A /* vp8_header_parser.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ACF51F27A8C800BD533A /* vp8_header_parser.h */; };
 		F5E1B5CA1F27A8CC00BD533A /* vp9_uncompressed_header_parser.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ACF61F27A8C800BD533A /* vp9_uncompressed_header_parser.h */; };
 		F5E1B5CB1F27A8CC00BD533A /* video_coding_impl.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ACF71F27A8C800BD533A /* video_coding_impl.h */; };
-		F5E1B5CC1F27A8CC00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1ACF91F27A8C800BD533A /* DEPS */; };
-		F5E1B5CD1F27A8CC00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1ACFA1F27A8C800BD533A /* OWNERS */; };
 		F5E1B5CE1F27A8CC00BD533A /* denoiser_filter.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ACFD1F27A8C800BD533A /* denoiser_filter.h */; };
 		F5E1B5CF1F27A8CC00BD533A /* denoiser_filter_c.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ACFE1F27A8C800BD533A /* denoiser_filter_c.h */; };
 		F5E1B5D01F27A8CC00BD533A /* denoiser_filter_neon.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ACFF1F27A8C800BD533A /* denoiser_filter_neon.h */; };
@@ -1506,16 +1322,13 @@
 		F5E1B5D21F27A8CC00BD533A /* noise_estimation.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD011F27A8C800BD533A /* noise_estimation.h */; };
 		F5E1B5D31F27A8CC00BD533A /* skin_detection.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD021F27A8C800BD533A /* skin_detection.h */; };
 		F5E1B5D41F27A8CC00BD533A /* video_denoiser.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD031F27A8C800BD533A /* video_denoiser.h */; };
-		F5E1B5D51F27A8CC00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AD051F27A8C800BD533A /* DEPS */; };
 		F5E1B5D61F27A8CC00BD533A /* ortcfactory.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD061F27A8C800BD533A /* ortcfactory.h */; };
 		F5E1B5D71F27A8CC00BD533A /* ortcrtpreceiveradapter.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD071F27A8C800BD533A /* ortcrtpreceiveradapter.h */; };
 		F5E1B5D81F27A8CC00BD533A /* ortcrtpsenderadapter.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD081F27A8C800BD533A /* ortcrtpsenderadapter.h */; };
-		F5E1B5D91F27A8CC00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AD091F27A8C800BD533A /* OWNERS */; };
 		F5E1B5DA1F27A8CC00BD533A /* rtpparametersconversion.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD0A1F27A8C800BD533A /* rtpparametersconversion.h */; };
 		F5E1B5DB1F27A8CC00BD533A /* rtptransportadapter.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD0B1F27A8C800BD533A /* rtptransportadapter.h */; };
 		F5E1B5DC1F27A8CC00BD533A /* rtptransportcontrolleradapter.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD0C1F27A8C800BD533A /* rtptransportcontrolleradapter.h */; };
 		F5E1B5DD1F27A8CC00BD533A /* testrtpparameters.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD0D1F27A8C800BD533A /* testrtpparameters.h */; };
-		F5E1B5DE1F27A8CC00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AD0E1F27A8C800BD533A /* OWNERS */; };
 		F5E1B5DF1F27A8CC00BD533A /* asyncstuntcpsocket.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD111F27A8C900BD533A /* asyncstuntcpsocket.h */; };
 		F5E1B5E01F27A8CC00BD533A /* basicpacketsocketfactory.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD121F27A8C900BD533A /* basicpacketsocketfactory.h */; };
 		F5E1B5E11F27A8CC00BD533A /* candidate.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD131F27A8C900BD533A /* candidate.h */; };
@@ -1566,15 +1379,12 @@
 		F5E1B60E1F27A8CC00BD533A /* udptransport.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD401F27A8C900BD533A /* udptransport.h */; };
 		F5E1B60F1F27A8CC00BD533A /* basicportallocator.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD421F27A8C900BD533A /* basicportallocator.h */; };
 		F5E1B6101F27A8CC00BD533A /* socketmonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD431F27A8C900BD533A /* socketmonitor.h */; };
-		F5E1B6111F27A8CC00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AD441F27A8C900BD533A /* DEPS */; };
-		F5E1B6121F27A8CC00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AD451F27A8C900BD533A /* OWNERS */; };
 		F5E1B6131F27A8CC00BD533A /* quicconnectionhelper.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD471F27A8C900BD533A /* quicconnectionhelper.h */; };
 		F5E1B6141F27A8CC00BD533A /* quicsession.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD481F27A8C900BD533A /* quicsession.h */; };
 		F5E1B6151F27A8CC00BD533A /* quictransport.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD491F27A8C900BD533A /* quictransport.h */; };
 		F5E1B6161F27A8CC00BD533A /* quictransportchannel.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD4A1F27A8C900BD533A /* quictransportchannel.h */; };
 		F5E1B6171F27A8CC00BD533A /* reliablequicstream.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD4B1F27A8C900BD533A /* reliablequicstream.h */; };
 		F5E1B6181F27A8CC00BD533A /* stunprober.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD4D1F27A8C900BD533A /* stunprober.h */; };
-		F5E1B6191F27A8CC00BD533A /* PATENTS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AD4E1F27A8C900BD533A /* PATENTS */; };
 		F5E1B61A1F27A8CC00BD533A /* audiomonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD501F27A8C900BD533A /* audiomonitor.h */; };
 		F5E1B61B1F27A8CC00BD533A /* audiotrack.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD511F27A8C900BD533A /* audiotrack.h */; };
 		F5E1B61C1F27A8CC00BD533A /* bundlefilter.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD521F27A8C900BD533A /* bundlefilter.h */; };
@@ -1582,7 +1392,6 @@
 		F5E1B61E1F27A8CC00BD533A /* channelmanager.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD541F27A8C900BD533A /* channelmanager.h */; };
 		F5E1B61F1F27A8CC00BD533A /* currentspeakermonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD551F27A8C900BD533A /* currentspeakermonitor.h */; };
 		F5E1B6201F27A8CC00BD533A /* datachannel.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD561F27A8C900BD533A /* datachannel.h */; };
-		F5E1B6211F27A8CC00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AD571F27A8C900BD533A /* DEPS */; };
 		F5E1B6221F27A8CC00BD533A /* dtmfsender.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD581F27A8C900BD533A /* dtmfsender.h */; };
 		F5E1B6231F27A8CC00BD533A /* externalhmac.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD591F27A8C900BD533A /* externalhmac.h */; };
 		F5E1B6241F27A8CC00BD533A /* iceserverparsing.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD5A1F27A8C900BD533A /* iceserverparsing.h */; };
@@ -1592,7 +1401,6 @@
 		F5E1B6281F27A8CC00BD533A /* mediastream.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD5E1F27A8C900BD533A /* mediastream.h */; };
 		F5E1B6291F27A8CC00BD533A /* mediastreamobserver.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD5F1F27A8C900BD533A /* mediastreamobserver.h */; };
 		F5E1B62A1F27A8CC00BD533A /* mediastreamtrack.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD601F27A8C900BD533A /* mediastreamtrack.h */; };
-		F5E1B62B1F27A8CC00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AD611F27A8C900BD533A /* OWNERS */; };
 		F5E1B62C1F27A8CC00BD533A /* peerconnection.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD621F27A8C900BD533A /* peerconnection.h */; };
 		F5E1B62D1F27A8CC00BD533A /* peerconnectionfactory.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD631F27A8C900BD533A /* peerconnectionfactory.h */; };
 		F5E1B62E1F27A8CC00BD533A /* quicdatachannel.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD641F27A8C900BD533A /* quicdatachannel.h */; };
@@ -1608,7 +1416,6 @@
 		F5E1B6381F27A8CC00BD533A /* statscollector.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD6E1F27A8C900BD533A /* statscollector.h */; };
 		F5E1B6391F27A8CC00BD533A /* streamcollection.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD6F1F27A8C900BD533A /* streamcollection.h */; };
 		F5E1B63A1F27A8CC00BD533A /* androidtestinitializer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD711F27A8C900BD533A /* androidtestinitializer.h */; };
-		F5E1B63B1F27A8CC00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AD721F27A8C900BD533A /* DEPS */; };
 		F5E1B63C1F27A8CC00BD533A /* fakeaudiocapturemodule.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD731F27A8C900BD533A /* fakeaudiocapturemodule.h */; };
 		F5E1B63D1F27A8CC00BD533A /* fakedatachannelprovider.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD741F27A8C900BD533A /* fakedatachannelprovider.h */; };
 		F5E1B63E1F27A8CC00BD533A /* fakeperiodicvideocapturer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD751F27A8C900BD533A /* fakeperiodicvideocapturer.h */; };
@@ -1630,17 +1437,6 @@
 		F5E1B64E1F27A8CC00BD533A /* webrtcsdp.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD851F27A8C900BD533A /* webrtcsdp.h */; };
 		F5E1B64F1F27A8CC00BD533A /* webrtcsession.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD861F27A8C900BD533A /* webrtcsession.h */; };
 		F5E1B6501F27A8CC00BD533A /* webrtcsessiondescriptionfactory.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AD871F27A8C900BD533A /* webrtcsessiondescriptionfactory.h */; };
-		F5E1B6511F27A8CC00BD533A /* PRESUBMIT.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AD881F27A8C900BD533A /* PRESUBMIT.py */; };
-		F5E1B6521F27A8CC00BD533A /* AndroidManifest.xml in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AD8C1F27A8C900BD533A /* AndroidManifest.xml */; };
-		F5E1B6531F27A8CC00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AD901F27A8C900BD533A /* OWNERS */; };
-		F5E1B6541F27A8CC00BD533A /* AndroidManifest.xml in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AD921F27A8C900BD533A /* AndroidManifest.xml */; };
-		F5E1B6551F27A8CC00BD533A /* ant.properties in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AD931F27A8C900BD533A /* ant.properties */; };
-		F5E1B6561F27A8CC00BD533A /* build.xml in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AD941F27A8C900BD533A /* build.xml */; };
-		F5E1B6571F27A8CC00BD533A /* project.properties in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AD951F27A8C900BD533A /* project.properties */; };
-		F5E1B6581F27A8CC00BD533A /* capturetestvideo.y4m in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AD991F27A8C900BD533A /* capturetestvideo.y4m */; };
-		F5E1B6591F27A8CC00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AD9A1F27A8C900BD533A /* OWNERS */; };
-		F5E1B65A1F27A8CC00BD533A /* PRESUBMIT.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AD9B1F27A8C900BD533A /* PRESUBMIT.py */; };
-		F5E1B65B1F27A8CC00BD533A /* README in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AD9C1F27A8C900BD533A /* README */; };
 		F5E1B65C1F27A8CC00BD533A /* androidmediacodeccommon.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ADA21F27A8C900BD533A /* androidmediacodeccommon.h */; };
 		F5E1B65D1F27A8CC00BD533A /* androidmediadecoder_jni.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ADA31F27A8C900BD533A /* androidmediadecoder_jni.h */; };
 		F5E1B65E1F27A8CC00BD533A /* androidmediaencoder_jni.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ADA41F27A8C900BD533A /* androidmediaencoder_jni.h */; };
@@ -1648,19 +1444,16 @@
 		F5E1B6601F27A8CC00BD533A /* androidvideotracksource.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ADA61F27A8C900BD533A /* androidvideotracksource.h */; };
 		F5E1B6611F27A8CC00BD533A /* audio_jni.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ADA71F27A8C900BD533A /* audio_jni.h */; };
 		F5E1B6621F27A8CC00BD533A /* classreferenceholder.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ADA81F27A8C900BD533A /* classreferenceholder.h */; };
-		F5E1B6631F27A8CC00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1ADA91F27A8C900BD533A /* DEPS */; };
 		F5E1B6641F27A8CC00BD533A /* jni_helpers.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ADAA1F27A8C900BD533A /* jni_helpers.h */; };
 		F5E1B6651F27A8CC00BD533A /* media_jni.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ADAB1F27A8C900BD533A /* media_jni.h */; };
 		F5E1B6661F27A8CC00BD533A /* native_handle_impl.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ADAC1F27A8C900BD533A /* native_handle_impl.h */; };
 		F5E1B6671F27A8CC00BD533A /* ownedfactoryandthreads.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ADAD1F27A8C900BD533A /* ownedfactoryandthreads.h */; };
-		F5E1B6681F27A8CC00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1ADAE1F27A8C900BD533A /* OWNERS */; };
 		F5E1B6691F27A8CC00BD533A /* rtcstatscollectorcallbackwrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ADAF1F27A8C900BD533A /* rtcstatscollectorcallbackwrapper.h */; };
 		F5E1B66A1F27A8CC00BD533A /* surfacetexturehelper_jni.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ADB01F27A8C900BD533A /* surfacetexturehelper_jni.h */; };
 		F5E1B66B1F27A8CC00BD533A /* video_jni.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ADB11F27A8C900BD533A /* video_jni.h */; };
 		F5E1B66C1F27A8CC00BD533A /* videodecoderfactorywrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ADB21F27A8C900BD533A /* videodecoderfactorywrapper.h */; };
 		F5E1B66D1F27A8CC00BD533A /* videodecoderwrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ADB31F27A8C900BD533A /* videodecoderwrapper.h */; };
 		F5E1B66E1F27A8CC00BD533A /* wrapped_native_i420_buffer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ADB41F27A8C900BD533A /* wrapped_native_i420_buffer.h */; };
-		F5E1B66F1F27A8CC00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1ADBA1F27A8C900BD533A /* DEPS */; };
 		F5E1B6701F27A8CC00BD533A /* RTCAudioSession+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ADBE1F27A8C900BD533A /* RTCAudioSession+Private.h */; };
 		F5E1B6711F27A8CC00BD533A /* helpers.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ADC01F27A8C900BD533A /* helpers.h */; };
 		F5E1B6721F27A8CC00BD533A /* NSString+StdString.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1ADC11F27A8C900BD533A /* NSString+StdString.h */; };
@@ -1760,14 +1553,7 @@
 		F5E1B6D01F27A8CC00BD533A /* RTCVideoViewShading.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AE261F27A8C900BD533A /* RTCVideoViewShading.h */; };
 		F5E1B6D11F27A8CC00BD533A /* UIDevice+RTCDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AE271F27A8C900BD533A /* UIDevice+RTCDevice.h */; };
 		F5E1B6D21F27A8CC00BD533A /* WebRTC.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AE281F27A8C900BD533A /* WebRTC.h */; };
-		F5E1B6D31F27A8CC00BD533A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE291F27A8C900BD533A /* Info.plist */; };
-		F5E1B6D41F27A8CC00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE2C1F27A8C900BD533A /* OWNERS */; };
-		F5E1B6D51F27A8CC00BD533A /* WebRTC.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE2D1F27A8C900BD533A /* WebRTC.podspec */; };
-		F5E1B6D61F27A8CC00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE2E1F27A8C900BD533A /* OWNERS */; };
-		F5E1B6D71F27A8CC00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE301F27A8C900BD533A /* DEPS */; };
-		F5E1B6D81F27A8CC00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE311F27A8C900BD533A /* OWNERS */; };
 		F5E1B6D91F27A8CC00BD533A /* rtcteststats.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AE331F27A8C900BD533A /* rtcteststats.h */; };
-		F5E1B6DA1F27A8CC00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE351F27A8C900BD533A /* DEPS */; };
 		F5E1B6DB1F27A8CC00BD533A /* aligned_array.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AE371F27A8C900BD533A /* aligned_array.h */; };
 		F5E1B6DC1F27A8CC00BD533A /* aligned_malloc.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AE381F27A8C900BD533A /* aligned_malloc.h */; };
 		F5E1B6DD1F27A8CC00BD533A /* asm_defines.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AE391F27A8C900BD533A /* asm_defines.h */; };
@@ -1790,7 +1576,6 @@
 		F5E1B6EE1F27A8CC00BD533A /* static_instance.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AE4A1F27A8C900BD533A /* static_instance.h */; };
 		F5E1B6EF1F27A8CC00BD533A /* timestamp_extrapolator.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AE4B1F27A8C900BD533A /* timestamp_extrapolator.h */; };
 		F5E1B6F01F27A8CC00BD533A /* trace.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AE4C1F27A8C900BD533A /* trace.h */; };
-		F5E1B6F11F27A8CC00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE4D1F27A8C900BD533A /* OWNERS */; };
 		F5E1B6F21F27A8CC00BD533A /* event_timer_posix.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AE4F1F27A8C900BD533A /* event_timer_posix.h */; };
 		F5E1B6F31F27A8CC00BD533A /* event_timer_win.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AE501F27A8C900BD533A /* event_timer_win.h */; };
 		F5E1B6F41F27A8CC00BD533A /* rw_lock_posix.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AE511F27A8C900BD533A /* rw_lock_posix.h */; };
@@ -1798,11 +1583,9 @@
 		F5E1B6F61F27A8CC00BD533A /* trace_impl.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AE531F27A8C900BD533A /* trace_impl.h */; };
 		F5E1B6F71F27A8CC00BD533A /* trace_posix.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AE541F27A8C900BD533A /* trace_posix.h */; };
 		F5E1B6F81F27A8CC00BD533A /* trace_win.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AE551F27A8C900BD533A /* trace_win.h */; };
-		F5E1B6F91F27A8CC00BD533A /* AndroidManifest.xml in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE581F27A8C900BD533A /* AndroidManifest.xml */; };
 		F5E1B6FA1F27A8CC00BD533A /* call_test.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AE5C1F27A8C900BD533A /* call_test.h */; };
 		F5E1B6FB1F27A8CC00BD533A /* configurable_frame_size_encoder.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AE5D1F27A8C900BD533A /* configurable_frame_size_encoder.h */; };
 		F5E1B6FC1F27A8CC00BD533A /* constants.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AE5E1F27A8C900BD533A /* constants.h */; };
-		F5E1B6FD1F27A8CC00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE5F1F27A8C900BD533A /* DEPS */; };
 		F5E1B6FE1F27A8CC00BD533A /* direct_transport.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AE601F27A8C900BD533A /* direct_transport.h */; };
 		F5E1B6FF1F27A8CC00BD533A /* drifting_clock.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AE611F27A8C900BD533A /* drifting_clock.h */; };
 		F5E1B7001F27A8CC00BD533A /* encoder_settings.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AE621F27A8C900BD533A /* encoder_settings.h */; };
@@ -1818,174 +1601,9 @@
 		F5E1B70A1F27A8CC00BD533A /* frame_utils.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AE6C1F27A8C900BD533A /* frame_utils.h */; };
 		F5E1B70B1F27A8CC00BD533A /* audio_decoder_fuzzer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AE6E1F27A8C900BD533A /* audio_decoder_fuzzer.h */; };
 		F5E1B70C1F27A8CC00BD533A /* audio_processing_fuzzer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AE6F1F27A8C900BD533A /* audio_processing_fuzzer.h */; };
-		F5E1B70D1F27A8CC00BD533A /* 785b96587d0eb44dd5d75b7a886f37e2ac504511 in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE721F27A8C900BD533A /* 785b96587d0eb44dd5d75b7a886f37e2ac504511 */; };
-		F5E1B70E1F27A8CC00BD533A /* README in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE731F27A8C900BD533A /* README */; };
-		F5E1B70F1F27A8CC00BD533A /* 0.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE751F27A8C900BD533A /* 0.rtcp */; };
-		F5E1B7101F27A8CC00BD533A /* 1.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE761F27A8C900BD533A /* 1.rtcp */; };
-		F5E1B7111F27A8CC00BD533A /* 10.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE771F27A8C900BD533A /* 10.rtcp */; };
-		F5E1B7121F27A8CC00BD533A /* 11.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE781F27A8C900BD533A /* 11.rtcp */; };
-		F5E1B7131F27A8CC00BD533A /* 12.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE791F27A8C900BD533A /* 12.rtcp */; };
-		F5E1B7141F27A8CC00BD533A /* 13.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE7A1F27A8C900BD533A /* 13.rtcp */; };
-		F5E1B7151F27A8CC00BD533A /* 14.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE7B1F27A8C900BD533A /* 14.rtcp */; };
-		F5E1B7161F27A8CC00BD533A /* 15.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE7C1F27A8C900BD533A /* 15.rtcp */; };
-		F5E1B7171F27A8CC00BD533A /* 16.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE7D1F27A8C900BD533A /* 16.rtcp */; };
-		F5E1B7181F27A8CC00BD533A /* 17.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE7E1F27A8C900BD533A /* 17.rtcp */; };
-		F5E1B7191F27A8CC00BD533A /* 18.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE7F1F27A8C900BD533A /* 18.rtcp */; };
-		F5E1B71A1F27A8CC00BD533A /* 19.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE801F27A8C900BD533A /* 19.rtcp */; };
-		F5E1B71B1F27A8CC00BD533A /* 2.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE811F27A8C900BD533A /* 2.rtcp */; };
-		F5E1B71C1F27A8CC00BD533A /* 20.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE821F27A8C900BD533A /* 20.rtcp */; };
-		F5E1B71D1F27A8CC00BD533A /* 21.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE831F27A8C900BD533A /* 21.rtcp */; };
-		F5E1B71E1F27A8CC00BD533A /* 22.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE841F27A8C900BD533A /* 22.rtcp */; };
-		F5E1B71F1F27A8CC00BD533A /* 23.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE851F27A8C900BD533A /* 23.rtcp */; };
-		F5E1B7201F27A8CC00BD533A /* 24.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE861F27A8C900BD533A /* 24.rtcp */; };
-		F5E1B7211F27A8CC00BD533A /* 25.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE871F27A8C900BD533A /* 25.rtcp */; };
-		F5E1B7221F27A8CC00BD533A /* 26.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE881F27A8C900BD533A /* 26.rtcp */; };
-		F5E1B7231F27A8CC00BD533A /* 27.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE891F27A8C900BD533A /* 27.rtcp */; };
-		F5E1B7241F27A8CC00BD533A /* 28.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE8A1F27A8C900BD533A /* 28.rtcp */; };
-		F5E1B7251F27A8CC00BD533A /* 29.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE8B1F27A8C900BD533A /* 29.rtcp */; };
-		F5E1B7261F27A8CC00BD533A /* 3.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE8C1F27A8C900BD533A /* 3.rtcp */; };
-		F5E1B7271F27A8CC00BD533A /* 30.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE8D1F27A8C900BD533A /* 30.rtcp */; };
-		F5E1B7281F27A8CC00BD533A /* 31.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE8E1F27A8C900BD533A /* 31.rtcp */; };
-		F5E1B7291F27A8CC00BD533A /* 32.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE8F1F27A8C900BD533A /* 32.rtcp */; };
-		F5E1B72A1F27A8CC00BD533A /* 33.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE901F27A8C900BD533A /* 33.rtcp */; };
-		F5E1B72B1F27A8CC00BD533A /* 34.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE911F27A8C900BD533A /* 34.rtcp */; };
-		F5E1B72C1F27A8CC00BD533A /* 35.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE921F27A8C900BD533A /* 35.rtcp */; };
-		F5E1B72D1F27A8CC00BD533A /* 36.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE931F27A8C900BD533A /* 36.rtcp */; };
-		F5E1B72E1F27A8CC00BD533A /* 37.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE941F27A8C900BD533A /* 37.rtcp */; };
-		F5E1B72F1F27A8CC00BD533A /* 38.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE951F27A8C900BD533A /* 38.rtcp */; };
-		F5E1B7301F27A8CC00BD533A /* 39.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE961F27A8C900BD533A /* 39.rtcp */; };
-		F5E1B7311F27A8CC00BD533A /* 4.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE971F27A8C900BD533A /* 4.rtcp */; };
-		F5E1B7321F27A8CC00BD533A /* 40.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE981F27A8C900BD533A /* 40.rtcp */; };
-		F5E1B7331F27A8CC00BD533A /* 41.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE991F27A8C900BD533A /* 41.rtcp */; };
-		F5E1B7341F27A8CC00BD533A /* 42.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE9A1F27A8C900BD533A /* 42.rtcp */; };
-		F5E1B7351F27A8CC00BD533A /* 43.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE9B1F27A8C900BD533A /* 43.rtcp */; };
-		F5E1B7361F27A8CC00BD533A /* 44.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE9C1F27A8C900BD533A /* 44.rtcp */; };
-		F5E1B7371F27A8CC00BD533A /* 45.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE9D1F27A8C900BD533A /* 45.rtcp */; };
-		F5E1B7381F27A8CC00BD533A /* 46.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE9E1F27A8C900BD533A /* 46.rtcp */; };
-		F5E1B7391F27A8CC00BD533A /* 47.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AE9F1F27A8C900BD533A /* 47.rtcp */; };
-		F5E1B73A1F27A8CC00BD533A /* 48.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEA01F27A8C900BD533A /* 48.rtcp */; };
-		F5E1B73B1F27A8CC00BD533A /* 49.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEA11F27A8C900BD533A /* 49.rtcp */; };
-		F5E1B73C1F27A8CC00BD533A /* 5.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEA21F27A8C900BD533A /* 5.rtcp */; };
-		F5E1B73D1F27A8CC00BD533A /* 50.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEA31F27A8C900BD533A /* 50.rtcp */; };
-		F5E1B73E1F27A8CC00BD533A /* 51.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEA41F27A8C900BD533A /* 51.rtcp */; };
-		F5E1B73F1F27A8CC00BD533A /* 52.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEA51F27A8C900BD533A /* 52.rtcp */; };
-		F5E1B7401F27A8CC00BD533A /* 53.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEA61F27A8C900BD533A /* 53.rtcp */; };
-		F5E1B7411F27A8CC00BD533A /* 54.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEA71F27A8C900BD533A /* 54.rtcp */; };
-		F5E1B7421F27A8CC00BD533A /* 55.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEA81F27A8C900BD533A /* 55.rtcp */; };
-		F5E1B7431F27A8CC00BD533A /* 56.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEA91F27A8C900BD533A /* 56.rtcp */; };
-		F5E1B7441F27A8CC00BD533A /* 57.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEAA1F27A8C900BD533A /* 57.rtcp */; };
-		F5E1B7451F27A8CC00BD533A /* 58.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEAB1F27A8C900BD533A /* 58.rtcp */; };
-		F5E1B7461F27A8CC00BD533A /* 59.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEAC1F27A8C900BD533A /* 59.rtcp */; };
-		F5E1B7471F27A8CC00BD533A /* 6.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEAD1F27A8C900BD533A /* 6.rtcp */; };
-		F5E1B7481F27A8CC00BD533A /* 60.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEAE1F27A8C900BD533A /* 60.rtcp */; };
-		F5E1B7491F27A8CC00BD533A /* 61.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEAF1F27A8C900BD533A /* 61.rtcp */; };
-		F5E1B74A1F27A8CC00BD533A /* 62.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEB01F27A8C900BD533A /* 62.rtcp */; };
-		F5E1B74B1F27A8CC00BD533A /* 63.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEB11F27A8C900BD533A /* 63.rtcp */; };
-		F5E1B74C1F27A8CC00BD533A /* 64.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEB21F27A8C900BD533A /* 64.rtcp */; };
-		F5E1B74D1F27A8CC00BD533A /* 65.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEB31F27A8C900BD533A /* 65.rtcp */; };
-		F5E1B74E1F27A8CC00BD533A /* 66.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEB41F27A8C900BD533A /* 66.rtcp */; };
-		F5E1B74F1F27A8CC00BD533A /* 7.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEB51F27A8C900BD533A /* 7.rtcp */; };
-		F5E1B7501F27A8CC00BD533A /* 8.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEB61F27A8C900BD533A /* 8.rtcp */; };
-		F5E1B7511F27A8CC00BD533A /* 9.rtcp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEB71F27A8C900BD533A /* 9.rtcp */; };
-		F5E1B7521F27A8CC00BD533A /* rtp-0 in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEB91F27A8C900BD533A /* rtp-0 */; };
-		F5E1B7531F27A8CC00BD533A /* rtp-1 in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEBA1F27A8C900BD533A /* rtp-1 */; };
-		F5E1B7541F27A8CC00BD533A /* rtp-2 in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEBB1F27A8C900BD533A /* rtp-2 */; };
-		F5E1B7551F27A8CC00BD533A /* rtp-3 in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEBC1F27A8C900BD533A /* rtp-3 */; };
-		F5E1B7561F27A8CC00BD533A /* rtp-4 in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEBD1F27A8C900BD533A /* rtp-4 */; };
-		F5E1B7571F27A8CC00BD533A /* 10.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEBF1F27A8C900BD533A /* 10.sdp */; };
-		F5E1B7581F27A8CC00BD533A /* 11.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEC01F27A8C900BD533A /* 11.sdp */; };
-		F5E1B7591F27A8CC00BD533A /* 12.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEC11F27A8C900BD533A /* 12.sdp */; };
-		F5E1B75A1F27A8CC00BD533A /* 13.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEC21F27A8C900BD533A /* 13.sdp */; };
-		F5E1B75B1F27A8CC00BD533A /* 14.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEC31F27A8C900BD533A /* 14.sdp */; };
-		F5E1B75C1F27A8CC00BD533A /* 15.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEC41F27A8C900BD533A /* 15.sdp */; };
-		F5E1B75D1F27A8CC00BD533A /* 16.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEC51F27A8C900BD533A /* 16.sdp */; };
-		F5E1B75E1F27A8CC00BD533A /* 17.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEC61F27A8C900BD533A /* 17.sdp */; };
-		F5E1B75F1F27A8CC00BD533A /* 18.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEC71F27A8C900BD533A /* 18.sdp */; };
-		F5E1B7601F27A8CC00BD533A /* 19.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEC81F27A8C900BD533A /* 19.sdp */; };
-		F5E1B7611F27A8CC00BD533A /* 2.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEC91F27A8C900BD533A /* 2.sdp */; };
-		F5E1B7621F27A8CC00BD533A /* 20.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AECA1F27A8C900BD533A /* 20.sdp */; };
-		F5E1B7631F27A8CC00BD533A /* 21.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AECB1F27A8C900BD533A /* 21.sdp */; };
-		F5E1B7641F27A8CC00BD533A /* 22.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AECC1F27A8C900BD533A /* 22.sdp */; };
-		F5E1B7651F27A8CC00BD533A /* 23.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AECD1F27A8C900BD533A /* 23.sdp */; };
-		F5E1B7661F27A8CC00BD533A /* 24.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AECE1F27A8C900BD533A /* 24.sdp */; };
-		F5E1B7671F27A8CC00BD533A /* 25.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AECF1F27A8C900BD533A /* 25.sdp */; };
-		F5E1B7681F27A8CC00BD533A /* 26.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AED01F27A8C900BD533A /* 26.sdp */; };
-		F5E1B7691F27A8CC00BD533A /* 27.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AED11F27A8C900BD533A /* 27.sdp */; };
-		F5E1B76A1F27A8CC00BD533A /* 28.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AED21F27A8C900BD533A /* 28.sdp */; };
-		F5E1B76B1F27A8CC00BD533A /* 29.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AED31F27A8C900BD533A /* 29.sdp */; };
-		F5E1B76C1F27A8CC00BD533A /* 3.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AED41F27A8C900BD533A /* 3.sdp */; };
-		F5E1B76D1F27A8CC00BD533A /* 30.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AED51F27A8C900BD533A /* 30.sdp */; };
-		F5E1B76E1F27A8CC00BD533A /* 31.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AED61F27A8C900BD533A /* 31.sdp */; };
-		F5E1B76F1F27A8CC00BD533A /* 32.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AED71F27A8C900BD533A /* 32.sdp */; };
-		F5E1B7701F27A8CC00BD533A /* 33.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AED81F27A8C900BD533A /* 33.sdp */; };
-		F5E1B7711F27A8CC00BD533A /* 34.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AED91F27A8C900BD533A /* 34.sdp */; };
-		F5E1B7721F27A8CC00BD533A /* 35.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEDA1F27A8C900BD533A /* 35.sdp */; };
-		F5E1B7731F27A8CC00BD533A /* 36.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEDB1F27A8C900BD533A /* 36.sdp */; };
-		F5E1B7741F27A8CC00BD533A /* 37.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEDC1F27A8C900BD533A /* 37.sdp */; };
-		F5E1B7751F27A8CC00BD533A /* 38.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEDD1F27A8C900BD533A /* 38.sdp */; };
-		F5E1B7761F27A8CC00BD533A /* 39.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEDE1F27A8C900BD533A /* 39.sdp */; };
-		F5E1B7771F27A8CC00BD533A /* 4.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEDF1F27A8C900BD533A /* 4.sdp */; };
-		F5E1B7781F27A8CC00BD533A /* 40.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEE01F27A8C900BD533A /* 40.sdp */; };
-		F5E1B7791F27A8CC00BD533A /* 41.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEE11F27A8C900BD533A /* 41.sdp */; };
-		F5E1B77A1F27A8CC00BD533A /* 42.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEE21F27A8C900BD533A /* 42.sdp */; };
-		F5E1B77B1F27A8CC00BD533A /* 43.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEE31F27A8C900BD533A /* 43.sdp */; };
-		F5E1B77C1F27A8CC00BD533A /* 44.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEE41F27A8C900BD533A /* 44.sdp */; };
-		F5E1B77D1F27A8CC00BD533A /* 45.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEE51F27A8C900BD533A /* 45.sdp */; };
-		F5E1B77E1F27A8CC00BD533A /* 46.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEE61F27A8C900BD533A /* 46.sdp */; };
-		F5E1B77F1F27A8CC00BD533A /* 47.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEE71F27A8C900BD533A /* 47.sdp */; };
-		F5E1B7801F27A8CC00BD533A /* 48.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEE81F27A8C900BD533A /* 48.sdp */; };
-		F5E1B7811F27A8CC00BD533A /* 49.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEE91F27A8C900BD533A /* 49.sdp */; };
-		F5E1B7821F27A8CC00BD533A /* 5.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEEA1F27A8C900BD533A /* 5.sdp */; };
-		F5E1B7831F27A8CC00BD533A /* 50.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEEB1F27A8C900BD533A /* 50.sdp */; };
-		F5E1B7841F27A8CC00BD533A /* 51.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEEC1F27A8C900BD533A /* 51.sdp */; };
-		F5E1B7851F27A8CC00BD533A /* 52.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEED1F27A8C900BD533A /* 52.sdp */; };
-		F5E1B7861F27A8CC00BD533A /* 53.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEEE1F27A8C900BD533A /* 53.sdp */; };
-		F5E1B7871F27A8CC00BD533A /* 54.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEEF1F27A8C900BD533A /* 54.sdp */; };
-		F5E1B7881F27A8CC00BD533A /* 55.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEF01F27A8C900BD533A /* 55.sdp */; };
-		F5E1B7891F27A8CC00BD533A /* 6.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEF11F27A8C900BD533A /* 6.sdp */; };
-		F5E1B78A1F27A8CC00BD533A /* 7.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEF21F27A8C900BD533A /* 7.sdp */; };
-		F5E1B78B1F27A8CC00BD533A /* 8.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEF31F27A8C900BD533A /* 8.sdp */; };
-		F5E1B78C1F27A8CC00BD533A /* 9.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEF41F27A8C900BD533A /* 9.sdp */; };
-		F5E1B78D1F27A8CC00BD533A /* firefox-1.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEF51F27A8C900BD533A /* firefox-1.sdp */; };
-		F5E1B78E1F27A8CC00BD533A /* firefox-2.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEF61F27A8C900BD533A /* firefox-2.sdp */; };
-		F5E1B78F1F27A8CC00BD533A /* opera-1.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEF71F27A8C900BD533A /* opera-1.sdp */; };
-		F5E1B7901F27A8CC00BD533A /* opera-2.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEF81F27A8C900BD533A /* opera-2.sdp */; };
-		F5E1B7911F27A8CC00BD533A /* unittest-1.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEF91F27A8C900BD533A /* unittest-1.sdp */; };
-		F5E1B7921F27A8CC00BD533A /* unittest-2.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEFA1F27A8C900BD533A /* unittest-2.sdp */; };
-		F5E1B7931F27A8CC00BD533A /* unittest-3.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEFB1F27A8C900BD533A /* unittest-3.sdp */; };
-		F5E1B7941F27A8CC00BD533A /* unittest-4.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEFC1F27A8C900BD533A /* unittest-4.sdp */; };
-		F5E1B7951F27A8CC00BD533A /* unittest-5.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEFD1F27A8C900BD533A /* unittest-5.sdp */; };
-		F5E1B7961F27A8CC00BD533A /* unittest-6.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEFE1F27A8C900BD533A /* unittest-6.sdp */; };
-		F5E1B7971F27A8CC00BD533A /* unittest-7.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AEFF1F27A8C900BD533A /* unittest-7.sdp */; };
-		F5E1B7981F27A8CC00BD533A /* unittest-8.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF001F27A8C900BD533A /* unittest-8.sdp */; };
-		F5E1B7991F27A8CC00BD533A /* unittest-9.sdp in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF011F27A8C900BD533A /* unittest-9.sdp */; };
-		F5E1B79A1F27A8CC00BD533A /* sdp.tokens in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF021F27A8C900BD533A /* sdp.tokens */; };
-		F5E1B79B1F27A8CC00BD533A /* 0.stun in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF041F27A8C900BD533A /* 0.stun */; };
-		F5E1B79C1F27A8CC00BD533A /* 1.stun in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF051F27A8C900BD533A /* 1.stun */; };
-		F5E1B79D1F27A8CC00BD533A /* 10.stun in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF061F27A8C900BD533A /* 10.stun */; };
-		F5E1B79E1F27A8CC00BD533A /* 11.stun in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF071F27A8C900BD533A /* 11.stun */; };
-		F5E1B79F1F27A8CC00BD533A /* 12.stun in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF081F27A8C900BD533A /* 12.stun */; };
-		F5E1B7A01F27A8CC00BD533A /* 13.stun in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF091F27A8C900BD533A /* 13.stun */; };
-		F5E1B7A11F27A8CC00BD533A /* 14.stun in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF0A1F27A8C900BD533A /* 14.stun */; };
-		F5E1B7A21F27A8CC00BD533A /* 15.stun in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF0B1F27A8C900BD533A /* 15.stun */; };
-		F5E1B7A31F27A8CC00BD533A /* 16.stun in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF0C1F27A8C900BD533A /* 16.stun */; };
-		F5E1B7A41F27A8CC00BD533A /* 17.stun in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF0D1F27A8C900BD533A /* 17.stun */; };
-		F5E1B7A51F27A8CC00BD533A /* 2.stun in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF0E1F27A8C900BD533A /* 2.stun */; };
-		F5E1B7A61F27A8CC00BD533A /* 3.stun in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF0F1F27A8C900BD533A /* 3.stun */; };
-		F5E1B7A71F27A8CC00BD533A /* 4.stun in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF101F27A8C900BD533A /* 4.stun */; };
-		F5E1B7A81F27A8CC00BD533A /* 5.stun in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF111F27A8C900BD533A /* 5.stun */; };
-		F5E1B7A91F27A8CC00BD533A /* 6.stun in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF121F27A8C900BD533A /* 6.stun */; };
-		F5E1B7AA1F27A8CC00BD533A /* 7.stun in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF131F27A8C900BD533A /* 7.stun */; };
-		F5E1B7AB1F27A8CC00BD533A /* 8.stun in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF141F27A8C900BD533A /* 8.stun */; };
-		F5E1B7AC1F27A8CC00BD533A /* 9.stun in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF151F27A8C900BD533A /* 9.stun */; };
-		F5E1B7AD1F27A8CC00BD533A /* validator-crash-1.stun in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF161F27A8C900BD533A /* validator-crash-1.stun */; };
-		F5E1B7AE1F27A8CC00BD533A /* stun.tokens in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF171F27A8C900BD533A /* stun.tokens */; };
-		F5E1B7AF1F27A8CC00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF181F27A8C900BD533A /* DEPS */; };
-		F5E1B7B01F27A8CC00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF191F27A8C900BD533A /* OWNERS */; };
 		F5E1B7B11F27A8CC00BD533A /* gl_renderer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AF1B1F27A8C900BD533A /* gl_renderer.h */; };
 		F5E1B7B21F27A8CC00BD533A /* gmock.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AF1C1F27A8C900BD533A /* gmock.h */; };
 		F5E1B7B31F27A8CC00BD533A /* gtest.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AF1D1F27A8C900BD533A /* gtest.h */; };
-		F5E1B7B41F27A8CC00BD533A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF1F1F27A8C900BD533A /* Info.plist */; };
 		F5E1B7B51F27A8CC00BD533A /* test_support.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AF201F27A8C900BD533A /* test_support.h */; };
 		F5E1B7B61F27A8CD00BD533A /* layer_filtering_transport.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AF211F27A8C900BD533A /* layer_filtering_transport.h */; };
 		F5E1B7B71F27A8CD00BD533A /* glx_renderer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AF231F27A8C900BD533A /* glx_renderer.h */; };
@@ -1998,7 +1616,6 @@
 		F5E1B7BE1F27A8CD00BD533A /* mock_voe_channel_proxy.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AF2B1F27A8C900BD533A /* mock_voe_channel_proxy.h */; };
 		F5E1B7BF1F27A8CD00BD533A /* mock_voice_engine.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AF2C1F27A8C900BD533A /* mock_voice_engine.h */; };
 		F5E1B7C01F27A8CD00BD533A /* null_transport.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AF2D1F27A8C900BD533A /* null_transport.h */; };
-		F5E1B7C11F27A8CD00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF2E1F27A8C900BD533A /* OWNERS */; };
 		F5E1B7C21F27A8CD00BD533A /* rtcp_packet_parser.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AF2F1F27A8C900BD533A /* rtcp_packet_parser.h */; };
 		F5E1B7C31F27A8CD00BD533A /* rtp_file_reader.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AF301F27A8C900BD533A /* rtp_file_reader.h */; };
 		F5E1B7C41F27A8CD00BD533A /* rtp_file_writer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AF311F27A8C900BD533A /* rtp_file_writer.h */; };
@@ -2020,93 +1637,23 @@
 		F5E1B7D41F27A8CD00BD533A /* video_capturer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AF441F27A8C900BD533A /* video_capturer.h */; };
 		F5E1B7D51F27A8CD00BD533A /* video_renderer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AF451F27A8C900BD533A /* video_renderer.h */; };
 		F5E1B7D61F27A8CD00BD533A /* d3d_renderer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AF471F27A8C900BD533A /* d3d_renderer.h */; };
-		F5E1B7D71F27A8CD00BD533A /* author_line_count.sh in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF4A1F27A8C900BD533A /* author_line_count.sh */; };
-		F5E1B7D81F27A8CD00BD533A /* barcode_decoder.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF4C1F27A8C900BD533A /* barcode_decoder.py */; };
-		F5E1B7D91F27A8CD00BD533A /* barcode_encoder.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF4D1F27A8C900BD533A /* barcode_encoder.py */; };
-		F5E1B7DA1F27A8CD00BD533A /* build_zxing.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF4E1F27A8C900BD533A /* build_zxing.py */; };
-		F5E1B7DB1F27A8CD00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF4F1F27A8C900BD533A /* DEPS */; };
-		F5E1B7DC1F27A8CD00BD533A /* helper_functions.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF501F27A8C900BD533A /* helper_functions.py */; };
-		F5E1B7DD1F27A8CD00BD533A /* README in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF511F27A8C900BD533A /* README */; };
-		F5E1B7DE1F27A8CD00BD533A /* yuv_cropper.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF521F27A8C900BD533A /* yuv_cropper.py */; };
-		F5E1B7DF1F27A8CD00BD533A /* class_usage.sh in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF531F27A8C900BD533A /* class_usage.sh */; };
-		F5E1B7E01F27A8CD00BD533A /* compare_videos.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF541F27A8C900BD533A /* compare_videos.py */; };
 		F5E1B7E11F27A8CD00BD533A /* converter.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AF561F27A8C900BD533A /* converter.h */; };
-		F5E1B7E21F27A8CD00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF571F27A8C900BD533A /* DEPS */; };
 		F5E1B7E31F27A8CD00BD533A /* analyzer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AF591F27A8C900BD533A /* analyzer.h */; };
-		F5E1B7E41F27A8CD00BD533A /* chart.proto in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF5A1F27A8C900BD533A /* chart.proto */; };
-		F5E1B7E51F27A8CD00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF5B1F27A8C900BD533A /* OWNERS */; };
 		F5E1B7E61F27A8CD00BD533A /* plot_base.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AF5C1F27A8C900BD533A /* plot_base.h */; };
 		F5E1B7E71F27A8CD00BD533A /* plot_protobuf.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AF5D1F27A8C900BD533A /* plot_protobuf.h */; };
 		F5E1B7E81F27A8CD00BD533A /* plot_python.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AF5E1F27A8C900BD533A /* plot_python.h */; };
 		F5E1B7E91F27A8CD00BD533A /* reference_less_video_analysis_lib.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AF611F27A8C900BD533A /* reference_less_video_analysis_lib.h */; };
 		F5E1B7EA1F27A8CD00BD533A /* video_quality_analysis.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AF621F27A8C900BD533A /* video_quality_analysis.h */; };
 		F5E1B7EB1F27A8CD00BD533A /* frame_editing_lib.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AF641F27A8C900BD533A /* frame_editing_lib.h */; };
-		F5E1B7EC1F27A8CD00BD533A /* header_usage.sh in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF651F27A8C900BD533A /* header_usage.sh */; };
-		F5E1B7ED1F27A8CD00BD533A /* adapter.js in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF671F27A8C900BD533A /* adapter.js */; };
-		F5E1B7EE1F27A8CD00BD533A /* loopback_test.html in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF681F27A8C900BD533A /* loopback_test.html */; };
-		F5E1B7EF1F27A8CD00BD533A /* loopback_test.js in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF691F27A8C900BD533A /* loopback_test.js */; };
-		F5E1B7F01F27A8CD00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF6A1F27A8C900BD533A /* OWNERS */; };
-		F5E1B7F11F27A8CD00BD533A /* README in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF6B1F27A8C900BD533A /* README */; };
-		F5E1B7F21F27A8CD00BD533A /* record-test.sh in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF6C1F27A8C900BD533A /* record-test.sh */; };
-		F5E1B7F31F27A8CD00BD533A /* run-server.sh in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF6D1F27A8C900BD533A /* run-server.sh */; };
-		F5E1B7F41F27A8CD00BD533A /* stat_tracker.js in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF6E1F27A8C900BD533A /* stat_tracker.js */; };
-		F5E1B7F51F27A8CD00BD533A /* AndroidManifest.xml in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF711F27A8C900BD533A /* AndroidManifest.xml */; };
-		F5E1B7F61F27A8CD00BD533A /* activity_main.xml in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF741F27A8C900BD533A /* activity_main.xml */; };
-		F5E1B7FC1F27A8CD00BD533A /* colors.xml in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF801F27A8C900BD533A /* colors.xml */; };
-		F5E1B7FD1F27A8CD00BD533A /* dimens.xml in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF811F27A8C900BD533A /* dimens.xml */; };
-		F5E1B7FE1F27A8CD00BD533A /* strings.xml in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF821F27A8C900BD533A /* strings.xml */; };
-		F5E1B7FF1F27A8CD00BD533A /* styles.xml in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF841F27A8C900BD533A /* styles.xml */; };
-		F5E1B8001F27A8CD00BD533A /* dimens.xml in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF861F27A8C900BD533A /* dimens.xml */; };
 		F5E1B8011F27A8CD00BD533A /* config_reader.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AF8C1F27A8C900BD533A /* config_reader.h */; };
-		F5E1B8021F27A8CD00BD533A /* create_network_tester_config.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF8D1F27A8C900BD533A /* create_network_tester_config.py */; };
-		F5E1B8031F27A8CD00BD533A /* network_tester_config.proto in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF8E1F27A8C900BD533A /* network_tester_config.proto */; };
-		F5E1B8041F27A8CD00BD533A /* network_tester_packet.proto in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF8F1F27A8C900BD533A /* network_tester_packet.proto */; };
 		F5E1B8051F27A8CD00BD533A /* packet_logger.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AF901F27A8C900BD533A /* packet_logger.h */; };
 		F5E1B8061F27A8CD00BD533A /* packet_sender.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AF911F27A8C900BD533A /* packet_sender.h */; };
-		F5E1B8071F27A8CD00BD533A /* parse_packet_log.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF921F27A8C900BD533A /* parse_packet_log.py */; };
 		F5E1B8081F27A8CD00BD533A /* test_controller.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AF931F27A8C900BD533A /* test_controller.h */; };
-		F5E1B8091F27A8CD00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF941F27A8C900BD533A /* OWNERS */; };
-		F5E1B80A1F27A8CD00BD533A /* misc.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF971F27A8CA00BD533A /* misc.py */; };
-		F5E1B80B1F27A8CD00BD533A /* misc_test.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF981F27A8CA00BD533A /* misc_test.py */; };
-		F5E1B80C1F27A8CD00BD533A /* pb_parse.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF991F27A8CA00BD533A /* pb_parse.py */; };
-		F5E1B80D1F27A8CD00BD533A /* README in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF9A1F27A8CA00BD533A /* README */; };
-		F5E1B80E1F27A8CD00BD533A /* rtp_analyzer.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF9B1F27A8CA00BD533A /* rtp_analyzer.py */; };
-		F5E1B80F1F27A8CD00BD533A /* rtp_analyzer.sh in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF9C1F27A8CA00BD533A /* rtp_analyzer.sh */; };
-		F5E1B8101F27A8CD00BD533A /* rtp_analyzer_test.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AF9D1F27A8CA00BD533A /* rtp_analyzer_test.py */; };
-		F5E1B8111F27A8CD00BD533A /* api.js in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AFA01F27A8CA00BD533A /* api.js */; };
-		F5E1B8121F27A8CD00BD533A /* bot.js in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AFA21F27A8CA00BD533A /* bot.js */; };
-		F5E1B8131F27A8CD00BD533A /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AFA31F27A8CA00BD533A /* index.html */; };
-		F5E1B8141F27A8CD00BD533A /* botmanager.js in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AFA41F27A8CA00BD533A /* botmanager.js */; };
-		F5E1B8151F27A8CD00BD533A /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AFA51F27A8CA00BD533A /* main.js */; };
-		F5E1B8161F27A8CD00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AFA61F27A8CA00BD533A /* OWNERS */; };
-		F5E1B8171F27A8CD00BD533A /* README in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AFA71F27A8CA00BD533A /* README */; };
-		F5E1B8181F27A8CD00BD533A /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AFA91F27A8CA00BD533A /* index.html */; };
-		F5E1B8191F27A8CD00BD533A /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AFAA1F27A8CA00BD533A /* main.js */; };
-		F5E1B81A1F27A8CD00BD533A /* oneWayVideoStreamingWithDownloadingFile.js in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AFAC1F27A8CA00BD533A /* oneWayVideoStreamingWithDownloadingFile.js */; };
-		F5E1B81B1F27A8CD00BD533A /* ping_pong.js in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AFAD1F27A8CA00BD533A /* ping_pong.js */; };
-		F5E1B81C1F27A8CD00BD533A /* simple_offer_answer.js in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AFAE1F27A8CA00BD533A /* simple_offer_answer.js */; };
-		F5E1B81D1F27A8CD00BD533A /* three_bots_video_conference.js in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AFAF1F27A8CA00BD533A /* three_bots_video_conference.js */; };
-		F5E1B81E1F27A8CD00BD533A /* two_way_video_streaming.js in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AFB01F27A8CA00BD533A /* two_way_video_streaming.js */; };
-		F5E1B81F1F27A8CD00BD533A /* webrtc_video_streaming.js in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AFB11F27A8CA00BD533A /* webrtc_video_streaming.js */; };
-		F5E1B8201F27A8CD00BD533A /* test.js in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AFB21F27A8CA00BD533A /* test.js */; };
 		F5E1B8211F27A8CD00BD533A /* simple_command_line_parser.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AFB31F27A8CA00BD533A /* simple_command_line_parser.h */; };
-		F5E1B8221F27A8CD00BD533A /* build_apprtc.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AFB51F27A8CA00BD533A /* build_apprtc.py */; };
-		F5E1B8231F27A8CD00BD533A /* download_apprtc.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AFB61F27A8CA00BD533A /* download_apprtc.py */; };
-		F5E1B8241F27A8CD00BD533A /* go.tar.gz.sha1 in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AFB91F27A8CA00BD533A /* go.tar.gz.sha1 */; };
-		F5E1B8251F27A8CD00BD533A /* go.tar.gz.sha1 in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AFBB1F27A8CA00BD533A /* go.tar.gz.sha1 */; };
-		F5E1B8261F27A8CD00BD533A /* go.zip.sha1 in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AFBD1F27A8CA00BD533A /* go.zip.sha1 */; };
-		F5E1B8271F27A8CD00BD533A /* prebuilt_apprtc.zip.sha1 in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AFBE1F27A8CA00BD533A /* prebuilt_apprtc.zip.sha1 */; };
-		F5E1B8281F27A8CD00BD533A /* setup_apprtc.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AFBF1F27A8CA00BD533A /* setup_apprtc.py */; };
-		F5E1B8291F27A8CD00BD533A /* utils.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AFC01F27A8CA00BD533A /* utils.py */; };
-		F5E1B82A1F27A8CD00BD533A /* video_analysis.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AFC11F27A8CA00BD533A /* video_analysis.py */; };
-		F5E1B82B1F27A8CD00BD533A /* video_analysis_test.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AFC21F27A8CA00BD533A /* video_analysis_test.py */; };
 		F5E1B82C1F27A8CD00BD533A /* typedefs.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AFC31F27A8CA00BD533A /* typedefs.h */; };
 		F5E1B82D1F27A8CD00BD533A /* call_stats.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AFC51F27A8CA00BD533A /* call_stats.h */; };
-		F5E1B82E1F27A8CD00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AFC61F27A8CA00BD533A /* DEPS */; };
 		F5E1B82F1F27A8CD00BD533A /* encoder_rtcp_feedback.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AFC71F27A8CA00BD533A /* encoder_rtcp_feedback.h */; };
-		F5E1B8301F27A8CD00BD533A /* full_stack_tests_plot.py in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AFC81F27A8CA00BD533A /* full_stack_tests_plot.py */; };
 		F5E1B8311F27A8CD00BD533A /* overuse_frame_detector.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AFC91F27A8CA00BD533A /* overuse_frame_detector.h */; };
-		F5E1B8321F27A8CD00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AFCA1F27A8CA00BD533A /* OWNERS */; };
 		F5E1B8331F27A8CD00BD533A /* payload_router.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AFCB1F27A8CA00BD533A /* payload_router.h */; };
 		F5E1B8341F27A8CD00BD533A /* quality_threshold.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AFCC1F27A8CA00BD533A /* quality_threshold.h */; };
 		F5E1B8351F27A8CD00BD533A /* receive_statistics_proxy.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AFCD1F27A8CA00BD533A /* receive_statistics_proxy.h */; };
@@ -2130,7 +1677,6 @@
 		F5E1B8471F27A8CD00BD533A /* channel_manager.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AFE01F27A8CA00BD533A /* channel_manager.h */; };
 		F5E1B8481F27A8CD00BD533A /* channel_proxy.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AFE11F27A8CA00BD533A /* channel_proxy.h */; };
 		F5E1B8491F27A8CD00BD533A /* coder.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AFE21F27A8CA00BD533A /* coder.h */; };
-		F5E1B84A1F27A8CD00BD533A /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AFE31F27A8CA00BD533A /* DEPS */; };
 		F5E1B84B1F27A8CD00BD533A /* file_player.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AFE41F27A8CA00BD533A /* file_player.h */; };
 		F5E1B84C1F27A8CD00BD533A /* file_recorder.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AFE51F27A8CA00BD533A /* file_recorder.h */; };
 		F5E1B84D1F27A8CD00BD533A /* voe_base.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AFE71F27A8CA00BD533A /* voe_base.h */; };
@@ -2142,7 +1688,6 @@
 		F5E1B8531F27A8CD00BD533A /* mock_voe_observer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AFEE1F27A8CA00BD533A /* mock_voe_observer.h */; };
 		F5E1B8541F27A8CD00BD533A /* monitor_module.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AFEF1F27A8CA00BD533A /* monitor_module.h */; };
 		F5E1B8551F27A8CD00BD533A /* output_mixer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AFF01F27A8CA00BD533A /* output_mixer.h */; };
-		F5E1B8561F27A8CD00BD533A /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = F5E1AFF11F27A8CA00BD533A /* OWNERS */; };
 		F5E1B8571F27A8CD00BD533A /* shared_data.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AFF21F27A8CA00BD533A /* shared_data.h */; };
 		F5E1B8581F27A8CD00BD533A /* statistics.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AFF31F27A8CA00BD533A /* statistics.h */; };
 		F5E1B8591F27A8CD00BD533A /* automated_mode.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1AFF61F27A8CA00BD533A /* automated_mode.h */; };
@@ -2166,7 +1711,6 @@
 		F5E1B86B1F27A8CD00BD533A /* voice_engine_defines.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1B00B1F27A8CA00BD533A /* voice_engine_defines.h */; };
 		F5E1B86C1F27A8CD00BD533A /* voice_engine_fixture.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1B00C1F27A8CA00BD533A /* voice_engine_fixture.h */; };
 		F5E1B86D1F27A8CD00BD533A /* voice_engine_impl.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1B00D1F27A8CA00BD533A /* voice_engine_impl.h */; };
-		F5E1B86E1F27A8CD00BD533A /* whitespace.txt in Resources */ = {isa = PBXBuildFile; fileRef = F5E1B00E1F27A8CA00BD533A /* whitespace.txt */; };
 		F5E1B8931F27AD4E00BD533A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E1B8921F27AD4E00BD533A /* AudioToolbox.framework */; };
 		F5E1B8951F27AD5A00BD533A /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E1B8941F27AD5A00BD533A /* Accelerate.framework */; };
 		F5E1B8971F27AD6800BD533A /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E1B8961F27AD6800BD533A /* MediaPlayer.framework */; };
@@ -2220,6 +1764,8 @@
 		F517D0DE1F2F040D00228BBF /* ThreeBandEQFxUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreeBandEQFxUnit.h; sourceTree = "<group>"; };
 		F517D0E41F317BA800228BBF /* FXRollItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXRollItem.h; sourceTree = "<group>"; };
 		F517D0E51F317BA800228BBF /* FXRollItem.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FXRollItem.mm; sourceTree = "<group>"; };
+		F517D0EB1F31A59A00228BBF /* AMMixer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMMixer.h; sourceTree = "<group>"; };
+		F517D0EC1F31A59A00228BBF /* AMMixer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AMMixer.mm; sourceTree = "<group>"; };
 		F5E1A60F1F27A86300BD533A /* FXAudio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FXAudio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5E1A6121F27A86300BD533A /* FXAudio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FXAudio.h; sourceTree = "<group>"; };
 		F5E1A6131F27A86300BD533A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -4438,6 +3984,15 @@
 			name = FXItem;
 			sourceTree = "<group>";
 		};
+		F517D0EA1F31A57500228BBF /* Mixer */ = {
+			isa = PBXGroup;
+			children = (
+				F517D0EB1F31A59A00228BBF /* AMMixer.h */,
+				F517D0EC1F31A59A00228BBF /* AMMixer.mm */,
+			);
+			path = Mixer;
+			sourceTree = "<group>";
+		};
 		F5E1A6051F27A86300BD533A = {
 			isa = PBXGroup;
 			children = (
@@ -4485,6 +4040,7 @@
 				F5E1A6411F27A8C600BD533A /* Manager */,
 				F5E1A6471F27A8C600BD533A /* Player */,
 				F5E1A64A1F27A8C600BD533A /* Recorder */,
+				F517D0EA1F31A57500228BBF /* Mixer */,
 			);
 			path = AudioManager;
 			sourceTree = "<group>";
@@ -9976,6 +9532,7 @@
 				F5E1B5DF1F27A8CC00BD533A /* asyncstuntcpsocket.h in Headers */,
 				F5E1B5111F27A8CB00BD533A /* mock_recovered_packet_receiver.h in Headers */,
 				F5E1B5701F27A8CC00BD533A /* device_info_ds.h in Headers */,
+				F517D0ED1F31A59A00228BBF /* AMMixer.h in Headers */,
 				F5E1B2201F27A8CA00BD533A /* rtc_event_log_parser.h in Headers */,
 				F5E1B5401F27A8CC00BD533A /* rtp_format_vp8.h in Headers */,
 				F5E1B5CA1F27A8CC00BD533A /* vp9_uncompressed_header_parser.h in Headers */,
@@ -11433,464 +10990,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5E1B6D41F27A8CC00BD533A /* OWNERS in Resources */,
-				F5E1B4DA1F27A8CB00BD533A /* OWNERS in Resources */,
-				F5E1B7DA1F27A8CD00BD533A /* build_zxing.py in Resources */,
-				F5E1B6541F27A8CC00BD533A /* AndroidManifest.xml in Resources */,
-				F5E1B7151F27A8CC00BD533A /* 14.rtcp in Resources */,
-				F5E1B36B1F27A8CB00BD533A /* OWNERS in Resources */,
-				F5E1B7741F27A8CC00BD533A /* 37.sdp in Resources */,
-				F5E1B6111F27A8CC00BD533A /* DEPS in Resources */,
-				F5E1B7971F27A8CC00BD533A /* unittest-7.sdp in Resources */,
-				F5E1B1CA1F27A8CA00BD533A /* .gitignore in Resources */,
-				F5E1B1C81F27A8CA00BD533A /* project.properties in Resources */,
-				F5E1B44D1F27A8CB00BD533A /* __init__.py in Resources */,
-				F5E1B7A21F27A8CC00BD533A /* 15.stun in Resources */,
-				F5E1B75B1F27A8CC00BD533A /* 14.sdp in Resources */,
-				F5E1B4531F27A8CB00BD533A /* eval_scores_unittest.py in Resources */,
-				F5E1B7641F27A8CC00BD533A /* 22.sdp in Resources */,
-				F5E1B1681F27A8CA00BD533A /* OWNERS in Resources */,
-				F5E1B7161F27A8CC00BD533A /* 15.rtcp in Resources */,
-				F5E1B71A1F27A8CC00BD533A /* 19.rtcp in Resources */,
-				F5E1B2ED1F27A8CB00BD533A /* InputFilesFew.txt in Resources */,
-				F5E1B73B1F27A8CC00BD533A /* 49.rtcp in Resources */,
-				F5E1B62B1F27A8CC00BD533A /* OWNERS in Resources */,
-				F5E1B7DF1F27A8CD00BD533A /* class_usage.sh in Resources */,
-				F5E1B1B71F27A8CA00BD533A /* fragment_hud.xml in Resources */,
-				F5E1B1A91F27A8CA00BD533A /* ic_loopback_call.png in Resources */,
-				F5E1B7D91F27A8CD00BD533A /* barcode_encoder.py in Resources */,
-				F5E1B7751F27A8CC00BD533A /* 38.sdp in Resources */,
-				F5E1B79D1F27A8CC00BD533A /* 10.stun in Resources */,
-				F5E1B7581F27A8CC00BD533A /* 11.sdp in Resources */,
-				F5E1B4521F27A8CB00BD533A /* eval_scores_factory.py in Resources */,
-				F5E1B7441F27A8CC00BD533A /* 57.rtcp in Resources */,
-				F5E1B7681F27A8CC00BD533A /* 26.sdp in Resources */,
-				F5E1B1A41F27A8CA00BD533A /* ic_loopback_call.png in Resources */,
-				F5E1B2651F27A8CB00BD533A /* config.proto in Resources */,
-				F5E1B4571F27A8CB00BD533A /* results.js in Resources */,
-				F5E1B3B61F27A8CB00BD533A /* DEPS in Resources */,
-				F5E1B6D31F27A8CC00BD533A /* Info.plist in Resources */,
-				F5E1B1491F27A8CA00BD533A /* DEPS in Resources */,
-				F5E1B6D81F27A8CC00BD533A /* OWNERS in Resources */,
-				F5E1B4D11F27A8CB00BD533A /* DEPS in Resources */,
-				F5E1B30E1F27A8CB00BD533A /* runiSACfault.txt in Resources */,
-				F5E1B7421F27A8CC00BD533A /* 55.rtcp in Resources */,
-				F5E1B2101F27A8CA00BD533A /* server_test.html in Resources */,
-				F5E1B4511F27A8CB00BD533A /* eval_scores.py in Resources */,
-				F5E1B7A01F27A8CC00BD533A /* 13.stun in Resources */,
-				F5E1B78E1F27A8CC00BD533A /* firefox-2.sdp in Resources */,
-				F5E1B1F21F27A8CA00BD533A /* ic_surround_sound_black_24dp.png in Resources */,
-				F5E1B75A1F27A8CC00BD533A /* 13.sdp in Resources */,
-				F5E1B1A51F27A8CA00BD533A /* disconnect.png in Resources */,
-				F5E1B7F11F27A8CD00BD533A /* README in Resources */,
-				F5E1B7F31F27A8CD00BD533A /* run-server.sh in Resources */,
-				F5E1B8201F27A8CD00BD533A /* test.js in Resources */,
-				F5E1B73D1F27A8CC00BD533A /* 50.rtcp in Resources */,
-				F5E1B0D21F27A8CA00BD533A /* OWNERS in Resources */,
-				F5E1B1C61F27A8CA00BD533A /* gradle_project_test.py in Resources */,
-				F5E1B2571F27A8CA00BD533A /* OWNERS in Resources */,
-				F5E1B6521F27A8CC00BD533A /* AndroidManifest.xml in Resources */,
-				F5E1B7F41F27A8CD00BD533A /* stat_tracker.js in Resources */,
-				F5E1B1EF1F27A8CA00BD533A /* ic_clear_black_24dp@2x.png in Resources */,
-				F5E1B7AA1F27A8CC00BD533A /* 7.stun in Resources */,
-				F5E1B1F61F27A8CA00BD533A /* iPhone5@2x.png in Resources */,
-				F5E1B8281F27A8CD00BD533A /* setup_apprtc.py in Resources */,
-				F5E1B2EF1F27A8CB00BD533A /* runiSACfault.txt in Resources */,
-				F5E1B4541F27A8CB00BD533A /* evaluation.py in Resources */,
-				F5E1B6591F27A8CC00BD533A /* OWNERS in Resources */,
-				F5E1B4331F27A8CB00BD533A /* default.properties in Resources */,
-				F5E1B1EE1F27A8CA00BD533A /* ic_clear_black_24dp.png in Resources */,
-				F5E1B72B1F27A8CC00BD533A /* 34.rtcp in Resources */,
-				F5E1B1C31F27A8CA00BD533A /* AndroidManifest.xml in Resources */,
-				F5E1B7341F27A8CC00BD533A /* 42.rtcp in Resources */,
-				F5E1B7DC1F27A8CD00BD533A /* helper_functions.py in Resources */,
-				F5E1B7FD1F27A8CD00BD533A /* dimens.xml in Resources */,
-				F5E1B7711F27A8CC00BD533A /* 34.sdp in Resources */,
-				F5E1B5CD1F27A8CC00BD533A /* OWNERS in Resources */,
-				F5E1B7481F27A8CC00BD533A /* 60.rtcp in Resources */,
-				F5E1B71E1F27A8CC00BD533A /* 22.rtcp in Resources */,
-				F5E1B7911F27A8CC00BD533A /* unittest-1.sdp in Resources */,
-				F5E1B7471F27A8CC00BD533A /* 6.rtcp in Resources */,
-				F5E1B56A1F27A8CC00BD533A /* OWNERS in Resources */,
-				F5E1B2131F27A8CA00BD533A /* README in Resources */,
-				F5E1B4561F27A8CB00BD533A /* export.py in Resources */,
-				F5E1B77F1F27A8CC00BD533A /* 47.sdp in Resources */,
-				F5E1B76A1F27A8CC00BD533A /* 28.sdp in Resources */,
-				F5E1B8131F27A8CD00BD533A /* index.html in Resources */,
-				F5E1B5851F27A8CC00BD533A /* plot_webrtc_test_logs.py in Resources */,
-				F5E1B44A1F27A8CB00BD533A /* apm_quality_assessment_gencfgs.py in Resources */,
-				F5E1B44C1F27A8CB00BD533A /* OWNERS in Resources */,
-				F5E1B82B1F27A8CD00BD533A /* video_analysis_test.py in Resources */,
-				F5E1B4BC1F27A8CB00BD533A /* cursor_unittest_resources.rc in Resources */,
-				F5E1B7211F27A8CC00BD533A /* 25.rtcp in Resources */,
-				F5E1B7811F27A8CC00BD533A /* 49.sdp in Resources */,
-				F5E1B65B1F27A8CC00BD533A /* README in Resources */,
-				F5E1B7AE1F27A8CC00BD533A /* stun.tokens in Resources */,
-				F5E1B8021F27A8CD00BD533A /* create_network_tester_config.py in Resources */,
-				F5E1B7291F27A8CC00BD533A /* 32.rtcp in Resources */,
-				F5E1B0771F27A8CA00BD533A /* OWNERS in Resources */,
-				F5E1B06D1F27A8CA00BD533A /* OWNERS in Resources */,
-				F5E1B7671F27A8CC00BD533A /* 25.sdp in Resources */,
-				F5E1B7AF1F27A8CC00BD533A /* DEPS in Resources */,
-				F5E1B80D1F27A8CD00BD533A /* README in Resources */,
-				F5E1B1F81F27A8CA00BD533A /* iPhone6p@3x.png in Resources */,
-				F5E1B7461F27A8CC00BD533A /* 59.rtcp in Resources */,
-				F5E1B6551F27A8CC00BD533A /* ant.properties in Resources */,
-				F5E1B1C41F27A8CA00BD533A /* ant.properties in Resources */,
-				F5E1B3101F27A8CB00BD533A /* runiSACLongtest.txt in Resources */,
-				F5E1B1F31F27A8CA00BD533A /* ic_surround_sound_black_24dp@2x.png in Resources */,
-				F5E1B81B1F27A8CD00BD533A /* ping_pong.js in Resources */,
-				F5E1B5141F27A8CB00BD533A /* OWNERS in Resources */,
-				F5E1B1C11F27A8CA00BD533A /* NOTICE in Resources */,
-				F5E1B7501F27A8CC00BD533A /* 8.rtcp in Resources */,
-				F5E1B1BD1F27A8CA00BD533A /* preferences.xml in Resources */,
-				F5E1B7381F27A8CC00BD533A /* 46.rtcp in Resources */,
-				F5E1B37E1F27A8CB00BD533A /* OWNERS in Resources */,
-				F5E1B70F1F27A8CC00BD533A /* 0.rtcp in Resources */,
-				F5E1B5041F27A8CB00BD533A /* DEPS in Resources */,
-				F5E1B7541F27A8CC00BD533A /* rtp-2 in Resources */,
-				F5E1B2051F27A8CA00BD533A /* README in Resources */,
-				F5E1B3171F27A8CB00BD533A /* OWNERS in Resources */,
-				F5E1B7621F27A8CC00BD533A /* 20.sdp in Resources */,
-				F5E1B1ED1F27A8CA00BD533A /* ic_call_end_black_24dp@2x.png in Resources */,
-				F5E1B1C91F27A8CA00BD533A /* README in Resources */,
-				F5E1B8181F27A8CD00BD533A /* index.html in Resources */,
-				F5E1B79C1F27A8CC00BD533A /* 1.stun in Resources */,
-				F5E1B77B1F27A8CC00BD533A /* 43.sdp in Resources */,
-				F5E1B2681F27A8CB00BD533A /* debug_dump.proto in Resources */,
-				F5E1B7C11F27A8CD00BD533A /* OWNERS in Resources */,
-				F5E1B2EA1F27A8CB00BD533A /* diffiSAC.txt in Resources */,
-				F5E1B5621F27A8CC00BD533A /* DEPS in Resources */,
-				F5E1B80E1F27A8CD00BD533A /* rtp_analyzer.py in Resources */,
-				F5E1B5DE1F27A8CC00BD533A /* OWNERS in Resources */,
-				F5E1B7AC1F27A8CC00BD533A /* 9.stun in Resources */,
-				F5E1B7281F27A8CC00BD533A /* 31.rtcp in Resources */,
-				F5E1B65A1F27A8CC00BD533A /* PRESUBMIT.py in Resources */,
-				F5E1B8041F27A8CD00BD533A /* network_tester_packet.proto in Resources */,
-				F5E1B74B1F27A8CC00BD533A /* 63.rtcp in Resources */,
-				F5E1B23D1F27A8CA00BD533A /* DEPS in Resources */,
-				F5E1B6191F27A8CC00BD533A /* PATENTS in Resources */,
-				F5E1B5601F27A8CC00BD533A /* OWNERS in Resources */,
-				F5E1B7261F27A8CC00BD533A /* 3.rtcp in Resources */,
-				F5E1B7431F27A8CC00BD533A /* 56.rtcp in Resources */,
-				F5E1B4471F27A8CB00BD533A /* apm_quality_assessment.py in Resources */,
-				F5E1B7401F27A8CC00BD533A /* 53.rtcp in Resources */,
-				F5E1B7771F27A8CC00BD533A /* 4.sdp in Resources */,
-				F5E1B73E1F27A8CC00BD533A /* 51.rtcp in Resources */,
-				F5E1B7F01F27A8CD00BD533A /* OWNERS in Resources */,
-				F5E1B7201F27A8CC00BD533A /* 24.rtcp in Resources */,
-				F5E1B7371F27A8CC00BD533A /* 45.rtcp in Resources */,
-				F5E1B76C1F27A8CC00BD533A /* 3.sdp in Resources */,
-				F5E1B7AB1F27A8CC00BD533A /* 8.stun in Resources */,
-				F5E1B7901F27A8CC00BD533A /* opera-2.sdp in Resources */,
-				F5E1B7B01F27A8CC00BD533A /* OWNERS in Resources */,
-				F5E1B82E1F27A8CD00BD533A /* DEPS in Resources */,
-				F5E1B79A1F27A8CC00BD533A /* sdp.tokens in Resources */,
-				F5E1B44F1F27A8CB00BD533A /* audioproc_wrapper.py in Resources */,
-				F5E1B2121F27A8CA00BD533A /* OWNERS in Resources */,
-				F5E1B8141F27A8CD00BD533A /* botmanager.js in Resources */,
-				F5E1B1EB1F27A8CA00BD533A /* Info.plist in Resources */,
-				F5E1B6681F27A8CC00BD533A /* OWNERS in Resources */,
-				F5E1B45E1F27A8CB00BD533A /* test_data_generation_unittest.py in Resources */,
-				F5E1B1871F27A8CA00BD533A /* DEPS in Resources */,
-				F5E1B8221F27A8CD00BD533A /* build_apprtc.py in Resources */,
-				F5E1B7111F27A8CC00BD533A /* 10.rtcp in Resources */,
-				F5E1B7851F27A8CC00BD533A /* 52.sdp in Resources */,
-				F5E1B59A1F27A8CC00BD533A /* DEPS in Resources */,
-				F5E1B72E1F27A8CC00BD533A /* 37.rtcp in Resources */,
-				F5E1B7A81F27A8CC00BD533A /* 5.stun in Resources */,
-				F5E1B73A1F27A8CC00BD533A /* 48.rtcp in Resources */,
-				F5E1B7921F27A8CC00BD533A /* unittest-2.sdp in Resources */,
-				F5E1B37B1F27A8CB00BD533A /* DEPS in Resources */,
-				F5E1B72F1F27A8CC00BD533A /* 38.rtcp in Resources */,
-				F5E1B7121F27A8CC00BD533A /* 11.rtcp in Resources */,
-				F5E1B2041F27A8CA00BD533A /* Icon.png in Resources */,
-				F5E1B4491F27A8CB00BD533A /* apm_quality_assessment_export.py in Resources */,
-				F5E1B1B91F27A8CA00BD533A /* arrays.xml in Resources */,
-				F5E1B7551F27A8CC00BD533A /* rtp-3 in Resources */,
-				F5E1B6DA1F27A8CC00BD533A /* DEPS in Resources */,
-				F5E1B42C1F27A8CB00BD533A /* OWNERS in Resources */,
-				F5E1B75D1F27A8CC00BD533A /* 16.sdp in Resources */,
-				F5E1B7131F27A8CC00BD533A /* 12.rtcp in Resources */,
-				F5E1B74A1F27A8CC00BD533A /* 62.rtcp in Resources */,
-				F5E1B73F1F27A8CC00BD533A /* 52.rtcp in Resources */,
-				F5E1B4551F27A8CB00BD533A /* exceptions.py in Resources */,
-				F5E1B7631F27A8CC00BD533A /* 21.sdp in Resources */,
-				F5E1B74F1F27A8CC00BD533A /* 7.rtcp in Resources */,
-				F5E1B7981F27A8CC00BD533A /* unittest-8.sdp in Resources */,
-				F5E1B81C1F27A8CD00BD533A /* simple_offer_answer.js in Resources */,
-				F5E1B75F1F27A8CC00BD533A /* 18.sdp in Resources */,
-				F5E1B82A1F27A8CD00BD533A /* video_analysis.py in Resources */,
-				F5E1B79E1F27A8CC00BD533A /* 11.stun in Resources */,
-				F5E1B78B1F27A8CC00BD533A /* 8.sdp in Resources */,
-				F5E1B1F01F27A8CA00BD533A /* ic_settings_black_24dp.png in Resources */,
-				F5E1B7181F27A8CC00BD533A /* 17.rtcp in Resources */,
-				F5E1B0991F27A8CA00BD533A /* low_bandwidth_audio_test_test.py in Resources */,
-				F5E1B4461F27A8CB00BD533A /* default.json in Resources */,
-				F5E1B3931F27A8CB00BD533A /* DEPS in Resources */,
-				F5E1B7A71F27A8CC00BD533A /* 4.stun in Resources */,
-				F5E1B4DD1F27A8CB00BD533A /* DEPS in Resources */,
-				F5E1B1F51F27A8CA00BD533A /* ic_switch_video_black_24dp@2x.png in Resources */,
-				F5E1B80A1F27A8CD00BD533A /* misc.py in Resources */,
-				F5E1B78A1F27A8CC00BD533A /* 7.sdp in Resources */,
-				F5E1B7731F27A8CC00BD533A /* 36.sdp in Resources */,
-				F5E1B7A41F27A8CC00BD533A /* 17.stun in Resources */,
-				F5E1B4DF1F27A8CB00BD533A /* OWNERS in Resources */,
-				F5E1B6581F27A8CC00BD533A /* capturetestvideo.y4m in Resources */,
-				F5E1B14D1F27A8CA00BD533A /* OWNERS in Resources */,
-				F5E1B4D91F27A8CB00BD533A /* OWNERS in Resources */,
-				F5E1B7701F27A8CC00BD533A /* 33.sdp in Resources */,
-				F5E1B81E1F27A8CD00BD533A /* two_way_video_streaming.js in Resources */,
-				F5E1B1FD1F27A8CA00BD533A /* Info.plist in Resources */,
-				F5E1B0551F27A8CA00BD533A /* DEPS in Resources */,
-				F5E1B5CC1F27A8CC00BD533A /* DEPS in Resources */,
-				F5E1B19D1F27A8CA00BD533A /* OWNERS in Resources */,
-				F5E1B1AF1F27A8CA00BD533A /* disconnect.png in Resources */,
-				F5E1B7841F27A8CC00BD533A /* 51.sdp in Resources */,
-				F5E1B5B51F27A8CC00BD533A /* OWNERS in Resources */,
-				F5E1B1C01F27A8CA00BD533A /* LICENSE in Resources */,
-				F5E1B71F1F27A8CC00BD533A /* 23.rtcp in Resources */,
-				F5E1B7EE1F27A8CD00BD533A /* loopback_test.html in Resources */,
-				F5E1B48B1F27A8CB00BD533A /* DEPS in Resources */,
-				F5E1B7651F27A8CC00BD533A /* 23.sdp in Resources */,
-				F5E1B7F21F27A8CD00BD533A /* record-test.sh in Resources */,
-				F5E1B7231F27A8CC00BD533A /* 27.rtcp in Resources */,
-				F5E1B1BC1F27A8CA00BD533A /* styles.xml in Resources */,
-				F5E1B7571F27A8CC00BD533A /* 10.sdp in Resources */,
-				F5E1B4341F27A8CB00BD533A /* strings.xml in Resources */,
-				F5E1B7271F27A8CC00BD533A /* 30.rtcp in Resources */,
-				F5E1B4591F27A8CB00BD533A /* signal_processing_unittest.py in Resources */,
-				F5E1B6F91F27A8CC00BD533A /* AndroidManifest.xml in Resources */,
-				F5E1B1CC1F27A8CA00BD533A /* video_quality_loopback_test.py in Resources */,
-				F5E1B81A1F27A8CD00BD533A /* oneWayVideoStreamingWithDownloadingFile.js in Resources */,
-				F5E1B2831F27A8CB00BD533A /* OWNERS in Resources */,
-				F5E1B7A61F27A8CC00BD533A /* 3.stun in Resources */,
-				F5E1B1C21F27A8CA00BD533A /* README in Resources */,
-				F5E1B80C1F27A8CD00BD533A /* pb_parse.py in Resources */,
-				F5E1B76B1F27A8CC00BD533A /* 29.sdp in Resources */,
-				F5E1B2061F27A8CA00BD533A /* OWNERS in Resources */,
-				F5E1B4071F27A8CB00BD533A /* DEPS in Resources */,
-				F5E1B7801F27A8CC00BD533A /* 48.sdp in Resources */,
-				F5E1B7321F27A8CC00BD533A /* 40.rtcp in Resources */,
-				F5E1B7DE1F27A8CD00BD533A /* yuv_cropper.py in Resources */,
-				F5E1B1AA1F27A8CA00BD533A /* disconnect.png in Resources */,
-				F5E1B8001F27A8CD00BD533A /* dimens.xml in Resources */,
-				F5E1B45A1F27A8CB00BD533A /* simulation.py in Resources */,
-				F5E1B7D71F27A8CD00BD533A /* author_line_count.sh in Resources */,
-				F5E1B2181F27A8CA00BD533A /* OWNERS in Resources */,
-				F5E1B5D51F27A8CC00BD533A /* DEPS in Resources */,
-				F5E1B4501F27A8CB00BD533A /* data_access.py in Resources */,
-				F5E1B7241F27A8CC00BD533A /* 28.rtcp in Resources */,
-				F5E1B7491F27A8CC00BD533A /* 61.rtcp in Resources */,
-				F5E1B4EB1F27A8CB00BD533A /* OWNERS in Resources */,
-				F5E1B44E1F27A8CB00BD533A /* default.json in Resources */,
-				F5E1B4E31F27A8CB00BD533A /* DEPS in Resources */,
-				F5E1B76E1F27A8CC00BD533A /* 31.sdp in Resources */,
-				F5E1B4481F27A8CB00BD533A /* apm_quality_assessment.sh in Resources */,
-				F5E1B6531F27A8CC00BD533A /* OWNERS in Resources */,
-				F5E1B79B1F27A8CC00BD533A /* 0.stun in Resources */,
-				F5E1B0501F27A8CA00BD533A /* OWNERS in Resources */,
-				F5E1B4611F27A8CB00BD533A /* unittest.proto in Resources */,
-				F5E1B7141F27A8CC00BD533A /* 13.rtcp in Resources */,
-				F5E1B7F51F27A8CD00BD533A /* AndroidManifest.xml in Resources */,
-				F5E1B7F61F27A8CD00BD533A /* activity_main.xml in Resources */,
-				F5E1B7891F27A8CC00BD533A /* 6.sdp in Resources */,
-				F5E1B1F41F27A8CA00BD533A /* ic_switch_video_black_24dp.png in Resources */,
-				F5E1B6121F27A8CC00BD533A /* OWNERS in Resources */,
-				F5E1B71C1F27A8CC00BD533A /* 20.rtcp in Resources */,
-				F5E1B1CD1F27A8CA00BD533A /* DEPS in Resources */,
-				F5E1B19B1F27A8CA00BD533A /* ant.properties in Resources */,
-				F5E1B45B1F27A8CB00BD533A /* simulation_unittest.py in Resources */,
-				F5E1B77A1F27A8CC00BD533A /* 42.sdp in Resources */,
-				F5E1B7521F27A8CC00BD533A /* rtp-0 in Resources */,
-				F5E1B8171F27A8CD00BD533A /* README in Resources */,
-				F5E1B7E41F27A8CD00BD533A /* chart.proto in Resources */,
-				F5E1B8301F27A8CD00BD533A /* full_stack_tests_plot.py in Resources */,
-				F5E1B6571F27A8CC00BD533A /* project.properties in Resources */,
-				F5E1B66F1F27A8CC00BD533A /* DEPS in Resources */,
-				F5E1B6511F27A8CC00BD533A /* PRESUBMIT.py in Resources */,
-				F5E1B1F71F27A8CA00BD533A /* iPhone6@2x.png in Resources */,
-				F5E1B7101F27A8CC00BD533A /* 1.rtcp in Resources */,
-				F5E1B4921F27A8CB00BD533A /* OWNERS in Resources */,
-				F5E1B73C1F27A8CC00BD533A /* 5.rtcp in Resources */,
-				F5E1B8091F27A8CD00BD533A /* OWNERS in Resources */,
-				F5E1B21C1F27A8CA00BD533A /* rtc_event_log.proto in Resources */,
-				F5E1B0981F27A8CA00BD533A /* low_bandwidth_audio_test.py in Resources */,
-				F5E1B7221F27A8CC00BD533A /* 26.rtcp in Resources */,
-				F5E1B2161F27A8CA00BD533A /* LICENSE in Resources */,
-				F5E1B7FF1F27A8CD00BD533A /* styles.xml in Resources */,
-				F5E1B6D51F27A8CC00BD533A /* WebRTC.podspec in Resources */,
-				F5E1B7ED1F27A8CD00BD533A /* adapter.js in Resources */,
-				F5E1B7931F27A8CC00BD533A /* unittest-3.sdp in Resources */,
-				F5E1B78C1F27A8CC00BD533A /* 9.sdp in Resources */,
-				F5E1B1BE1F27A8CA00BD533A /* start_loopback_stubbed_camera_saved_video_out.py in Resources */,
-				F5E1B8111F27A8CD00BD533A /* api.js in Resources */,
-				F5E1B5011F27A8CB00BD533A /* plot_bars.sh in Resources */,
-				F5E1B7531F27A8CC00BD533A /* rtp-1 in Resources */,
-				F5E1B80B1F27A8CD00BD533A /* misc_test.py in Resources */,
-				F5E1B15B1F27A8CA00BD533A /* codereview.settings in Resources */,
-				F5E1B70E1F27A8CC00BD533A /* README in Resources */,
-				F5E1B76F1F27A8CC00BD533A /* 32.sdp in Resources */,
-				F5E1B7361F27A8CC00BD533A /* 44.rtcp in Resources */,
-				F5E1B2EE1F27A8CB00BD533A /* ListOfTestCases.xls in Resources */,
-				F5E1B0941F27A8CA00BD533A /* OWNERS in Resources */,
-				F5E1B7E21F27A8CD00BD533A /* DEPS in Resources */,
-				F5E1B7661F27A8CC00BD533A /* 24.sdp in Resources */,
-				F5E1B7821F27A8CC00BD533A /* 5.sdp in Resources */,
-				F5E1B7A11F27A8CC00BD533A /* 14.stun in Resources */,
-				F5E1B72C1F27A8CC00BD533A /* 35.rtcp in Resources */,
-				F5E1B20D1F27A8CA00BD533A /* OWNERS in Resources */,
-				F5E1B7961F27A8CC00BD533A /* unittest-6.sdp in Resources */,
-				F5E1B7721F27A8CC00BD533A /* 35.sdp in Resources */,
-				F5E1B7B41F27A8CC00BD533A /* Info.plist in Resources */,
-				F5E1B74C1F27A8CC00BD533A /* 64.rtcp in Resources */,
-				F5E1B63B1F27A8CC00BD533A /* DEPS in Resources */,
-				F5E1B2EB1F27A8CB00BD533A /* diffiSACPLC.txt in Resources */,
-				F5E1B6D71F27A8CC00BD533A /* DEPS in Resources */,
-				F5E1B7781F27A8CC00BD533A /* 40.sdp in Resources */,
-				F5E1B7311F27A8CC00BD533A /* 4.rtcp in Resources */,
-				F5E1B7611F27A8CC00BD533A /* 2.sdp in Resources */,
-				F5E1B8071F27A8CD00BD533A /* parse_packet_log.py in Resources */,
-				F5E1B72D1F27A8CC00BD533A /* 36.rtcp in Resources */,
-				F5E1B7871F27A8CC00BD533A /* 54.sdp in Resources */,
-				F5E1B3571F27A8CB00BD533A /* DEPS in Resources */,
-				F5E1B1F11F27A8CA00BD533A /* ic_settings_black_24dp@2x.png in Resources */,
-				F5E1B7991F27A8CC00BD533A /* unittest-9.sdp in Resources */,
-				F5E1B43C1F27A8CB00BD533A /* OWNERS in Resources */,
-				F5E1B7691F27A8CC00BD533A /* 27.sdp in Resources */,
-				F5E1B4D41F27A8CB00BD533A /* DEPS in Resources */,
-				F5E1B0F31F27A8CA00BD533A /* OWNERS in Resources */,
-				F5E1B2191F27A8CA00BD533A /* DEPS in Resources */,
-				F5E1B7561F27A8CC00BD533A /* rtp-4 in Resources */,
-				F5E1B70D1F27A8CC00BD533A /* 785b96587d0eb44dd5d75b7a886f37e2ac504511 in Resources */,
-				F5E1B1961F27A8CA00BD533A /* OWNERS in Resources */,
-				F5E1B4861F27A8CB00BD533A /* OWNERS in Resources */,
-				F5E1B1AE1F27A8CA00BD533A /* ic_loopback_call.png in Resources */,
-				F5E1B72A1F27A8CC00BD533A /* 33.rtcp in Resources */,
-				F5E1B1B41F27A8CA00BD533A /* activity_call.xml in Resources */,
-				F5E1B2F41F27A8CB00BD533A /* runiSACRate.txt in Resources */,
-				F5E1B0421F27A8CA00BD533A /* .gitignore in Resources */,
-				F5E1B5811F27A8CC00BD533A /* OWNERS in Resources */,
-				F5E1B7E51F27A8CD00BD533A /* OWNERS in Resources */,
-				F5E1B86E1F27A8CD00BD533A /* whitespace.txt in Resources */,
-				F5E1B7791F27A8CC00BD533A /* 41.sdp in Resources */,
-				F5E1B79F1F27A8CC00BD533A /* 12.stun in Resources */,
-				F5E1B8291F27A8CD00BD533A /* utils.py in Resources */,
-				F5E1B75C1F27A8CC00BD533A /* 15.sdp in Resources */,
-				F5E1B8261F27A8CD00BD533A /* go.zip.sha1 in Resources */,
-				F5E1B7EC1F27A8CD00BD533A /* header_usage.sh in Resources */,
-				F5E1B71D1F27A8CC00BD533A /* 21.rtcp in Resources */,
-				F5E1B8101F27A8CD00BD533A /* rtp_analyzer_test.py in Resources */,
-				F5E1B77E1F27A8CC00BD533A /* 46.sdp in Resources */,
-				F5E1B7861F27A8CC00BD533A /* 53.sdp in Resources */,
-				F5E1B7FE1F27A8CD00BD533A /* strings.xml in Resources */,
-				F5E1B7451F27A8CC00BD533A /* 58.rtcp in Resources */,
-				F5E1B80F1F27A8CD00BD533A /* rtp_analyzer.sh in Resources */,
-				F5E1B1EC1F27A8CA00BD533A /* ic_call_end_black_24dp.png in Resources */,
-				F5E1B76D1F27A8CC00BD533A /* 30.sdp in Resources */,
-				F5E1B1BA1F27A8CA00BD533A /* strings.xml in Resources */,
-				F5E1B0B81F27A8CA00BD533A /* DEPS in Resources */,
-				F5E1B2EC1F27A8CB00BD533A /* InputFiles.txt in Resources */,
-				F5E1B2171F27A8CA00BD533A /* LICENSE_THIRD_PARTY in Resources */,
-				F5E1B7A51F27A8CC00BD533A /* 2.stun in Resources */,
-				F5E1B8561F27A8CD00BD533A /* OWNERS in Resources */,
-				F5E1B1B31F27A8CA00BD533A /* ic_loopback_call.png in Resources */,
-				F5E1B74D1F27A8CC00BD533A /* 65.rtcp in Resources */,
-				F5E1B75E1F27A8CC00BD533A /* 17.sdp in Resources */,
-				F5E1B45D1F27A8CB00BD533A /* test_data_generation_factory.py in Resources */,
-				F5E1B7A91F27A8CC00BD533A /* 6.stun in Resources */,
-				F5E1B4061F27A8CB00BD533A /* debug.proto in Resources */,
-				F5E1B1A01F27A8CA00BD533A /* disconnect.png in Resources */,
-				F5E1B6561F27A8CC00BD533A /* build.xml in Resources */,
-				F5E1B0931F27A8CA00BD533A /* DEPS in Resources */,
-				F5E1B84A1F27A8CD00BD533A /* DEPS in Resources */,
-				F5E1B4321F27A8CB00BD533A /* AndroidManifest.xml in Resources */,
-				F5E1B7191F27A8CC00BD533A /* 18.rtcp in Resources */,
-				F5E1B8161F27A8CD00BD533A /* OWNERS in Resources */,
-				F5E1B6D61F27A8CC00BD533A /* OWNERS in Resources */,
-				F5E1B8271F27A8CD00BD533A /* prebuilt_apprtc.zip.sha1 in Resources */,
-				F5E1B19E1F27A8CA00BD533A /* project.properties in Resources */,
-				F5E1B1C51F27A8CA00BD533A /* build.xml in Resources */,
-				F5E1B7391F27A8CC00BD533A /* 47.rtcp in Resources */,
-				F5E1B45C1F27A8CB00BD533A /* test_data_generation.py in Resources */,
-				F5E1B74E1F27A8CC00BD533A /* 66.rtcp in Resources */,
-				F5E1B8251F27A8CD00BD533A /* go.tar.gz.sha1 in Resources */,
-				F5E1B4831F27A8CB00BD533A /* DEPS in Resources */,
-				F5E1B8151F27A8CD00BD533A /* main.js in Resources */,
-				F5E1B8191F27A8CD00BD533A /* main.js in Resources */,
-				F5E1B8231F27A8CD00BD533A /* download_apprtc.py in Resources */,
-				F5E1B6211F27A8CC00BD533A /* DEPS in Resources */,
-				F5E1B49A1F27A8CB00BD533A /* DEPS in Resources */,
-				F5E1B2E91F27A8CB00BD533A /* ChannelFiles.txt in Resources */,
-				F5E1B2CB1F27A8CB00BD533A /* iLBCtestscript.txt in Resources */,
-				F5E1B19A1F27A8CA00BD533A /* AndroidManifest.xml in Resources */,
-				F5E1B7351F27A8CC00BD533A /* 43.rtcp in Resources */,
-				F5E1B6FD1F27A8CC00BD533A /* DEPS in Resources */,
-				F5E1B7AD1F27A8CC00BD533A /* validator-crash-1.stun in Resources */,
-				F5E1B7251F27A8CC00BD533A /* 29.rtcp in Resources */,
-				F5E1B7411F27A8CC00BD533A /* 54.rtcp in Resources */,
-				F5E1B7D81F27A8CD00BD533A /* barcode_decoder.py in Resources */,
-				F5E1B7591F27A8CC00BD533A /* 12.sdp in Resources */,
-				F5E1B1CB1F27A8CA00BD533A /* README.webrtc in Resources */,
-				F5E1B81F1F27A8CD00BD533A /* webrtc_video_streaming.js in Resources */,
-				F5E1B19F1F27A8CA00BD533A /* README in Resources */,
-				F5E1B78D1F27A8CC00BD533A /* firefox-1.sdp in Resources */,
-				F5E1B2F31F27A8CB00BD533A /* runiSACPLC.txt in Resources */,
-				F5E1B7941F27A8CC00BD533A /* unittest-4.sdp in Resources */,
-				F5E1B7761F27A8CC00BD533A /* 39.sdp in Resources */,
-				F5E1B1B81F27A8CA00BD533A /* connect_menu.xml in Resources */,
-				F5E1B7831F27A8CC00BD533A /* 50.sdp in Resources */,
-				F5E1B81D1F27A8CD00BD533A /* three_bots_video_conference.js in Resources */,
-				F5E1B8121F27A8CD00BD533A /* bot.js in Resources */,
-				F5E1B78F1F27A8CC00BD533A /* opera-1.sdp in Resources */,
-				F5E1B1C71F27A8CA00BD533A /* OWNERS in Resources */,
-				F5E1B7EF1F27A8CD00BD533A /* loopback_test.js in Resources */,
-				F5E1B7601F27A8CC00BD533A /* 19.sdp in Resources */,
-				F5E1B7E01F27A8CD00BD533A /* compare_videos.py in Resources */,
-				F5E1B7331F27A8CC00BD533A /* 41.rtcp in Resources */,
-				F5E1B7DD1F27A8CD00BD533A /* README in Resources */,
-				F5E1B19C1F27A8CA00BD533A /* build.xml in Resources */,
-				F5E1B2021F27A8CA00BD533A /* LICENSE in Resources */,
-				F5E1B7A31F27A8CC00BD533A /* 16.stun in Resources */,
-				F5E1B5021F27A8CB00BD533A /* plot_dynamics.py in Resources */,
-				F5E1B0371F27A8CA00BD533A /* SuperpoweredOfflineProcessingExample-Info.plist in Resources */,
-				F5E1B7DB1F27A8CD00BD533A /* DEPS in Resources */,
-				F5E1B1601F27A8CA00BD533A /* DEPS in Resources */,
-				F5E1B4B21F27A8CB00BD533A /* OWNERS in Resources */,
-				F5E1B30F1F27A8CB00BD533A /* runiSACfixfloat.txt in Resources */,
-				F5E1B5D91F27A8CC00BD533A /* OWNERS in Resources */,
-				F5E1B71B1F27A8CC00BD533A /* 2.rtcp in Resources */,
-				F5E1B3421F27A8CB00BD533A /* neteq_unittest.proto in Resources */,
-				F5E1B2741F27A8CB00BD533A /* parse_ana_dump.py in Resources */,
-				F5E1B2F01F27A8CB00BD533A /* runiSACfixfloat.txt in Resources */,
-				F5E1B55A1F27A8CC00BD533A /* DEPS in Resources */,
-				F5E1B6631F27A8CC00BD533A /* DEPS in Resources */,
-				F5E1B1F91F27A8CA00BD533A /* Roboto-Regular.ttf in Resources */,
-				F5E1B6F11F27A8CC00BD533A /* OWNERS in Resources */,
-				F5E1B3BA1F27A8CB00BD533A /* OWNERS in Resources */,
-				F5E1B8241F27A8CD00BD533A /* go.tar.gz.sha1 in Resources */,
-				F5E1B1B51F27A8CA00BD533A /* activity_connect.xml in Resources */,
-				F5E1B7171F27A8CC00BD533A /* 16.rtcp in Resources */,
-				F5E1B8031F27A8CD00BD533A /* network_tester_config.proto in Resources */,
-				F5E1B31D1F27A8CB00BD533A /* DEPS in Resources */,
-				F5E1B2F21F27A8CB00BD533A /* runiSACNB.txt in Resources */,
-				F5E1B0AE1F27A8CA00BD533A /* callback.h.pump in Resources */,
-				F5E1B2F11F27A8CB00BD533A /* runiSACLongtest.txt in Resources */,
-				F5E1B7511F27A8CC00BD533A /* 9.rtcp in Resources */,
-				F5E1B1BB1F27A8CA00BD533A /* styles.xml in Resources */,
-				F5E1B1151F27A8CA00BD533A /* sigslottester.h.pump in Resources */,
-				F5E1B7951F27A8CC00BD533A /* unittest-5.sdp in Resources */,
-				F5E1B8321F27A8CD00BD533A /* OWNERS in Resources */,
-				F5E1B7881F27A8CC00BD533A /* 55.sdp in Resources */,
-				F5E1B3B01F27A8CB00BD533A /* OWNERS in Resources */,
-				F5E1B7FC1F27A8CD00BD533A /* colors.xml in Resources */,
-				F5E1B7301F27A8CC00BD533A /* 39.rtcp in Resources */,
-				F5E1B4581F27A8CB00BD533A /* signal_processing.py in Resources */,
-				F5E1B1991F27A8CA00BD533A /* DEPS in Resources */,
-				F5E1B77D1F27A8CC00BD533A /* 45.sdp in Resources */,
-				F5E1B1B61F27A8CA00BD533A /* fragment_call.xml in Resources */,
-				F5E1B77C1F27A8CC00BD533A /* 44.sdp in Resources */,
-				F5E1B44B1F27A8CB00BD533A /* apm_quality_assessment_unittest.py in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -11926,6 +11025,7 @@
 				F510D8131F2903CF00B4B4D4 /* LimiterFxUnit.cpp in Sources */,
 				F5E1B01F1F27A8CA00BD533A /* AMAudioPlayer.mm in Sources */,
 				F510D8211F297E0400B4B4D4 /* FXReverbItem.mm in Sources */,
+				F517D0EE1F31A59A00228BBF /* AMMixer.mm in Sources */,
 				F5E1B0151F27A8CA00BD533A /* FXWebRTC.cpp in Sources */,
 				F510D80B1F28E5C900B4B4D4 /* ReverbFxUnit.cpp in Sources */,
 				F5E1B0111F27A8CA00BD533A /* WYRingBuffer.c in Sources */,

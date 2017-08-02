@@ -28,11 +28,27 @@
             NSString *recorderPath= [NSString stringWithFormat:@"%@/%@.wav", path, [[NSDate date] description]];
             _fileURL = [NSURL fileURLWithPath:recorderPath];
         }
-        const char *p = _fileURL.fileSystemRepresentation;
-        _recorder = new SuperpoweredRecorder(p, FS, 1);
+        const char *file_full_path = _fileURL.fileSystemRepresentation;
+        _recorder = new SuperpoweredRecorder(file_full_path, FS, 1);
         _paused = YES;
     }
     return self;
+}
+
+- (void)setFileURL:(NSURL *)fileURL {
+    if ([fileURL.absoluteString isEqualToString:_fileURL.absoluteString]) {
+        return;
+    }
+    _fileURL = fileURL;
+    if (!_fileURL.absoluteString.length) {
+        [self stop];
+    }
+    if (_fileURL.absoluteString.length) {
+        delete _recorder;
+        const char *file_full_path = _fileURL.fileSystemRepresentation;
+        _recorder = new SuperpoweredRecorder(file_full_path, FS, 1);
+        [self pause];
+    }
 }
 
 #pragma mark - 控制
