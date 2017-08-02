@@ -9,10 +9,15 @@
 
 #import <Foundation/Foundation.h>
 #import "FxConstants.h"
+#import "AMConst.h"
 
 extern NSString * const UPDATE_FX_PROPERTY;
 
 @interface FXItem : NSObject
+{
+@protected
+    BOOL _enble;
+}
 
 /** 名称 */
 @property (nonatomic, copy) NSString *fxName;
@@ -23,11 +28,13 @@ extern NSString * const UPDATE_FX_PROPERTY;
 /** 开关,默认关闭 */
 @property (nonatomic, assign) BOOL enble;
 
-/** 更新效果器,子类在set方法中标记为YES，设置成功后会置为NO */
-@property (nonatomic, assign, getter=isDirty) BOOL dirty;
 
 - (instancetype)initWithFXId:(long)fxId;
 
+#pragma mark - 子类重写
+- (void)process:(float *)input output:(float *)output numberOfSamples:(unsigned int)numberOfSamples; // 子类重写
+
+#pragma mark - 工具方法
 + (NSString *)getFXNameFromFXId:(long)fxId;
 
 @end

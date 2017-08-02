@@ -12,7 +12,6 @@
 
 @property (nonatomic, assign) float wet;
 @property (nonatomic, assign) float depth;
-@property (nonatomic, assign) float beats;
 @property (nonatomic, assign) float LFOBeats;
 
 @end

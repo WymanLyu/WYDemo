@@ -22,16 +22,22 @@
 		F510D8171F2903EA00B4B4D4 /* ClipperFxUnit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F510D8151F2903EA00B4B4D4 /* ClipperFxUnit.cpp */; };
 		F510D8181F2903EA00B4B4D4 /* ClipperFxUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = F510D8161F2903EA00B4B4D4 /* ClipperFxUnit.h */; };
 		F510D81C1F297DCC00B4B4D4 /* FXFlangerItem.h in Headers */ = {isa = PBXBuildFile; fileRef = F510D81A1F297DCC00B4B4D4 /* FXFlangerItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F510D81D1F297DCC00B4B4D4 /* FXFlangerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F510D81B1F297DCC00B4B4D4 /* FXFlangerItem.m */; };
+		F510D81D1F297DCC00B4B4D4 /* FXFlangerItem.mm in Sources */ = {isa = PBXBuildFile; fileRef = F510D81B1F297DCC00B4B4D4 /* FXFlangerItem.mm */; };
 		F510D8201F297E0400B4B4D4 /* FXReverbItem.h in Headers */ = {isa = PBXBuildFile; fileRef = F510D81E1F297E0400B4B4D4 /* FXReverbItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F510D8211F297E0400B4B4D4 /* FXReverbItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F510D81F1F297E0400B4B4D4 /* FXReverbItem.m */; };
+		F510D8211F297E0400B4B4D4 /* FXReverbItem.mm in Sources */ = {isa = PBXBuildFile; fileRef = F510D81F1F297E0400B4B4D4 /* FXReverbItem.mm */; };
 		F510D8231F29889700B4B4D4 /* FXHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = F510D8221F29889700B4B4D4 /* FXHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F510D8371F29B48B00B4B4D4 /* EchoFxUnit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F510D8351F29B48B00B4B4D4 /* EchoFxUnit.cpp */; };
 		F510D8381F29B48B00B4B4D4 /* EchoFxUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = F510D8361F29B48B00B4B4D4 /* EchoFxUnit.h */; };
 		F510D83B1F29B7D300B4B4D4 /* FXEchoItem.h in Headers */ = {isa = PBXBuildFile; fileRef = F510D8391F29B7D300B4B4D4 /* FXEchoItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F510D83C1F29B7D300B4B4D4 /* FXEchoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F510D83A1F29B7D300B4B4D4 /* FXEchoItem.m */; };
+		F510D83C1F29B7D300B4B4D4 /* FXEchoItem.mm in Sources */ = {isa = PBXBuildFile; fileRef = F510D83A1F29B7D300B4B4D4 /* FXEchoItem.mm */; };
 		F510D8441F29C02800B4B4D4 /* FXLimiterItem.h in Headers */ = {isa = PBXBuildFile; fileRef = F510D8421F29C02800B4B4D4 /* FXLimiterItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F510D8451F29C02800B4B4D4 /* FXLimiterItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F510D8431F29C02800B4B4D4 /* FXLimiterItem.m */; };
+		F510D8451F29C02800B4B4D4 /* FXLimiterItem.mm in Sources */ = {isa = PBXBuildFile; fileRef = F510D8431F29C02800B4B4D4 /* FXLimiterItem.mm */; };
+		F517D0DF1F2F040D00228BBF /* RollFxUnit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F517D0DB1F2F040D00228BBF /* RollFxUnit.cpp */; };
+		F517D0E01F2F040D00228BBF /* RollFxUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = F517D0DC1F2F040D00228BBF /* RollFxUnit.h */; };
+		F517D0E11F2F040D00228BBF /* ThreeBandEQFxUnit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F517D0DD1F2F040D00228BBF /* ThreeBandEQFxUnit.cpp */; };
+		F517D0E21F2F040D00228BBF /* ThreeBandEQFxUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = F517D0DE1F2F040D00228BBF /* ThreeBandEQFxUnit.h */; };
+		F517D0E61F317BA800228BBF /* FXRollItem.h in Headers */ = {isa = PBXBuildFile; fileRef = F517D0E41F317BA800228BBF /* FXRollItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F517D0E71F317BA800228BBF /* FXRollItem.mm in Sources */ = {isa = PBXBuildFile; fileRef = F517D0E51F317BA800228BBF /* FXRollItem.mm */; };
 		F5E1A6191F27A86300BD533A /* FXAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E1A60F1F27A86300BD533A /* FXAudio.framework */; };
 		F5E1A61E1F27A86300BD533A /* FXAudioTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E1A61D1F27A86300BD533A /* FXAudioTests.m */; };
 		F5E1A6201F27A86300BD533A /* FXAudio.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6121F27A86300BD533A /* FXAudio.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -45,7 +51,7 @@
 		F5E1B0161F27A8CA00BD533A /* FXWebRTC.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A63D1F27A8C600BD533A /* FXWebRTC.h */; };
 		F5E1B0171F27A8CA00BD533A /* SuperpoweredIOSAudioIO.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A63F1F27A8C600BD533A /* SuperpoweredIOSAudioIO.h */; };
 		F5E1B0181F27A8CA00BD533A /* SuperpoweredIOSAudioIO.mm in Sources */ = {isa = PBXBuildFile; fileRef = F5E1A6401F27A8C600BD533A /* SuperpoweredIOSAudioIO.mm */; };
-		F5E1B0191F27A8CA00BD533A /* AMConst.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6421F27A8C600BD533A /* AMConst.h */; };
+		F5E1B0191F27A8CA00BD533A /* AMConst.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6421F27A8C600BD533A /* AMConst.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F5E1B01A1F27A8CA00BD533A /* AMRecorderPlayerControl.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6431F27A8C600BD533A /* AMRecorderPlayerControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F5E1B01B1F27A8CA00BD533A /* AMRecorderPlayerControl.mm in Sources */ = {isa = PBXBuildFile; fileRef = F5E1A6441F27A8C600BD533A /* AMRecorderPlayerControl.mm */; };
 		F5E1B01C1F27A8CA00BD533A /* AudioManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E1A6451F27A8C600BD533A /* AudioManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -2198,16 +2204,22 @@
 		F510D8151F2903EA00B4B4D4 /* ClipperFxUnit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ClipperFxUnit.cpp; sourceTree = "<group>"; };
 		F510D8161F2903EA00B4B4D4 /* ClipperFxUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClipperFxUnit.h; sourceTree = "<group>"; };
 		F510D81A1F297DCC00B4B4D4 /* FXFlangerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXFlangerItem.h; sourceTree = "<group>"; };
-		F510D81B1F297DCC00B4B4D4 /* FXFlangerItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXFlangerItem.m; sourceTree = "<group>"; };
+		F510D81B1F297DCC00B4B4D4 /* FXFlangerItem.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FXFlangerItem.mm; sourceTree = "<group>"; };
 		F510D81E1F297E0400B4B4D4 /* FXReverbItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXReverbItem.h; sourceTree = "<group>"; };
-		F510D81F1F297E0400B4B4D4 /* FXReverbItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXReverbItem.m; sourceTree = "<group>"; };
+		F510D81F1F297E0400B4B4D4 /* FXReverbItem.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FXReverbItem.mm; sourceTree = "<group>"; };
 		F510D8221F29889700B4B4D4 /* FXHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXHeader.h; sourceTree = "<group>"; };
 		F510D8351F29B48B00B4B4D4 /* EchoFxUnit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EchoFxUnit.cpp; sourceTree = "<group>"; };
 		F510D8361F29B48B00B4B4D4 /* EchoFxUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EchoFxUnit.h; sourceTree = "<group>"; };
 		F510D8391F29B7D300B4B4D4 /* FXEchoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXEchoItem.h; sourceTree = "<group>"; };
-		F510D83A1F29B7D300B4B4D4 /* FXEchoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXEchoItem.m; sourceTree = "<group>"; };
+		F510D83A1F29B7D300B4B4D4 /* FXEchoItem.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FXEchoItem.mm; sourceTree = "<group>"; };
 		F510D8421F29C02800B4B4D4 /* FXLimiterItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXLimiterItem.h; sourceTree = "<group>"; };
-		F510D8431F29C02800B4B4D4 /* FXLimiterItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXLimiterItem.m; sourceTree = "<group>"; };
+		F510D8431F29C02800B4B4D4 /* FXLimiterItem.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FXLimiterItem.mm; sourceTree = "<group>"; };
+		F517D0DB1F2F040D00228BBF /* RollFxUnit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RollFxUnit.cpp; sourceTree = "<group>"; };
+		F517D0DC1F2F040D00228BBF /* RollFxUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RollFxUnit.h; sourceTree = "<group>"; };
+		F517D0DD1F2F040D00228BBF /* ThreeBandEQFxUnit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ThreeBandEQFxUnit.cpp; sourceTree = "<group>"; };
+		F517D0DE1F2F040D00228BBF /* ThreeBandEQFxUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreeBandEQFxUnit.h; sourceTree = "<group>"; };
+		F517D0E41F317BA800228BBF /* FXRollItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXRollItem.h; sourceTree = "<group>"; };
+		F517D0E51F317BA800228BBF /* FXRollItem.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FXRollItem.mm; sourceTree = "<group>"; };
 		F5E1A60F1F27A86300BD533A /* FXAudio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FXAudio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5E1A6121F27A86300BD533A /* FXAudio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FXAudio.h; sourceTree = "<group>"; };
 		F5E1A6131F27A86300BD533A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -4383,6 +4395,10 @@
 		F510D7FC1F28E5C900B4B4D4 /* AudioFX */ = {
 			isa = PBXGroup;
 			children = (
+				F517D0DB1F2F040D00228BBF /* RollFxUnit.cpp */,
+				F517D0DC1F2F040D00228BBF /* RollFxUnit.h */,
+				F517D0DD1F2F040D00228BBF /* ThreeBandEQFxUnit.cpp */,
+				F517D0DE1F2F040D00228BBF /* ThreeBandEQFxUnit.h */,
 				F510D7FD1F28E5C900B4B4D4 /* FlangerFxUnit.cpp */,
 				F510D7FE1F28E5C900B4B4D4 /* FlangerFxUnit.h */,
 				F510D7FF1F28E5C900B4B4D4 /* FxChain.cpp */,
@@ -4408,14 +4424,16 @@
 				F510D80D1F29012000B4B4D4 /* FXItem.h */,
 				F510D80E1F29012000B4B4D4 /* FXItem.m */,
 				F510D81A1F297DCC00B4B4D4 /* FXFlangerItem.h */,
-				F510D81B1F297DCC00B4B4D4 /* FXFlangerItem.m */,
+				F510D81B1F297DCC00B4B4D4 /* FXFlangerItem.mm */,
 				F510D81E1F297E0400B4B4D4 /* FXReverbItem.h */,
-				F510D81F1F297E0400B4B4D4 /* FXReverbItem.m */,
+				F510D81F1F297E0400B4B4D4 /* FXReverbItem.mm */,
 				F510D8221F29889700B4B4D4 /* FXHeader.h */,
 				F510D8391F29B7D300B4B4D4 /* FXEchoItem.h */,
-				F510D83A1F29B7D300B4B4D4 /* FXEchoItem.m */,
+				F510D83A1F29B7D300B4B4D4 /* FXEchoItem.mm */,
 				F510D8421F29C02800B4B4D4 /* FXLimiterItem.h */,
-				F510D8431F29C02800B4B4D4 /* FXLimiterItem.m */,
+				F510D8431F29C02800B4B4D4 /* FXLimiterItem.mm */,
+				F517D0E41F317BA800228BBF /* FXRollItem.h */,
+				F517D0E51F317BA800228BBF /* FXRollItem.mm */,
 			);
 			name = FXItem;
 			sourceTree = "<group>";
@@ -9971,6 +9989,7 @@
 				F5E1B5C81F27A8CC00BD533A /* quality_scaler.h in Headers */,
 				F5E1B5571F27A8CC00BD533A /* video_codec_information.h in Headers */,
 				F5E1B0591F27A8CA00BD533A /* jsepicecandidate.h in Headers */,
+				F517D0E61F317BA800228BBF /* FXRollItem.h in Headers */,
 				F5E1B2DA1F27A8CB00BD533A /* bandwidth_estimator.h in Headers */,
 				F5E1B4D21F27A8CB00BD533A /* module.h in Headers */,
 				F5E1B4951F27A8CB00BD533A /* transport_feedback_adapter.h in Headers */,
@@ -10616,6 +10635,7 @@
 				F5E1B5861F27A8CC00BD533A /* predictive_packet_manipulator.h in Headers */,
 				F5E1B3F81F27A8CB00BD533A /* mock_agc.h in Headers */,
 				F5E1B4FB1F27A8CB00BD533A /* send_side.h in Headers */,
+				F517D0E01F2F040D00228BBF /* RollFxUnit.h in Headers */,
 				F5E1B43D1F27A8CB00BD533A /* simulator.h in Headers */,
 				F5E1B5DD1F27A8CC00BD533A /* testrtpparameters.h in Headers */,
 				F5E1B5CB1F27A8CC00BD533A /* video_coding_impl.h in Headers */,
@@ -11019,6 +11039,7 @@
 				F5E1B8311F27A8CD00BD533A /* overuse_frame_detector.h in Headers */,
 				F5E1B6021F27A8CC00BD533A /* testrelayserver.h in Headers */,
 				F5E1B5391F27A8CB00BD533A /* voip_metric.h in Headers */,
+				F517D0E21F2F040D00228BBF /* ThreeBandEQFxUnit.h in Headers */,
 				F5E1B22E1F27A8CA00BD533A /* mediaengine.h in Headers */,
 				F5E1B6231F27A8CC00BD533A /* externalhmac.h in Headers */,
 				F5E1B2F81F27A8CB00BD533A /* isac.h in Headers */,
@@ -11887,27 +11908,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F517D0DF1F2F040D00228BBF /* RollFxUnit.cpp in Sources */,
+				F517D0E11F2F040D00228BBF /* ThreeBandEQFxUnit.cpp in Sources */,
 				F510D8371F29B48B00B4B4D4 /* EchoFxUnit.cpp in Sources */,
 				F510D8101F29012000B4B4D4 /* FXItem.m in Sources */,
 				F5E1B01B1F27A8CA00BD533A /* AMRecorderPlayerControl.mm in Sources */,
+				F517D0E71F317BA800228BBF /* FXRollItem.mm in Sources */,
 				F510D8051F28E5C900B4B4D4 /* FlangerFxUnit.cpp in Sources */,
 				F5E1B01D1F27A8CA00BD533A /* AudioManager.mm in Sources */,
 				F5E1B0181F27A8CA00BD533A /* SuperpoweredIOSAudioIO.mm in Sources */,
 				F5E1B00F1F27A8CA00BD533A /* WYAudioRingBuffer.cc in Sources */,
 				F510D8071F28E5C900B4B4D4 /* FxChain.cpp in Sources */,
-				F510D8451F29C02800B4B4D4 /* FXLimiterItem.m in Sources */,
+				F510D8451F29C02800B4B4D4 /* FXLimiterItem.mm in Sources */,
 				F5E1B0351F27A8CA00BD533A /* SuperpoweredNBandEQ.cpp in Sources */,
 				F5E1B0211F27A8CA00BD533A /* AMAudioRecorder.mm in Sources */,
 				F5E1B0131F27A8CA00BD533A /* AudioProcessingProxy.cpp in Sources */,
 				F510D8131F2903CF00B4B4D4 /* LimiterFxUnit.cpp in Sources */,
 				F5E1B01F1F27A8CA00BD533A /* AMAudioPlayer.mm in Sources */,
-				F510D8211F297E0400B4B4D4 /* FXReverbItem.m in Sources */,
+				F510D8211F297E0400B4B4D4 /* FXReverbItem.mm in Sources */,
 				F5E1B0151F27A8CA00BD533A /* FXWebRTC.cpp in Sources */,
 				F510D80B1F28E5C900B4B4D4 /* ReverbFxUnit.cpp in Sources */,
 				F5E1B0111F27A8CA00BD533A /* WYRingBuffer.c in Sources */,
 				F510D8171F2903EA00B4B4D4 /* ClipperFxUnit.cpp in Sources */,
-				F510D81D1F297DCC00B4B4D4 /* FXFlangerItem.m in Sources */,
-				F510D83C1F29B7D300B4B4D4 /* FXEchoItem.m in Sources */,
+				F510D81D1F297DCC00B4B4D4 /* FXFlangerItem.mm in Sources */,
+				F510D83C1F29B7D300B4B4D4 /* FXEchoItem.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

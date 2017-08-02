@@ -14,6 +14,7 @@
 #import "FXReverbItem.h"
 #import "FXEchoItem.h"
 #import "FXLimiterItem.h"
+#import "FXRollItem.h"
 
 
 #endif /* FXHeader_h */

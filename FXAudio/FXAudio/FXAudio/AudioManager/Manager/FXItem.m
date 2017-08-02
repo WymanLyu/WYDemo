@@ -12,11 +12,12 @@ NSString * const UPDATE_FX_PROPERTY = @"UPDATE_FX_PROPERTY";
 
 @implementation FXItem
 
+@synthesize enble=_enble;
+
 - (instancetype)initWithFXId:(long)fxId {
     if (self = [super init]) {
         self.fxId = fxId;
-        self.enble = NO;
-        _dirty = NO;
+        _enble = NO;
     }
     return self;
 }
@@ -24,18 +25,6 @@ NSString * const UPDATE_FX_PROPERTY = @"UPDATE_FX_PROPERTY";
 - (void)setFxId:(long)fxId {
     _fxId = fxId;
     self.fxName = [FXItem getFXNameFromFXId:_fxId];
-}
-
-- (void)setDirty:(BOOL)dirty {
-    _dirty = dirty;
-    if (_dirty) { // 更新数据
-         [[NSNotificationCenter defaultCenter] postNotificationName:UPDATE_FX_PROPERTY object:self];
-    }
-}
-
-- (void)setEnble:(BOOL)enble {
-    _enble = enble;
-    self.dirty = YES;
 }
 
 + (NSString *)getFXNameFromFXId:(long)fxId {
@@ -91,6 +80,15 @@ NSString * const UPDATE_FX_PROPERTY = @"UPDATE_FX_PROPERTY";
             break;
     }
     return @"";
+}
+
+- (void)process:(float *)input output:(float *)output numberOfSamples:(unsigned int)numberOfSamples {
+    // 子类重写
+}
+
+- (void)setEnble:(BOOL)enble {
+    _enble = enble;
+    // 子类重写
 }
 
 @end

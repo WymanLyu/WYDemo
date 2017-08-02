@@ -49,7 +49,6 @@
 - (void)setNsLevel:(bool)enable;
 
 @property (nonatomic, strong) NSMutableArray<FXItem *> *fxArrayM;
-- (void)updateFX;
 
 
 

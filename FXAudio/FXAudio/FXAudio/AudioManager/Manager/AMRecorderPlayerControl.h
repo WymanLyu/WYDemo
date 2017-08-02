@@ -16,12 +16,14 @@
 
 /** 开启返听 */
 @property (nonatomic, assign, getter=isOpenReturnVoice) BOOL openReturnVoice;
+
 /** 返听开关仅当耳机时开启 默认是NO */
 @property (nonatomic, assign) BOOL openReturnVoicePropertyActivityWhenHeadSetPlugging;
 
 /** 伴奏混音比重大小 0是无伴奏声音 1是最大声 默认1.0 */
 @property (nonatomic, assign) float volume;
 
+/** 播放URL */
 @property (nonatomic, strong) NSURL *playFileURL;
 
 #pragma mark - 控制
