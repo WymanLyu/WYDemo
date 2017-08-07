@@ -73,6 +73,9 @@ void printBuffer(float **buffers, unsigned int numberOfSamples)
         // 初始化内存
         posix_memalign((void **)&self->_buffers_Interleave, 16, (sizeof(float)*BUFFER_SAMPLE_COUNT+64)*CHANNELS);
         _fxArrayM = [NSMutableArray array];
+        
+        // webRTC对象
+        self->_webRTC = new FXWebRTC(BUFFER_SAMPLE_COUNT, WEBRTC_BUFFER_SAMPLE_COUNT, CHANNELS);
     }
     return self;
 }
