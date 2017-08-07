@@ -116,7 +116,7 @@
         // 2 序号的 item的中心点x = _centerLineX - (ITEM_MARGIN_H*0.5 + ITEM_SIZE_W*0.5) - (ITEM_MARGIN_H + ITEM_SIZE_W)
         // 4 序号的 item的中心点x = _centerLineX - (ITEM_MARGIN_H*0.5 + ITEM_SIZE_W*0.5) - (ITEM_MARGIN_H + ITEM_SIZE_W)*2
         // 6 序号的 item的中心点x = _centerLineX - (ITEM_MARGIN_H*0.5 + ITEM_SIZE_W*0.5) - (ITEM_MARGIN_H + ITEM_SIZE_W)*3
-        itemCenterX = _centerLineX - (ITEM_MARGIN_H*0.5 + ITEM_SIZE_W*0.5) - (ITEM_MARGIN_H + ITEM_SIZE_W) * ((indexPath.row%8)/2);
+        itemCenterX = _centerLineX - (ITEM_MARGIN_H*0.5 + ITEM_SIZE_W*0.5) - (ITEM_MARGIN_H + ITEM_SIZE_W) * ((indexPath.row%MAX_ITEM_COUNT_H)/2);
         itemCenterY = sectionMaxY - ITEM_MARGIN_H*0.5  - (ITEM_SIZE_H + ITEM_MARGIN_V) * rowNumber;
 
     } else { // 奇数，在中心线右边
@@ -125,7 +125,7 @@
         // 3 序号的 item的中心点x = _centerLineX + (ITEM_MARGIN_H*0.5 + ITEM_SIZE_W*0.5) + (ITEM_MARGIN_H + ITEM_SIZE_W)
         // 5 序号的 item的中心点x = _centerLineX + (ITEM_MARGIN_H*0.5 + ITEM_SIZE_W*0.5) + (ITEM_MARGIN_H + ITEM_SIZE_W)*2
         // 7 序号的 item的中心点x = _centerLineX + (ITEM_MARGIN_H*0.5 + ITEM_SIZE_W*0.5) + (ITEM_MARGIN_H + ITEM_SIZE_W)*3
-        itemCenterX =  _centerLineX + (ITEM_MARGIN_H*0.5 + ITEM_SIZE_W*0.5) + (ITEM_MARGIN_H + ITEM_SIZE_W) * (((indexPath.row%8)-1)/2);
+        itemCenterX =  _centerLineX + (ITEM_MARGIN_H*0.5 + ITEM_SIZE_W*0.5) + (ITEM_MARGIN_H + ITEM_SIZE_W) * (((indexPath.row%MAX_ITEM_COUNT_H)-1)/2);
         itemCenterY = sectionMaxY - ITEM_MARGIN_H*0.5  - (ITEM_SIZE_H + ITEM_MARGIN_V) * rowNumber;
 //        itemCenterY = (sectionMaxY - ITEM_MARGIN_H*0.5) * (rowNumber+1);
  

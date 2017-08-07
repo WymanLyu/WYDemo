@@ -40,7 +40,7 @@
     
     
     UIScrollView *scrol = [[UIScrollView alloc] initWithFrame:CGRectMake(44, 88, 300, 300)];
-    scrol.contentSize = CGSizeMake(600, 600);
+//    scrol.contentSize = CGSizeMake(600, 600);
     scrol.backgroundColor = [UIColor yellowColor];
     scrol.zoomScale = 3.0;
     scrol.maximumZoomScale = 2.0;
