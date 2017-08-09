@@ -91,8 +91,7 @@
         [self.layerB removeFromSuperlayer];
         [[UIApplication sharedApplication] endIgnoringInteractionEvents];
     }];
-    
-    [self.layerB convertTime:<#(CFTimeInterval)#> toLayer:<#(nullable CALayer *)#>]
+
     
 }
 
