@@ -1,0 +1,6 @@
+framework module Pods_7_31testNullUITests {
+  umbrella header "Pods-7-31testNullUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

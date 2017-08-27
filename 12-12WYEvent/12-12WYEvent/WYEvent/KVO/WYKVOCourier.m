@@ -33,6 +33,11 @@ static WYKVOCourier *shareCourier = nil;
     // key 由observe 和 path组成
     NSString *key = [NSString stringWithFormat:@"%zd+%@", [observe hash], path];
     WYKVOEvent *event = [self.wy_map objectForKey:key];
+    if (event) {
+        [weakReferenceNonretainedObjectValue(event.target) removeObserver:self forKeyPath:event.path];
+        [self.wy_map removeObjectForKey:key];
+        event = nil;
+    }
     if (!event) {
         event = [[WYKVOEvent alloc] init];
         [self.wy_map setObject:event forKey:key];

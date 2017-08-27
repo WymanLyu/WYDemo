@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "WYNullView.h"
+#import <WYNullView/WYNullView.h>
 
 @interface ViewController ()
 

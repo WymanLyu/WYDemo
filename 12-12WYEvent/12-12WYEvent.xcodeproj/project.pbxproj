@@ -34,6 +34,9 @@
 		F59A0B771E0A6E4100CE20B2 /* View0.m in Sources */ = {isa = PBXBuildFile; fileRef = F59A0B761E0A6E4100CE20B2 /* View0.m */; };
 		F59A0B7A1E0A6E5400CE20B2 /* View1.m in Sources */ = {isa = PBXBuildFile; fileRef = F59A0B791E0A6E5400CE20B2 /* View1.m */; };
 		F59A0B851E0A8B8600CE20B2 /* TestController1.m in Sources */ = {isa = PBXBuildFile; fileRef = F59A0B841E0A8B8600CE20B2 /* TestController1.m */; };
+		F5C51CB51F4FC84300657F86 /* TestBindView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C51CB41F4FC84300657F86 /* TestBindView.m */; };
+		F5C51CB81F4FC86000657F86 /* TestBindModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C51CB71F4FC86000657F86 /* TestBindModel.m */; };
+		F5C51CBB1F4FD33E00657F86 /* NSObject+WYRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C51CBA1F4FD33E00657F86 /* NSObject+WYRuntime.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +113,12 @@
 		F59A0B821E0A813B00CE20B2 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		F59A0B831E0A8B8600CE20B2 /* TestController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestController1.h; sourceTree = "<group>"; };
 		F59A0B841E0A8B8600CE20B2 /* TestController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestController1.m; sourceTree = "<group>"; };
+		F5C51CB31F4FC84300657F86 /* TestBindView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestBindView.h; sourceTree = "<group>"; };
+		F5C51CB41F4FC84300657F86 /* TestBindView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestBindView.m; sourceTree = "<group>"; };
+		F5C51CB61F4FC86000657F86 /* TestBindModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestBindModel.h; sourceTree = "<group>"; };
+		F5C51CB71F4FC86000657F86 /* TestBindModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestBindModel.m; sourceTree = "<group>"; };
+		F5C51CB91F4FD33E00657F86 /* NSObject+WYRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+WYRuntime.h"; sourceTree = "<group>"; };
+		F5C51CBA1F4FD33E00657F86 /* NSObject+WYRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+WYRuntime.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +149,7 @@
 		F526C4A91E4D5F7A00D7E0AB /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				F5C51CB21F4FC7AF00657F86 /* Bind */,
 				F526C4B21E4D88DF00D7E0AB /* KVO */,
 				F526C4AB1E4D5FAA00D7E0AB /* Notification */,
 				F526C4AA1E4D5F8400D7E0AB /* CustomEvent */,
@@ -327,6 +337,19 @@
 			name = view;
 			sourceTree = "<group>";
 		};
+		F5C51CB21F4FC7AF00657F86 /* Bind */ = {
+			isa = PBXGroup;
+			children = (
+				F5C51CB31F4FC84300657F86 /* TestBindView.h */,
+				F5C51CB41F4FC84300657F86 /* TestBindView.m */,
+				F5C51CB61F4FC86000657F86 /* TestBindModel.h */,
+				F5C51CB71F4FC86000657F86 /* TestBindModel.m */,
+				F5C51CB91F4FD33E00657F86 /* NSObject+WYRuntime.h */,
+				F5C51CBA1F4FD33E00657F86 /* NSObject+WYRuntime.m */,
+			);
+			name = Bind;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -468,6 +491,7 @@
 				F59A0B771E0A6E4100CE20B2 /* View0.m in Sources */,
 				F563FB641E86518A00F5FE1A /* WYKVOObserver.m in Sources */,
 				F563FB611E863E5B00F5FE1A /* NSObject+WYEvent.m in Sources */,
+				F5C51CB81F4FC86000657F86 /* TestBindModel.m in Sources */,
 				F526C4F91E4DC07400D7E0AB /* WYEventCourier.m in Sources */,
 				F526C4FC1E4DC07400D7E0AB /* WYKVOCourier.m in Sources */,
 				F526C4F81E4DC07400D7E0AB /* WYEvent.m in Sources */,
@@ -477,6 +501,8 @@
 				F526C4FE1E4DC07400D7E0AB /* WYNotificationCourier.m in Sources */,
 				F526C4FF1E4DC07400D7E0AB /* WYNotificationEvent.m in Sources */,
 				F526C4FD1E4DC07400D7E0AB /* WYKVOEvent.m in Sources */,
+				F5C51CBB1F4FD33E00657F86 /* NSObject+WYRuntime.m in Sources */,
+				F5C51CB51F4FC84300657F86 /* TestBindView.m in Sources */,
 				F526C4FA1E4DC07400D7E0AB /* WYEventCenter.m in Sources */,
 				F563FB671E86534200F5FE1A /* NSObject+WYKVO.m in Sources */,
 				F59A0B461E0A6E0900CE20B2 /* AppDelegate.m in Sources */,

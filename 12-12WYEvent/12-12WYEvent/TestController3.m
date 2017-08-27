@@ -10,10 +10,17 @@
 #import "WYEvent.h"
 #import "WYKVOCourier.h"
 
+#import "TestBindView.h"
+#import "TestBindModel.h"
+
 @interface TestController3 ()
+
 @property (weak, nonatomic) IBOutlet UISlider *slider;
 
 @property (weak, nonatomic) IBOutlet UILabel *lbl;
+
+@property (nonatomic, strong) TestBindModel *bindmodel;
+@property (nonatomic, strong) TestBindView *bindview;
 
 @end
 
@@ -31,23 +38,25 @@ static id obj = nil;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     obj = [NSObject new];
+    
+    _bindmodel = [TestBindModel new];
+    _bindview = [[TestBindView alloc] initWithFrame:CGRectMake(0, 300, 200, 200)];
+    _bindview.backgroundColor = [UIColor yellowColor];
+    _bindview.model = _bindmodel;
+    [self.view addSubview:_bindview];
+    
     __weak typeof(self)weakSelf = self;
     [self wy_observePath:@"value" target:self.slider options:NSKeyValueObservingOptionNew change:^(NSDictionary<NSKeyValueChangeKey,id> *change) {
         NSLog(@"====");
         NSString *newValue = [[change objectForKey:NSKeyValueChangeNewKey] stringValue];
         weakSelf.lbl.text = newValue;
-        
+        weakSelf.bindmodel.price = [[change objectForKey:NSKeyValueChangeNewKey] doubleValue];
     }];
+
     
-//    [self.slider addObserver:self forKeyPath:@"value" options:NSKeyValueObservingOptionNew context:nil];
     
 }
 
-//- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
-//    NSLog(@"--");
-//    NSString *newValue = [[change objectForKey:NSKeyValueChangeNewKey] stringValue];
-//    self.lbl.text = newValue;
-//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
