@@ -15,6 +15,24 @@
 		F570555D1F3315F60067EC5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F570555B1F3315F60067EC5D /* LaunchScreen.storyboard */; };
 		F57055681F3315F60067EC5D /* __3AnimationTimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F57055671F3315F60067EC5D /* __3AnimationTimeTests.m */; };
 		F57055731F3315F60067EC5D /* __3AnimationTimeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F57055721F3315F60067EC5D /* __3AnimationTimeUITests.m */; };
+		F5C51CD91F581A5200657F86 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F57055541F3315F60067EC5D /* ViewController.m */; };
+		F5C51CDA1F581A5200657F86 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F57055511F3315F60067EC5D /* AppDelegate.m */; };
+		F5C51CDB1F581A5200657F86 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F570554E1F3315F60067EC5D /* main.m */; };
+		F5C51CDE1F581A5200657F86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F570555B1F3315F60067EC5D /* LaunchScreen.storyboard */; };
+		F5C51CDF1F581A5200657F86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F57055591F3315F60067EC5D /* Assets.xcassets */; };
+		F5C51CE01F581A5200657F86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F57055561F3315F60067EC5D /* Main.storyboard */; };
+		F5C51CE81F581A7100657F86 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F57055541F3315F60067EC5D /* ViewController.m */; };
+		F5C51CE91F581A7100657F86 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F57055511F3315F60067EC5D /* AppDelegate.m */; };
+		F5C51CEA1F581A7100657F86 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F570554E1F3315F60067EC5D /* main.m */; };
+		F5C51CED1F581A7100657F86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F570555B1F3315F60067EC5D /* LaunchScreen.storyboard */; };
+		F5C51CEE1F581A7100657F86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F57055591F3315F60067EC5D /* Assets.xcassets */; };
+		F5C51CEF1F581A7100657F86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F57055561F3315F60067EC5D /* Main.storyboard */; };
+		F5C51CF71F581A8600657F86 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F57055541F3315F60067EC5D /* ViewController.m */; };
+		F5C51CF81F581A8600657F86 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F57055511F3315F60067EC5D /* AppDelegate.m */; };
+		F5C51CF91F581A8600657F86 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F570554E1F3315F60067EC5D /* main.m */; };
+		F5C51CFC1F581A8600657F86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F570555B1F3315F60067EC5D /* LaunchScreen.storyboard */; };
+		F5C51CFD1F581A8600657F86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F57055591F3315F60067EC5D /* Assets.xcassets */; };
+		F5C51CFE1F581A8600657F86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F57055561F3315F60067EC5D /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +69,12 @@
 		F570556E1F3315F60067EC5D /* 8-3AnimationTimeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "8-3AnimationTimeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F57055721F3315F60067EC5D /* __3AnimationTimeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = __3AnimationTimeUITests.m; sourceTree = "<group>"; };
 		F57055741F3315F60067EC5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5C51CE41F581A5200657F86 /* 8-3AnimationTime copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "8-3AnimationTime copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5C51CE51F581A5200657F86 /* 8-3AnimationTime copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "8-3AnimationTime copy-Info.plist"; path = "/Users/wyman/Documents/xcodeDemo/8-3AnimationTime/8-3AnimationTime copy-Info.plist"; sourceTree = "<absolute>"; };
+		F5C51CF31F581A7100657F86 /* 8-3AnimationTime copy 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "8-3AnimationTime copy 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5C51CF41F581A7200657F86 /* 8-3AnimationTime copy 2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "8-3AnimationTime copy 2-Info.plist"; path = "/Users/wyman/Documents/xcodeDemo/8-3AnimationTime/8-3AnimationTime copy 2-Info.plist"; sourceTree = "<absolute>"; };
+		F5C51D021F581A8600657F86 /* 8-3AnimationTime copy 3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "8-3AnimationTime copy 3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5C51D031F581A8600657F86 /* 8-3AnimationTime copy 3-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "8-3AnimationTime copy 3-Info.plist"; path = "/Users/wyman/Documents/xcodeDemo/8-3AnimationTime/8-3AnimationTime copy 3-Info.plist"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +99,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F5C51CDC1F581A5200657F86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5C51CEB1F581A7100657F86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5C51CFA1F581A8600657F86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -85,6 +130,9 @@
 				F57055661F3315F60067EC5D /* 8-3AnimationTimeTests */,
 				F57055711F3315F60067EC5D /* 8-3AnimationTimeUITests */,
 				F570554B1F3315F60067EC5D /* Products */,
+				F5C51CE51F581A5200657F86 /* 8-3AnimationTime copy-Info.plist */,
+				F5C51CF41F581A7200657F86 /* 8-3AnimationTime copy 2-Info.plist */,
+				F5C51D031F581A8600657F86 /* 8-3AnimationTime copy 3-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +142,9 @@
 				F570554A1F3315F60067EC5D /* 8-3AnimationTime.app */,
 				F57055631F3315F60067EC5D /* 8-3AnimationTimeTests.xctest */,
 				F570556E1F3315F60067EC5D /* 8-3AnimationTimeUITests.xctest */,
+				F5C51CE41F581A5200657F86 /* 8-3AnimationTime copy.app */,
+				F5C51CF31F581A7100657F86 /* 8-3AnimationTime copy 2.app */,
+				F5C51D021F581A8600657F86 /* 8-3AnimationTime copy 3.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -196,6 +247,57 @@
 			productReference = F570556E1F3315F60067EC5D /* 8-3AnimationTimeUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		F5C51CD71F581A5200657F86 /* 8-3AnimationTime copy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5C51CE11F581A5200657F86 /* Build configuration list for PBXNativeTarget "8-3AnimationTime copy" */;
+			buildPhases = (
+				F5C51CD81F581A5200657F86 /* Sources */,
+				F5C51CDC1F581A5200657F86 /* Frameworks */,
+				F5C51CDD1F581A5200657F86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "8-3AnimationTime copy";
+			productName = "8-3AnimationTime";
+			productReference = F5C51CE41F581A5200657F86 /* 8-3AnimationTime copy.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F5C51CE61F581A7100657F86 /* 8-3AnimationTime copy 2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5C51CF01F581A7100657F86 /* Build configuration list for PBXNativeTarget "8-3AnimationTime copy 2" */;
+			buildPhases = (
+				F5C51CE71F581A7100657F86 /* Sources */,
+				F5C51CEB1F581A7100657F86 /* Frameworks */,
+				F5C51CEC1F581A7100657F86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "8-3AnimationTime copy 2";
+			productName = "8-3AnimationTime";
+			productReference = F5C51CF31F581A7100657F86 /* 8-3AnimationTime copy 2.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F5C51CF51F581A8600657F86 /* 8-3AnimationTime copy 3 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5C51CFF1F581A8600657F86 /* Build configuration list for PBXNativeTarget "8-3AnimationTime copy 3" */;
+			buildPhases = (
+				F5C51CF61F581A8600657F86 /* Sources */,
+				F5C51CFA1F581A8600657F86 /* Frameworks */,
+				F5C51CFB1F581A8600657F86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "8-3AnimationTime copy 3";
+			productName = "8-3AnimationTime";
+			productReference = F5C51D021F581A8600657F86 /* 8-3AnimationTime copy 3.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -207,7 +309,7 @@
 				TargetAttributes = {
 					F57055491F3315F60067EC5D = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 9T725P7UDK;
+						DevelopmentTeam = F3ZZL9NMTQ;
 						ProvisioningStyle = Automatic;
 					};
 					F57055621F3315F60067EC5D = {
@@ -221,6 +323,15 @@
 						DevelopmentTeam = 9T725P7UDK;
 						ProvisioningStyle = Automatic;
 						TestTargetID = F57055491F3315F60067EC5D;
+					};
+					F5C51CD71F581A5200657F86 = {
+						DevelopmentTeam = F3ZZL9NMTQ;
+					};
+					F5C51CE61F581A7100657F86 = {
+						DevelopmentTeam = F3ZZL9NMTQ;
+					};
+					F5C51CF51F581A8600657F86 = {
+						DevelopmentTeam = F3ZZL9NMTQ;
 					};
 				};
 			};
@@ -240,6 +351,9 @@
 				F57055491F3315F60067EC5D /* 8-3AnimationTime */,
 				F57055621F3315F60067EC5D /* 8-3AnimationTimeTests */,
 				F570556D1F3315F60067EC5D /* 8-3AnimationTimeUITests */,
+				F5C51CD71F581A5200657F86 /* 8-3AnimationTime copy */,
+				F5C51CE61F581A7100657F86 /* 8-3AnimationTime copy 2 */,
+				F5C51CF51F581A8600657F86 /* 8-3AnimationTime copy 3 */,
 			);
 		};
 /* End PBXProject section */
@@ -269,6 +383,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F5C51CDD1F581A5200657F86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5C51CDE1F581A5200657F86 /* LaunchScreen.storyboard in Resources */,
+				F5C51CDF1F581A5200657F86 /* Assets.xcassets in Resources */,
+				F5C51CE01F581A5200657F86 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5C51CEC1F581A7100657F86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5C51CED1F581A7100657F86 /* LaunchScreen.storyboard in Resources */,
+				F5C51CEE1F581A7100657F86 /* Assets.xcassets in Resources */,
+				F5C51CEF1F581A7100657F86 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5C51CFB1F581A8600657F86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5C51CFC1F581A8600657F86 /* LaunchScreen.storyboard in Resources */,
+				F5C51CFD1F581A8600657F86 /* Assets.xcassets in Resources */,
+				F5C51CFE1F581A8600657F86 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -295,6 +439,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				F57055731F3315F60067EC5D /* __3AnimationTimeUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5C51CD81F581A5200657F86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5C51CD91F581A5200657F86 /* ViewController.m in Sources */,
+				F5C51CDA1F581A5200657F86 /* AppDelegate.m in Sources */,
+				F5C51CDB1F581A5200657F86 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5C51CE71F581A7100657F86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5C51CE81F581A7100657F86 /* ViewController.m in Sources */,
+				F5C51CE91F581A7100657F86 /* AppDelegate.m in Sources */,
+				F5C51CEA1F581A7100657F86 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5C51CF61F581A8600657F86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5C51CF71F581A8600657F86 /* ViewController.m in Sources */,
+				F5C51CF81F581A8600657F86 /* AppDelegate.m in Sources */,
+				F5C51CF91F581A8600657F86 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,11 +603,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9T725P7UDK;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = F3ZZL9NMTQ;
+				GCC_PREPROCESSOR_DEFINITIONS = "PRODUCT=1";
 				INFOPLIST_FILE = "8-3AnimationTime/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "wyman.--3AnimationTime";
+				PRODUCT_BUNDLE_IDENTIFIER = "wyman.--3AnimationTimes";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -441,11 +618,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9T725P7UDK;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = F3ZZL9NMTQ;
+				GCC_PREPROCESSOR_DEFINITIONS = "PRODUCT=1";
 				INFOPLIST_FILE = "8-3AnimationTime/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "wyman.--3AnimationTime";
+				PRODUCT_BUNDLE_IDENTIFIER = "wyman.--3AnimationTimes";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -499,6 +679,96 @@
 			};
 			name = Release;
 		};
+		F5C51CE21F581A5200657F86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = F3ZZL9NMTQ;
+				GCC_PREPROCESSOR_DEFINITIONS = "PRODUCT=0";
+				INFOPLIST_FILE = "8-3AnimationTime copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "wyman.--3AnimationTimes";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Debug;
+		};
+		F5C51CE31F581A5200657F86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = F3ZZL9NMTQ;
+				GCC_PREPROCESSOR_DEFINITIONS = "PRODUCT=0";
+				INFOPLIST_FILE = "8-3AnimationTime copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "wyman.--3AnimationTimes";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Release;
+		};
+		F5C51CF11F581A7100657F86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = F3ZZL9NMTQ;
+				GCC_PREPROCESSOR_DEFINITIONS = "PRODUCT=2";
+				INFOPLIST_FILE = "8-3AnimationTime copy 2-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "wyman.--3AnimationTimes";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Debug;
+		};
+		F5C51CF21F581A7100657F86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = F3ZZL9NMTQ;
+				GCC_PREPROCESSOR_DEFINITIONS = "PRODUCT=2";
+				INFOPLIST_FILE = "8-3AnimationTime copy 2-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "wyman.--3AnimationTimes";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Release;
+		};
+		F5C51D001F581A8600657F86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = F3ZZL9NMTQ;
+				GCC_PREPROCESSOR_DEFINITIONS = "PRODUCT=3";
+				INFOPLIST_FILE = "8-3AnimationTime copy 3-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "wyman.--3AnimationTimes";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Debug;
+		};
+		F5C51D011F581A8600657F86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = F3ZZL9NMTQ;
+				GCC_PREPROCESSOR_DEFINITIONS = "PRODUCT=3";
+				INFOPLIST_FILE = "8-3AnimationTime copy 3-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "wyman.--3AnimationTimes";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -518,6 +788,7 @@
 				F57055791F3315F60067EC5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F570557A1F3315F60067EC5D /* Build configuration list for PBXNativeTarget "8-3AnimationTimeTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +797,7 @@
 				F570557C1F3315F60067EC5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F570557D1F3315F60067EC5D /* Build configuration list for PBXNativeTarget "8-3AnimationTimeUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +806,34 @@
 				F570557F1F3315F60067EC5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F5C51CE11F581A5200657F86 /* Build configuration list for PBXNativeTarget "8-3AnimationTime copy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5C51CE21F581A5200657F86 /* Debug */,
+				F5C51CE31F581A5200657F86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F5C51CF01F581A7100657F86 /* Build configuration list for PBXNativeTarget "8-3AnimationTime copy 2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5C51CF11F581A7100657F86 /* Debug */,
+				F5C51CF21F581A7100657F86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F5C51CFF1F581A8600657F86 /* Build configuration list for PBXNativeTarget "8-3AnimationTime copy 3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5C51D001F581A8600657F86 /* Debug */,
+				F5C51D011F581A8600657F86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

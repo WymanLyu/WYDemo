@@ -23,6 +23,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    NSLog(@"%@", BASE_URL);
+    
+    
     NSLog(@"CACurrentMediaTime : %f", CACurrentMediaTime());
     
     self.superLayer = [CALayer layer];

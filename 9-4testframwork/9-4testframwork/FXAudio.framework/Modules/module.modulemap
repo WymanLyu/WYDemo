@@ -1,0 +1,6 @@
+framework module FXAudio {
+  umbrella header "FXAudio.h"
+
+  export *
+  module * { export * }
+}

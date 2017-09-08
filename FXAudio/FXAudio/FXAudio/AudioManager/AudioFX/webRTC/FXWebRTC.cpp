@@ -22,7 +22,7 @@ FXWebRTC::FXWebRTC(unsigned int inputNumberOfSamples, unsigned int outputNumberO
     
     // 0.初始化apm
     this->apm = new AudioProcessingProxy();
-    this->apm->setAgcState(true);
+    this->apm->setAgcState(false);
     this->apm->setNsState(true);
     
     // 1.设置参数
