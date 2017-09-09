@@ -17,12 +17,10 @@
 
 @implementation WYDownloadInfo
 
-//@synthesize bytesWritten=_bytesWritten, totalBytesWritten=_totalBytesWritten, totalBytesExpectedToWrite=_totalBytesExpectedToWrite, filename=_filename, filepath=_filepath, url=_url, error=_error;
-
 #pragma mark - Getter
 
 - (NSString *)filepath {
-    if (_filepath == nil) {
+    if (_filepath == nil && self.filename) {
         _filepath = [[NSString stringWithFormat:@"%@/%@", [WYDownloadConfig defaultConfig].rootDir, self.filename] prependCaches];
     }
     if (_filepath && ![[NSFileManager defaultManager] fileExistsAtPath:_filepath]) {
@@ -50,7 +48,7 @@
 
 - (NSInteger)totalBytesExpectedToWrite {
     if (0==_totalBytesExpectedToWrite) {
-        _totalBytesWritten = [[WYDownloadConfig defaultConfig].totalFileSizes[self.url] integerValue];
+        _totalBytesExpectedToWrite = [[WYDownloadConfig defaultConfig].totalFileSizes[self.url] integerValue];
     }
     return _totalBytesExpectedToWrite;
 }

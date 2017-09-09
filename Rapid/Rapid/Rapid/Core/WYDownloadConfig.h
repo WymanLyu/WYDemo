@@ -46,4 +46,9 @@ typedef void (^WYDownloadStateChangeBlock)(WYDownloadState state, NSString *file
 
 - (void)synchronize;
 
+- (NSString *)defaultFilePathForURL:(NSString *)url;
+
+- (NSString *)defaultFileNameForURL:(NSString *)url;
+
+
 @end

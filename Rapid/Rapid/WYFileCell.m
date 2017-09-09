@@ -36,18 +36,16 @@
     // 控制状态
     WYDownloadTask *downTask = [[WYDownloadSession shareSession] selectDownLoadTask:_url];
 
-    if (downTask.state == WYDownloadStateCompleted) {
-        self.downloadBtn.hidden = YES;
+    if (downTask.state == WYDownloadStateCompleted) { // 完成
         self.progressView.hidden = YES;
-    } else if (downTask.state == WYDownloadStateWillResume) {
-        self.downloadBtn.hidden = NO;
+        [self.downloadBtn setBackgroundImage:[UIImage imageNamed:@"check"] forState:UIControlStateNormal];
+    } else if (downTask.state == WYDownloadStateWillResume) { // 等待
         self.progressView.hidden = NO;
         [self.downloadBtn setBackgroundImage:[UIImage imageNamed:@"clock"] forState:UIControlStateNormal];
     } else {
-        self.downloadBtn.hidden = NO;
-        if (downTask.state == WYDownloadStateNone ) {
+        if (downTask.state == WYDownloadStateNone ) { // 未知状态
             self.progressView.hidden = YES;
-        } else {
+        } else { // 下载中
             self.progressView.hidden = NO;
             if (downTask.downInfo.totalBytesExpectedToWrite) {
                 self.progressView.progress = 1.0 * downTask.downInfo.totalBytesWritten / downTask.downInfo.totalBytesExpectedToWrite;
@@ -55,9 +53,9 @@
                 self.progressView.progress = 0.0;
             }
         }
-        if (downTask.state == WYDownloadStateResumed) {
+        if (downTask.state == WYDownloadStateResumed) { // 下载中
             [self.downloadBtn setBackgroundImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
-        } else {
+        } else { // 未知状态
             [self.downloadBtn setBackgroundImage:[UIImage imageNamed:@"download"] forState:UIControlStateNormal];
         }
     }
@@ -68,6 +66,7 @@
     
     if (downTask.state == WYDownloadStateResumed || downTask.state == WYDownloadStateWillResume) {
         [downTask suspend];
+        self.url = self.url;
     } else {
         [[WYDownloadSession shareSession] download:self.url progress:^(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytesExpectedToWrite) {
             NSLog(@"%f", (double)totalBytesWritten / totalBytesExpectedToWrite);

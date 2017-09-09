@@ -10,6 +10,9 @@
 #import "NSString+WYDownload.h"
 
 @interface WYDownloadTask ()
+{
+    WYDownloadState _state;
+}
 
 /** 网络任务 */
 @property (strong, nonatomic) NSURLSessionDataTask *task;
@@ -29,6 +32,7 @@
         // 1.设置info
         _downInfo = [[WYDownloadInfo alloc] init];
         _downInfo.url = url;
+        _identifier = url;
         // 2.回调
         _downInfo.progressChangeBlock = progress;
         _downInfo.stateChangeBlock = state;
@@ -38,9 +42,9 @@
             _downInfo.filename = [destinationPath lastPathComponent];
         }
         // 4.状态
-        if (_state == WYDownloadStateCompleted) {
+        if (self.state == WYDownloadStateCompleted) {
             return self;
-        } else if (_state == WYDownloadStateResumed) {
+        } else if (self.state == WYDownloadStateResumed) {
             return self;
         }
         // 5.设置网络任务
@@ -58,7 +62,6 @@
     self.task = [[WYDownloadConfig defaultConfig].URLSession dataTaskWithRequest:request];
     // 设置描述
     self.task.taskDescription = info.url;
-    _identifier = info.url;
 }
 
 #pragma mark - 初始化方法
@@ -81,24 +84,32 @@
 #pragma mark - WYDownloadOperation
 /** 取消 */
 - (void)cancel {
+    if (self.state == WYDownloadStateCompleted || self.state == WYDownloadStateNone) return;
     [self.task cancel];
     self.state = WYDownloadStateNone;
 }
 
 /** 挂起 */
 - (void)suspend {
-    [self.task suspend];
-    self.state = WYDownloadStateSuspened;
+    if (self.state == WYDownloadStateCompleted || self.state == WYDownloadStateSuspened) return;
+    if (self.state== WYDownloadStateResumed) {
+        [self.task suspend];
+        self.state = WYDownloadStateSuspened;
+    } else {
+        self.state = WYDownloadStateNone;
+    }
 }
 
 /** 继续 */
 - (void)resume {
+    if (self.state == WYDownloadStateCompleted || self.state == WYDownloadStateResumed) return;
     [self.task resume];
     self.state = WYDownloadStateResumed;
 }
 
 /** 即将下载 */
 - (void)willResume {
+    if (self.state == WYDownloadStateCompleted || self.state == WYDownloadStateWillResume) return;
     self.state = WYDownloadStateWillResume;
 }
 
@@ -107,6 +118,16 @@
         !self.downInfo.stateChangeBlock ? : self.downInfo.stateChangeBlock(state, self.downInfo.filepath, nil);
     }
     _state = state;
+}
+
+- (WYDownloadState)state {
+    // 如果是下载完毕
+    if (self.downInfo.totalBytesExpectedToWrite && self.downInfo.totalBytesWritten == self.downInfo.totalBytesExpectedToWrite) {
+        return WYDownloadStateCompleted;
+    }
+    // 如果下载失败
+    if (self.task.error) return WYDownloadStateNone;
+    return _state;
 }
 
 #pragma mark - 下载操作

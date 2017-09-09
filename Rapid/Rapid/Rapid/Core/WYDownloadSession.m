@@ -63,9 +63,42 @@ static WYDownloadSession *_downloadSession;
 
 #pragma mark - 核心方法
 
-- (WYDownloadTask *)download:(NSString *)url toDestinationPath:(NSString *)destinationPath progress:(WYDownloadProgressChangeBlock)progress state:(WYDownloadStateChangeBlock)state {
+- (WYDownloadTask *)createDownloadTask:(NSString *)url toDestinationPath:(NSString *)destinationPath progress:(WYDownloadProgressChangeBlock)progress state:(WYDownloadStateChangeBlock)state {
     WYDownloadTask *task = [WYDownloadTask download:url toDestinationPath:destinationPath progress:progress state:state];
     [self appendDownloadTask:task];
+    return task;
+}
+
+- (WYDownloadTask *)download:(NSString *)url toDestinationPath:(NSString *)destinationPath progress:(WYDownloadProgressChangeBlock)progress state:(WYDownloadStateChangeBlock)state {
+    // 查找任务
+    WYDownloadTask *task = [self selectDownLoadTask:url];
+    // 创建任务
+    if (nil==task) {
+        task = [self createDownloadTask:url toDestinationPath:destinationPath progress:progress state:state];
+    }
+    // 更新任务回调,目标地址没变则更新，反之则重新创建
+    if ([task.downInfo.filepath isEqualToString:destinationPath]||
+        (nil==destinationPath&&nil==task.downInfo.filepath)     ||
+        (nil==destinationPath&&[task.downInfo.filepath isEqualToString:[[WYDownloadConfig defaultConfig] defaultFilePathForURL:url]])) {
+        task.downInfo.progressChangeBlock = progress;
+        task.downInfo.stateChangeBlock = state;
+    } else {
+        [self deleteDownloadTask:task];
+        task = [self createDownloadTask:url toDestinationPath:destinationPath progress:progress state:state];
+    }
+    // 开启任务
+    [task resume];
+    
+    
+//    if (nil!=task && (destinationPath.length && [task.downInfo.filepath isEqualToString:destinationPath])) { // 更新任务回调
+//        task.downInfo.progressChangeBlock = progress;
+//        task.downInfo.stateChangeBlock = state;
+//    } else if (task.state == WYDownloadStateResumed || task.state == WYDownloadStateSuspened || task.state == WYDownloadStateWillResume) {
+//        [task resume];
+//    } else {  // 新启一个任务
+//        [self deleteDownloadTask:task];
+//        task = [self createDownloadTask:url toDestinationPath:destinationPath progress:progress state:state];
+//    }
     return task;
 }
 
@@ -81,16 +114,22 @@ static WYDownloadSession *_downloadSession;
 }
 
 - (void)deleteDownloadTask:(WYDownloadTask *)task {
-    if (!task) return;
+    if (!task || !task.identifier) return;
     WYDownloadTask *downTask = [self selectDownLoadTask:task.identifier];
     if (downTask==task) {
         [self.downloadDaskArrM removeObject:downTask];
+        [[WYDownloadConfig defaultConfig].totalFileSizes removeObjectForKey:downTask.identifier];
+        [[WYDownloadConfig defaultConfig] synchronize];
     }
 }
 
 - (WYDownloadTask *)selectDownLoadTask:(NSString *)url {
     if (url == nil) return nil;
     WYDownloadTask *downTask = [self.downloadDaskArrM filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"identifier==%@", url]].firstObject;
+    if (nil==downTask && [[WYDownloadConfig defaultConfig].totalFileSizes.allKeys containsObject:url]) {
+        // 如果session不存在此任务，但磁盘中存在则新启个下载任务
+        downTask = [self createDownloadTask:url toDestinationPath:nil progress:nil state:nil];
+    }
     return downTask;
 }
 
@@ -152,7 +191,6 @@ static WYDownloadSession *_downloadSession;
     if ([downTask respondsToSelector:@selector(didReceiveResponse:)]) {
         [downTask didReceiveResponse:response];
     }
-    
     // 继续
     completionHandler(NSURLSessionResponseAllow);
 }
@@ -167,17 +205,7 @@ static WYDownloadSession *_downloadSession;
     }
 }
 
-- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error
-{
-//    // 获得下载信息
-//    MJDownloadInfo *info = [self downloadInfoForURL:task.taskDescription];
-//    
-//    // 处理结束
-//    [info didCompleteWithError:error];
-    
-    // 恢复等待下载的
-//    [self resumeFirstWillResume];
-    
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error {
     // 获取下载任务
     WYDownloadTask *downTask = [self selectDownLoadTask:task.taskDescription];
     
@@ -186,6 +214,8 @@ static WYDownloadSession *_downloadSession;
         [downTask didCompleteWithError:error];
     }
     
+    // 恢复等待下载的
+    [self resumeFirstWillResume];
 }
 
 

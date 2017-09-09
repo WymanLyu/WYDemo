@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "WYFileCell.h"
 
+#import "NSFileManager+WYSandbox.h"
+
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

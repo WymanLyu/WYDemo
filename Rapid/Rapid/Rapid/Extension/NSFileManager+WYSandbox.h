@@ -25,4 +25,53 @@
 /** 缓存路径【在lib下】 */
 - (NSString *)cachesPath;
 
+
+/** 
+ * 获取目录所以文件的路径,递归查找
+ *
+ *  结构：Dir
+ *         - subDir1
+ *              file1
+ *         - subDir2
+ *              file2
+ *              file3
+ *         file
+ *
+ *  返回值：@[ @[file1], @[file2, file3], file];
+ **/
+- (NSArray *)allFilePathsAtPathKeepStructure:(NSString *)direString;
+
+/**
+ * 获取目录所以文件的路径,递归查找
+ *
+ *  结构：Dir
+ *         - subDir1
+ *              file1
+ *         - subDir2
+ *              file2
+ *              file3
+ *         file
+ *
+ *  返回值：@[file1, @file2, file3, file];
+ **/
+- (NSArray *)allFilePathsAtPath:(NSString *)direString;
+
+/**
+ * 获取目录所以文件的路径,递归查找
+ *
+ *  结构：Dir
+ *         - subDir1
+ *              file1
+ *         - subDir2
+ *              file2
+ *              file3
+ *         file
+ *
+ *  返回值：@[fileName1, @fileName2, fileName3, fileName];
+ **/
+- (NSArray *)allFileNamesAtPath:(NSString *)direString;
+
+
+
+
 @end
