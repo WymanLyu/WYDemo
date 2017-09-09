@@ -83,8 +83,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Rapid" id="v9p-oG-ZxI">
-                        <barButtonItem key="leftBarButtonItem" title="全部暂停" id="tUP-dr-cEl"/>
-                        <barButtonItem key="rightBarButtonItem" title="全部继续" id="ndX-dz-mS9"/>
+                        <barButtonItem key="leftBarButtonItem" title="全部暂停" id="tUP-dr-cEl">
+                            <connections>
+                                <action selector="allSuspend:" destination="BYZ-38-t0r" id="pIF-qe-HDm"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="全部继续" id="ndX-dz-mS9">
+                            <connections>
+                                <action selector="allResume:" destination="BYZ-38-t0r" id="qkD-o6-dr9"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="x9Y-Re-6dD" id="Tu1-xB-XDo"/>

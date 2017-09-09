@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "WYFileCell.h"
-
+#import "Rapid.h"
 #import "NSFileManager+WYSandbox.h"
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -24,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+
 }
 
 #pragma mark - 懒加载
@@ -54,5 +55,11 @@
     return 100;
 }
 
+- (IBAction)allResume:(id)sender {
+    [[WYDownloadSession shareSession] resumeAll];
+}
+- (IBAction)allSuspend:(id)sender {
+    [[WYDownloadSession shareSession] suspendAll];
+}
 
 @end

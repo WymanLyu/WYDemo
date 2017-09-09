@@ -83,14 +83,14 @@
 #pragma mark - WYDownloadOperation
 /** 取消 */
 - (void)cancel {
-    if (self.state == WYDownloadStateCompleted || self.state == WYDownloadStateNone) return;
+    if (self.state == WYDownloadStateCompleted || self.state == WYDownloadStateNone || nil==self.task) return;
     [self.task cancel];
     self.state = WYDownloadStateNone;
 }
 
 /** 挂起 */
 - (void)suspend {
-    if (self.state == WYDownloadStateCompleted || self.state == WYDownloadStateSuspened) return;
+    if (self.state == WYDownloadStateCompleted || self.state == WYDownloadStateSuspened || nil==self.task) return;
     if (self.state== WYDownloadStateResumed) {
         [self.task suspend];
         self.state = WYDownloadStateSuspened;
@@ -101,7 +101,7 @@
 
 /** 继续 */
 - (void)resume {
-    if (self.state == WYDownloadStateCompleted || self.state == WYDownloadStateResumed) return;
+    if (self.state == WYDownloadStateCompleted || self.state == WYDownloadStateResumed || nil==self.task) return;
     [self.task resume];
     self.state = WYDownloadStateResumed;
 }

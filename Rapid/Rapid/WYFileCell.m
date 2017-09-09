@@ -60,7 +60,7 @@
     WYDownloadTask *downTask = [[WYDownloadSession shareSession] selectDownLoadTask:_url];
     
     if (downTask.state == WYDownloadStateResumed || downTask.state == WYDownloadStateWillResume) {
-        [downTask suspend];
+        [[WYDownloadSession shareSession] suspendTask:downTask];
         self.url = self.url;
     } else {
         [[WYDownloadSession shareSession] download:self.url progress:^(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytesExpectedToWrite) {
