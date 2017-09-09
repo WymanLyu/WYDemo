@@ -7,6 +7,7 @@
 //
 
 #import "WYDownloadSession.h"
+#import "NSFileManager+WYSandbox.h"
 
 @interface WYDownloadSession () <NSURLSessionDataDelegate>
 
@@ -17,7 +18,7 @@
 @property (strong, nonatomic) NSOperationQueue *queue;
 
 /** 有序任务队列 */
-@property (nonatomic, strong) NSMutableArray<WYDownloadTask<WYDownloadOperation> *> *downloadDaskArrM;
+@property (nonatomic, strong) NSMutableArray<WYDownloadTask<WYDownloadOperation> *> *downloadTaskArrM;
 
 @end
 
@@ -27,7 +28,7 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        _downloadDaskArrM = [NSMutableArray array];
+        _downloadTaskArrM = [NSMutableArray array];
     }
     return self;
 }
@@ -87,18 +88,7 @@ static WYDownloadSession *_downloadSession;
         task = [self createDownloadTask:url toDestinationPath:destinationPath progress:progress state:state];
     }
     // 开启任务
-    [task resume];
-    
-    
-//    if (nil!=task && (destinationPath.length && [task.downInfo.filepath isEqualToString:destinationPath])) { // 更新任务回调
-//        task.downInfo.progressChangeBlock = progress;
-//        task.downInfo.stateChangeBlock = state;
-//    } else if (task.state == WYDownloadStateResumed || task.state == WYDownloadStateSuspened || task.state == WYDownloadStateWillResume) {
-//        [task resume];
-//    } else {  // 新启一个任务
-//        [self deleteDownloadTask:task];
-//        task = [self createDownloadTask:url toDestinationPath:destinationPath progress:progress state:state];
-//    }
+    [self resumeTask:task];
     return task;
 }
 
@@ -110,14 +100,14 @@ static WYDownloadSession *_downloadSession;
 
 - (void)appendDownloadTask:(WYDownloadTask *)task {
     if (!task || !task.identifier) return;
-    [self.downloadDaskArrM addObject:task];
+    [self.downloadTaskArrM addObject:task];
 }
 
 - (void)deleteDownloadTask:(WYDownloadTask *)task {
     if (!task || !task.identifier) return;
     WYDownloadTask *downTask = [self selectDownLoadTask:task.identifier];
     if (downTask==task) {
-        [self.downloadDaskArrM removeObject:downTask];
+        [self.downloadTaskArrM removeObject:downTask];
         [[WYDownloadConfig defaultConfig].totalFileSizes removeObjectForKey:downTask.identifier];
         [[WYDownloadConfig defaultConfig] synchronize];
     }
@@ -125,61 +115,84 @@ static WYDownloadSession *_downloadSession;
 
 - (WYDownloadTask *)selectDownLoadTask:(NSString *)url {
     if (url == nil) return nil;
-    WYDownloadTask *downTask = [self.downloadDaskArrM filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"identifier==%@", url]].firstObject;
+    WYDownloadTask *downTask = [self.downloadTaskArrM filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"identifier==%@", url]].firstObject;
     if (nil==downTask && [[WYDownloadConfig defaultConfig].totalFileSizes.allKeys containsObject:url]) {
         // 如果session不存在此任务，但磁盘中存在则新启个下载任务
-        downTask = [self createDownloadTask:url toDestinationPath:nil progress:nil state:nil];
+        // 获取原有文件路径
+        NSString *fileName = [[WYDownloadConfig defaultConfig] defaultFileNameForURL:url];
+        NSArray<NSString *> *filePaths = [[NSFileManager defaultManager] allFilePathsAtPath:[WYDownloadConfig defaultConfig].rootDir];
+        __block NSString *desPath = nil;
+        [filePaths enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([obj.lastPathComponent isEqualToString:fileName]) {
+                desPath = obj;
+                *stop = YES;
+            }
+        }];
+        downTask = [self createDownloadTask:url toDestinationPath:desPath progress:nil state:nil];
     }
     return downTask;
 }
 
 - (void)cancelTask:(WYDownloadTask *)task {
-    WYDownloadTask *downTask = [self selectDownLoadTask:task.description];
+    WYDownloadTask *downTask = [self selectDownLoadTask:task.identifier];
     if (downTask==task) {
         [task cancel];
     }
 }
 
 - (void)suspendTask:(WYDownloadTask *)task {
-    WYDownloadTask *downTask = [self selectDownLoadTask:task.description];
+    WYDownloadTask *downTask = [self selectDownLoadTask:task.identifier];
     if (downTask==task) {
         [task suspend];
     }
 }
 
 - (void)resumeTask:(WYDownloadTask *)task {
-    WYDownloadTask *downTask = [self selectDownLoadTask:task.description];
+    WYDownloadTask *downTask = [self selectDownLoadTask:task.identifier];
     if (downTask==task) {
         [task resume];
     }
+    // 如果此时已经有最大下载数则此任务进入等待状态
+    NSArray *downloadingDownloadInfoArray = [self.downloadTaskArrM filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"state==%d", WYDownloadStateResumed]];
+//    if (self.maxConcurrentCount && downloadingDownloadInfoArray.count == self.maxConcurrentCount) {
+//        // 等待下载
+//        [task willResume];
+//    } else {
+        // 继续
+        [task resume];
+//    }
 }
 
 - (void)willResumeTask:(WYDownloadTask *)task {
-    WYDownloadTask *downTask = [self selectDownLoadTask:task.description];
+    WYDownloadTask *downTask = [self selectDownLoadTask:task.identifier];
     if (downTask==task) {
         [task willResume];
     }
 }
 
 - (void)cancelAll {
-    [self.downloadDaskArrM makeObjectsPerformSelector:@selector(cancel)];
+    [self.downloadTaskArrM makeObjectsPerformSelector:@selector(cancel)];
 }
 
 - (void)suspendAll {
-    [self.downloadDaskArrM makeObjectsPerformSelector:@selector(suspend)];
+    [self.downloadTaskArrM makeObjectsPerformSelector:@selector(suspend)];
 }
 
 - (void)resumeAll {
-    [self.downloadDaskArrM makeObjectsPerformSelector:@selector(resume)];
+    // 不直接  [self.downloadTaskArrM makeObjectsPerformSelector:@selector(resume)];
+    // 是因为在 [self resumeTask:obj] 中处理了willResume逻辑
+    [self.downloadTaskArrM enumerateObjectsUsingBlock:^(WYDownloadTask<WYDownloadOperation> * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [self resumeTask:obj];
+    }];
 }
 
 - (void)willResumeAll {
-    [self.downloadDaskArrM makeObjectsPerformSelector:@selector(willResume)];
+    [self.downloadTaskArrM makeObjectsPerformSelector:@selector(willResume)];
 }
 
 - (void)resumeFirstWillResume {
-    WYDownloadTask *willDownTask = [self.downloadDaskArrM filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"state==%d", WYDownloadStateWillResume]].firstObject;
-    [willDownTask resume];
+    WYDownloadTask *willDownTask = [self.downloadTaskArrM filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"state==%d", WYDownloadStateWillResume]].firstObject;
+    [self resumeTask:willDownTask];
 }
 
 #pragma mark - <NSURLSessionDataDelegate>

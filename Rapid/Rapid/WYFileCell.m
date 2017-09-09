@@ -43,15 +43,10 @@
         self.progressView.hidden = NO;
         [self.downloadBtn setBackgroundImage:[UIImage imageNamed:@"clock"] forState:UIControlStateNormal];
     } else {
-        if (downTask.state == WYDownloadStateNone ) { // 未知状态
-            self.progressView.hidden = YES;
-        } else { // 下载中
-            self.progressView.hidden = NO;
-            if (downTask.downInfo.totalBytesExpectedToWrite) {
-                self.progressView.progress = 1.0 * downTask.downInfo.totalBytesWritten / downTask.downInfo.totalBytesExpectedToWrite;
-            } else {
-                self.progressView.progress = 0.0;
-            }
+        if (downTask.downInfo.totalBytesExpectedToWrite) {
+            self.progressView.progress = 1.0 * downTask.downInfo.totalBytesWritten / downTask.downInfo.totalBytesExpectedToWrite;
+        } else {
+            self.progressView.progress = 0.0;
         }
         if (downTask.state == WYDownloadStateResumed) { // 下载中
             [self.downloadBtn setBackgroundImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];

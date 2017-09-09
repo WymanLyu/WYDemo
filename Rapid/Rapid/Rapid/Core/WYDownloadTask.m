@@ -68,7 +68,6 @@
 
 + (WYDownloadTask *)download:(NSString *)url toDestinationPath:(NSString *)destinationPath progress:(WYDownloadProgressChangeBlock)progress state:(WYDownloadStateChangeBlock)state {
     WYDownloadTask *task = [[WYDownloadTask alloc] initWithDownloadURL:url toDestinationPath:destinationPath progress:progress state:state];
-    [task resume];
     return task;
 }
 
