@@ -77,8 +77,14 @@
         [self.downloadBtn setBackgroundImage:[UIImage imageNamed:@"check"] forState:UIControlStateNormal];
     } else if (downTask.state == WYDownloadStateWillResume) { // 等待
         self.progressView.hidden = NO;
+        if (downTask.downInfo.totalBytesExpectedToWrite) {
+            self.progressView.progress = 1.0 * downTask.downInfo.totalBytesWritten / downTask.downInfo.totalBytesExpectedToWrite;
+        } else {
+            self.progressView.progress = 0.0;
+        }
         [self.downloadBtn setBackgroundImage:[UIImage imageNamed:@"clock"] forState:UIControlStateNormal];
     } else {
+        self.progressView.hidden = NO;
         if (downTask.downInfo.totalBytesExpectedToWrite) {
             self.progressView.progress = 1.0 * downTask.downInfo.totalBytesWritten / downTask.downInfo.totalBytesExpectedToWrite;
         } else {

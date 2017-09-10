@@ -170,6 +170,9 @@ static WYDownloadSession *_downloadSession;
     if (downTask!=task) {
         return;
     }
+    if (downTask.state == WYDownloadStateResumed) {
+        return;
+    }
     // 如果此时已经有最大下载数则此任务进入等待状态
     NSArray *downloadingDownloadInfoArray = [self.downloadTaskArrM filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"state==%d", WYDownloadStateResumed]];
     if (self.maxConcurrentCount && downloadingDownloadInfoArray.count == self.maxConcurrentCount) {
@@ -193,11 +196,11 @@ static WYDownloadSession *_downloadSession;
 }
 
 - (void)suspendAll {
-    // 不直接  [self.downloadTaskArrM makeObjectsPerformSelector:@selector(resume)];
-    // 是因为在 [self suspendTask:obj]; 中处理了willResume逻辑
-    [self.downloadTaskArrM enumerateObjectsUsingBlock:^(WYDownloadTask<WYDownloadOperation> * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [self suspendTask:obj];
-    }];
+    [self.downloadTaskArrM makeObjectsPerformSelector:@selector(suspend)];
+//    // 是因为在 [self suspendTask:obj]; 中处理了willResume逻辑
+//    [self.downloadTaskArrM enumerateObjectsUsingBlock:^(WYDownloadTask<WYDownloadOperation> * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//        [self suspendTask:obj];
+//    }];
 }
 
 - (void)resumeAll {

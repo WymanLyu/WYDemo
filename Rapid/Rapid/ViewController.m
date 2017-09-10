@@ -32,7 +32,7 @@
 - (NSMutableArray *)urls {
     if (!_urls) {
         self.urls = [NSMutableArray array];
-        for (int i = 1; i<=5; i++) {
+        for (int i = 1; i<=10; i++) {
             [self.urls addObject:[NSString stringWithFormat:@"http://120.25.226.186:32812/resources/videos/minion_%02d.mp4", i]];
         }
     }

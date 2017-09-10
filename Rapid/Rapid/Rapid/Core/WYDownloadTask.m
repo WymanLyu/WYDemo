@@ -44,8 +44,6 @@
         // 4.状态
         if (self.state == WYDownloadStateCompleted) {
             return self;
-        } else if (self.state == WYDownloadStateResumed) {
-            return self;
         }
         // 5.设置网络任务
         [self setupURLSessionTaskWithDownloadInfo:_downInfo];
@@ -101,7 +99,10 @@
 
 /** 继续 */
 - (void)resume {
-    if (self.state == WYDownloadStateCompleted || self.state == WYDownloadStateResumed || nil==self.task) return;
+    if (self.state == WYDownloadStateCompleted || self.state == WYDownloadStateResumed) return;
+    if (nil==self.task) {
+        [self setupURLSessionTaskWithDownloadInfo:self.downInfo];
+    }
     [self.task resume];
     self.state = WYDownloadStateResumed;
 }
