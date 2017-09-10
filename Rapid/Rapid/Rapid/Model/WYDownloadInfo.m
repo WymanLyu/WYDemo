@@ -21,7 +21,7 @@
 
 - (NSString *)filepath {
     if (_filepath == nil && self.filename) {
-        _filepath = [[NSString stringWithFormat:@"%@/%@", [WYDownloadConfig defaultConfig].rootDir, self.filename] prependCaches];
+        _filepath = [[WYDownloadConfig defaultConfig] defaultFilePathForURL:self.url];
     }
     if (_filepath && ![[NSFileManager defaultManager] fileExistsAtPath:_filepath]) {
         NSString *dir = [_filepath stringByDeletingLastPathComponent];
@@ -32,12 +32,7 @@
 
 - (NSString *)filename {
     if (_filename == nil) {
-        NSString *pathExtension = self.url.pathExtension;
-        if (pathExtension.length) {
-            _filename = [NSString stringWithFormat:@"%@.%@", self.url.MD5, pathExtension];
-        } else {
-            _filename = self.url.MD5;
-        }
+        _filename = [[WYDownloadConfig defaultConfig] defaultFileNameForURL:self.url];
     }
     return _filename;
 }

@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Rapid.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // 配置下载根路径（相对caches）
+    [WYDownloadConfig configRootDir:@"TYCache/TYDownload"];
+    [WYDownloadConfig configDefaultFileDownloadDir:@"BGMusic"];
+    
     return YES;
 }
 

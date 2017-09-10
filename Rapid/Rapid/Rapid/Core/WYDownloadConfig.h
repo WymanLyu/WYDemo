@@ -36,11 +36,18 @@ typedef void (^WYDownloadStateChangeBlock)(WYDownloadState state, NSString *file
 
 @interface WYDownloadConfig : NSObject
 
+/** 配置根文件夹[相对caches] */
++ (void)configRootDir:(NSString *)rootDirInCaches;
+/** 配置默认下载路径[相对rootDirInCaches] */
++ (void)configDefaultFileDownloadDir:(NSString *)defaultFileDownloadDirtDirInCaches;
+
 + (instancetype)defaultConfig;
 
 - (NSURLSession *)URLSession;
 
 - (NSString *)rootDir;
+
+- (NSString *)defaultFileDownloadDir;
 
 - (NSMutableDictionary *)totalFileSizes;
 

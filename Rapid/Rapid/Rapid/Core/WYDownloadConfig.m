@@ -21,6 +21,17 @@
 
 @implementation WYDownloadConfig
 
+/** 配置根文件夹 */
+static NSString *_rootDirInCaches = nil;
+static NSString *_defaultFileDownloadDirtDirInCaches = nil;
++ (void)configRootDir:(NSString *)rootDirInCaches {
+    _rootDirInCaches = rootDirInCaches;
+}
+/** 配置默认下载路径[相对rootDirInCaches] */
++ (void)configDefaultFileDownloadDir:(NSString *)defaultFileDownloadDirtDirInCaches {
+    _defaultFileDownloadDirtDirInCaches = defaultFileDownloadDirtDirInCaches;
+}
+
 - (instancetype)init {
     if (self = [super init]) {
         _lock = [[NSRecursiveLock alloc] init];
@@ -42,7 +53,15 @@ static WYDownloadConfig *config;
 }
 
 - (NSString *)rootDir {
-    return @"WYDownload";
+    if (_rootDirInCaches) {
+        return _rootDirInCaches;
+    } else {
+        return @"WYDownload";
+    }
+}
+
+- (NSString *)defaultFileDownloadDir {
+    return _defaultFileDownloadDirtDirInCaches;
 }
 
 - (NSString *)totalFileSizesPath {
@@ -50,7 +69,11 @@ static WYDownloadConfig *config;
 }
 
 - (NSString *)defaultFilePathForURL:(NSString *)url {
-    return [[NSString stringWithFormat:@"%@/%@", self.rootDir, [self defaultFileNameForURL:url]] prependCaches];
+    if ([WYDownloadConfig defaultConfig].defaultFileDownloadDir) {
+        return [[NSString stringWithFormat:@"%@/%@/%@", [WYDownloadConfig defaultConfig].rootDir,[WYDownloadConfig defaultConfig].defaultFileDownloadDir, [self defaultFileNameForURL:url]] prependCaches];
+    } else {
+        return [[NSString stringWithFormat:@"%@/%@", [WYDownloadConfig defaultConfig].rootDir, [self defaultFileNameForURL:url]] prependCaches];
+    }
 }
 
 - (NSString *)defaultFileNameForURL:(NSString *)url {

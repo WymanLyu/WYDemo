@@ -11,10 +11,6 @@
 
 #import "WYDownloadSession.h"
 #import "WYDownloadTask.h"
-
-
-
-
-
+#import "WYDownloadInfo.h"
 
 #endif
