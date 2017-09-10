@@ -24,7 +24,7 @@
 @property (nonatomic, copy, readonly) NSString *identifier;
 
 /**
- 创建一个下载任务, 并启动此任务；如果已经下载完毕，则不再启动
+ 创建一个下载任务,未启动
 
  @param url             下载地址
  @param destinationPath 目标路径

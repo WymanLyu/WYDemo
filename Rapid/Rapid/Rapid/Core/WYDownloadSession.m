@@ -71,37 +71,52 @@ static WYDownloadSession *_downloadSession;
     return task;
 }
 
-- (WYDownloadTask *)download:(NSString *)url toDestinationPath:(NSString *)destinationPath progress:(WYDownloadProgressChangeBlock)progress state:(WYDownloadStateChangeBlock)state {
+- (WYDownloadTask *)download:(NSString *)url toDestinationPath:(NSString *)destinationPath progress:(WYDownloadProgressChangeBlock)progress state:(WYDownloadStateChangeBlock)state autoResume:(BOOL)autoResume {
     // 查找任务
     WYDownloadTask *task = [self selectDownLoadTask:url];
     // 创建任务
     if (nil==task) {
         task = [self createDownloadTask:url toDestinationPath:destinationPath progress:progress state:state];
     }
-    // 更新任务回调,目标地址没变则更新，反之则重新创建
+    // 更新任务回调,目标地址改变了则重新创建
     if ([task.downInfo.filepath isEqualToString:destinationPath]||
         (nil==destinationPath&&nil==task.downInfo.filepath)     ||
         (nil==destinationPath&&[task.downInfo.filepath isEqualToString:[[WYDownloadConfig defaultConfig] defaultFilePathForURL:url]])) {
-        task.downInfo.progressChangeBlock = progress;
-        task.downInfo.stateChangeBlock = state;
+        // 未更新地址信息,则更新回调，下载中禁止更新【有可能在回调中触发更新导致递归】
+        if (task.state!=WYDownloadStateResumed) {
+            task.downInfo.progressChangeBlock = progress;
+            task.downInfo.stateChangeBlock = state;
+        }
     } else {
         [self deleteDownloadTask:task];
         task = [self createDownloadTask:url toDestinationPath:destinationPath progress:progress state:state];
     }
     // 开启任务
-    [self resumeTask:task];
+    if (autoResume) {
+        [self resumeTask:task];
+    }
     return task;
 }
 
 - (WYDownloadTask *)download:(NSString *)url progress:(WYDownloadProgressChangeBlock)progress state:(WYDownloadStateChangeBlock)state {
-    return [self download:url toDestinationPath:nil progress:progress state:state];
+    return [self download:url toDestinationPath:nil progress:progress state:state autoResume:YES];
+}
+
+- (WYDownloadTask *)download:(NSString *)url progress:(WYDownloadProgressChangeBlock)progress state:(WYDownloadStateChangeBlock)state autoResume:(BOOL)autoResume {
+    return [self download:url toDestinationPath:nil progress:progress state:state autoResume:autoResume];
 }
 
 #pragma mark - 操作
 
 - (void)appendDownloadTask:(WYDownloadTask *)task {
-    if (!task || !task.identifier) return;
-    [self.downloadTaskArrM addObject:task];
+    if (!task || !task.identifier || [self.downloadTaskArrM containsObject:task]) return;
+    WYDownloadTask *downTask = [self.downloadTaskArrM filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"identifier==%@", task.identifier]].firstObject;
+    if (task.identifier!=downTask.identifier) {
+        [self.downloadTaskArrM addObject:task];
+    } else { // 更新下载任务
+        [self deleteDownloadTask:downTask];
+        [self appendDownloadTask:task];
+    }
 }
 
 - (void)deleteDownloadTask:(WYDownloadTask *)task {

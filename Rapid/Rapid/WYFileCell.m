@@ -13,6 +13,10 @@
 @interface WYFileCell ()
 @property (weak, nonatomic) IBOutlet UIButton *downloadBtn;
 @property (weak, nonatomic) IBOutlet WYProgressView *progressView;
+
+
+@property (nonatomic, strong) WYDownloadTask *task;
+
 @end
 
 @implementation WYFileCell
@@ -34,7 +38,39 @@
     self.textLabel.text = [url lastPathComponent];
     
     // 控制状态
-    WYDownloadTask *downTask = [[WYDownloadSession shareSession] selectDownLoadTask:_url];
+///// 1
+//    if (!_task) {
+//        _task = [WYDownloadTask download:self.url toDestinationPath:nil progress:^(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytesExpectedToWrite) {
+//            NSLog(@"%f", (double)totalBytesWritten / totalBytesExpectedToWrite);
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                self.url = self.url;
+//            });
+//        } state:^(WYDownloadState state, NSString *file, NSError *error) {
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                self.url = self.url;
+//            });
+//        }];
+//
+//    }
+//    [[WYDownloadSession shareSession] appendDownloadTask:_task];
+//    WYDownloadTask *downTask = _task;
+   
+///// 2
+    __weak typeof(self)weakSelf = self;
+    _task = [[WYDownloadSession shareSession] download:self.url progress:^(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytesExpectedToWrite) {
+        NSLog(@"%f", (double)totalBytesWritten / totalBytesExpectedToWrite);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            weakSelf.url = weakSelf.url;
+        });
+    } state:^(WYDownloadState state, NSString *file, NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            weakSelf.url = weakSelf.url;
+        });
+    } autoResume:NO];
+    WYDownloadTask *downTask = _task;
+
+///// 3
+//    WYDownloadTask *downTask = [[WYDownloadSession shareSession] selectDownLoadTask:_url];
 
     if (downTask.state == WYDownloadStateCompleted) { // 完成
         self.progressView.hidden = YES;
@@ -63,16 +99,19 @@
         [[WYDownloadSession shareSession] suspendTask:downTask];
         self.url = self.url;
     } else {
-        [[WYDownloadSession shareSession] download:self.url progress:^(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytesExpectedToWrite) {
-            NSLog(@"%f", (double)totalBytesWritten / totalBytesExpectedToWrite);
-            dispatch_async(dispatch_get_main_queue(), ^{
-                self.url = self.url;
-            });
-        } state:^(WYDownloadState state, NSString *file, NSError *error) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                self.url = self.url;
-            });
-        }];
+        [[WYDownloadSession shareSession] resumeTask:self.task];
+
+///// 3
+//        [[WYDownloadSession shareSession] download:self.url progress:^(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytesExpectedToWrite) {
+//            NSLog(@"%f", (double)totalBytesWritten / totalBytesExpectedToWrite);
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                self.url = self.url;
+//            });
+//        } state:^(WYDownloadState state, NSString *file, NSError *error) {
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                self.url = self.url;
+//            });
+//        }];
     }
 }
 

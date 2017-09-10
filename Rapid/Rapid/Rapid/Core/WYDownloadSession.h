@@ -21,15 +21,17 @@
 @property (nonatomic, assign) NSInteger maxConcurrentCount;
 
 /**
- 创建一个下载任务
+ 创建一个下载任务 并启动
 
  @param url             下载地址
  @param destinationPath 目标路径
  @param progress        下载回调
  @param state           下载状态
+ @param autoResume      自动开启
  @return                返回一个下载任务
  */
-- (WYDownloadTask *)download:(NSString *)url toDestinationPath:(NSString *)destinationPath progress:(WYDownloadProgressChangeBlock)progress state:(WYDownloadStateChangeBlock)state;
+- (WYDownloadTask *)download:(NSString *)url toDestinationPath:(NSString *)destinationPath progress:(WYDownloadProgressChangeBlock)progress state:(WYDownloadStateChangeBlock)state autoResume:(BOOL)autoResume;
+- (WYDownloadTask *)download:(NSString *)url progress:(WYDownloadProgressChangeBlock)progress state:(WYDownloadStateChangeBlock)state autoResume:(BOOL)autoResume;
 - (WYDownloadTask *)download:(NSString *)url progress:(WYDownloadProgressChangeBlock)progress state:(WYDownloadStateChangeBlock)state;
 
 #pragma mark - 任务操作
@@ -50,7 +52,7 @@
 /** 即将下载全部 */
 - (void)willResumeAll;
 
-/** 增 */
+/** 增 如果存在则不添加，如果相同url新的任务会删除就任务更新 */
 - (void)appendDownloadTask:(WYDownloadTask *)task;
 /** 删 */
 - (void)deleteDownloadTask:(WYDownloadTask *)task;
