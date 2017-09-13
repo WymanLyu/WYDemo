@@ -16,9 +16,6 @@
 
 @property (nonatomic, assign) CGFloat sn_alpha;
 @property (nonatomic, assign) BOOL sn_bottomLineHidden;
-@property (nonatomic, assign) BOOL sn_statusBarHidden;
-@property (nonatomic, assign) float sn_translationY;
-@property (nonatomic, weak) UIView *overlay;
 
 @end
 
@@ -31,14 +28,12 @@
 
 
 @interface UIColor (SimpleNavgationBar)
-+ (BOOL)isSimilarColor:(UIColor *)fromColor toColor:(UIColor *)toColor;
 + (UIColor *)middleColor:(UIColor *)fromColor toColor:(UIColor *)toColor percent:(CGFloat)percent;
 @end
 
 @interface UIViewController (_SimpleNavgationBar)
 @property (nonatomic, strong) UIColor *sn_keepBackgroundColor; // 保存的背景色
 @property (nonatomic, assign) CGFloat sn_keepAlpha;            // 保存的透明度
-@property (nonatomic, assign) CGFloat sn_keepTranslationY;     // 保存的Y
 - (void)sn_updateNavigationBarWithFromVC:(UIViewController *)fromVC toVC:(UIViewController *)toVC progress:(CGFloat)progress;
 @end
 
@@ -55,8 +50,6 @@
 #pragma mark - 属性
 
 static char overlayKey;
-static char statusBarHiddenKey;
-static char translationYKey;
 
 // 自定义view
 - (void)setOverlay:(UIView *)overlay {
@@ -75,37 +68,6 @@ static char translationYKey;
     }
     [[self.subviews firstObject] insertSubview:overlay atIndex:0];
     return overlay;
-}
-
-// 垂直尺寸
-- (void)setSn_translationY:(float)sn_translationY {
-    objc_setAssociatedObject(self, &translationYKey, @(sn_translationY), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    [self setTitleVerticalPositionAdjustment:-sn_translationY forBarMetrics:UIBarMetricsDefault];
-    CGRect f = self.frame;
-    f.size.height = 44+sn_translationY;
-    self.frame = f;
-    CGFloat overlayH = self.sn_statusBarHidden?(44+sn_translationY):(44+20+sn_translationY);
-    self.overlay.frame = CGRectMake(0, 0, self.overlay.frame.size.width, overlayH);
-}
-- (float)sn_translationY {
-     return [objc_getAssociatedObject(self, &translationYKey) floatValue];
-}
-
-- (CGSize)sizeThatFits:(CGSize)size {
-    CGSize newSize = CGSizeMake(self.frame.size.width,self.sn_translationY+44);
-    return newSize;
-}
-
-
-// 状态条隐藏
-- (void)setSn_statusBarHidden:(BOOL)sn_statusBarHidden {
-    objc_setAssociatedObject(self, &statusBarHiddenKey, @(sn_statusBarHidden), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    CGFloat overlayH = sn_statusBarHidden?(CGRectGetHeight(self.overlay.bounds)-20):(CGRectGetHeight(self.overlay.bounds)+20);
-    self.overlay.frame = CGRectMake(0, 0, self.overlay.frame.size.width, overlayH);
-}
-- (BOOL)sn_statusBarHidden {
-    NSNumber *statusBarHidden = (NSNumber *)objc_getAssociatedObject(self, &statusBarHiddenKey);
-    return statusBarHidden.boolValue;
 }
 
 // 透明度
@@ -143,7 +105,7 @@ static char translationYKey;
 @dynamic sn_keepBackgroundColor, sn_keepAlpha;
 static char keepBackgroundColorKey;
 static char keepAlphaKey;
-static char keepTranslationYKey;
+static char barStyleKey;
 
 - (void)sn_addGuestTarget {
     UINavigationController *nav = [self isKindOfClass:[UINavigationController class]] ? (UINavigationController *)self : self.navigationController;
@@ -151,16 +113,6 @@ static char keepTranslationYKey;
 }
 
 #pragma mark - 属性
-// 保存Y
-- (void)setSn_keepTranslationY:(CGFloat)sn_keepTranslationY {
-    [self sn_addGuestTarget];
-    objc_setAssociatedObject(self, &keepTranslationYKey, @(sn_keepTranslationY), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-- (CGFloat)sn_keepTranslationY {
-    NSNumber *translationY = (NSNumber *)objc_getAssociatedObject(self, &keepTranslationYKey);
-    return translationY.floatValue;
-}
-
 // 保存的透明度
 - (void)setSn_keepAlpha:(CGFloat )sn_keepAlpha {
     [self sn_addGuestTarget];
@@ -188,74 +140,20 @@ static char keepTranslationYKey;
     if (!toBarColor) {
         toBarColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1];
     }
-    if (!fromBarColor) {
-        fromVC.sn_navBarBackgroundColor = [UIColor whiteColor];
-        fromBarColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1];
-    }
     if (!fromBarColor || !toBarColor) {
         return;
     }
     UIColor *newBarTintColor = [UIColor middleColor:fromBarColor toColor:toBarColor percent:progress];
-    if ([UIColor isSimilarColor:fromBarColor toColor:toBarColor]) { // 渐变才设置
-        toVC.sn_navBarBackgroundColor = newBarTintColor; // 这里因为苹果默认的转场时的bar是取toVC的进行模糊
-    }
+    toVC.sn_navBarBackgroundColor = newBarTintColor; // 这里因为苹果默认的转场时的bar是取toVC的进行模糊
     CGFloat fromBarAlpha = fromVC.sn_keepAlpha;
     CGFloat toBarAlpha = toVC.sn_keepAlpha;
     CGFloat newBarAlpha = fromBarAlpha + (toBarAlpha-fromBarAlpha)*progress;
     toVC.sn_navBarAlpha = newBarAlpha; // 这里因为苹果默认的转场时的bar是取toVC的进行模糊
-    
-    // 不同高度bar的手势,增加高度
-    CGFloat h= (toVC.sn_keepTranslationY-fromVC.sn_keepTranslationY)*progress + fromVC.sn_keepTranslationY;
-    // 强行干掉下边线和模糊变大（或者干掉）
-    [[toVC.navigationController.navigationBar.subviews[0] subviews] enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if ([obj isKindOfClass:[UIImageView class]] && obj.frame.origin.y) {
-            obj.hidden =YES;
-        }
-        if (fromVC.sn_keepBackgroundColor && toVC.sn_keepBackgroundColor) { //都是自定义
-                if ([obj isKindOfClass:NSClassFromString(@"UIVisualEffectView")]) {
-                    obj.hidden = YES;
-                    obj.alpha = 0.0;
-                }
-        }
-
-    }];
-    if (!fromVC.sn_keepBackgroundColor || !toVC.sn_keepBackgroundColor) { // 存在系统则模糊
-        CGRect f = toVC.navigationController.navigationBar.subviews[0].frame;
-        f.size.height = 64+h;
-        toVC.navigationController.navigationBar.subviews[0].frame = f;
-    }
-
-    // 处理其他子控件居上
-//    NSArray *classNamesToReposition = @[@"UINavigationItemView", @"UINavigationButton",@"UIButton"];
-//    for (UIView *view in toVC.navigationController.navigationBar.subviews) {
-//        if ([classNamesToReposition containsObject:NSStringFromClass([view class])]) {
-//            CGRect frame = view.frame;
-//            frame.origin.y = -20;
-//            view.frame=frame;
-//        }
-//    }
-//    for (UIView *view in fromVC.navigationController.navigationBar.subviews) {
-//        if ([classNamesToReposition containsObject:NSStringFromClass([view class])]) {
-//            CGRect frame = view.frame;
-//            frame.origin.y = -20;
-//            view.frame=frame;
-//        }
-//    }
-
-    
-    
-//    NSLog(@"从%f->%f,手势设置高度%f--进度:%f", fromVC.sn_keepTranslationY, toVC.sn_keepTranslationY, h, progress);
-    toVC.sn_translationY = h;
-    fromVC.sn_translationY = h;
 }
 
 @end
 
 @implementation UIViewController (SimpleNavgationBar)
-
-static char barStyleKey;
-static char statusBarStyleKey;
-static char sn_statusBarHiddenKey;
 
 - (void)sn_reset {
     UINavigationController *nav = [self isKindOfClass:[UINavigationController class]] ? (UINavigationController *)self : self.navigationController;
@@ -263,72 +161,10 @@ static char sn_statusBarHiddenKey;
     if (!nav.sn_dontKeepSNState) { // 只有在非中断状态记录
         self.sn_keepBackgroundColor = self.sn_navBarBackgroundColor;
         self.sn_keepAlpha = self.sn_navBarAlpha;
-        self.sn_keepTranslationY = self.sn_translationY;
     }
     self.sn_barStyle = UIBarStyleDefault;
-    self.sn_statusBarStyle = UIStatusBarStyleDefault;
-    self.sn_statusBarHidden = NO;
-    self.sn_statusBarBackgroundColor = [UIColor clearColor];
-    self.sn_translationY = 0;
     [self.navigationController.navigationBar sn_reset];
 }
-
-// 垂直尺寸
-- (void)setSn_translationY:(float)sn_translationY {
-    UINavigationController *nav = [self isKindOfClass:[UINavigationController class]] ? (UINavigationController *)self : self.navigationController;
-    nav.navigationBar.sn_translationY = sn_translationY;
-}
-- (float)sn_translationY {
-    UINavigationController *nav = [self isKindOfClass:[UINavigationController class]] ? (UINavigationController *)self : self.navigationController;
-    return nav.navigationBar.sn_translationY;
-}
-
-// 状态条颜色
-- (void)setSn_statusBarBackgroundColor:(UIColor *)sn_statusBarBackgroundColor {
-    UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
-    if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
-        statusBar.backgroundColor = sn_statusBarBackgroundColor;
-    }
-}
-- (UIColor *)sn_statusBarBackgroundColor {
-    UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
-    if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
-        return statusBar.backgroundColor;
-    } else {
-        return nil;
-    }
-}
-
-// 状态条隐藏
-- (void)setSn_statusBarHidden:(BOOL)sn_statusBarHidden {
-    [self sn_addGuestTarget];
-    objc_setAssociatedObject(self, &sn_statusBarHiddenKey, @(sn_statusBarHidden), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    UINavigationController *nav = [self isKindOfClass:[UINavigationController class]] ? (UINavigationController *)self : self.navigationController;
-    nav.navigationBar.sn_statusBarHidden = sn_statusBarHidden;
-    [self setNeedsStatusBarAppearanceUpdate];
-}
-- (BOOL)sn_statusBarHidden {
-    NSNumber *statusBarHidden = (NSNumber *)objc_getAssociatedObject(self, &sn_statusBarHiddenKey);
-    return statusBarHidden.boolValue;
-}
-- (BOOL)prefersStatusBarHidden {
-    return self.sn_statusBarHidden;
-}
-//- (UIStatusBarAnimation)preferredStatusBarUpdateAnimation {
-//    return UIStatusBarAnimationSlide;
-//}
-
-// 状态条样式
-- (void)setSn_statusBarStyle:(UIStatusBarStyle)sn_statusBarStyle {
-    [self sn_addGuestTarget];
-    objc_setAssociatedObject(self, &statusBarStyleKey, @(sn_statusBarStyle), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    [self setNeedsStatusBarAppearanceUpdate];
-}
-- (UIStatusBarStyle)sn_statusBarStyle {
-    NSNumber *statusBarStyle = (NSNumber *)objc_getAssociatedObject(self, &statusBarStyleKey);
-    return statusBarStyle.integerValue;
-}
-
 
 // 导航栏样式
 - (void)setSn_barStyle:(UIBarStyle)sn_barStyle {
@@ -387,18 +223,6 @@ static char sn_dontKeepSNStateKey;
 
 - (NSInteger)sn_dontKeepSNState {
    return [(NSNumber *)objc_getAssociatedObject(self, &sn_dontKeepSNStateKey) integerValue];
-}
-
-#pragma mark - 处理statusBar
-
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    UIViewController *topVC = self.topViewController;
-    return topVC.sn_statusBarStyle;
-}
-
-- (BOOL)prefersStatusBarHidden {
-    
-    return YES;
 }
 
 #pragma mark - 处理手势返回
@@ -463,34 +287,13 @@ static char sn_dontKeepSNStateKey;
     return YES;
 }
 
-//- (BOOL)navigationBar:(UINavigationBar *)navigationBar shouldPushItem:(UINavigationItem *)item {
-//    NSUInteger itemCount = self.navigationBar.items.count;
-//    NSUInteger n = self.viewControllers.count >= itemCount ? 2 : 1;
-//    UIViewController *pushToVC = self.viewControllers[self.viewControllers.count + n];
-//    if (pushToVC.sn_keepBackgroundColor) { // push到自定义的,在此触发干掉原导航模糊层
-//        [self sn_navBarBackgroundColor];
-//        self.sn_translationY = pushToVC.sn_keepTranslationY;
-//    } else {  // pop到原生的,需要对原生vc进行reset
-//        self.sn_dontKeepSNState++;
-//        [pushToVC sn_reset];
-//        pushToVC.sn_keepTranslationY = -64;
-//        self.sn_dontKeepSNState--;
-//    }
-//    [self pushViewController:pushToVC animated:YES];
-//    return YES;
-//}
-
-
-
 - (void)dealInteractionChanges:(id<UIViewControllerTransitionCoordinatorContext>)context {
     void (^animations) (UITransitionContextViewControllerKey) = ^(UITransitionContextViewControllerKey key){
         UIColor *curColor = [[context viewControllerForKey:key] sn_keepBackgroundColor];
         CGFloat curAlpha = [[context viewControllerForKey:key] sn_keepAlpha];
-        CGFloat curY = [[context viewControllerForKey:key] sn_keepTranslationY];
         UIViewController *targetVc = [context viewControllerForKey:key];
         targetVc.sn_navBarAlpha = curAlpha;
         targetVc.sn_navBarBackgroundColor = curColor;
-        targetVc.sn_translationY = curY;
     };
     if ([context isCancelled] == YES) { // 回到fromVc状态
         double cancelDuration = [context transitionDuration] * [context percentComplete];
@@ -511,11 +314,9 @@ static char sn_dontKeepSNStateKey;
         } completion:^(BOOL finished) {
             UIColor *curColor = [[context viewControllerForKey:UITransitionContextToViewControllerKey] sn_keepBackgroundColor];
             CGFloat curAlpha = [[context viewControllerForKey:UITransitionContextToViewControllerKey] sn_keepAlpha];
-            CGFloat curY = [[context viewControllerForKey:UITransitionContextToViewControllerKey] sn_keepTranslationY];
             UIViewController *targetVc = [context viewControllerForKey:UITransitionContextToViewControllerKey];
             weakSelf.sn_navBarAlpha = curAlpha;
             weakSelf.sn_navBarBackgroundColor = curColor;
-            targetVc.sn_translationY = curY;
             if (![targetVc sn_keepBackgroundColor]) { // pop到系统的要reset一下
                 weakSelf.sn_dontKeepSNState++;
                 [targetVc sn_reset];
@@ -547,35 +348,6 @@ static char sn_dontKeepSNStateKey;
     CGFloat newAlpha = fromAlpha + (toAlpha - fromAlpha) * percent;
     return [UIColor colorWithRed:newRed green:newGreen blue:newBlue alpha:newAlpha];
 }
-
-+ (BOOL)isSimilarColor:(UIColor *)fromColor toColor:(UIColor *)toColor {
-    CGFloat fromRed = 0;
-    CGFloat fromGreen = 0;
-    CGFloat fromBlue = 0;
-    CGFloat fromAlpha = 0;
-    [fromColor getRed:&fromRed green:&fromGreen blue:&fromBlue alpha:&fromAlpha];
-    
-    CGFloat toRed = 0;
-    CGFloat toGreen = 0;
-    CGFloat toBlue = 0;
-    CGFloat toAlpha = 0;
-    [toColor getRed:&toRed green:&toGreen blue:&toBlue alpha:&toAlpha];
-    
-    CGFloat newRed = (toRed - fromRed) / 255.0;
-    CGFloat newGreen = (toGreen - fromGreen) / 255.0;
-    CGFloat newBlue = (toBlue - fromBlue) / 255.0;
-    CGFloat newAlpha = (toAlpha - fromAlpha);
-    if (newRed > 0.05 ||
-        newGreen > 0.05 ||
-        newBlue > 0.05 ||
-        newAlpha > 0.05 ) {
-        return NO;
-    } else {
-        return YES;
-    }
-
-}
-
 @end
 
 

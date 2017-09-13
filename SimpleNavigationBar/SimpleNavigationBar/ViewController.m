@@ -11,6 +11,8 @@
 #import "ViewController1.h"
 #import "ViewController2.h"
 #import "ViewController3.h"
+#import "ViewController4.h"
+#import "ViewController5.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -27,6 +29,9 @@
     FuncLog
     [self tableView];
     self.title = @"SimpleNavigationBar";
+    
+   
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -35,6 +40,13 @@
     self.sn_navBarBackgroundColor = [UIColor redColor];
     self.sn_navBarAlpha = 1 + (self.tableView.contentOffset.y+64) / (imageHeight-64);
     self.sn_navBarBottomLineHidden = !ceil(self.sn_navBarAlpha);
+    
+
+//    self.sn_translationY = 23.1;
+//    self.sn_statusBarStyle = UIStatusBarStyleLightContent;
+//    self.sn_statusBarHidden = YES;
+//    self.sn_statusBarBackgroundColor =[UIColor yellowColor];
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -48,7 +60,7 @@
 
 - (NSArray<NSString *> *)dataArr {
     if (!_dataArr) {
-        _dataArr = @[@"To系统原生导航", @"To透明导航", @"To纯色导航", @"test",@"test",@"test",@"test",@"test",@"test",@"test",@"test",@"test",@"test"];
+        _dataArr = @[@"To系统原生导航", @"To透明导航", @"To纯色导航", @"To可变高导航",@"To无状态栏",@"test",@"test",@"test",@"test",@"test",@"test",@"test",@"test"];
     }
     return _dataArr;
 }
@@ -106,6 +118,12 @@ static CGFloat imageHeight = 250;
         [self.navigationController pushViewController:vc animated:YES];
     } else if (2==indexPath.row) {
         ViewController3 *vc = [ViewController3 new];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if (3==indexPath.row) {
+        ViewController4 *vc = [ViewController4 new];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if (4==indexPath.row) {
+        ViewController5 *vc = [ViewController5 new];
         [self.navigationController pushViewController:vc animated:YES];
     } else {
         

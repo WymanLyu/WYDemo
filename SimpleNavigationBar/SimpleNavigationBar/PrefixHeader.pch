@@ -13,6 +13,6 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
 
-#define FuncLog NSLog(@"%@:%s", self, __func__);
+#define FuncLog //NSLog(@"%@:%s", self, __func__);
 
 #endif /* PrefixHeader_pch */
