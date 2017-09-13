@@ -21,6 +21,7 @@
 		F5DEA3B61F677C5300DED671 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEA3B51F677C5300DED671 /* ViewController2.m */; };
 		F5DEA3B91F677C5D00DED671 /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEA3B81F677C5D00DED671 /* ViewController3.m */; };
 		F5DEA3BC1F677EB000DED671 /* SNNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEA3BB1F677EB000DED671 /* SNNavViewController.m */; };
+		F5DEA3C31F67842B00DED671 /* SNNavTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEA3C21F67842B00DED671 /* SNNavTransition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,9 @@
 		F5DEA3B81F677C5D00DED671 /* ViewController3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController3.m; sourceTree = "<group>"; };
 		F5DEA3BA1F677EB000DED671 /* SNNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNNavViewController.h; sourceTree = "<group>"; };
 		F5DEA3BB1F677EB000DED671 /* SNNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNNavViewController.m; sourceTree = "<group>"; };
+		F5DEA3BD1F67817C00DED671 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		F5DEA3C11F67842B00DED671 /* SNNavTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNNavTransition.h; sourceTree = "<group>"; };
+		F5DEA3C21F67842B00DED671 /* SNNavTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNNavTransition.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,8 @@
 		F5DEA3771F6770C700DED671 /* SimpleNavigationBar */ = {
 			isa = PBXGroup;
 			children = (
+				F5DEA3C11F67842B00DED671 /* SNNavTransition.h */,
+				F5DEA3C21F67842B00DED671 /* SNNavTransition.m */,
 				F5DEA3AD1F67778D00DED671 /* SimpleNavgationBar */,
 				F5DEA3AB1F6776CB00DED671 /* bg.jpg */,
 				F5DEA37B1F6770C700DED671 /* AppDelegate.h */,
@@ -137,6 +143,7 @@
 				F5DEA3B81F677C5D00DED671 /* ViewController3.m */,
 				F5DEA3BA1F677EB000DED671 /* SNNavViewController.h */,
 				F5DEA3BB1F677EB000DED671 /* SNNavViewController.m */,
+				F5DEA3BD1F67817C00DED671 /* PrefixHeader.pch */,
 			);
 			path = SimpleNavigationBar;
 			sourceTree = "<group>";
@@ -319,6 +326,7 @@
 				F5DEA37D1F6770C700DED671 /* AppDelegate.m in Sources */,
 				F5DEA37A1F6770C700DED671 /* main.m in Sources */,
 				F5DEA3BC1F677EB000DED671 /* SNNavViewController.m in Sources */,
+				F5DEA3C31F67842B00DED671 /* SNNavTransition.m in Sources */,
 				F5DEA3B61F677C5300DED671 /* ViewController2.m in Sources */,
 				F5DEA3B91F677C5D00DED671 /* ViewController3.m in Sources */,
 			);
@@ -473,6 +481,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = F3ZZL9NMTQ;
+				GCC_PREFIX_HEADER = SimpleNavigationBar/PrefixHeader.pch;
 				INFOPLIST_FILE = SimpleNavigationBar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -488,6 +497,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = F3ZZL9NMTQ;
+				GCC_PREFIX_HEADER = SimpleNavigationBar/PrefixHeader.pch;
 				INFOPLIST_FILE = SimpleNavigationBar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -24,11 +24,13 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    FuncLog
     self.sn_navBarBackgroundColor = [UIColor blueColor];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
+    FuncLog
     [self sn_reset];
 }
 

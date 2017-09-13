@@ -24,14 +24,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    FuncLog
     [self tableView];
     self.title = @"SimpleNavigationBar";
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.sn_navBarBackgroundColor = [UIColor blueColor];
+    FuncLog
+    self.sn_navBarBackgroundColor = [UIColor redColor];
     self.sn_navBarAlpha = 1 + (self.tableView.contentOffset.y+64) / (imageHeight-64);
     self.sn_navBarBottomLineHidden = !ceil(self.sn_navBarAlpha);
 }
@@ -39,6 +40,7 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self sn_reset];
+    FuncLog
 }
 
 
@@ -96,7 +98,6 @@ static CGFloat imageHeight = 250;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%@", self.dataArr[indexPath.row]);
     if (0==indexPath.row) {
         ViewController1 *vc = [ViewController1 new];
         [self.navigationController pushViewController:vc animated:YES];
