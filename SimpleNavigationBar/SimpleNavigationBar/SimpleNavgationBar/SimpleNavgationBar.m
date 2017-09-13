@@ -271,7 +271,20 @@ static char sn_statusBarHiddenKey;
     self.sn_statusBarHidden = NO;
     self.sn_statusBarBackgroundColor = [UIColor clearColor];
     self.sn_translationY = 0;
+    [self resetNavBarHidden];
     [self.navigationController.navigationBar sn_reset];
+}
+
+- (void)resetNavBarHidden {
+    [[self.navigationController.navigationBar.subviews[0] subviews] enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj isKindOfClass:[UIImageView class]] && obj.frame.origin.y) {
+            obj.hidden =YES;
+        }
+        if ([obj isKindOfClass:NSClassFromString(@"UIVisualEffectView")]) {
+            obj.hidden = NO;    // 结束时要显示回去
+        }
+    }];
+
 }
 
 // 垂直尺寸
@@ -422,21 +435,17 @@ static char sn_dontKeepSNStateKey;
         case UIGestureRecognizerStateCancelled: {
         }
         case UIGestureRecognizerStateEnded:{
-            // 回复在手势中的隐藏模糊操作!!!!!
+            // 回复在手势中的隐藏模糊操作!!!!!这个会导致结束时候闪现
             UIViewController *fromVC = [self.topViewController.transitionCoordinator viewControllerForKey:UITransitionContextFromViewControllerKey];
             UIViewController *toVC = [self.topViewController.transitionCoordinator viewControllerForKey:UITransitionContextToViewControllerKey];
             [[toVC.navigationController.navigationBar.subviews[0] subviews] enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                 if ([obj isKindOfClass:NSClassFromString(@"UIVisualEffectView")]) {
-                    if (fromVC.sn_keepBackgroundColor && toVC.sn_keepBackgroundColor) { //都是自定义
-                        obj.hidden = NO;    // 结束时要显示回去
-                    }
+                    obj.hidden = NO;    // 结束时要显示回去
                 }
             }];
-            [[toVC.navigationController.navigationBar.subviews[0] subviews] enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [[fromVC.navigationController.navigationBar.subviews[0] subviews] enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                 if ([obj isKindOfClass:NSClassFromString(@"UIVisualEffectView")]) {
-                    if (fromVC.sn_keepBackgroundColor && toVC.sn_keepBackgroundColor) { //都是自定义
-                        obj.hidden = NO;    // 结束时要显示回去
-                    }
+                     obj.hidden = NO;    // 结束时要显示回去
                 }
             }];
         }
