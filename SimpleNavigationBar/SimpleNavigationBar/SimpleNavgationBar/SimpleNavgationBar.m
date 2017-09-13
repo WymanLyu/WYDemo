@@ -189,7 +189,6 @@ static char keepTranslationYKey;
         toBarColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1];
     }
     if (!fromBarColor) {
-        fromVC.sn_navBarBackgroundColor = [UIColor whiteColor];
         fromBarColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1];
     }
     if (!fromBarColor || !toBarColor) {
@@ -207,19 +206,21 @@ static char keepTranslationYKey;
     // 不同高度bar的手势,增加高度
     CGFloat h= (toVC.sn_keepTranslationY-fromVC.sn_keepTranslationY)*progress + fromVC.sn_keepTranslationY;
     // 强行干掉下边线和模糊变大（或者干掉）
+    __block UIView *systemVisualEffectView = nil;
     [[toVC.navigationController.navigationBar.subviews[0] subviews] enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([obj isKindOfClass:[UIImageView class]] && obj.frame.origin.y) {
             obj.hidden =YES;
         }
-        if (fromVC.sn_keepBackgroundColor && toVC.sn_keepBackgroundColor) { //都是自定义
-                if ([obj isKindOfClass:NSClassFromString(@"UIVisualEffectView")]) {
-                    obj.hidden = YES;
-                    obj.alpha = 0.0;
-                }
+        if ([obj isKindOfClass:NSClassFromString(@"UIVisualEffectView")]) {
+            if (fromVC.sn_keepBackgroundColor && toVC.sn_keepBackgroundColor) { //都是自定义
+                obj.hidden = YES;    // 结束时要显示回去
+            }
+            systemVisualEffectView = obj;
         }
 
     }];
     if (!fromVC.sn_keepBackgroundColor || !toVC.sn_keepBackgroundColor) { // 存在系统则模糊
+        systemVisualEffectView.hidden = NO;
         CGRect f = toVC.navigationController.navigationBar.subviews[0].frame;
         f.size.height = 64+h;
         toVC.navigationController.navigationBar.subviews[0].frame = f;
@@ -421,6 +422,23 @@ static char sn_dontKeepSNStateKey;
         case UIGestureRecognizerStateCancelled: {
         }
         case UIGestureRecognizerStateEnded:{
+            // 回复在手势中的隐藏模糊操作!!!!!
+            UIViewController *fromVC = [self.topViewController.transitionCoordinator viewControllerForKey:UITransitionContextFromViewControllerKey];
+            UIViewController *toVC = [self.topViewController.transitionCoordinator viewControllerForKey:UITransitionContextToViewControllerKey];
+            [[toVC.navigationController.navigationBar.subviews[0] subviews] enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                if ([obj isKindOfClass:NSClassFromString(@"UIVisualEffectView")]) {
+                    if (fromVC.sn_keepBackgroundColor && toVC.sn_keepBackgroundColor) { //都是自定义
+                        obj.hidden = NO;    // 结束时要显示回去
+                    }
+                }
+            }];
+            [[toVC.navigationController.navigationBar.subviews[0] subviews] enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                if ([obj isKindOfClass:NSClassFromString(@"UIVisualEffectView")]) {
+                    if (fromVC.sn_keepBackgroundColor && toVC.sn_keepBackgroundColor) { //都是自定义
+                        obj.hidden = NO;    // 结束时要显示回去
+                    }
+                }
+            }];
         }
             break;
         default:
