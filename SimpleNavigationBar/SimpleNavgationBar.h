@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "UINavigationBar+Flexible.h"
 #import <UIKit/UIKit.h>
 
 @interface UIViewController (SimpleNavgationBar)

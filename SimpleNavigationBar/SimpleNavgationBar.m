@@ -8,6 +8,7 @@
 
 #import "SimpleNavgationBar.h"
 #import <objc/runtime.h>
+#import "Overlay.h"
 
 @interface UINavigationBar (SimpleNavgationBar)
 
@@ -31,7 +32,6 @@
 
 
 @interface UIColor (SimpleNavgationBar)
-+ (BOOL)isSimilarColor:(UIColor *)fromColor toColor:(UIColor *)toColor;
 + (UIColor *)middleColor:(UIColor *)fromColor toColor:(UIColor *)toColor percent:(CGFloat)percent;
 @end
 
@@ -66,7 +66,7 @@ static char translationYKey;
     UIView *overlay = objc_getAssociatedObject(self, &overlayKey);
     if (!overlay) {
         [self setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-        overlay = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds) + 20)];
+        overlay = [[Overlay alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds) + 20)];
         overlay.userInteractionEnabled = NO;
         overlay.backgroundColor = [UIColor clearColor];
         overlay.autoresizingMask = UIViewAutoresizingFlexibleWidth;    // Should not set `UIViewAutoresizingFlexibleHeight`
@@ -80,20 +80,12 @@ static char translationYKey;
 // 垂直尺寸
 - (void)setSn_translationY:(float)sn_translationY {
     objc_setAssociatedObject(self, &translationYKey, @(sn_translationY), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    [self setTitleVerticalPositionAdjustment:-sn_translationY forBarMetrics:UIBarMetricsDefault];
-    CGRect f = self.frame;
-    f.size.height = 44+sn_translationY;
-    self.frame = f;
+    self.transform = CGAffineTransformMakeTranslation(0, sn_translationY);
     CGFloat overlayH = self.sn_statusBarHidden?(44+sn_translationY):(44+20+sn_translationY);
     self.overlay.frame = CGRectMake(0, 0, self.overlay.frame.size.width, overlayH);
 }
 - (float)sn_translationY {
-     return [objc_getAssociatedObject(self, &translationYKey) floatValue];
-}
-
-- (CGSize)sizeThatFits:(CGSize)size {
-    CGSize newSize = CGSizeMake(self.frame.size.width,self.sn_translationY+44);
-    return newSize;
+     return self.transform.ty;
 }
 
 
@@ -196,57 +188,17 @@ static char keepTranslationYKey;
         return;
     }
     UIColor *newBarTintColor = [UIColor middleColor:fromBarColor toColor:toBarColor percent:progress];
-    if ([UIColor isSimilarColor:fromBarColor toColor:toBarColor]) { // 渐变才设置
-        toVC.sn_navBarBackgroundColor = newBarTintColor; // 这里因为苹果默认的转场时的bar是取toVC的进行模糊
-    }
+    toVC.sn_navBarBackgroundColor = newBarTintColor; // 这里因为苹果默认的转场时的bar是取toVC的进行模糊
     CGFloat fromBarAlpha = fromVC.sn_keepAlpha;
     CGFloat toBarAlpha = toVC.sn_keepAlpha;
     CGFloat newBarAlpha = fromBarAlpha + (toBarAlpha-fromBarAlpha)*progress;
     toVC.sn_navBarAlpha = newBarAlpha; // 这里因为苹果默认的转场时的bar是取toVC的进行模糊
     
-    // 不同高度bar的手势,增加高度
+    // 不同高度bar的手势
     CGFloat h= (toVC.sn_keepTranslationY-fromVC.sn_keepTranslationY)*progress + fromVC.sn_keepTranslationY;
-    // 强行干掉下边线和模糊变大（或者干掉）
-    [[toVC.navigationController.navigationBar.subviews[0] subviews] enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if ([obj isKindOfClass:[UIImageView class]] && obj.frame.origin.y) {
-            obj.hidden =YES;
-        }
-        if (fromVC.sn_keepBackgroundColor && toVC.sn_keepBackgroundColor) { //都是自定义
-                if ([obj isKindOfClass:NSClassFromString(@"UIVisualEffectView")]) {
-                    obj.hidden = YES;
-                    obj.alpha = 0.0;
-                }
-        }
-
-    }];
-    if (!fromVC.sn_keepBackgroundColor || !toVC.sn_keepBackgroundColor) { // 存在系统则模糊
-        CGRect f = toVC.navigationController.navigationBar.subviews[0].frame;
-        f.size.height = 64+h;
-        toVC.navigationController.navigationBar.subviews[0].frame = f;
-    }
-
-    // 处理其他子控件居上
-//    NSArray *classNamesToReposition = @[@"UINavigationItemView", @"UINavigationButton",@"UIButton"];
-//    for (UIView *view in toVC.navigationController.navigationBar.subviews) {
-//        if ([classNamesToReposition containsObject:NSStringFromClass([view class])]) {
-//            CGRect frame = view.frame;
-//            frame.origin.y = -20;
-//            view.frame=frame;
-//        }
-//    }
-//    for (UIView *view in fromVC.navigationController.navigationBar.subviews) {
-//        if ([classNamesToReposition containsObject:NSStringFromClass([view class])]) {
-//            CGRect frame = view.frame;
-//            frame.origin.y = -20;
-//            view.frame=frame;
-//        }
-//    }
-
-    
-    
-//    NSLog(@"从%f->%f,手势设置高度%f--进度:%f", fromVC.sn_keepTranslationY, toVC.sn_keepTranslationY, h, progress);
+    NSLog(@"从%f->%f,手势设置高度%f--进度:%f", fromVC.sn_keepTranslationY, toVC.sn_keepTranslationY, h, progress);
     toVC.sn_translationY = h;
-    fromVC.sn_translationY = h;
+    
 }
 
 @end
@@ -268,7 +220,6 @@ static char sn_statusBarHiddenKey;
     self.sn_barStyle = UIBarStyleDefault;
     self.sn_statusBarStyle = UIStatusBarStyleDefault;
     self.sn_statusBarHidden = NO;
-    self.sn_statusBarBackgroundColor = [UIColor clearColor];
     self.sn_translationY = 0;
     [self.navigationController.navigationBar sn_reset];
 }
@@ -454,6 +405,10 @@ static char sn_dontKeepSNStateKey;
     UIViewController *popToVC = self.viewControllers[self.viewControllers.count - n];
     if (popToVC.sn_keepBackgroundColor) { // pop到自定义的,在此触发干掉原导航模糊层
         [self sn_navBarBackgroundColor];
+//        self.sn_translationY = 20;
+//        CGRect f = self.navigationBar.overlay.frame;
+//        f.origin.y -= 20;
+//        self.navigationBar.overlay.frame = f;
     } else {  // pop到原生的,需要对原生vc进行reset
         self.sn_dontKeepSNState++;
         [popToVC sn_reset];
@@ -547,35 +502,6 @@ static char sn_dontKeepSNStateKey;
     CGFloat newAlpha = fromAlpha + (toAlpha - fromAlpha) * percent;
     return [UIColor colorWithRed:newRed green:newGreen blue:newBlue alpha:newAlpha];
 }
-
-+ (BOOL)isSimilarColor:(UIColor *)fromColor toColor:(UIColor *)toColor {
-    CGFloat fromRed = 0;
-    CGFloat fromGreen = 0;
-    CGFloat fromBlue = 0;
-    CGFloat fromAlpha = 0;
-    [fromColor getRed:&fromRed green:&fromGreen blue:&fromBlue alpha:&fromAlpha];
-    
-    CGFloat toRed = 0;
-    CGFloat toGreen = 0;
-    CGFloat toBlue = 0;
-    CGFloat toAlpha = 0;
-    [toColor getRed:&toRed green:&toGreen blue:&toBlue alpha:&toAlpha];
-    
-    CGFloat newRed = (toRed - fromRed) / 255.0;
-    CGFloat newGreen = (toGreen - fromGreen) / 255.0;
-    CGFloat newBlue = (toBlue - fromBlue) / 255.0;
-    CGFloat newAlpha = (toAlpha - fromAlpha);
-    if (newRed > 0.05 ||
-        newGreen > 0.05 ||
-        newBlue > 0.05 ||
-        newAlpha > 0.05 ) {
-        return NO;
-    } else {
-        return YES;
-    }
-
-}
-
 @end
 
 

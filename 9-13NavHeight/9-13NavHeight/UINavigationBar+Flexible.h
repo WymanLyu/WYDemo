@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface UINavigationBar (Flexible)
-
+//@property (nonatomic, assign) float fn_translationY;
 @end

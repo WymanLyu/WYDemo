@@ -22,7 +22,8 @@
 		F5DEA3B91F677C5D00DED671 /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEA3B81F677C5D00DED671 /* ViewController3.m */; };
 		F5DEA3BC1F677EB000DED671 /* SNNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEA3BB1F677EB000DED671 /* SNNavViewController.m */; };
 		F5DEA3C31F67842B00DED671 /* SNNavTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEA3C21F67842B00DED671 /* SNNavTransition.m */; };
-		F5DEA3CA1F69457400DED671 /* Overlay.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEA3C91F69457300DED671 /* Overlay.m */; };
+		F5DEA41A1F699A7A00DED671 /* ViewController4.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEA4191F699A7A00DED671 /* ViewController4.m */; };
+		F5DEA41D1F699A8700DED671 /* ViewController5.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEA41C1F699A8700DED671 /* ViewController5.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,8 +74,10 @@
 		F5DEA3BD1F67817C00DED671 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		F5DEA3C11F67842B00DED671 /* SNNavTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNNavTransition.h; sourceTree = "<group>"; };
 		F5DEA3C21F67842B00DED671 /* SNNavTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNNavTransition.m; sourceTree = "<group>"; };
-		F5DEA3C81F69457300DED671 /* Overlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Overlay.h; sourceTree = "<group>"; };
-		F5DEA3C91F69457300DED671 /* Overlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Overlay.m; sourceTree = "<group>"; };
+		F5DEA4181F699A7A00DED671 /* ViewController4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController4.h; sourceTree = "<group>"; };
+		F5DEA4191F699A7A00DED671 /* ViewController4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController4.m; sourceTree = "<group>"; };
+		F5DEA41B1F699A8700DED671 /* ViewController5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController5.h; sourceTree = "<group>"; };
+		F5DEA41C1F699A8700DED671 /* ViewController5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController5.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +147,10 @@
 				F5DEA3B51F677C5300DED671 /* ViewController2.m */,
 				F5DEA3B71F677C5D00DED671 /* ViewController3.h */,
 				F5DEA3B81F677C5D00DED671 /* ViewController3.m */,
+				F5DEA4181F699A7A00DED671 /* ViewController4.h */,
+				F5DEA4191F699A7A00DED671 /* ViewController4.m */,
+				F5DEA41B1F699A8700DED671 /* ViewController5.h */,
+				F5DEA41C1F699A8700DED671 /* ViewController5.m */,
 				F5DEA3BA1F677EB000DED671 /* SNNavViewController.h */,
 				F5DEA3BB1F677EB000DED671 /* SNNavViewController.m */,
 				F5DEA3BD1F67817C00DED671 /* PrefixHeader.pch */,
@@ -182,8 +189,6 @@
 			children = (
 				F5DEA3AE1F67778D00DED671 /* SimpleNavgationBar.h */,
 				F5DEA3AF1F67778D00DED671 /* SimpleNavgationBar.m */,
-				F5DEA3C81F69457300DED671 /* Overlay.h */,
-				F5DEA3C91F69457300DED671 /* Overlay.m */,
 			);
 			path = SimpleNavgationBar;
 			sourceTree = "<group>";
@@ -329,9 +334,10 @@
 				F5DEA3801F6770C700DED671 /* ViewController.m in Sources */,
 				F5DEA3B01F67778D00DED671 /* SimpleNavgationBar.m in Sources */,
 				F5DEA37D1F6770C700DED671 /* AppDelegate.m in Sources */,
-				F5DEA3CA1F69457400DED671 /* Overlay.m in Sources */,
 				F5DEA37A1F6770C700DED671 /* main.m in Sources */,
+				F5DEA41A1F699A7A00DED671 /* ViewController4.m in Sources */,
 				F5DEA3BC1F677EB000DED671 /* SNNavViewController.m in Sources */,
+				F5DEA41D1F699A8700DED671 /* ViewController5.m in Sources */,
 				F5DEA3C31F67842B00DED671 /* SNNavTransition.m in Sources */,
 				F5DEA3B61F677C5300DED671 /* ViewController2.m in Sources */,
 				F5DEA3B91F677C5D00DED671 /* ViewController3.m in Sources */,

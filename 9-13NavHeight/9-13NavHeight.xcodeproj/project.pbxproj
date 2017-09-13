@@ -15,6 +15,11 @@
 		F5DEA3E71F69753900DED671 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5DEA3E51F69753900DED671 /* LaunchScreen.storyboard */; };
 		F5DEA3F21F69753900DED671 /* __13NavHeightTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEA3F11F69753900DED671 /* __13NavHeightTests.m */; };
 		F5DEA3FD1F69753900DED671 /* __13NavHeightUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEA3FC1F69753900DED671 /* __13NavHeightUITests.m */; };
+		F5DEA40C1F69755100DED671 /* SimpleNavgationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEA40B1F69755100DED671 /* SimpleNavgationBar.m */; };
+		F5DEA40F1F69765800DED671 /* SNNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEA40E1F69765800DED671 /* SNNavViewController.m */; };
+		F5DEA4121F69769600DED671 /* ViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEA4111F69769600DED671 /* ViewController1.m */; };
+		F5DEA4141F6978FE00DED671 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5DEA4131F6978FE00DED671 /* bg.jpg */; };
+		F5DEA4171F697F0F00DED671 /* UINavigationBar+Flexible.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEA4161F697F0F00DED671 /* UINavigationBar+Flexible.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,15 @@
 		F5DEA3F81F69753900DED671 /* 9-13NavHeightUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "9-13NavHeightUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5DEA3FC1F69753900DED671 /* __13NavHeightUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = __13NavHeightUITests.m; sourceTree = "<group>"; };
 		F5DEA3FE1F69753900DED671 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5DEA40A1F69755100DED671 /* SimpleNavgationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleNavgationBar.h; sourceTree = "<group>"; };
+		F5DEA40B1F69755100DED671 /* SimpleNavgationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleNavgationBar.m; sourceTree = "<group>"; };
+		F5DEA40D1F69765800DED671 /* SNNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNNavViewController.h; sourceTree = "<group>"; };
+		F5DEA40E1F69765800DED671 /* SNNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNNavViewController.m; sourceTree = "<group>"; };
+		F5DEA4101F69769600DED671 /* ViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController1.h; sourceTree = "<group>"; };
+		F5DEA4111F69769600DED671 /* ViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController1.m; sourceTree = "<group>"; };
+		F5DEA4131F6978FE00DED671 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
+		F5DEA4151F697F0F00DED671 /* UINavigationBar+Flexible.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Flexible.h"; sourceTree = "<group>"; };
+		F5DEA4161F697F0F00DED671 /* UINavigationBar+Flexible.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Flexible.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +115,13 @@
 		F5DEA3D61F69753900DED671 /* 9-13NavHeight */ = {
 			isa = PBXGroup;
 			children = (
+				F5DEA4151F697F0F00DED671 /* UINavigationBar+Flexible.h */,
+				F5DEA4161F697F0F00DED671 /* UINavigationBar+Flexible.m */,
+				F5DEA4131F6978FE00DED671 /* bg.jpg */,
+				F5DEA40D1F69765800DED671 /* SNNavViewController.h */,
+				F5DEA40E1F69765800DED671 /* SNNavViewController.m */,
+				F5DEA40A1F69755100DED671 /* SimpleNavgationBar.h */,
+				F5DEA40B1F69755100DED671 /* SimpleNavgationBar.m */,
 				F5DEA3DA1F69753900DED671 /* AppDelegate.h */,
 				F5DEA3DB1F69753900DED671 /* AppDelegate.m */,
 				F5DEA3DD1F69753900DED671 /* ViewController.h */,
@@ -110,6 +131,8 @@
 				F5DEA3E51F69753900DED671 /* LaunchScreen.storyboard */,
 				F5DEA3E81F69753900DED671 /* Info.plist */,
 				F5DEA3D71F69753900DED671 /* Supporting Files */,
+				F5DEA4101F69769600DED671 /* ViewController1.h */,
+				F5DEA4111F69769600DED671 /* ViewController1.m */,
 			);
 			path = "9-13NavHeight";
 			sourceTree = "<group>";
@@ -207,7 +230,7 @@
 				TargetAttributes = {
 					F5DEA3D31F69753900DED671 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 9T725P7UDK;
+						DevelopmentTeam = F3ZZL9NMTQ;
 						ProvisioningStyle = Automatic;
 					};
 					F5DEA3EC1F69753900DED671 = {
@@ -251,6 +274,7 @@
 			files = (
 				F5DEA3E71F69753900DED671 /* LaunchScreen.storyboard in Resources */,
 				F5DEA3E41F69753900DED671 /* Assets.xcassets in Resources */,
+				F5DEA4141F6978FE00DED671 /* bg.jpg in Resources */,
 				F5DEA3E21F69753900DED671 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,8 +301,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5DEA3DF1F69753900DED671 /* ViewController.m in Sources */,
+				F5DEA40C1F69755100DED671 /* SimpleNavgationBar.m in Sources */,
+				F5DEA4121F69769600DED671 /* ViewController1.m in Sources */,
 				F5DEA3DC1F69753900DED671 /* AppDelegate.m in Sources */,
+				F5DEA4171F697F0F00DED671 /* UINavigationBar+Flexible.m in Sources */,
 				F5DEA3D91F69753900DED671 /* main.m in Sources */,
+				F5DEA40F1F69765800DED671 /* SNNavViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,10 +457,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9T725P7UDK;
+				DEVELOPMENT_TEAM = F3ZZL9NMTQ;
 				INFOPLIST_FILE = "9-13NavHeight/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "wyman.--13NavHeight";
+				PRODUCT_BUNDLE_IDENTIFIER = "wyman.--13NavHeight.ty";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -441,10 +470,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9T725P7UDK;
+				DEVELOPMENT_TEAM = F3ZZL9NMTQ;
 				INFOPLIST_FILE = "9-13NavHeight/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "wyman.--13NavHeight";
+				PRODUCT_BUNDLE_IDENTIFIER = "wyman.--13NavHeight.ty";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

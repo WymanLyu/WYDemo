@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
+#import "SNNavViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +18,18 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    ViewController *vc = [[ViewController alloc] init];
+    SNNavViewController *navVc = [[SNNavViewController alloc] initWithRootViewController:vc];
+    self.window = window;
+    
+    window.rootViewController = navVc;
+    [window makeKeyWindow];
+
+    
+    
     return YES;
 }
 
