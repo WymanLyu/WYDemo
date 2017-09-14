@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F57504DC1F6A653400A513AB /* ViewController7.m in Sources */ = {isa = PBXBuildFile; fileRef = F57504DB1F6A653400A513AB /* ViewController7.m */; };
 		F5DEA37A1F6770C700DED671 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEA3791F6770C700DED671 /* main.m */; };
 		F5DEA37D1F6770C700DED671 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEA37C1F6770C700DED671 /* AppDelegate.m */; };
 		F5DEA3801F6770C700DED671 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEA37F1F6770C700DED671 /* ViewController.m */; };
@@ -24,6 +25,7 @@
 		F5DEA3C31F67842B00DED671 /* SNNavTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEA3C21F67842B00DED671 /* SNNavTransition.m */; };
 		F5DEA41A1F699A7A00DED671 /* ViewController4.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEA4191F699A7A00DED671 /* ViewController4.m */; };
 		F5DEA41D1F699A8700DED671 /* ViewController5.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEA41C1F699A8700DED671 /* ViewController5.m */; };
+		F5DEA4201F6A464600DED671 /* ViewController6.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEA41F1F6A464500DED671 /* ViewController6.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F57504DA1F6A653400A513AB /* ViewController7.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController7.h; sourceTree = "<group>"; };
+		F57504DB1F6A653400A513AB /* ViewController7.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController7.m; sourceTree = "<group>"; };
 		F5DEA3751F6770C700DED671 /* SimpleNavigationBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleNavigationBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5DEA3791F6770C700DED671 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F5DEA37B1F6770C700DED671 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -78,6 +82,8 @@
 		F5DEA4191F699A7A00DED671 /* ViewController4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController4.m; sourceTree = "<group>"; };
 		F5DEA41B1F699A8700DED671 /* ViewController5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController5.h; sourceTree = "<group>"; };
 		F5DEA41C1F699A8700DED671 /* ViewController5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController5.m; sourceTree = "<group>"; };
+		F5DEA41E1F6A464500DED671 /* ViewController6.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController6.h; sourceTree = "<group>"; };
+		F5DEA41F1F6A464500DED671 /* ViewController6.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController6.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +157,10 @@
 				F5DEA4191F699A7A00DED671 /* ViewController4.m */,
 				F5DEA41B1F699A8700DED671 /* ViewController5.h */,
 				F5DEA41C1F699A8700DED671 /* ViewController5.m */,
+				F5DEA41E1F6A464500DED671 /* ViewController6.h */,
+				F5DEA41F1F6A464500DED671 /* ViewController6.m */,
+				F57504DA1F6A653400A513AB /* ViewController7.h */,
+				F57504DB1F6A653400A513AB /* ViewController7.m */,
 				F5DEA3BA1F677EB000DED671 /* SNNavViewController.h */,
 				F5DEA3BB1F677EB000DED671 /* SNNavViewController.m */,
 				F5DEA3BD1F67817C00DED671 /* PrefixHeader.pch */,
@@ -334,7 +344,9 @@
 				F5DEA3801F6770C700DED671 /* ViewController.m in Sources */,
 				F5DEA3B01F67778D00DED671 /* SimpleNavgationBar.m in Sources */,
 				F5DEA37D1F6770C700DED671 /* AppDelegate.m in Sources */,
+				F57504DC1F6A653400A513AB /* ViewController7.m in Sources */,
 				F5DEA37A1F6770C700DED671 /* main.m in Sources */,
+				F5DEA4201F6A464600DED671 /* ViewController6.m in Sources */,
 				F5DEA41A1F699A7A00DED671 /* ViewController4.m in Sources */,
 				F5DEA3BC1F677EB000DED671 /* SNNavViewController.m in Sources */,
 				F5DEA41D1F699A8700DED671 /* ViewController5.m in Sources */,
@@ -588,6 +600,7 @@
 				F5DEA3A41F6770C700DED671 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F5DEA3A51F6770C700DED671 /* Build configuration list for PBXNativeTarget "SimpleNavigationBarTests" */ = {
 			isa = XCConfigurationList;
@@ -596,6 +609,7 @@
 				F5DEA3A71F6770C700DED671 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F5DEA3A81F6770C700DED671 /* Build configuration list for PBXNativeTarget "SimpleNavigationBarUITests" */ = {
 			isa = XCConfigurationList;
@@ -604,6 +618,7 @@
 				F5DEA3AA1F6770C700DED671 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

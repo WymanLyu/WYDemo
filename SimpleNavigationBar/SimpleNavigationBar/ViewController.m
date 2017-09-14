@@ -13,6 +13,8 @@
 #import "ViewController3.h"
 #import "ViewController4.h"
 #import "ViewController5.h"
+#import "ViewController6.h"
+#import "ViewController7.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -40,7 +42,7 @@
     self.sn_navBarBackgroundColor = [UIColor redColor];
     self.sn_navBarAlpha = 1 + (self.tableView.contentOffset.y+64) / (imageHeight-64);
     self.sn_navBarBottomLineHidden = !ceil(self.sn_navBarAlpha);
-    
+
 
 //    self.sn_translationY = 23.1;
 //    self.sn_statusBarStyle = UIStatusBarStyleLightContent;
@@ -60,7 +62,7 @@
 
 - (NSArray<NSString *> *)dataArr {
     if (!_dataArr) {
-        _dataArr = @[@"To系统原生导航", @"To透明导航", @"To纯色导航", @"To可变高导航",@"To无状态栏",@"test",@"test",@"test",@"test",@"test",@"test",@"test",@"test"];
+        _dataArr = @[@"To系统原生导航", @"To透明导航", @"To纯色导航", @"To可变高导航",@"To无状态栏",@"To自定义导航栏",@"To隐藏导航",@"test",@"test",@"test",@"test",@"test",@"test"];
     }
     return _dataArr;
 }
@@ -124,6 +126,12 @@ static CGFloat imageHeight = 250;
         [self.navigationController pushViewController:vc animated:YES];
     } else if (4==indexPath.row) {
         ViewController5 *vc = [ViewController5 new];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if (5==indexPath.row) {
+        ViewController6 *vc = [ViewController6 new];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if (6==indexPath.row) {
+        ViewController7 *vc = [ViewController7 new];
         [self.navigationController pushViewController:vc animated:YES];
     } else {
         

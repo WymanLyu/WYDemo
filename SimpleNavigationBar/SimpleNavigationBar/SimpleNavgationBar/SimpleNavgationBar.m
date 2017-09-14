@@ -9,6 +9,25 @@
 #import "SimpleNavgationBar.h"
 #import <objc/runtime.h>
 
+@interface SNKvoObject : NSObject
+
+@end
+
+@implementation SNKvoObject
+
+static char titleKVOKey;
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    if (context == &titleKVOKey) {
+        if ([keyPath isEqual:@"center"]) {
+            CGPoint p = [[change objectForKey:NSKeyValueChangeNewKey] CGPointValue];
+            NSLog(@"new --- %@", NSStringFromCGPoint(p));
+        }
+    }
+}
+
+
+@end
+
 @interface UINavigationBar (SimpleNavgationBar)
 
 - (void)sn_setBackgroundColor:(UIColor *)backgroundColor;
@@ -20,10 +39,11 @@
 @property (nonatomic, assign) float sn_translationY;
 @property (nonatomic, weak) UIView *overlay;
 
+@property (nonatomic, strong) SNKvoObject *sn_kvoObject;    // 监听者
+
 @end
 
 @interface UINavigationController (SimpleNavgationBar)
-
 @property (nonatomic, assign) NSInteger sn_dontKeepSNState; // YES标示不要记录bar状态
 - (void)sn_updateInteractiveTransition:(UIPanGestureRecognizer *)panGesture;
 
@@ -39,10 +59,27 @@
 @property (nonatomic, strong) UIColor *sn_keepBackgroundColor; // 保存的背景色
 @property (nonatomic, assign) CGFloat sn_keepAlpha;            // 保存的透明度
 @property (nonatomic, assign) CGFloat sn_keepTranslationY;     // 保存的Y
+@property (nonatomic, strong) UIView *sn_systemVisualEffect;   // 系统模糊层
+@property (nonatomic, strong) UIView *sn_systemBottomLineView; // 底部线
+@property (nonatomic, strong) UIColor *sn_customBarTransitionColor;         // 自定义nav转场时的颜色
+@property (nonatomic, strong) id sn_interactivePopGestureRecognizerDelegate;// 自定义nav开启侧滑时的手势代理，需要还原
+
 - (void)sn_updateNavigationBarWithFromVC:(UIViewController *)fromVC toVC:(UIViewController *)toVC progress:(CGFloat)progress;
 @end
 
 @implementation UINavigationBar (SimpleNavgationBar)
+static char titleCenterKvoKey;
+- (void)setSn_kvoObject:(SNKvoObject *)sn_kvoObject {
+    objc_setAssociatedObject(self, &titleCenterKvoKey, sn_kvoObject, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+- (SNKvoObject *)sn_kvoObject {
+    SNKvoObject *kvoObj = objc_getAssociatedObject(self, &titleCenterKvoKey);
+    if (!kvoObj) {
+        kvoObj = [[SNKvoObject alloc] init];
+        [self setSn_kvoObject:kvoObj];
+    }
+    return kvoObj;
+}
 
 - (void)sn_reset {
     // 重置前记录
@@ -78,14 +115,17 @@ static char translationYKey;
 }
 
 // 垂直尺寸
+static bool needCunstomLayout = NO;
 - (void)setSn_translationY:(float)sn_translationY {
     objc_setAssociatedObject(self, &translationYKey, @(sn_translationY), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self setTitleVerticalPositionAdjustment:-sn_translationY forBarMetrics:UIBarMetricsDefault];
+    needCunstomLayout = YES;
     CGRect f = self.frame;
     f.size.height = 44+sn_translationY;
     self.frame = f;
     CGFloat overlayH = self.sn_statusBarHidden?(44+sn_translationY):(44+20+sn_translationY);
     self.overlay.frame = CGRectMake(0, 0, self.overlay.frame.size.width, overlayH);
+    [self sn_layoutSubviews];
 }
 - (float)sn_translationY {
      return [objc_getAssociatedObject(self, &translationYKey) floatValue];
@@ -96,6 +136,72 @@ static char translationYKey;
     return newSize;
 }
 
+// 此处布局子控件
+- (void)sn_layoutSubviews {
+    if (!self.sn_translationY) { // 不是可变时不布局
+        return;
+    }
+    // 获取私有控件
+    NSArray *classNamesToReposition = @[@"_UIBarBackground",@"_UINavigationBarBackground", @"_UINavigationBarBackIndicatorView", @"UINavigationItemView", @"UINavigationItemButtonView"];
+    UIView *_snUIBarBackground = nil;
+    UIView *_snUINavigationBarBackground = nil;
+    UIView *_snUINavigationBarBackIndicatorView = nil;
+    UIView *_snUINavigationItemView = nil;
+    UIView *_snUINavigationItemButtonView = nil;
+    for (UIView *view in [self subviews]) {
+        if ([view isKindOfClass:NSClassFromString(classNamesToReposition[0])]) {
+            _snUIBarBackground = view;
+        } else if ([view isKindOfClass:NSClassFromString(classNamesToReposition[1])]) {
+            _snUINavigationBarBackground = view;
+        } else if ([view isKindOfClass:NSClassFromString(classNamesToReposition[2])]) {
+            _snUINavigationBarBackIndicatorView = view;
+        } else if ([NSStringFromClass(view.class) isEqualToString:classNamesToReposition[3]]){ // 因为UINavigationItemButtonView是UINavigationItemView子类
+            _snUINavigationItemView = view;
+        } else if ([NSStringFromClass(view.class) isEqualToString:classNamesToReposition[4]]){
+            _snUINavigationItemButtonView = view;
+        } else {
+            
+        }
+    }
+    
+    // 设置下划线居下
+    for (UIView *subView in _snUIBarBackground.subviews) {
+        if ([subView isKindOfClass:[UIImageView class]] && subView.frame.origin.y) {
+            [subView.layer removeAllAnimations]; // 干掉在动画时的偏移
+            CGRect frame = [subView frame];
+            frame.origin.y = [self bounds].size.height + 20.f - frame.size.height;
+            [subView setFrame:frame];
+        }
+    }
+    
+    // 内容背景随动
+    CGRect frame = [_snUIBarBackground frame];
+    frame.size.height = [self bounds].size.height + 20.f;
+    [_snUIBarBackground setFrame:frame];
+    
+    CGRect frame1 = [_snUINavigationBarBackground frame];
+    frame1.size.height = [self bounds].size.height + 20.f;
+    [_snUINavigationBarBackground setFrame:frame1];
+    
+    // 文字控件重排布
+    CGPoint titleCenterInBar = CGPointZero;
+    for (UIView *view in _snUINavigationItemView.subviews) {
+        if ([view isKindOfClass:[UILabel class]]) {
+            titleCenterInBar = [view.superview convertPoint:view.center toView:_snUIBarBackground];
+        }
+    }
+    for (UIView *view in _snUINavigationItemButtonView.subviews) {
+        if ([view isKindOfClass:[UILabel class]]) {
+            [view.layer removeAllAnimations]; // 干掉在动画时的偏移
+            CGPoint center = [view center];
+            center.y = [_snUIBarBackground convertPoint:titleCenterInBar toView:view.superview].y;
+            [view setCenter:center];
+            // 尝试KVO该属性，貌似不行。不要打开，未写移除逻辑会crash
+//            [view addObserver:self.sn_kvoObject forKeyPath:@"center" options:NSKeyValueObservingOptionNew context:nil];
+        }
+    }
+    [_snUINavigationBarBackIndicatorView setCenter:CGPointMake(_snUINavigationBarBackIndicatorView.center.x, [_snUIBarBackground convertPoint:titleCenterInBar toView:_snUINavigationBarBackIndicatorView.superview].y)];
+}
 
 // 状态条隐藏
 - (void)setSn_statusBarHidden:(BOOL)sn_statusBarHidden {
@@ -144,16 +250,62 @@ static char translationYKey;
 static char keepBackgroundColorKey;
 static char keepAlphaKey;
 static char keepTranslationYKey;
+static char systemVisualEffectViewKey;
+static char systemBottomLineViewKey;
+static char sn_customBarTransitionColorKey;
+static char sn_interactivePopGestureRecognizerDelegateKey;
 
 - (void)sn_addGuestTarget {
     UINavigationController *nav = [self isKindOfClass:[UINavigationController class]] ? (UINavigationController *)self : self.navigationController;
     [nav.interactivePopGestureRecognizer addTarget:nav action:@selector(sn_updateInteractiveTransition:)]; // 增加手势方法,处理转场
 }
+- (void)sn_layoutBar {
+    UINavigationController *nav = [self isKindOfClass:[UINavigationController class]] ? (UINavigationController *)self : self.navigationController;
+    [nav.navigationBar sn_layoutSubviews];
+}
 
 #pragma mark - 属性
+// 转场时系统手势代理
+- (void)setSn_interactivePopGestureRecognizerDelegate:(id)sn_interactivePopGestureRecognizerDelegate {
+    objc_setAssociatedObject(self, &sn_interactivePopGestureRecognizerDelegateKey, sn_interactivePopGestureRecognizerDelegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+- (id)sn_interactivePopGestureRecognizerDelegate {
+    return (id)objc_getAssociatedObject(self, &sn_interactivePopGestureRecognizerDelegateKey);
+}
+
+// 转场自定义bar的颜色
+- (void)setSn_customBarTransitionColor:(UIColor *)sn_customBarTransitionColor {
+      objc_setAssociatedObject(self, &sn_customBarTransitionColorKey, sn_customBarTransitionColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+- (UIColor *)sn_customBarTransitionColor {
+    return (UIColor *)objc_getAssociatedObject(self, &sn_customBarTransitionColorKey);
+}
+
+// 系统底部线
+- (void)setSn_systemBottomLineView:(UIView *)sn_systemBottomLineView {
+    [self sn_addGuestTarget];
+    [self sn_layoutBar];
+    objc_setAssociatedObject(self, &systemBottomLineViewKey, sn_systemBottomLineView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+- (UIView *)sn_systemBottomLineView {
+     return (UIView *)objc_getAssociatedObject(self, &systemBottomLineViewKey);
+}
+
+// 系统模糊层
+- (void)setSn_systemVisualEffect:(UIView *)sn_systemVisualEffect {
+    [self sn_addGuestTarget];
+    [self sn_layoutBar];
+    objc_setAssociatedObject(self, &systemVisualEffectViewKey, sn_systemVisualEffect, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (UIView *)sn_systemVisualEffect {
+    return (UIView *)objc_getAssociatedObject(self, &systemVisualEffectViewKey);
+}
+
 // 保存Y
 - (void)setSn_keepTranslationY:(CGFloat)sn_keepTranslationY {
     [self sn_addGuestTarget];
+    [self sn_layoutBar];
     objc_setAssociatedObject(self, &keepTranslationYKey, @(sn_keepTranslationY), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 - (CGFloat)sn_keepTranslationY {
@@ -164,6 +316,7 @@ static char keepTranslationYKey;
 // 保存的透明度
 - (void)setSn_keepAlpha:(CGFloat )sn_keepAlpha {
     [self sn_addGuestTarget];
+    [self sn_layoutBar];
     objc_setAssociatedObject(self, &keepAlphaKey, @(sn_keepAlpha), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 - (CGFloat)sn_keepAlpha {
@@ -174,6 +327,7 @@ static char keepTranslationYKey;
 // 保存的背景色
 - (void)setSn_keepBackgroundColor:(UIColor *)sn_keepBackgroundColor {
     [self sn_addGuestTarget];
+    [self sn_layoutBar];
     objc_setAssociatedObject(self, &keepBackgroundColorKey, sn_keepBackgroundColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 - (UIColor *)sn_keepBackgroundColor {
@@ -183,6 +337,11 @@ static char keepTranslationYKey;
 #pragma mark - 方法
 // 更新颜色
 - (void)sn_updateNavigationBarWithFromVC:(UIViewController *)fromVC toVC:(UIViewController *)toVC progress:(CGFloat)progress {
+    if (toVC.navigationController.isNavigationBarHidden ||
+        fromVC.navigationController.isNavigationBarHidden) {
+        return;
+    }
+    // 颜色
     UIColor *fromBarColor = fromVC.sn_keepBackgroundColor;
     UIColor *toBarColor = toVC.sn_keepBackgroundColor;
     if (!toBarColor) {
@@ -206,48 +365,38 @@ static char keepTranslationYKey;
     // 不同高度bar的手势,增加高度
     CGFloat h= (toVC.sn_keepTranslationY-fromVC.sn_keepTranslationY)*progress + fromVC.sn_keepTranslationY;
     // 强行干掉下边线和模糊变大（或者干掉）
-    __block UIView *systemVisualEffectView = nil;
+    [toVC.navigationController.navigationBar sn_layoutSubviews]; // 布局
+    [fromVC.navigationController.navigationBar sn_layoutSubviews]; // 布局
     [[toVC.navigationController.navigationBar.subviews[0] subviews] enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([obj isKindOfClass:[UIImageView class]] && obj.frame.origin.y) {
-            obj.hidden =YES;
+            toVC.sn_systemBottomLineView = obj; // 只记录
         }
         if ([obj isKindOfClass:NSClassFromString(@"UIVisualEffectView")]) {
             if (fromVC.sn_keepBackgroundColor && toVC.sn_keepBackgroundColor) { //都是自定义
                 obj.hidden = YES;    // 结束时要显示回去
             }
-            systemVisualEffectView = obj;
+            toVC.sn_systemVisualEffect = obj;
+            fromVC.sn_systemVisualEffect = obj;
         }
-
     }];
     if (!fromVC.sn_keepBackgroundColor || !toVC.sn_keepBackgroundColor) { // 存在系统则模糊
-        systemVisualEffectView.hidden = NO;
+        toVC.sn_systemVisualEffect.hidden = NO;
         CGRect f = toVC.navigationController.navigationBar.subviews[0].frame;
         f.size.height = 64+h;
         toVC.navigationController.navigationBar.subviews[0].frame = f;
     }
-
-    // 处理其他子控件居上
-//    NSArray *classNamesToReposition = @[@"UINavigationItemView", @"UINavigationButton",@"UIButton"];
-//    for (UIView *view in toVC.navigationController.navigationBar.subviews) {
-//        if ([classNamesToReposition containsObject:NSStringFromClass([view class])]) {
-//            CGRect frame = view.frame;
-//            frame.origin.y = -20;
-//            view.frame=frame;
-//        }
-//    }
-//    for (UIView *view in fromVC.navigationController.navigationBar.subviews) {
-//        if ([classNamesToReposition containsObject:NSStringFromClass([view class])]) {
-//            CGRect frame = view.frame;
-//            frame.origin.y = -20;
-//            view.frame=frame;
-//        }
-//    }
-
     
-    
+    // 设置导航栏高度
 //    NSLog(@"从%f->%f,手势设置高度%f--进度:%f", fromVC.sn_keepTranslationY, toVC.sn_keepTranslationY, h, progress);
     toVC.sn_translationY = h;
     fromVC.sn_translationY = h;
+    
+    // 自定义bar
+    if (fromVC.sn_customBar && fromVC.sn_smoothTransitionToCustomBar) {
+        [toVC.navigationController.navigationBar.overlay addSubview:fromVC.sn_customBar];
+        fromVC.sn_customBar.backgroundColor = [UIColor clearColor];
+        fromVC.sn_customBar.alpha = (1-progress)*(1-progress)*(1-progress)*(1-progress)*(1-progress);
+    }
 }
 
 @end
@@ -257,6 +406,8 @@ static char keepTranslationYKey;
 static char barStyleKey;
 static char statusBarStyleKey;
 static char sn_statusBarHiddenKey;
+static char sn_customBarKey;
+static char sn_smoothTransitionToCustomBarKey;
 
 - (void)sn_reset {
     UINavigationController *nav = [self isKindOfClass:[UINavigationController class]] ? (UINavigationController *)self : self.navigationController;
@@ -270,21 +421,72 @@ static char sn_statusBarHiddenKey;
     self.sn_statusBarStyle = UIStatusBarStyleDefault;
     self.sn_statusBarHidden = NO;
     self.sn_statusBarBackgroundColor = [UIColor clearColor];
+    self.sn_navBarBottomLineHidden = NO;
     self.sn_translationY = 0;
-    [self resetNavBarHidden];
+    [self resetNavBarSystemView];
     [self.navigationController.navigationBar sn_reset];
+    if (self.sn_interactivePopGestureRecognizerDelegate) { // 还原代理
+        nav.interactivePopGestureRecognizer.delegate = self.sn_interactivePopGestureRecognizerDelegate ;
+        self.sn_interactivePopGestureRecognizerDelegate = nil;
+    }
 }
 
-- (void)resetNavBarHidden {
-    [[self.navigationController.navigationBar.subviews[0] subviews] enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if ([obj isKindOfClass:[UIImageView class]] && obj.frame.origin.y) {
-            obj.hidden =YES;
-        }
-        if ([obj isKindOfClass:NSClassFromString(@"UIVisualEffectView")]) {
-            obj.hidden = NO;    // 结束时要显示回去
-        }
-    }];
+- (void)resetNavBarSystemView {
+    self.sn_systemBottomLineView.hidden = NO; // 结束时显示回来
+}
 
+// 隐藏
+- (void)sn_navBarHidden:(BOOL)animated {
+    UINavigationController *nav = [self isKindOfClass:[UINavigationController class]] ? (UINavigationController *)self : self.navigationController;
+    [nav setNavigationBarHidden:YES animated:animated];
+}
+- (void)sn_navBarShow:(BOOL)animated {
+    UINavigationController *nav = [self isKindOfClass:[UINavigationController class]] ? (UINavigationController *)self : self.navigationController;
+    [nav setNavigationBarHidden:NO animated:animated];
+}
+
+// 侧滑开关
+- (void)sn_openScreenPop {
+    UINavigationController *nav = [self isKindOfClass:[UINavigationController class]] ? (UINavigationController *)self : self.navigationController;
+    if (!self.sn_interactivePopGestureRecognizerDelegate) { // 保存代理
+        self.sn_interactivePopGestureRecognizerDelegate = nav.interactivePopGestureRecognizer.delegate;
+        nav.interactivePopGestureRecognizer.delegate = (id)nav;
+    }
+}
+
+// 是否顺换过度自定义bar
+- (void)setSn_smoothTransitionToCustomBar:(BOOL)sn_smoothTransitionToCustomBar {
+    objc_setAssociatedObject(self, &sn_smoothTransitionToCustomBarKey, @(sn_smoothTransitionToCustomBar), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+- (BOOL)sn_smoothTransitionToCustomBar {
+    return (BOOL)[objc_getAssociatedObject(self, &sn_smoothTransitionToCustomBarKey) boolValue];
+}
+
+// 自定义bar
+- (void)setSn_customBar:(UIView *)sn_customBar {
+    if (!sn_customBar) return;
+    UINavigationController *nav = [self isKindOfClass:[UINavigationController class]] ? (UINavigationController *)self : self.navigationController;
+    [nav.navigationBar.overlay removeFromSuperview];
+    nav.navigationBar.overlay = sn_customBar;
+    CGFloat overlayH = nav.navigationBar.sn_statusBarHidden?(44+nav.navigationBar.sn_translationY):(44+20+nav.navigationBar.sn_translationY);
+    sn_customBar.frame = CGRectMake(0, 0, nav.navigationBar.bounds.size.width, overlayH);
+    [[nav.navigationBar.subviews firstObject] insertSubview:nav.navigationBar.overlay atIndex:0];
+    // 开启侧滑
+    if (!self.sn_interactivePopGestureRecognizerDelegate) { // 保存代理
+        self.sn_interactivePopGestureRecognizerDelegate = nav.interactivePopGestureRecognizer.delegate;
+    }
+    nav.interactivePopGestureRecognizer.delegate = (id)nav;
+    // 隐藏视图
+    self.navigationItem.hidesBackButton = YES;
+    self.navigationItem.titleView.hidden = YES;
+    self.sn_navBarBottomLineHidden = YES;
+    self.title = @"";
+    // 转场记录色彩
+    self.sn_customBarTransitionColor = sn_customBar.backgroundColor;
+    objc_setAssociatedObject(self, &sn_customBarKey, sn_customBar, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+- (UIView *)sn_customBar {
+    return objc_getAssociatedObject(self, &sn_customBarKey);
 }
 
 // 垂直尺寸
@@ -435,19 +637,6 @@ static char sn_dontKeepSNStateKey;
         case UIGestureRecognizerStateCancelled: {
         }
         case UIGestureRecognizerStateEnded:{
-            // 回复在手势中的隐藏模糊操作!!!!!这个会导致结束时候闪现
-            UIViewController *fromVC = [self.topViewController.transitionCoordinator viewControllerForKey:UITransitionContextFromViewControllerKey];
-            UIViewController *toVC = [self.topViewController.transitionCoordinator viewControllerForKey:UITransitionContextToViewControllerKey];
-            [[toVC.navigationController.navigationBar.subviews[0] subviews] enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                if ([obj isKindOfClass:NSClassFromString(@"UIVisualEffectView")]) {
-                    obj.hidden = NO;    // 结束时要显示回去
-                }
-            }];
-            [[fromVC.navigationController.navigationBar.subviews[0] subviews] enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                if ([obj isKindOfClass:NSClassFromString(@"UIVisualEffectView")]) {
-                     obj.hidden = NO;    // 结束时要显示回去
-                }
-            }];
         }
             break;
         default:
@@ -479,6 +668,7 @@ static char sn_dontKeepSNStateKey;
     NSUInteger itemCount = self.navigationBar.items.count;
     NSUInteger n = self.viewControllers.count >= itemCount ? 2 : 1;
     UIViewController *popToVC = self.viewControllers[self.viewControllers.count - n];
+//    popToVC.sn_navBarBottomLineHidden = YES; // pop时必须隐藏底部线
     if (popToVC.sn_keepBackgroundColor) { // pop到自定义的,在此触发干掉原导航模糊层
         [self sn_navBarBackgroundColor];
     } else {  // pop到原生的,需要对原生vc进行reset
@@ -489,25 +679,6 @@ static char sn_dontKeepSNStateKey;
     [self popToViewController:popToVC animated:YES];
     return YES;
 }
-
-//- (BOOL)navigationBar:(UINavigationBar *)navigationBar shouldPushItem:(UINavigationItem *)item {
-//    NSUInteger itemCount = self.navigationBar.items.count;
-//    NSUInteger n = self.viewControllers.count >= itemCount ? 2 : 1;
-//    UIViewController *pushToVC = self.viewControllers[self.viewControllers.count + n];
-//    if (pushToVC.sn_keepBackgroundColor) { // push到自定义的,在此触发干掉原导航模糊层
-//        [self sn_navBarBackgroundColor];
-//        self.sn_translationY = pushToVC.sn_keepTranslationY;
-//    } else {  // pop到原生的,需要对原生vc进行reset
-//        self.sn_dontKeepSNState++;
-//        [pushToVC sn_reset];
-//        pushToVC.sn_keepTranslationY = -64;
-//        self.sn_dontKeepSNState--;
-//    }
-//    [self pushViewController:pushToVC animated:YES];
-//    return YES;
-//}
-
-
 
 - (void)dealInteractionChanges:(id<UIViewControllerTransitionCoordinatorContext>)context {
     void (^animations) (UITransitionContextViewControllerKey) = ^(UITransitionContextViewControllerKey key){
@@ -521,18 +692,35 @@ static char sn_dontKeepSNStateKey;
     };
     if ([context isCancelled] == YES) { // 回到fromVc状态
         double cancelDuration = [context transitionDuration] * [context percentComplete];
+        UIViewController *fromVc = [context viewControllerForKey:UITransitionContextFromViewControllerKey];
+         // 处理有自定义导航
+        if (fromVc.sn_customBar) {
+            [fromVc.sn_customBar removeFromSuperview];
+            fromVc.sn_customBar.backgroundColor = fromVc.sn_customBarTransitionColor;
+            fromVc.sn_customBar.alpha = 1.0;
+            [fromVc setSn_customBar:fromVc.sn_customBar];
+        }
         __weak typeof(self)weakSelf = self;
         weakSelf.sn_dontKeepSNState++; // 加锁
         [UIView animateWithDuration:cancelDuration animations:^{
             animations(UITransitionContextFromViewControllerKey);
         } completion:^(BOOL finished) {
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.50 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 weakSelf.sn_dontKeepSNState--; // 解锁
             });
+            [weakSelf sn_layoutBar]; // 布局一下
+            // 处理有自定义导航
+            if (fromVc.sn_customBar) {
+                [fromVc.sn_customBar removeFromSuperview];
+                fromVc.sn_customBar.backgroundColor = fromVc.sn_customBarTransitionColor;
+                fromVc.sn_customBar.alpha = 1.0;
+                [fromVc setSn_customBar:fromVc.sn_customBar];
+            }
         }];
     } else { // 完成toVc剩下的动画
         __weak typeof(self)weakSelf = self;
         double finishDuration = [context transitionDuration] * (1 - [context percentComplete]);
+        UIViewController *fromVc = [context viewControllerForKey:UITransitionContextFromViewControllerKey];
         [UIView animateWithDuration:finishDuration animations:^{
             animations(UITransitionContextFromViewControllerKey);
         } completion:^(BOOL finished) {
@@ -547,6 +735,12 @@ static char sn_dontKeepSNStateKey;
                 weakSelf.sn_dontKeepSNState++;
                 [targetVc sn_reset];
                 weakSelf.sn_dontKeepSNState--;
+            }
+            [weakSelf sn_layoutBar]; // 布局一下
+             // 处理有自定义导航
+            if (fromVc.sn_customBar) {
+                [fromVc.sn_customBar removeFromSuperview];
+                [fromVc sn_reset];
             }
         }];
     }
@@ -600,7 +794,6 @@ static char sn_dontKeepSNStateKey;
     } else {
         return YES;
     }
-
 }
 
 @end
