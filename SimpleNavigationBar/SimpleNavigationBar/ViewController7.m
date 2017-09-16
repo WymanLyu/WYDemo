@@ -55,6 +55,8 @@
     [self sn_navBarShow:animated];
     [self sn_reset];
 }
+
+
 /*
 #pragma mark - Navigation
 

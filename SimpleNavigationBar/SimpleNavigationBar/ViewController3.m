@@ -8,6 +8,7 @@
 
 #import "ViewController3.h"
 #import "SimpleNavgationBar.h"
+#import "ViewController1.h"
 
 @interface ViewController3 ()
 
@@ -32,6 +33,12 @@
     [super viewWillDisappear:animated];
     FuncLog
     [self sn_reset];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    ViewController1 *v = [ViewController1 new];
+    UINavigationController *n = [[UINavigationController alloc] initWithRootViewController:v];
+    [self presentViewController:n animated:YES completion:nil];
 }
 
 
