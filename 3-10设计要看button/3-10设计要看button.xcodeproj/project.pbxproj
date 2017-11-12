@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F564FDDA1F7DE74D006E5514 /* TYBottomPlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = F564FDD91F7DE74D006E5514 /* TYBottomPlayView.m */; };
+		F564FDDD1F7DE8C2006E5514 /* UINavigationController+TYMediaCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = F564FDDC1F7DE8C2006E5514 /* UINavigationController+TYMediaCenter.m */; };
+		F564FDE01F7DEB78006E5514 /* UIViewController+TYMediaCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = F564FDDF1F7DEB78006E5514 /* UIViewController+TYMediaCenter.m */; };
+		F564FDE31F7DEC99006E5514 /* ViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = F564FDE21F7DEC99006E5514 /* ViewController1.m */; };
+		F564FDE61F7DECA4006E5514 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = F564FDE51F7DECA4006E5514 /* ViewController2.m */; };
+		F564FDE91F7DED2C006E5514 /* UINavigationController1.m in Sources */ = {isa = PBXBuildFile; fileRef = F564FDE81F7DED2C006E5514 /* UINavigationController1.m */; };
+		F564FDEC1F7E26D1006E5514 /* DeallocNotiObj.m in Sources */ = {isa = PBXBuildFile; fileRef = F564FDEB1F7E26D1006E5514 /* DeallocNotiObj.m */; };
+		F564FDEF1F7E2B3B006E5514 /* NSObject+DeallocNoti.m in Sources */ = {isa = PBXBuildFile; fileRef = F564FDEE1F7E2B3B006E5514 /* NSObject+DeallocNoti.m */; };
 		F577F9951E7289AB0085F528 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F577F9941E7289AB0085F528 /* main.m */; };
 		F577F9981E7289AB0085F528 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F577F9971E7289AB0085F528 /* AppDelegate.m */; };
 		F577F99B1E7289AB0085F528 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F577F99A1E7289AB0085F528 /* ViewController.m */; };
@@ -37,6 +45,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F564FDD81F7DE74D006E5514 /* TYBottomPlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYBottomPlayView.h; sourceTree = "<group>"; };
+		F564FDD91F7DE74D006E5514 /* TYBottomPlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYBottomPlayView.m; sourceTree = "<group>"; };
+		F564FDDB1F7DE8C2006E5514 /* UINavigationController+TYMediaCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+TYMediaCenter.h"; sourceTree = "<group>"; };
+		F564FDDC1F7DE8C2006E5514 /* UINavigationController+TYMediaCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+TYMediaCenter.m"; sourceTree = "<group>"; };
+		F564FDDE1F7DEB78006E5514 /* UIViewController+TYMediaCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TYMediaCenter.h"; sourceTree = "<group>"; };
+		F564FDDF1F7DEB78006E5514 /* UIViewController+TYMediaCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TYMediaCenter.m"; sourceTree = "<group>"; };
+		F564FDE11F7DEC99006E5514 /* ViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController1.h; sourceTree = "<group>"; };
+		F564FDE21F7DEC99006E5514 /* ViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController1.m; sourceTree = "<group>"; };
+		F564FDE41F7DECA4006E5514 /* ViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
+		F564FDE51F7DECA4006E5514 /* ViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
+		F564FDE71F7DED2C006E5514 /* UINavigationController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UINavigationController1.h; sourceTree = "<group>"; };
+		F564FDE81F7DED2C006E5514 /* UINavigationController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UINavigationController1.m; sourceTree = "<group>"; };
+		F564FDEA1F7E26D1006E5514 /* DeallocNotiObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeallocNotiObj.h; sourceTree = "<group>"; };
+		F564FDEB1F7E26D1006E5514 /* DeallocNotiObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeallocNotiObj.m; sourceTree = "<group>"; };
+		F564FDED1F7E2B3B006E5514 /* NSObject+DeallocNoti.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DeallocNoti.h"; sourceTree = "<group>"; };
+		F564FDEE1F7E2B3B006E5514 /* NSObject+DeallocNoti.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DeallocNoti.m"; sourceTree = "<group>"; };
 		F577F9901E7289AB0085F528 /* 3-10设计要看button.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "3-10设计要看button.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F577F9941E7289AB0085F528 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F577F9961E7289AB0085F528 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -116,6 +140,22 @@
 				F577F9A11E7289AB0085F528 /* LaunchScreen.storyboard */,
 				F577F9A41E7289AB0085F528 /* Info.plist */,
 				F577F9931E7289AB0085F528 /* Supporting Files */,
+				F564FDD81F7DE74D006E5514 /* TYBottomPlayView.h */,
+				F564FDD91F7DE74D006E5514 /* TYBottomPlayView.m */,
+				F564FDED1F7E2B3B006E5514 /* NSObject+DeallocNoti.h */,
+				F564FDEE1F7E2B3B006E5514 /* NSObject+DeallocNoti.m */,
+				F564FDEA1F7E26D1006E5514 /* DeallocNotiObj.h */,
+				F564FDEB1F7E26D1006E5514 /* DeallocNotiObj.m */,
+				F564FDDB1F7DE8C2006E5514 /* UINavigationController+TYMediaCenter.h */,
+				F564FDDC1F7DE8C2006E5514 /* UINavigationController+TYMediaCenter.m */,
+				F564FDDE1F7DEB78006E5514 /* UIViewController+TYMediaCenter.h */,
+				F564FDDF1F7DEB78006E5514 /* UIViewController+TYMediaCenter.m */,
+				F564FDE11F7DEC99006E5514 /* ViewController1.h */,
+				F564FDE21F7DEC99006E5514 /* ViewController1.m */,
+				F564FDE41F7DECA4006E5514 /* ViewController2.h */,
+				F564FDE51F7DECA4006E5514 /* ViewController2.m */,
+				F564FDE71F7DED2C006E5514 /* UINavigationController1.h */,
+				F564FDE81F7DED2C006E5514 /* UINavigationController1.m */,
 			);
 			path = "3-10设计要看button";
 			sourceTree = "<group>";
@@ -281,8 +321,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F564FDE01F7DEB78006E5514 /* UIViewController+TYMediaCenter.m in Sources */,
+				F564FDE31F7DEC99006E5514 /* ViewController1.m in Sources */,
+				F564FDEF1F7E2B3B006E5514 /* NSObject+DeallocNoti.m in Sources */,
+				F564FDDA1F7DE74D006E5514 /* TYBottomPlayView.m in Sources */,
 				F577F99B1E7289AB0085F528 /* ViewController.m in Sources */,
+				F564FDEC1F7E26D1006E5514 /* DeallocNotiObj.m in Sources */,
+				F564FDDD1F7DE8C2006E5514 /* UINavigationController+TYMediaCenter.m in Sources */,
+				F564FDE61F7DECA4006E5514 /* ViewController2.m in Sources */,
 				F577F9981E7289AB0085F528 /* AppDelegate.m in Sources */,
+				F564FDE91F7DED2C006E5514 /* UINavigationController1.m in Sources */,
 				F577F9951E7289AB0085F528 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -515,6 +563,7 @@
 				F577F9BF1E7289AB0085F528 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F577F9C01E7289AB0085F528 /* Build configuration list for PBXNativeTarget "3-10设计要看buttonTests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +572,7 @@
 				F577F9C21E7289AB0085F528 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F577F9C31E7289AB0085F528 /* Build configuration list for PBXNativeTarget "3-10设计要看buttonUITests" */ = {
 			isa = XCConfigurationList;
@@ -531,6 +581,7 @@
 				F577F9C51E7289AB0085F528 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
