@@ -17,6 +17,7 @@
 		F5D6D7271FB7FB2400645B39 /* _1_12____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D6D7261FB7FB2400645B39 /* _1_12____UITests.m */; };
 		F5D6D7361FB8000400645B39 /* UIPickerView+WY.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D6D7351FB8000400645B39 /* UIPickerView+WY.m */; };
 		F5D6D7391FB829D500645B39 /* ScorePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D6D7381FB829D500645B39 /* ScorePickerView.m */; };
+		F5D6D73C1FB833BF00645B39 /* ScoreRotateView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D6D73B1FB833BF00645B39 /* ScoreRotateView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		F5D6D7351FB8000400645B39 /* UIPickerView+WY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIPickerView+WY.m"; sourceTree = "<group>"; };
 		F5D6D7371FB829D500645B39 /* ScorePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScorePickerView.h; sourceTree = "<group>"; };
 		F5D6D7381FB829D500645B39 /* ScorePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScorePickerView.m; sourceTree = "<group>"; };
+		F5D6D73A1FB833BF00645B39 /* ScoreRotateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreRotateView.h; sourceTree = "<group>"; };
+		F5D6D73B1FB833BF00645B39 /* ScoreRotateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreRotateView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,8 @@
 				F5D6D7351FB8000400645B39 /* UIPickerView+WY.m */,
 				F5D6D7371FB829D500645B39 /* ScorePickerView.h */,
 				F5D6D7381FB829D500645B39 /* ScorePickerView.m */,
+				F5D6D73A1FB833BF00645B39 /* ScoreRotateView.h */,
+				F5D6D73B1FB833BF00645B39 /* ScoreRotateView.m */,
 			);
 			path = "11-12滚动数字";
 			sourceTree = "<group>";
@@ -286,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5D6D73C1FB833BF00645B39 /* ScoreRotateView.m in Sources */,
 				F5D6D7391FB829D500645B39 /* ScorePickerView.m in Sources */,
 				F5D6D7091FB7FB2400645B39 /* ViewController.m in Sources */,
 				F5D6D7061FB7FB2400645B39 /* AppDelegate.m in Sources */,

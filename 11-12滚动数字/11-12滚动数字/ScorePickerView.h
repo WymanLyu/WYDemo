@@ -24,8 +24,11 @@
 
 @property (nonatomic, weak) id<ScorePickerViewDelegate> delegate;
 
+@property (nonatomic, assign) NSInteger maxCount; // 160
+@property (nonatomic, assign) NSInteger minCount; // 50;
+
 - (void)setScore:(NSInteger)score;
-- (NSInteger)currentScore;
+- (NSInteger)score;
 
 
 @end

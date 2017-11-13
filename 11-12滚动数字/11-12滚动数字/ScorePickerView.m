@@ -18,12 +18,16 @@
 @property (nonatomic, assign) NSInteger currentEnterHundred; // 当前进百位数
 
 @property (nonatomic, assign) NSInteger currentScore;
+
+@property (nonatomic, assign) BOOL dontCallDelegate;
 @end
 
 @implementation ScorePickerView
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
+        _maxCount= 160;
+        _minCount = 50;
         [self setupSub];
     }
     return self;
@@ -68,7 +72,27 @@
     NSInteger ten = ([self.pickView selectedRowInComponent:1] % 10) * 10;
     NSInteger digit = ([self.pickView selectedRowInComponent:2] % 10) * 1;
     bpm = hundred+ten+digit;
-    if (bpm!=self.currentScore) {
+    if (bpm!=self.currentScore && !self.dontCallDelegate) {
+        if ([self.delegate respondsToSelector:@selector(scorePickerView:scoreChange:)]) {
+            [self.delegate scorePickerView:self scoreChange:bpm];
+        }
+    }
+    if (self.dontCallDelegate) {
+        self.dontCallDelegate = NO;
+    }
+    // 限制结果范围
+    if (bpm < self.minCount) {
+        bpm = self.minCount;
+        [self.pickView selectRow:bpm inComponent:2 animated:YES];
+        [self pickerView:self.pickView didSelectRow:bpm inComponent:2];
+        if ([self.delegate respondsToSelector:@selector(scorePickerView:scoreChange:)]) {
+            [self.delegate scorePickerView:self scoreChange:bpm];
+        }
+    }
+    if (bpm > self.maxCount) {
+        bpm = self.maxCount;
+        [self.pickView selectRow:bpm inComponent:2 animated:YES];
+        [self pickerView:self.pickView didSelectRow:bpm inComponent:2];
         if ([self.delegate respondsToSelector:@selector(scorePickerView:scoreChange:)]) {
             [self.delegate scorePickerView:self scoreChange:bpm];
         }
@@ -131,11 +155,18 @@
 
 
 - (void)setScore:(NSInteger)score {
-    [self.pickView selectRow:234 inComponent:2 animated:YES];
-    [self pickerView:self.pickView didSelectRow:234 inComponent:2];
+    self.dontCallDelegate = YES; // 不触发代理
+    if (score<=self.minCount) {
+        score=self.minCount;
+    }
+    if (score>=self.maxCount) {
+        score=self.maxCount;
+    }
+    [self.pickView selectRow:score inComponent:2 animated:YES];
+    [self pickerView:self.pickView didSelectRow:score inComponent:2];
 }
 
-- (NSInteger)currentScore {
+- (NSInteger)score {
     return _currentScore;
 }
 
