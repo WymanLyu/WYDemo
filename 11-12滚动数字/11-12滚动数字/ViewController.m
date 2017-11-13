@@ -9,12 +9,17 @@
 #import "ViewController.h"
 #import "ScorePickerView.h"
 #import "ScoreRotateView.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface ViewController () <ScorePickerViewDelegate, ScoreRotateViewDelegate>
 
 @property (nonatomic, strong) ScorePickerView *scorePickerView;
 
 @property (nonatomic, strong) ScoreRotateView *scoreRotateView;
+
+@property (nonatomic, strong) UIButton *resetBtn;
+
+@property (nonatomic, assign) CGFloat selectedBPM;
 
 @end
 
@@ -29,23 +34,39 @@
     [self.view addSubview:self.scorePickerView];
     [self.scorePickerView setScore:50];
     
-    self.scoreRotateView = [[ScoreRotateView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width-(524.0/2), [UIScreen mainScreen].bounds.size.height-(692.0/2), 524.0, 524.0)];
+    self.scoreRotateView = [[ScoreRotateView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width-(ROTATE_VIEW_W/2), [UIScreen mainScreen].bounds.size.height-((ROTATE_VIEW_H_SCALE*ROTATE_VIEW_W)/2), ROTATE_VIEW_W, ROTATE_VIEW_W)];
     self.scoreRotateView.backgroundColor = [UIColor lightGrayColor];
     self.scoreRotateView.delegate = self;
     [self.view addSubview:self.scoreRotateView];
+    
+    self.resetBtn = [[UIButton alloc] init];
+    [self.resetBtn setBackgroundColor:[UIColor yellowColor]];
+    [self.resetBtn setImage:[UIImage imageNamed:@"reset_"] forState:UIControlStateNormal];
+    [self.view addSubview:self.resetBtn];
+    self.resetBtn.frame = CGRectMake(33, 55, 30, 40);
+    [self.resetBtn addTarget:self action:@selector(resetBtnClick) forControlEvents:UIControlEventTouchUpInside];
 
 }
 
-
+- (void)resetBtnClick {
+    [self.scoreRotateView resetBPMDetect];
+    [self.scorePickerView setScore:50];
+}
 
 - (void)scorePickerView:(ScorePickerView *)scoreView scoreChange:(NSInteger)score {
     [self.scoreRotateView setScore:score];
+    self.selectedBPM = score;
     NSLog(@"选择器--%zd", score);
 }
 
 - (void)scoreRotateView:(ScoreRotateView *)scoreView scoreChange:(NSInteger)score {
     [self.scorePickerView setScore:score];
+    self.selectedBPM = score;
     NSLog(@"滚盘--%zd", score);
+}
+
+- (void)setSelectedBPM:(CGFloat)selectedBPM {
+    _selectedBPM = selectedBPM;
 }
 
 @end

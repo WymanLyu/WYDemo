@@ -7,6 +7,7 @@
 //
 
 #import "ScoreRotateView.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 #define ERROR_ADD_ANGLE -1
 
@@ -25,6 +26,9 @@
 
 @property (nonatomic, strong) UIImageView *pointerImgView;
 
+@property (nonatomic, strong) UIImageView *touchView;
+@property (nonatomic, strong) UITapGestureRecognizer *tap;
+
 @property(nonatomic,strong) UIPanGestureRecognizer *pan;
 
 @property (nonatomic, assign) CGPoint startPoint;
@@ -34,6 +38,11 @@
 @property (nonatomic, assign) CGFloat lastCurrentAngleInRadians; // 用于记录是否顺时针或逆时针
 
 @property (nonatomic, assign) NSInteger currentScore;
+
+
+@property (nonatomic, assign) CFTimeInterval beginTime;
+@property (nonatomic, assign) CFTimeInterval endTime;
+@property (nonatomic, assign) NSInteger bpmCount;
 
 @end
 
@@ -57,8 +66,19 @@
         
         self.pointerImgView = [[UIImageView alloc] init];
         [self addSubview:self.pointerImgView];
-        self.pointerImgView.frame = CGRectMake(0, 104, 24, 21);
+        self.pointerImgView.frame = CGRectMake(0, (104/524.0)*ROTATE_VIEW_W, 24, 21);
         self.pointerImgView.image = [UIImage imageNamed:@"pointer"];
+        
+        self.touchView = [[UIImageView alloc] init];
+        self.touchView.userInteractionEnabled = YES;
+        [self.touchView setBackgroundColor:[UIColor redColor]];
+        [self addSubview:self.touchView];
+        self.touchView.frame = CGRectMake(20, 20, frame.size.width-40, frame.size.height-40);
+        self.touchView.layer.cornerRadius = (frame.size.width-40)*0.5;
+        self.touchView.layer.masksToBounds = YES;
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
+        [self.touchView addGestureRecognizer:tap];
+        self.tap = tap;
         
         UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(paned:)];
         [self addGestureRecognizer:pan];
@@ -66,6 +86,53 @@
         self.contentCenterPoint = CGPointMake(self.bounds.size.width * 0.5, self.bounds.size.height * 0.5);
     }
     return self;
+}
+
+
+- (void)tap:(UITapGestureRecognizer *)tap {
+    NSLog(@"---");
+    CABasicAnimation *ani = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+    ani.toValue = @(0.93);
+    ani.duration = 0.15;
+    [self.touchView.layer addAnimation:ani forKey:@"TouchScale_ani"];
+    
+    
+    // 检测bpm
+    // 0.检测此拍是否重置
+    if (self.endTime) {
+        if (CACurrentMediaTime()-self.endTime > (60.0/MIN_BPM)) { // 两拍间隔低于50则自动重置
+            [self resetBPMDetect];
+        }
+    }
+    
+    // 1.记录开始时间 和 结束时间
+    if (self.bpmCount==0) {
+        self.beginTime = CACurrentMediaTime();
+    } else {
+        self.endTime = CACurrentMediaTime();
+    }
+    // 2.记录拍子数
+    self.bpmCount++;
+    // 3.计算bpm
+    if (self.endTime) {
+        CGFloat bpm = (self.bpmCount*60.0) / (self.endTime - self.beginTime);
+        if (bpm>=MAX_BPM) {
+            bpm = MAX_BPM;
+        }
+        [self setScore:ceil(bpm)];
+        if ([self.delegate respondsToSelector:@selector(scoreRotateView:scoreChange:)]) {
+            [self.delegate scoreRotateView:self scoreChange:ceil(bpm)];
+        }
+        
+        NSLog(@"检测%f", ceil(bpm));
+    }
+}
+
+- (void)resetBPMDetect {
+    self.bpmCount = 0;
+    self.beginTime = 0;
+    self.endTime = 0;
+    [self setScore:MIN_BPM];
 }
 
 static BOOL pass = NO;

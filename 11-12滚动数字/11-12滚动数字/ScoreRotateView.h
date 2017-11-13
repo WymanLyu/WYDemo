@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+#define ROTATE_VIEW_W 524.0
+#define ROTATE_VIEW_H_SCALE (692.0/524.0)
+
 @class ScoreRotateView;
 @protocol ScoreRotateViewDelegate <NSObject>
 
@@ -22,5 +25,7 @@
 
 - (void)setScore:(NSInteger)score;
 - (NSInteger)score;
+
+- (void)resetBPMDetect;
 
 @end
